@@ -17,8 +17,7 @@ const routes: Routes = [
   {path: 'foundation' , component: FoundationComponent},
   {path: 'ventures' , component: VenturesComponent},
   {path: 'whoWe' , component: WhoWeComponent},
-  {path: '',   redirectTo: '/AboutUs', pathMatch: 'full' }
-
+  {path: '',   redirectTo: 'AboutUs', pathMatch: 'full' }
 ];
 
 @NgModule({

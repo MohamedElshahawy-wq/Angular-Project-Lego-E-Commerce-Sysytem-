@@ -5,10 +5,16 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VipComponent } from './components/vip/vip.component';
+import { FindStoreComponent } from './components/find-store/find-store.component';
+import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VipComponent,
+    FindStoreComponent,
+    LegoLifeComponent
   ],
   imports: [
     BrowserModule,

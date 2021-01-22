@@ -1,0 +1,119 @@
+html{overflow-x: hidden;}
+body{padding: 0 !important;}
+.main{padding: 0 !important;}
+.nBar{
+    background-color: #F8F8F8;
+    height: 50px;
+    font-size: 15px;
+}
+.nBar a{
+    color: #4091C8;
+}
+.nBar img{
+    width: 25px;
+    margin-right: 10px;
+}
+/* content */
+.content{padding: 10px 0 50px 0;}
+.content span{margin-left: 10px;}
+.blue{
+    background: #56a6c5;
+}
+.blue img{
+    margin: 50px 0 50px 0;
+}
+.blue .blackBlue{
+    background: #0A4DAD;
+    color: #fff;
+    margin: 40px;
+    margin-right: 0;
+    padding: 40px 0 40px 50px;
+    border-radius: 20px;
+}
+.blue .blackBlue h2{font-weight: lighter;font-size: 35px;}
+.blackBlue button{
+    background-color: #fff;
+    width: 200px;
+    border: 2px #fff solid;
+    font-weight: bold;
+}
+.btn-group .butt2{
+    background-color: #0A4DAD !important;
+    color: #fff;
+}
+.btn-group .butt2:hover{background-color: #fff !important;}
+.imgBlue{width: 190px;}
+.blackBlue p{font-size: 22px;}
+.customFont button{margin-top: 40px;margin-right: 5px;font-weight: lighter;font-size: 22px;}
+.customFont span{font-size: 24px; margin-left: 6px;}
+.customFont button:hover{background-color: #E6F3FF;}
+.blackBlue hr{color: #fff;height: 2px;background-color: #fff;margin-right: 40px;}
+.blackBlue li{font-size: 19px;}
+/* next */
+.next{background-color: #e7e7e7;}
+.next .fontdiv{font-size: 20px;transform: scale(0.7);}
+.next .fontdiv h2{font-weight: 400;}
+.next .fontdiv p{font-weight: 375;margin-top: 30px;margin-bottom: 30px;} 
+.next button{background: #000;color: #fff;}
+.next button:hover{background: #fff;color: #000;font-size: 18px;}
+.link a{color: #fff;}
+.link a:hover{color: #fff;text-decoration: underline;}
+/* sec3 */
+.sec3 h3{
+    color: #DE017D;
+    margin: 15px 0 15px 0;
+    font-size: 22px;
+}
+.sec3 p{font-size: 14px;}
+.sec3 .col-md-6{padding-right: 160px;padding-bottom: 80px;}
+/* vipDark */
+.vipDark{
+    background: #011631;
+    color: #fff;
+    margin-bottom: 25px;
+}
+.vipDark div{padding-top: 70px;}
+.vipDark div h2{padding-top: 15px;}
+.vipDark p{transform: scale(0.9);}
+.vipDark button{
+    font-weight: lighter;
+    font-size: 25px;
+    width: 150px;
+    margin-top: 5px;
+    color: #000;
+    background: #fff;
+}
+.vipDark button:hover{background: #000;color: #fff;}
+.vipDark img{width: 100%; margin-top: 50px;}
+.relative div{position: absolute; left: 0; top: 80px; z-index: 0;width: 50%;padding: 60px;font-size: 19px;}
+.relative div p{font-weight: 400;}
+.relative div h2{font-weight: 450;margin-bottom: 25px;}
+.relative2 {position: relative;}
+.relative2 img{width: 450px;}
+.relative2 div{position: absolute; right: 0; top: 0; z-index: 0;width: 50%;font-size: 20px;transform: scale(0.7);}
+.relative2 button{font-size: 20px;width: 150px;}
+@media (max-width: 991.98px) { .scal .row div>p{margin: 0;font-size: 10px;} }
+@media (max-width: 768px) {
+    .relative div{top: 0;width: 50%;padding: 0;padding-top: 10px;font-size: 14px;transform: scale(0.8);}
+    .relative div h2{margin-bottom: 10px;font-size: 20px;}
+    .relative2 img{width: 220px;}
+    .relative2 h2{font-size: 28px;}
+    .relative2 div{left: 100px; top: 0 !important;font-size: 16px;width: 100%;transform: scale(0.5);}
+    .relative2 button{font-size: 18px;width: 120px;}
+    .scal{margin: 0 !important;padding: 0 !important;transform: scale(0.9);}
+    .scal .row div>p{margin: 0;display: none;}
+    .scal .row div .dis{display: inline;}
+}
+@media (max-width: 576px) {
+    .blackBlue {margin: 0 !important;}
+    .blackBlue h2{font-size: 18px !important;margin-bottom: 50px;}
+    .blackBlue button{width: 150px;}
+    .blackBlue p{font-size: 18px;}
+    .customFont button{margin-top: 30px;font-size: 18px;}
+    .blackBlue li{font-size: 18px;}
+    .next .fontdiv{font-size: 16px;}
+    .next .fontdiv h2{font-size: 16px;}
+    .next .fontdiv p{font-size: 16px;} 
+    .link .row{transform: scale(0.8);}
+    .real{display: none;}
+}

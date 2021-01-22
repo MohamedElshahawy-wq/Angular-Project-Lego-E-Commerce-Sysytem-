@@ -1,0 +1,40 @@
+.big{font-style: normal;font-weight: 700;size: 36px;line-height: 45px;color: #333333;}
+.header{
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 100px;
+    cursor: pointer;
+}
+.header:hover{color: #717171;}
+/* searchBox */
+.btnDark{border: 1px solid;width: 180px;border-radius: 5px;font-weight: 400;font-size: 13px;}
+.btnDark:hover{opacity: 0.6;}
+/* /////////////////////////////////////// */
+.blueDIV{background: #005EB8;padding-left: 50px !important;}
+.blueDIV h2{color: #fff;font-weight: bold;margin: 20px 20px 20px 0;}
+.blueDIV p{color: #fff;font-weight: 400;margin: 20px 20px 20px 0;}
+.btnImag{background: #cee1f3;color: rgb(112, 112, 112);border: none;width: 180px;margin: 20px 20px 20px 0;border-radius: 5px;font-weight: 300;font-size: 15px;}
+.blueDIV button i{font-weight: lighter;font-size: 14px;}
+.btnImag:hover{opacity: 0.8;}
+.blueDIV img{height: 450px;}
+/* ////////////////////////////////// */
+.cenDIV{
+    padding-top: 50px !important;
+    /* padding-bottom: 90px !important; */
+}
+.cenDIV:hover{
+    cursor: pointer;
+    opacity:0.5;
+}
+/* ///////////////////////////////////// */
+.smallD2{
+    background: url('https://image.shutterstock.com/image-photo/authentic-shot-happy-young-woman-600w-1832613412.jpg');
+    background-size: cover;
+    padding: 30px 120px 30px 120px;}
+@media (max-width: 576px) {
+    .smallD {font-size: 14px;transform: scale(0.7) !important;}
+    .smallD2 { padding: 0;margin: 0; }
+    .smallD2 .card{margin: 0 !important;transform: scale(0.9) !important;}
+}
