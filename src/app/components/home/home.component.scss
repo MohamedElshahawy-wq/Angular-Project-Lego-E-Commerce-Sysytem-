@@ -1,0 +1,306 @@
+*{
+    box-sizing: border-box;
+    font-family:Cera Pro Light,sans-serif;
+
+}
+h1{
+    font-family:Cera Pro Light,sans-serif;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+#banner {
+    background-color: rgb(248,248,248);
+    height: 48px;
+    font-size: 0.875rem;
+}
+.carousel-control-next,
+.carousel-control-prev{
+    filter: invert(100%);
+    
+}
+#banner img{
+    width: 84px;
+    height: 48px;
+    display: inline;
+    margin-right: 0.9375rem;
+}
+.cover{
+    position: relative;
+    width: 100%;
+    font-family:Cera Pro Light,sans-serif;
+    font-size: 1rem;
+
+}
+.cover  .covercontent{
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    cursor: pointer;
+    text-align: right;
+}
+.cover button:hover{
+    background-color: black;
+    border: none;
+    color: white;
+}
+.coverxs{
+    font-size: 14px;
+    text-align: center;
+}
+.coverxs h1{
+    font-size: 16px;
+
+}
+
+
+.row4 img{
+    width: 80px;
+    height: 65px;
+    
+}
+.row4 a{
+    font-family:Cera Pro Light,sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.row7img{
+    position: relative;
+}
+.row7container{
+    position: absolute;
+    top: 25%;
+    left:10%;
+    font-family:Cera Pro Light,sans-serif;
+  
+
+}
+.row7containersmall{
+    font-family:Cera Pro Light,sans-serif;
+}
+@media (max-width: 575px) { 
+    .row7container {
+        display: none;
+       
+    }
+    .row7container h1{
+        font-size: 1rem;
+    }
+    .row7container span{
+        font-size: 1rem;
+    }
+    .row7containersmall{
+        text-align: center;
+        display: block;
+    }
+
+}
+
+@media (min-width: 576px) { 
+    .row7container {
+        display: none;
+        
+    }
+    .row7container h1{
+        font-size: 1rem;
+    }
+    .row7container span{
+        font-size: 1rem;
+    }
+    .row7containersmall{
+        text-align: center;
+        display: block;
+    }
+
+}
+
+
+@media (min-width: 768px) { 
+    .row7container{
+        display: block;
+        width: 300px;
+      
+       
+    }
+    .row7container h1{
+        font-size: 1rem;
+        font-weight: bold;
+
+
+    }
+    .row7container span{
+        font-size: 1rem;
+    }
+    .row7containersmall{
+        display: none;
+    }
+
+}
+
+@media (min-width: 992px) { 
+    .row7container{
+        display: block;
+        width: 500px;    
+    }
+    .row7container h1{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .row7container span{
+        font-size: 1rem;
+    }
+    .row7containersmall{
+        display: none;
+    }
+
+
+}
+
+
+@media (min-width: 1200px) {
+    .row7container{
+        display: block;
+        width: 600px;
+      
+    }
+    .row7container h1{
+        font-size: 2rem;
+    }
+    .row7container span{
+        font-size: 1.2rem;
+   }
+    .row7containersmall{
+        display: none;
+    }
+}
+
+
+.Trending{
+    font-family:Cera Pro Light,sans-serif;
+}
+
+.Trending h5{
+    font-weight: bold;
+}
+.Trending p{
+    font-size: .95rem;
+}
+.Trending a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.animationSection{
+    position: relative;
+}
+.animationSectionContainer{
+    position: absolute;
+    top: 25%;
+    left:10%;
+    font-family:Cera Pro Light,sans-serif;
+  
+
+}
+.animationSectionContainersmall{
+    text-align: center;
+    background-color: rgb(18, 32, 40);
+    color: white;
+}
+
+@media (max-width: 575px) { 
+    .animationSection #robotimage{
+        display: block;
+    }
+    .animationSection video{
+        display: none;
+    }
+    .animationSectionContainer{
+        display: none;
+    }
+    .animationSectionContainersmall{
+        display: block;
+    }
+
+}
+
+@media (min-width: 576px) { 
+   
+    .animationSectionr #robotimage{
+        display: block;
+    }
+    .animationSection video{
+        display: none;
+    }
+    .animationSectionContainer{
+        display: none;
+    }
+    .animationSectionContainersmall{
+        display: block;
+    }
+
+}
+
+
+@media (min-width: 768px) { 
+    .animationSection #robotimage{
+        display: block;
+    }
+    .animationSection video{
+        display: none;
+    }
+    .animationSectionContainersmall{
+        display: none;
+    }
+    .animationSectionContainer{
+        display: block;
+    }
+
+}
+
+@media (min-width: 992px) { 
+    .animationSectionr #robotimage{
+        display: block;
+    }
+    .animationSection video{
+        display: none;
+    }
+    .animationSectionContainersmall{
+        display: none;
+    }
+    .animationSectionContainer{
+        display: block;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .animationSection video{
+        display:block;
+    }
+    .animationSection #robotimage{
+        display: none;
+    }
+    .animationSectionContainersmall{
+        display: none;
+    }
+    .animationSectionContainer{
+        display: block;
+    }
+    .animationSectionContainer span
+    {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-top: 0.9375rem;
+    }
+}
+

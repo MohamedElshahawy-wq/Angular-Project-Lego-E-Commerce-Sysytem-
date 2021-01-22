@@ -9,6 +9,7 @@ import { FindStoreComponent } from './components/find-store/find-store.component
 import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FindStoreComponent,
     LegoLifeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
