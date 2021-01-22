@@ -1,19 +1,122 @@
 {
-  "posts": [
-    {
+  "users": [{
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "phoneNumber": "01234567890",
+      "totalOrdered": 100,
+      "dateOfJoin": "02/10/2020"
+    },
+    {
+      "id": 2,
+      "name": "Mohamed",
+      "email": "mohamed@gmail.com",
+      "password": "123456",
+      "phoneNumber": "01234567890",
+      "totalOrdered": 200,
+      "dateOfJoin": "12/02/2019"
     }
   ],
-  "comments": [
-    {
+  "admins": [{
+    "id": 1,
+    "userID": 1
+  }],
+  "products": [{
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Product 1",
+      "description": "This is Porduct 1",
+      "price": 12.99,
+      "stock": 20,
+      "image": "",
+      "available": true,
+      "categoryID": 1
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "This is Porduct 2",
+      "price": 59.99,
+      "stock": 40,
+      "image": "",
+      "available": true,
+      "categoryID": 1
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "This is Porduct 3",
+      "price": 39.99,
+      "stock": 80,
+      "image": "",
+      "available": true,
+      "categoryID": 2
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "categories": [{
+      "id": 1,
+      "name": "Spiderman",
+      "totalOrdered": 100
+    },
+    {
+      "id": 2,
+      "name": "Batman",
+      "totalOrdered": 50
+    }
+  ],
+  "wishlists": [{
+      "id": 1,
+      "userID": 1,
+      "productsIDs": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "userID": 2,
+      "productsIDs": [
+        2,
+        3
+      ]
+    }
+  ],
+  "bags": [{
+      "id": 1,
+      "userID": 1,
+      "productsIDs": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "userID": 2,
+      "productsIDs": [
+        2,
+        3
+      ]
+    }
+  ],
+  "orders": [{
+      "id": 1,
+      "userID": 1,
+      "amount": 2000,
+      "date": "12/02/2019",
+      "productsIDs": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "userID": 2,
+      "amount": 500,
+      "date": "22/01/2021",
+      "productsIDs": [
+        2,
+        3
+      ]
+    }
+  ]
 }
