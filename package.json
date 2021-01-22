@@ -41,5 +41,17 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamedElshahawy-wq/FinalProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamedElshahawy-wq/FinalProject/issues"
+  },
+  "homepage": "https://github.com/MohamedElshahawy-wq/FinalProject#readme"
 }

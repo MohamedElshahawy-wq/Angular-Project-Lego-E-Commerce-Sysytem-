@@ -1,0 +1,169 @@
+.main{
+    background-color: #ffffff;
+    font-family: "cera pro", sans-serif;
+    padding-top: 40px;
+    overflow-x: hidden;
+}
+.main img{max-width: 100%;}
+.main .header{
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    line-height: 40px;
+    cursor: pointer;
+}
+.main .header:hover{color: #717171;}
+.navbar .nav-item .nav-link{
+    font-style: normal;
+    font-size: 17px;
+    padding-top: 30px;
+    font-weight: 400;
+    color: #333333;
+}
+.navbar .navbar-nav{justify-content: space-between;}
+.navbar .nav-item .nav-link:hover{color: #807a7a;}
+#my-nav{background-color: #fff;}
+.navbar-toggler{outline: none;}
+.navbar-toggler i{
+    font-weight: 400;
+    font-size: 28px;
+    color: #333333;
+}
+/* drop */
+.drop {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 260px;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: rgb(104, 104, 104);
+    padding: 12px 20px 16px;
+    display: block;
+    text-decoration: none !important;
+}
+.drop:hover .dropdown-content {display: block;}
+.dropdown-content a:hover {color: #aaa;}
+/* banner */
+.banner{
+    background-image: url('/../assets/images/about1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner .container{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+.head{
+    font-style: normal;
+    font-size: 85px;
+    padding: 150px 150px 10px 150px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #424141;
+    line-height: 90px;
+    /* transform: scale(0.9); */
+}
+.prag{
+    font-size: 26px!important;
+    color: #484040;
+    margin-bottom: 50px;
+    font-weight: 10;
+}
+.specail{
+    font-weight: bold;
+    color: #333333;
+}
+.linkA{
+   padding-bottom: 100px;
+   font-size: 20px;
+}
+.linkA a{color: #474747;}
+.linkA a:hover{color: #807a7a;}
+.banTwo{
+    background-image: url('/../assets/images/about2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.banTwo .head{
+    color: #fff;
+    padding: 200px 20px 10px 20px;
+    font-size: 70px;
+}
+.banTwo .prag{color: #f0f0f0;}
+.banTwo .linkA a{color: #fff;}
+.banTwo .specail{color: #fff;}
+.banTwo .linkA a:hover{color: #eceaea;}
+.banTwo .container{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+/*  */
+.history,.history .container{margin: 0 !important;}
+.history h1{
+    font-weight: 700;
+    padding: 0;
+}
+.history h5{
+    font-weight: lighter;
+    line-height: 2;
+    color: #333333;
+    padding-bottom: 35px;
+}
+.history .linkA{
+    color: #464545;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+.history .linkA a:hover{color: #807a7ad8;}
+/*  */
+.hov:hover{
+    cursor: pointer;
+    opacity:0.8;
+}
+@media (min-width: 768px) {
+    .head {
+        padding: 0 !important;
+    }
+    .nav-link{
+    font-size: 16px;
+    }
+  }
+  @media (min-width: 500px){
+    .main .header{
+        font-size: 20px;
+        display: inline;
+    }
+      .foot h1{font-size: 25px !important;}
+      .banner .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .head{
+      
+        font-size: 40px;
+        padding: 0;
+        font-weight: 700;
+    }
+    .prag{
+        font-size: 20px!important;
+        margin-bottom: 50px;
+        font-weight: 10;
+    }
+      .banTwo .head{
+        padding: 0;
+        font-size: 20px;
+    }
+    .banTwo .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+  }
