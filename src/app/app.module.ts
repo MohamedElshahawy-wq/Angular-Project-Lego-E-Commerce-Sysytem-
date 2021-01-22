@@ -10,6 +10,7 @@ import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { OffersComponent } from './components/offers/offers.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     LegoLifeComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule,
