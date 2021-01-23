@@ -8,7 +8,8 @@ const routes: Routes = [
   {path: 'VIP' , component: VipComponent},
   {path: 'FindStor' , component: FindStoreComponent},
   {path: 'LegoLife' , component: LegoLifeComponent},
-  {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)}
+  {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)},
+  {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)}
 ];
 
 @NgModule({

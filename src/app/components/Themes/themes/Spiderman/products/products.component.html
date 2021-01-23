@@ -1,0 +1,392 @@
+<app-header></app-header>
+<div class="theTitle">
+  <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
+    <div class="row">
+      <div class="col-12">
+        <h5 class="font-weight-bold">Spider-Man</h5>
+        <p>Builders will love to use their spidey sense to fight crime with their favorite superhero.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="theFilterSection">
+  <div class="container-fluid my-sm-5 my-4">
+    <div class="row">
+      <div class="col-12 d-block d-lg-none my-4">
+        <button type="button" name="ToggleFilters" (click)="ToggleFilters()"
+          class="btn btn-primary btn-lg bg-white btn-block border-dark text-body shadow-none"><small
+            class="theFiltersBtn" #theFiltersBtn>Filter</small>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="theContent">
+  <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
+    <div class="row">
+      <div class="col-lg-3 col-12 d-none d-lg-block theFilters" #theFilters>
+        <div id="accordion1">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <p class="mb-0 text-uppercase filterTitle">
+                Product Type<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck1">Sets
+                    [16]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck2">Minifigures
+                    [1]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck3">Key
+                    Chains[1]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion2">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="true" aria-controls="collapseTwo">
+              <p class="mb-0 text-uppercase filterTitle">
+                Age<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion2">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck11" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck11">3-5
+                    [3]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck22" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck22">6-8
+                    [18]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck33" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck33">9-11
+                    [18]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck44" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck44">12+
+                    [18]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion3">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="true" aria-controls="collapseThree">
+              <p class="mb-0 text-uppercase filterTitle">
+                Price<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion3">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck111">$0 - $25
+                    [8]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck222">$25 - $50
+                    [7]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck333">$50 - $75
+                    [2]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck444" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck444">$75 - $100
+                    [1]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion4">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour"
+              aria-expanded="true" aria-controls="collapseFour">
+              <p class="mb-0 text-uppercase filterTitle">
+                Featured<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion4">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck1111">New
+                    [4]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion5">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive"
+              aria-expanded="true" aria-controls="collapseFive">
+              <p class="mb-0 text-uppercase filterTitle">
+                Theme<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion5">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck11111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck11111">Marvel
+                    [18]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck22222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck22222">Minifigures [1]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck33333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck33333">Spider-Man [18]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion6">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix"
+              aria-expanded="true" aria-controls="collapseSix">
+              <p class="mb-0 text-uppercase filterTitle">
+                Interest<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion6">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck111111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck111111">Animals
+                    [1]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck222222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck222222">Cars
+                    [7]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck333333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck333333">Preschool [3]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck444444" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck444444">Super
+                    Heroes [2]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck555555" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck555555">Super
+                    Trucks [1]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck666666" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck666666">Super
+                    Vehicles [10]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion7">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven"
+              aria-expanded="true" aria-controls="collapseSeven">
+              <p class="mb-0 text-uppercase filterTitle">
+                Piece Count<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion7">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1111111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck1111111">1-99
+                    [3]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2222222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck2222222">100-249 [5]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3333333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck3333333">250-499 [6]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck4444444" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck4444444">500-999 [3]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion8">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingEight" data-toggle="collapse" data-target="#collapseEight"
+              aria-expanded="true" aria-controls="collapseEight">
+              <p class="mb-0 text-uppercase filterTitle">
+                Availability<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion8">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck11111111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck11111111">Out
+                    of Stock [12]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck22222222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck22222222">Coming Soon [4]</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck33333333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck33333333">Available Now [2]</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordion9">
+          <div class="card rounded-0">
+            <div class="card-header" id="headingNine" data-toggle="collapse" data-target="#collapseNine"
+              aria-expanded="true" aria-controls="collapseNine">
+              <p class="mb-0 text-uppercase filterTitle">
+                Rating<i class="fa fa-chevron-down fa-lg float-right"></i>
+              </p>
+            </div>
+
+            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion9">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck111111111" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck111111111">
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    [2]
+                  </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck222222222" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck222222222">
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    [10]
+                  </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck333333333" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck333333333">
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    [1]
+                  </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck444444444" autocomplete="off">
+                  <label class="custom-control-label filterOption" for="customCheck444444444">
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    <i class="fa fa-star text-muted" aria-hidden="true"></i>
+                    [1]
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-12 px-0 allProducts" #allProducts>
+        <div class="row mt-4 mt-lg-0">
+          <div class="col-8 mb-4">
+            <p>Showing 1 - 18 of 18 results</p>
+          </div>
+          <div class="col-4">
+            <select autocomplete="off" class="custom-select custom-select-sm shadow-none">
+              <option value="1" selected>Featured</option>
+              <option value="2">Price: Low to High</option>
+              <option value="3">Price: High to Low</option>
+              <option value="4">Rating</option>
+            </select>
+          </div>
+        </div>
+        <div class="row no-gutters" id="data">
+          <div *ngFor="let item of productList" class="col-lg-4 col-6">
+            <div class="card rounded-0">
+              <a href="#" class="d-flex imgLink">
+                <img class="card-img-top theImg" [src]="item.image" alt="Card image cap">
+              </a>
+              <div class="card-body">
+                <div class="theBadge">
+                  <span class="badge badge-warning rounded-0 p-2 theBadgeTxt">New</span>
+                </div>
+                <div class="theTitle">
+                  <a href="#">
+                    <p class="card-title text-body">{{item.name}}</p>
+                  </a>
+                </div>
+                <div class="theRating">
+                  <i *ngFor="let i of [].constructor(item.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
+                </div>
+                <div class="thePrice">
+                  <p class="font-weight-bold">{{item.price | currency}}</p>
+                </div>
+                <div>
+                  <!-- <button type="button" name="addToCart" onclick="addToBag('${element.id}')"
+                    class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
+                      class="cardBtn">Add to cart</small></button> -->
+                </div>
+                <div class="mt-3">
+                  <!-- <button type="button" class="btn shadow-none" onclick="addToWishlist('${element.id}')"><i
+                      class="far fa-heart mr-3 text-primary" aria-hidden="true"></i><small class="font-weight-bold"> Add
+                      to wishlist</small></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

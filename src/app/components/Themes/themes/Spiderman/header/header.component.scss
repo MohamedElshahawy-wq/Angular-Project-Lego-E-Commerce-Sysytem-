@@ -1,0 +1,24 @@
+.marvelBar {
+  background-color: #00051B !important;
+}
+
+.btn {
+    border-width: 2px !important;
+    font-weight: 600 !important;
+}
+
+.btn:hover {
+    text-decoration: underline !important;
+    text-decoration-color: #00051B !important;
+}
+
+.btn.active {
+    color: #00051B;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .btn {
+        font-size: 0.7rem !important;
+    }
+}

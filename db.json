@@ -28,8 +28,9 @@
       "description": "This is Porduct 1",
       "price": 12.99,
       "stock": 20,
-      "image": "",
+      "image": "https://picsum.photos/200/200",
       "available": true,
+      "rating": 2,
       "categoryID": 1
     },
     {
@@ -38,8 +39,9 @@
       "description": "This is Porduct 2",
       "price": 59.99,
       "stock": 40,
-      "image": "",
+      "image": "https://picsum.photos/200/200",
       "available": true,
+      "rating": 3,
       "categoryID": 1
     },
     {
@@ -48,8 +50,9 @@
       "description": "This is Porduct 3",
       "price": 39.99,
       "stock": 80,
-      "image": "",
+      "image": "https://picsum.photos/200/200",
       "available": true,
+      "rating": 4,
       "categoryID": 2
     }
   ],

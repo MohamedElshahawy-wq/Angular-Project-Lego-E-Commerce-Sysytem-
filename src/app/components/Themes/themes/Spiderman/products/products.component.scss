@@ -1,0 +1,94 @@
+.marvelBar {
+    background-color: #00051B !important;
+}
+
+.filterTitle {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+}
+
+.filterOption,
+.cardBtn {
+    font-weight: 600 !important;
+}
+
+.imgLink {
+    height: 40vh !important;
+}
+
+.imgLink img {
+    transform: scale(0.8, 0.7) !important;
+    transition: transform, 1s !important;
+}
+
+.imgLink:hover .theImg {
+    transform: scale(0.9, 0.8) !important;
+}
+
+.theBadge {
+    height: 7vh !important;
+}
+
+.theBadge span {
+    font-weight: 500 !important;
+}
+
+.theTitle {
+    height: 15vh !important;
+    font-weight: 600 !important;
+}
+
+.theTitle a {
+    text-decoration-color: black !important;
+}
+
+.theRating {
+    height: 5vh !important;
+}
+
+.thePrice {
+    height: 7vh !important;
+}
+
+.addToCartBtn,
+.addToCartBtn:focus {
+    background-color: #FD8024 !important;
+    border-color: #FD8024 !important;
+    border-width: 2px !important;
+}
+
+.addToCartBtn:hover,
+.addToCartBtn:active {
+    background-color: white !important;
+    color: black !important;
+}
+
+.soonBtn,
+.soonBtn:disabled {
+    background-color: rgb(230, 243, 255) !important;
+    border-color: rgb(230, 243, 255) !important;
+    opacity: 1 !important;
+    border-width: 2px !important;
+}
+
+.outOfStockBtn,
+.outOfStockBtn:disabled {
+    background-color: rgb(255, 242, 242) !important;
+    border-color: rgb(255, 242, 242) !important;
+    color: #D93448 !important;
+    opacity: 1 !important;
+    border-width: 2px !important;
+}
+
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
