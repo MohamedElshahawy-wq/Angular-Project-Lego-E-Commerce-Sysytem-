@@ -1,0 +1,40 @@
+@font-face {
+    font-family: Cera Pro Light;
+    src: url("/assets/font/CeraProLight.otf") format("opentype");
+}
+*{
+    box-sizing: border-box;
+}
+h1,.carousel-inner{
+    font-family: Cera Pro Light;
+
+}
+button{
+    background-color: rgb(253,128,36);
+    font-size: 0.85rem;
+    width: 100%;
+    height: 50px;
+}
+img{
+    width: 230px;
+    height: 200px;
+   
+}
+#heart{
+    height: 1.875rem;
+    width: 1.875rem;
+}
+#stars svg{
+    height: .900rem;
+    width: .900rem;
+}
+@keyframes ani1 {
+    from {transform: scale(1,1);}
+    to {transform: scale(1.1,1.1);};
+}
+img:hover{
+    animation-name: ani1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}

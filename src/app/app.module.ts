@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { ProductComponent } from './components/product/product.component';
+import { RecommendedProductsComponent } from './components/recommended-products/recommended-products.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProductComponent } from './components/product/product.component';
     FooterComponent,
     HomeComponent,
     OffersComponent,
-    ProductComponent
+    ProductComponent,
+    RecommendedProductsComponent
   ],
   imports: [
     BrowserModule,
