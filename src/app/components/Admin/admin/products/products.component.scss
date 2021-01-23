@@ -1,0 +1,59 @@
+.darkBlue {
+    color: #364a63;
+}
+
+.addBtn,
+.saveBtn {
+    background-color: #854fff;
+    transition: background-color 0.5s;
+}
+
+.addBtn:hover,
+.saveBtn:hover {
+    background-color: #5928ca !important;
+}
+
+#search-input:focus,
+#search-input:focus+span button {
+    border-color: #854fff !important;
+}
+
+.searchIcon {
+    color: #854fff;
+}
+
+.table-hover tbody tr td,
+.table-hover tbody tr th {
+    transition: transform 0.5s;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    transform: scale(1.05, 1.05);
+}
+
+thead>tr {
+    border-top: hidden;
+    color: #8094ae;
+}
+
+tbody>tr th {
+    font-weight: 500;
+    color: #7a3fff;
+}
+
+tbody>tr .name,
+tbody>tr .price {
+    color: #364a63;
+}
+
+tbody>tr .sku,
+tbody>tr .stock,
+tbody>tr .category {
+    color: #8094ae;
+}
+
+td {
+    min-width: 50px;
+    max-width: 120px;
+}

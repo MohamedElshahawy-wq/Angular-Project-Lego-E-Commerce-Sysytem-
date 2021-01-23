@@ -1,1 +1,29 @@
-<p>menu works!</p>
+<div id="mySidenav" class="sidenav" #mySidenav>
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a routerLink="/Admin/Dashboard" routerLinkActive="active" class="rounded">
+    <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+  </a>
+  <a routerLink="/Admin/Categories" routerLinkActive="active" class="rounded">
+    <i class="fa fa-server mr-2"></i> Categories
+  </a>
+  <a routerLink="/Admin/Products" routerLinkActive="active" class="rounded">
+    <i class="fas fa-box-open mr-2"></i> Products
+  </a>
+  <a routerLink="/Admin/Customers" routerLinkActive="active" class="rounded">
+    <i class="fas fa-users mr-2"></i> Customers
+  </a>
+  <a routerLink="/Admin/Orders" routerLinkActive="active" class="rounded">
+    <i class="fas fa-shopping-bag mr-2"></i> Orders
+  </a>
+</div>
+<nav class="navbar navbar-expand" style="background-color: #101924;">
+  <span style="font-size:22px;cursor:pointer;color: #9D72FF;" (click)="openNav()">&#9776;</span>
+  <div class="d-flex ml-auto" style="color: #9D72FF;">
+    <i class="fa fa-user-circle fa-2x mr-2 pt-2" aria-hidden="true"></i>
+    <div>
+      <p class="my-0"><small>Administrator</small></p>
+      <span><small class="font-weight-bold">Nour El Deen Khaled</small></span>
+    </div>
+  </div>
+
+</nav>
