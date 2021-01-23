@@ -373,14 +373,14 @@
                   <p class="font-weight-bold">{{item.price | currency}}</p>
                 </div>
                 <div>
-                  <!-- <button type="button" name="addToCart" onclick="addToBag('${element.id}')"
+                  <button type="button" name="addToCart" (click)="addToBag()"
                     class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
-                      class="cardBtn">Add to cart</small></button> -->
+                      class="cardBtn">Add to cart</small></button>
                 </div>
                 <div class="mt-3">
-                  <!-- <button type="button" class="btn shadow-none" onclick="addToWishlist('${element.id}')"><i
+                  <button type="button" class="btn shadow-none" (click)="addToWishlist()"><i
                       class="far fa-heart mr-3 text-primary" aria-hidden="true"></i><small class="font-weight-bold"> Add
-                      to wishlist</small></button> -->
+                      to wishlist</small></button>
                 </div>
               </div>
             </div>

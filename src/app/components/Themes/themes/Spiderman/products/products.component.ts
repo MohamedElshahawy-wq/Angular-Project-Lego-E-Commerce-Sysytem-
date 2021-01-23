@@ -37,6 +37,14 @@ export class ProductsComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
+  addToBag() {
+    alert('Added to bag')
+  }
+
+  addToWishlist() {
+    alert('Added to wishlist')
+  }
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     console.log(event.target.innerWidth);
