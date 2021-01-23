@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  @ViewChild('mySidenav') sideNav: ElementRef;
   constructor() { }
 
+  openNav() {
+    this.sideNav.nativeElement.style.marginLeft = "0";
+  }
+  
+  closeNav() {
+    this.sideNav.nativeElement.style.marginLeft = "-250px";
+  }
   ngOnInit(): void {
   }
 
