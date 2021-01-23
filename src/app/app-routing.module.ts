@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'FindStor' , component: FindStoreComponent},
   {path: 'LegoLife' , component: LegoLifeComponent},
   {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)},
-  {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)}
+  {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
+  {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule)}
 ];
 
 @NgModule({
