@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { OffersComponent } from './components/offers/offers.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { OffersComponent } from './components/offers/offers.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    OffersComponent
+    OffersComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
