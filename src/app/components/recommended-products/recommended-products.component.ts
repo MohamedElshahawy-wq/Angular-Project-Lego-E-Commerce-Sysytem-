@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/Services/Products/products.service';
 import { IProduct } from 'src/app/ViewModels/IProduct';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recommended-products',
@@ -12,7 +13,8 @@ export class RecommendedProductsComponent implements OnInit {
   ProductList2: IProduct[] = [];
 
   AllProducts:IProduct[] = [];
-  constructor(private prodserv :ProductsService ){ }
+  constructor(private prodserv :ProductsService,
+              private route:Router){ }
   ngOnInit(): void {
     this.prodserv.getAllProducts().subscribe((res)=>{
       this.AllProducts=res;
@@ -20,6 +22,10 @@ export class RecommendedProductsComponent implements OnInit {
       this.ProductList2=this.AllProducts.slice(4,8)
 
     })
+
+  }
+  ShowProduct(id:number){
+    this.route.navigate(['Product',id]);
   }
   
 

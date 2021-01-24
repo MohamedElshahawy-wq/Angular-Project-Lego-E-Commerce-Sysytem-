@@ -10,32 +10,32 @@
 </div>
 <!--end-->
 
-<!--start
+
 <div class="container-fluid firstbar">
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Harry Potter™</a></li>
-            <li class="breadcrumb-item active">Forbidden Forest: Umbridge's Encounter</li>
+            <li class="breadcrumb-item active">{{product.name}}</li>
         </ul>
     </div>
 </div>
-end-->
 
-<!--start
+
+<!--start-->
 <div class="container-fluid product">
     <div class="row p-4">
         <div class="col-md-1 picelproduct">
-            <img src="assets\images\75967 (1).jpeg" id="picelproduct1">
-            <img src="assets\images\75967_alt1.jpeg" id="picelproduct2">
-            <img src="assets\images\75967_alt2.png" id="picelproduct3">
-            <img src="assets\images\75967_alt3.png" id="picelproduct4">
-            <img src="assets\images\75967_alt4.png" id="picelproduct5">
+            <img src={{product.image}} id="picelproduct1">
+            <img src={{product.image}} id="picelproduct2">
+            <img src={{product.image}} id="picelproduct3">
+            <img src={{product.image}} id="picelproduct4">
+            <img src={{product.image}} id="picelproduct5">
 
         </div>
         <div class="col-md-8">
             <div class=" picelproductkbera product1">
-                <img src="assets\images\75967 (1).jpeg" id="Picelproductkbera">
+                <img src={{product.image}} id="Picelproductkbera">
             </div>
         </div>
         <div class="col-md-3 product2 px-3 font-weight-bold">
@@ -43,7 +43,7 @@ end-->
                 <img src="assets\images\HarryPotter--2018--gl--logo.png">
             </div>
             <div class="mb-3">
-                <h3>Forbidden Forest: Umbridge's Encounter</h3>
+                <h3>{{product.name}}</h3>
             </div>
             <div class="mb-3">
                 <span class="my-1" id="stars">
@@ -93,7 +93,7 @@ end-->
 
             </div>
             <div>
-                <h1>$29.99</h1>
+                <h1>{{product.price | currency}}</h1>
                 <p style="color: rgb(14, 218, 14);">Available now</p>
             </div>
             <div class="d-flex mb-3">
@@ -160,7 +160,7 @@ end-->
     </div>
 
 </div>
-end-->
+<!--end-->
 
 
 <!--start-->
