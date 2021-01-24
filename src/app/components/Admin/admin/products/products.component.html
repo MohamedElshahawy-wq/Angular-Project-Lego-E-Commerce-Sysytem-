@@ -38,7 +38,7 @@
                 <td class="name text-truncate">{{item.name}}</td>
                 <td class="price"><small class="font-weight-bold">{{item.price|currency}}</small></td>
                 <td class="stock"><small>{{item.stock}}</small></td>
-                <td class="stock">
+                <td class="stock text-truncate">
                     <i *ngFor="let i of [].constructor(item.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
                 </td>
                 <td class="category"><small>{{getCategoryNameByID(item.categoryID)}}</small></td>
