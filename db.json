@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "name": "Ahmed",
       "email": "ahmed@gmail.com",
@@ -18,45 +19,104 @@
       "dateOfJoin": "12/02/2019"
     }
   ],
-  "admins": [{
-    "id": 1,
-    "userID": 1
-  }],
-  "products": [{
+  "admins": [
+    {
       "id": 1,
-      "name": "Product 1",
-      "description": "This is Porduct 1",
-      "price": 12.99,
-      "stock": 20,
-      "image": "https://picsum.photos/200/200",
+      "userID": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Forbidden Forest: Umbridge's Encounter",
+      "description": "this is product 1",
+      "price": 29.9,
+      "stock": 10,
+      "image": "assets/images/75967.jpeg",
       "available": true,
-      "rating": 2,
+      "rating": 5,
       "categoryID": 1
     },
     {
       "id": 2,
-      "name": "Product 2",
-      "description": "This is Porduct 2",
-      "price": 59.99,
-      "stock": 40,
-      "image": "https://picsum.photos/200/200",
+      "name": "Fairground MF Acc. Set",
+      "description": "this is product 2",
+      "price": 12.99,
+      "stock": 10,
+      "image": "assets/images/40373.jpeg",
       "available": true,
-      "rating": 3,
+      "rating": 5,
       "categoryID": 1
     },
     {
       "id": 3,
-      "name": "Product 3",
-      "description": "This is Porduct 3",
-      "price": 39.99,
-      "stock": 80,
-      "image": "https://picsum.photos/200/200",
+      "name": "Botanical Accessories",
+      "description": "this is product 3",
+      "price": 3.99,
+      "stock": 10,
+      "image": "assets/images/40376.jpeg",
       "available": true,
-      "rating": 4,
-      "categoryID": 2
+      "rating": 5,
+      "categoryID": 1
+    },
+    {
+      "id": 4,
+      "name": "Bicycles",
+      "description": "this is product 4",
+      "price": 29.9,
+      "stock": 10,
+      "image": "assets/images/40313.jpeg",
+      "available": true,
+      "rating": 5,
+      "categoryID": 1
+    },
+    {
+      "id": 5,
+      "name": "LEGO® Iconic Brick Calendar",
+      "description": "this is product 5",
+      "price": 19.99,
+      "stock": 10,
+      "image": "assets/images/40172.jpeg",
+      "available": true,
+      "rating": 5,
+      "categoryID": 1
+    },
+    {
+      "id": 6,
+      "name": "LEGO® 4x4 Brick Magnets Classic",
+      "description": "this is product 6",
+      "price": 7.99,
+      "stock": 10,
+      "image": "assets/images/853915.jpeg",
+      "available": true,
+      "rating": 5,
+      "categoryID": 1
+    },
+    {
+      "id": 7,
+      "name": "Traffic Lights",
+      "description": "this is product 7",
+      "price": 3.99,
+      "stock": 10,
+      "image": "assets/images/40311.jpeg",
+      "available": true,
+      "rating": 5,
+      "categoryID": 1
+    },
+    {
+      "id": 8,
+      "name": "Water Tape",
+      "description": "this is product 8",
+      "price": 8.99,
+      "stock": 10,
+      "image": "assets/images/854065.jpeg",
+      "available": true,
+      "rating": 5,
+      "categoryID": 1
     }
   ],
-  "categories": [{
+  "categories": [
+    {
       "id": 1,
       "name": "Spiderman",
       "totalOrdered": 100
@@ -67,7 +127,8 @@
       "totalOrdered": 50
     }
   ],
-  "wishlists": [{
+  "wishlists": [
+    {
       "id": 1,
       "userID": 1,
       "productsIDs": [
@@ -84,7 +145,8 @@
       ]
     }
   ],
-  "bags": [{
+  "bags": [
+    {
       "id": 1,
       "userID": 1,
       "productsIDs": [
@@ -101,7 +163,8 @@
       ]
     }
   ],
-  "orders": [{
+  "orders": [
+    {
       "id": 1,
       "userID": 1,
       "amount": 2000,

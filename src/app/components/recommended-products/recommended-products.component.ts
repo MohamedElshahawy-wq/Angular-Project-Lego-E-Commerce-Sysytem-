@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/Services/Products/products.service';
 import { IProduct } from 'src/app/ViewModels/IProduct';
 
 @Component({
@@ -7,56 +8,21 @@ import { IProduct } from 'src/app/ViewModels/IProduct';
   styleUrls: ['./recommended-products.component.scss']
 })
 export class RecommendedProductsComponent implements OnInit {
-  ProductList: IProduct[] = [];
-  constructor() { }
+  ProductList1: IProduct[] = [];
+  ProductList2: IProduct[] = [];
 
+  AllProducts:IProduct[] = [];
+  constructor(private prodserv :ProductsService ){ }
   ngOnInit(): void {
-    this.ProductList = [
-      {
-        id: 1,
-        name: "Forbidden Forest: Umbridge's Encounter",
-        description: "this is product 1",
-        price: 29.9,
-        stock: 10,
-        image: "assets/images/75967.jpeg",
-        available: true,
-        rating: 5,
-        categoryID: 1
-      },
-      {
-        id: 2,
-        name: "Fairground MF Acc. Set",
-        description: "this is product 2",
-        price: 12.99,
-        stock: 10,
-        image: "assets/images/40373.jpeg",
-        available: true,
-        rating: 5,
-        categoryID: 1
-      },
-      {
-        id: 3,
-        name: "Botanical Accessories",
-        description: "this is product 3",
-        price: 3.99,
-        stock: 10,
-        image: "assets/images/40376.jpeg",
-        available: true,
-        rating: 5,
-        categoryID: 1
-      },
-      {
-        id: 4,
-        name: "Bicycles",
-        description: "this is product 4",
-        price: 29.9,
-        stock: 10,
-        image: "assets/images/40313.jpeg",
-        available: true,
-        rating: 5,
-        categoryID: 1
-      }
-    ]
+    this.prodserv.getAllProducts().subscribe((res)=>{
+      this.AllProducts=res;
+      this.ProductList1=this.AllProducts.slice(0,4)
+      this.ProductList2=this.AllProducts.slice(4,8)
+
+    })
   }
+  
+
+
 
 }
