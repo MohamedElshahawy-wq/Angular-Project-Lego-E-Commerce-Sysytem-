@@ -30,8 +30,8 @@ export class ProductsComponent implements OnInit {
   }
 
   getCategoryNameByID(id:number) : string {
-    let x = this.categoryList.find(element=> element.id == id);
-    return `${x.name}`
+    let x = this.categoryList?.find(element=> element.id == id);
+    return `${x?.name}`
   }
 
 }

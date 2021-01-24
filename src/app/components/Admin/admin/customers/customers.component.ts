@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomersService } from 'src/app/Services/Customers/customers.service';
+import { ICustomer } from 'src/app/ViewModels/ICustomer';
 
 @Component({
   selector: 'app-customers',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor() { }
+  customerList: ICustomer[];
+  constructor(private customerSrv:CustomersService) { }
 
   ngOnInit(): void {
+    this.customerSrv.getAllCustomers().subscribe(
+      (res)=>{
+        this.customerList=res
+      },
+      (err)=>{console.log(err)}
+    )
   }
 
 }
