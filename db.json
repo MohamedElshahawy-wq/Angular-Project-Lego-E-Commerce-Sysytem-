@@ -113,6 +113,17 @@
       "available": true,
       "rating": 5,
       "categoryID": 1
+    },
+    {
+      "name": "proTest",
+      "description": "pro Description Test",
+      "price": "2000",
+      "stock": "4",
+      "image": "https://picsum.photos/200",
+      "available": "on",
+      "rating": "15",
+      "categoryID": 1,
+      "id": 9
     }
   ],
   "categories": [
@@ -125,6 +136,11 @@
       "id": 2,
       "name": "Batman",
       "totalOrdered": 50
+    },
+    {
+      "name": "Spiderman",
+      "totalOrdered": 50,
+      "id": 3
     }
   ],
   "wishlists": [

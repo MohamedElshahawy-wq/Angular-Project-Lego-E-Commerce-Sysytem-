@@ -7,6 +7,9 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CustomersComponent } from './customers/customers.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { FormsModule } from '@angular/forms';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 const routes: Routes = [
   {path: 'Dashboard', component: DashboardComponent},
@@ -14,14 +17,17 @@ const routes: Routes = [
   {path: 'Customers', component: CustomersComponent},
   {path: 'Orders', component: OrdersComponent},
   {path: 'Products', component: ProductsComponent},
+  {path: 'AddProduct', component: AddProductComponent},
+  {path: 'AddCategory', component: AddCategoryComponent},
   {path: '',   redirectTo: 'Dashboard', pathMatch: 'full'}
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, MenuComponent, CategoriesComponent, CustomersComponent, OrdersComponent, ProductsComponent],
+  declarations: [DashboardComponent, MenuComponent, CategoriesComponent, CustomersComponent, OrdersComponent, ProductsComponent, AddProductComponent, AddCategoryComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ]
 })
 export class AdminModule { }

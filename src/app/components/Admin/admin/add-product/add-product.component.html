@@ -1,0 +1,45 @@
+<div class="container my-4">
+     <form #frm="ngForm">
+        <div class="form-group">
+            <label for="proName">Product Name</label>
+            <input type="text" class="form-control" id="proName" placeholder="Enter product name" #Name>
+        </div>
+        <div class="form-group">
+            <label for="proDesc">Product Description</label>
+            <input type="text" class="form-control" id="proDesc" placeholder="Enter product description" #description>
+        </div>
+        <div class="form-group">
+            <label for="proPrice">Product Price</label>
+            <input type="number" class="form-control" id="proPrice" placeholder="Enter product price" #Price>
+        </div>
+        <div class="form-group">
+            <label for="proStockproStock">Product Stock</label>
+            <input type="number" class="form-control" id="proStock" placeholder="Enter product stock" #Stock>
+        </div> 
+        <div class="form-group">
+            <label for="proRating">Product Rating</label>
+            <input type="number" class="form-control" id="proRating" placeholder="Enter product rating" #Rating>
+        </div>
+        <div class="form-group">
+            <label for="image">Product Image Path</label>
+            <input type="text" class="form-control" id="image"  placeholder="Enter product image path" #Image>
+        </div>
+        <!-- Available  -->
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="Available" name="Available" #Available>
+            <label class="custom-control-label" for="Available">Available</label>
+        </div>
+        <!-- End Avalable -->
+        <div class="form-group">
+            <label>Select Category: </label>
+            <select class="form-control" #SelectCat>
+                <option *ngFor="let cat of CategoryList" [value]="cat.id">{{cat.name}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success" [disabled]="frm.invalid" (click)="addPRODUCT()">Add Product</button>
+        </div>
+    </form>   
+
+</div>

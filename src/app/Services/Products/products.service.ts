@@ -21,4 +21,16 @@ export class ProductsService {
     
     return this.http.get<IProduct[]>(`${environment.API_Link}/products`, httpOptions);
   }
+
+  // Add Product
+  addProduct(prd: IProduct):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.post<any>(`${environment.API_Link}/products`,prd, httpOptions);
+  }
 }

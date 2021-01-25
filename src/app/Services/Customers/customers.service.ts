@@ -21,5 +21,15 @@ export class CustomersService {
     
     return this.http.get<ICustomer[]>(`${environment.API_Link}/users`, httpOptions);
   }
-
+// Add Customer
+addCustomer(cust: ICustomer):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.post<any>(`${environment.API_Link}/users`,cust, httpOptions);
+  }
 }

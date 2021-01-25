@@ -21,5 +21,15 @@ export class OrdersService {
     
     return this.http.get<IOrder[]>(`${environment.API_Link}/orders`, httpOptions);
   }
-
+// Add Order
+addOrder(order: IOrder):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.post<any>(`${environment.API_Link}/orders`,order, httpOptions);
+  }
 }
