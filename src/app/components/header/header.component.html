@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#">
+            <a class="nav-link " [routerLink]="['/About']">
               <span class="border-left">
                 <img src="assets\images\aboutus-7416dc11232ec122683d85e4781bee75.png">
                 About Us
@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/VIP']">
               <span class="border-left">
                 <img src="assets\images\vip-f2b35d0b39794494b5d5cb40fe256517.png">
                 VIP
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/FindStore']">
               <span class="border-left">
                 <img src="assets\images\store-fce72c21fae5db22f1335fe436da787a.png">
                 Find a store
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/LegoLife']">
               <span class="border-left">
                 <img src="assets\images\legolife-c0398949fb45f6e81badb6cfd03af5eb.png">
                 LEGO® LIFE
@@ -101,7 +101,7 @@
     style="background-color: rgb(255,207,0);" id="secondnavbar">
     <nav class="navbar navbar-expand-sm p-0 ">
       <!-- Brand/logo -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" [routerLink]="['/Home']">
         <img src="assets\images\Lego-logo.jpg" alt="logo" id="logo">
       </a>
 
@@ -109,7 +109,7 @@
       <ul class="navbar-nav">
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" [routerLink]="['/Themes']" id="navbardrop" data-toggle="dropdown">
             Themes
           </a>
           <div class="dropdown-menu">
@@ -133,7 +133,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" [routerLink]="['/Offers&Sales']">
             Offers & Sale
 
           </a>
@@ -180,11 +180,11 @@
           </svg>
         </div>
       </a>
-      <a href="#" class="font-weight-bold cap">home</a>
-      <a href="#" class="font-weight-bold cap">Themes</a>
+      <a [routerLink]="['/Home']" class="font-weight-bold cap">home</a>
+      <a [routerLink]="['/Themes']" class="font-weight-bold cap">Themes</a>
       <a href="#" class="font-weight-bold cap">Shop by</a>
       <a href="#" class="font-weight-bold cap">Interests</a>
-      <a href="#" class="font-weight-bold cap">Offers & Sale</a>
+      <a [routerLink]="['/Offers&Sales']" class="font-weight-bold cap">Offers & Sale</a>
       <a href="#" class="font-weight-bold cap"> Exclusives</a>
       <a href="#" class="font-weight-bold cap"> support</a>
       <a href="#">
@@ -205,25 +205,25 @@
           Change Region
         </span>
       </a>
-      <a href="#">
+      <a [routerLink]="['/About']">
         <span class="font-weight-bold">
           <img src="assets\images\aboutus-7416dc11232ec122683d85e4781bee75.png">
           About Us
         </span>
       </a>
-      <a href="#">
+      <a [routerLink]="['/VIP']">
         <span class="font-weight-bold">
           <img src="assets\images\vip-f2b35d0b39794494b5d5cb40fe256517.png">
           VIP
         </span>
       </a>
-      <a href="#">
+      <a [routerLink]="['/FindStore']">
         <span class="font-weight-bold">
           <img src="assets\images\store-fce72c21fae5db22f1335fe436da787a.png">
           Find a store
         </span>
       </a>
-      <a href="#">
+      <a [routerLink]="['/LegoLife']">
         <span class="font-weight-bold">
           <img src="assets\images\legolife-c0398949fb45f6e81badb6cfd03af5eb.png">
           LEGO® LIFE
@@ -236,7 +236,9 @@
     <div class="row py-2 px-2 d-flex justify-content-between">
       <div>
         <span style="font-size:15px;cursor:pointer" (click)="openNav()">&#9776; MENU</span>
+        <a [routerLink]="['/Home']"> 
         <img class="mx-2" src="assets\images\Lego-logo.jpg" style="width: auto;height: 2.5rem;">
+        </a>
       </div>
       <div class="navbargdedaswr d-flex">
         <a href="#ff"><i class="fas fa-search mt-1 mx-1" style="color:rgb(0,109,183);"></i></a>
