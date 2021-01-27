@@ -9,6 +9,9 @@ import { VipComponent } from './components/vip/vip.component';
 import { FindStoreComponent } from './components/find-store/find-store.component';
 import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 import { HeaderComponent } from './components/header/header.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { CheckOutComponent } from './components/check-out/check-out.component';
+import { MyBaggComponent } from './components/my-bagg/my-bagg.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HeaderComponent } from './components/header/header.component';
     VipComponent,
     FindStoreComponent,
     LegoLifeComponent,
-    HeaderComponent
+    HeaderComponent,
+    WishListComponent,
+    CheckOutComponent,
+    MyBaggComponent
   ],
   imports: [
     BrowserModule,
