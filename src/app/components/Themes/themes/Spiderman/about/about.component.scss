@@ -1,0 +1,146 @@
+.marvelBar,
+.spiderBar {
+    background-color: #00051B !important;
+}
+
+.moltenBar {
+    background-color: #A92F26 !important;
+}
+
+.hydroBar {
+    background-color: #08306C !important;
+}
+
+.starkBar {
+    background-color: #023823 !important;
+}
+
+.questionsBar {
+    background-color: #1C2023 !important;
+}
+
+.btn3 {
+    font-weight: 600 !important;
+    border: 0 !important;
+}
+
+.btn3:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.btn3:hover i {
+    color: white !important;
+}
+
+.spiderImg,
+.moltenImg,
+.galleryImg,
+.hydroImg,
+.starkImg {
+    object-fit: cover !important;
+    height: calc(100vh - 56px) !important;
+    width: 100% !important;
+}
+
+.spiderImg {
+    height: calc(75vh - 56px) !important;
+}
+
+.selectCategory a:hover p {
+    color: rgb(0, 109, 183) !important;
+}
+
+.playsets a {
+    opacity: 0.8 !important;
+}
+
+.playsets a:hover {
+    opacity: 1 !important;
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+
+    .spiderInfo,
+    .moltenInfo,
+    .hydroInfo,
+    .starkInfo,
+    .questionInfo {
+        font-size: 0.8rem !important;
+    }
+
+    .spiderInfoH2,
+    .playsetsH2,
+    .moltenInfoH2,
+    .hydroInfoH2,
+    .starkInfoH2,
+    .questionInfoH2,
+    .recommendedH2 {
+        font-size: 1rem !important;
+    }
+
+    .spiderImg,
+    .moltenImg,
+    .galleryImg,
+    .hydroImg,
+    .starkImg {
+        height: auto !important;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+
+    .spiderInfo,
+    .moltenInfo,
+    .hydroInfo,
+    .starkInfo,
+    .questionInfo {
+        font-size: 1rem !important;
+    }
+
+    .spiderInfoH2,
+    .playsetsH2,
+    .moltenInfoH2,
+    .hydroInfoH2,
+    .starkInfoH2,
+    .questionInfoH2,
+    .recommendedH2 {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .spiderInfo,
+    .moltenInfo,
+    .hydroInfo,
+    .starkInfo,
+    .questionInfo {
+        font-size: 1rem !important;
+    }
+
+    .spiderInfoH2,
+    .playsetsH2,
+    .moltenInfoH2,
+    .hydroInfoH2,
+    .starkInfoH2,
+    .questionInfoH2,
+    .recommendedH2 {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .spiderInfo,
+    .moltenInfo,
+    .hydroInfo,
+    .starkInfo,
+    .questionInfo {
+        font-size: 1rem !important;
+    }
+}

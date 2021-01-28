@@ -1,0 +1,225 @@
+@font-face {
+    font-family: Cera Pro Light;
+    src: url("/assets/font/CeraProLight.otf") format("opentype");
+}
+*{
+    box-sizing: border-box;
+    font-family:Cera Pro Light,sans-serif;
+
+}
+h1{
+    font-family:Cera Pro Light,sans-serif;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+#heart{
+    height: 1.875rem;
+    width: 1.875rem;
+}
+#stars svg{
+    height: .900rem;
+    width: .900rem;
+}
+#banner {
+    background-color: rgb(248,248,248);
+    height: 48px;
+    font-size: 0.875rem;
+}
+.carousel-control-next,
+.carousel-control-prev{
+    filter: invert(100%);
+    
+}
+#banner img{
+    width: 84px;
+    height: 48px;
+    display: inline;
+    margin-right: 0.9375rem;
+}
+.product{
+    background-color: rgb(248, 248, 248);
+}
+.product1,.product2{
+    background-color: rgb(255, 255, 255);
+    font-size: 0.875rem;
+}
+.lonazrq{
+    background: rgb(230, 243, 255);
+    
+}
+.product2 .linkeswd a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+#ipopover{
+    width: 1.125rem;
+    height: 1.125rem;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 100%;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    font-size: .6rem;
+}
+.fontso8yr{
+    font-size: .7rem;
+}
+#minus,#plus{
+    cursor: pointer;
+}
+#btn_orange  :hover{
+    background-color: white;
+    border: 1px solid rgb(253,128,36);
+}
+.picelproduct img{
+    height: 45px;
+    width: 70px;
+    margin-bottom: 10px;
+    border: thistle 1px solid;
+    cursor: pointer;
+}
+.picelproductkbera img{
+    width: 100%;
+    height: auto;
+}
+#picelproduct1{
+    border: 2px solid rgb(49, 161, 224);
+}
+
+.product-details{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    padding-right: 4rem;
+    padding-left: 4rem;
+
+}
+.product-details{
+    border-right: rgb(206, 205, 205) solid 1px;
+}
+.rowselproduct{
+    background-color: rgb(248, 248, 248);
+    cursor: pointer;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom:rgb(206, 205, 205) solid 1px;
+}
+
+#Feature1{
+    position: relative;
+}
+#Feature1content2{
+    text-align: center;
+    padding:1rem;
+    background-color: rgb(244, 243, 243);
+    
+}
+@media screen and (max-width: 600px)
+{
+    #Feature1content{
+     display: none;
+    }
+    #Feature1content2{
+        display: block;
+    }
+}
+@media screen and (min-width: 601px){
+    #Feature1content{
+    top: 10%;
+    max-width: 35%;
+    right: 0.875rem;
+    position: absolute;
+    }
+    #Feature1content h1{
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    #Feature1content2{
+        display: none;
+    }
+}
+@media screen and (min-width: 901px)
+{
+    #Feature1content{
+    top: 30%;
+    max-width: 35%;
+    right: 0.875rem;
+    position: absolute;
+    }
+    #Feature1content h1{
+        font-size: 2rem;
+    }
+    #Feature1content2{
+        display: none;
+    }
+}
+
+#Feature2{
+    position: relative;
+}
+#Feature2content2{
+    text-align: center;
+    padding:1rem;
+    
+}
+@media screen and (max-width: 600px)
+{
+    #Feature2content{
+     display: none;
+    }
+    #Feature2content2{
+        display: block;
+    }
+}
+@media screen and (min-width: 601px){
+    #Feature2content{
+    top: 15%;
+    max-width: 35%;
+    left:5rem;
+    position: absolute;
+    }
+    #Feature2content h1{
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    #Feature2content2{
+        display: none;
+    }
+}
+@media screen and (min-width: 901px)
+{
+    #Feature2content{
+    top: 30%;
+    max-width: 35%;
+    left:5rem;
+    position: absolute;
+    }
+    #Feature2content h1{
+        font-size: 2rem;
+    }
+    #Feature2content2{
+        display: none;
+    }
+}
+
+#Feature3{
+text-align: center;
+}
+
+#Specifications ul li{
+    padding-top:1.5rem ;
+    padding-bottom:1.5rem ;
+
+}
+#DeliveriesandReturns ul li{
+    margin-top:1rem ;
+    margin-bottom:1rem ;
+
+}
+.mok3bat svg {
+width: 25px;
+height: 25px;
+}

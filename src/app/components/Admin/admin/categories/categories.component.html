@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<div class="row">
+  <div class="col p-4 pt-5">
+    <div class="d-flex">
+      <h3 class="font-weight-bold darkBlue">Categories</h3>
+      <button class="ml-auto addBtn btn shadow-none font-weight-bold text-white" type="button">
+        <i class="fa fa-plus mr-2"></i> Add Category
+      </button>
+    </div>
+    <div class="input-group col-lg-4 col-md-6 col-12 ml-auto px-0 mt-3">
+      <input autocomplete="off" class="form-control py-2 shadow-none border-right-0 border" type="search"
+        placeholder="Search by ID" id="search-input">
+      <span class="input-group-append">
+        <button class="btn shadow-none border-left-0 border" type="button">
+          <i class="fa fa-search searchIcon"></i>
+        </button>
+      </span>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-hover" id="data">
+            <thead>
+              <tr>
+                <th scope="col"><small>CategoryID</small></th>
+                <th scope="col"><small>Name</small></th>
+                <th scope="col"><small>Ordered</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of categoryList">
+                <th scope="row">#{{item.id}}</th>
+                    <td class="name text-truncate">{{item.name}}</td>
+                    <td class="price text-truncate"><small>{{item.totalOrdered|currency}}</small></td>
+                <!-- <td class="d-flex">
+                  <button type="button" class="btn shadow-none darkBlue"><i class="fa fa-eye"
+                      aria-hidden="true"></i></button>
+
+                  <button type="button" onclick="deletes('${element.id}')" class="btn shadow-none darkBlue"><i
+                      class="fa fa-trash" aria-hidden="true"></i></button>
+
+                  <button type="button" onclick="Update(
+                                        '${element.id}',
+                                        '${element.image}',
+                                        '${element.name}',
+                                        '${element.description}',
+                                        '${element.price}',
+                                        '${element.stock}'
+            
+                                        )" class="btn shadow-none darkBlue"><i class="fas fa-edit"
+                      aria-hidden="true"></i></button>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
