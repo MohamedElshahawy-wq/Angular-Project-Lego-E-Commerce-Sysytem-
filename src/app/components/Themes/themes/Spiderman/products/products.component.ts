@@ -47,7 +47,6 @@ export class ProductsComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log(event.target.innerWidth);
     if (event.target.innerWidth >= 992) {
       this.toggle = true;
       this.filters.nativeElement.classList.add('d-none');
@@ -60,7 +59,6 @@ export class ProductsComponent implements OnInit {
     this.prdSrv.getAllProducts().subscribe( 
       (res) => {
         this.productList = res
-        console.log(this.productList)
       },
       (err) => {console.log(err)}
     )
