@@ -62,7 +62,7 @@ export class AddProductComponent implements OnInit {
     this.prdService.addProduct(this.newProduct).subscribe(
       (res) => {
         console.log("res" + this.newProduct.categoryID);
-        // this.router.navigate([`/Admain/${this.newProduct.CategoryID}`]);//AdproID
+        this.router.navigate([`/Admin/Products`]);
         alert("Product added....");
       },
       (err) => { console.log(err) }

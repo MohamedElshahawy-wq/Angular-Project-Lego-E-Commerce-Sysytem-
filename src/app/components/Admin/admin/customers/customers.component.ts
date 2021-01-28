@@ -21,4 +21,18 @@ export class CustomersComponent implements OnInit {
     )
   }
 
+  deleteCustomer(id) {
+    this.customerSrv.deleteCustomer(id).subscribe(
+      (resp)=>{
+        this.customerSrv.getAllCustomers().subscribe(
+          (res)=>{
+            this.customerList=res
+          },
+          (err)=>{console.log(err)}
+        )
+      },
+      (err)=>{console.log(err)}
+    )
+  }
+
 }
