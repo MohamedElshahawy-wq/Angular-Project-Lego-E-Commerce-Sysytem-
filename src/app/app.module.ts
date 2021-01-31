@@ -17,6 +17,10 @@ import { OffersComponent } from './components/offers/offers.component';
 import { ProductComponent } from './components/product/product.component';
 import { RecommendedProductsComponent } from './components/recommended-products/recommended-products.component';
 import { MyBBagComponent } from './components/my-bbag/my-bbag.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 
 
 @NgModule({
@@ -34,7 +38,11 @@ import { MyBBagComponent } from './components/my-bbag/my-bbag.component';
     OffersComponent,
     ProductComponent,
     RecommendedProductsComponent,
-    MyBBagComponent
+    MyBBagComponent,
+    RegisterComponent,
+    LoginComponent,
+    RecoverUsernameComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,
