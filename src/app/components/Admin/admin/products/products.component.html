@@ -3,7 +3,8 @@
   <div class="col p-4 pt-5">
     <div class="d-flex">
       <h3 class="font-weight-bold darkBlue">Products</h3>
-      <button class="ml-auto addBtn btn shadow-none font-weight-bold text-white" type="button">
+      <button class="ml-auto addBtn btn shadow-none font-weight-bold text-white"
+      (click)="goToAddProducts()" type="button">
         <i class="fa fa-plus mr-2"></i> Add Product
       </button>
     </div>
@@ -42,13 +43,13 @@
                     <i *ngFor="let i of [].constructor(item.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
                 </td>
                 <td class="category"><small>{{getCategoryNameByID(item.categoryID)}}</small></td>
-                <!-- <td class="d-flex">
-                  <button type="button" class="btn shadow-none darkBlue"><i class="fa fa-eye"
+                <td class="d-flex">
+                  <button type="button" class="btn shadow-none darkBlue" (click)="goToProduct(item.id)"><i class="fa fa-eye"
                       aria-hidden="true"></i></button>
 
-                  <button type="button" onclick="deletes('${element.id}')" class="btn shadow-none darkBlue"><i
+                  <button type="button" (click)="deleteProduct(item.id)" class="btn shadow-none darkBlue"><i
                       class="fa fa-trash" aria-hidden="true"></i></button>
-
+                <!-- 
                   <button type="button" onclick="Update(
                                         '${element.id}',
                                         '${element.image}',

@@ -1,0 +1,1071 @@
+<div class="container">
+  <div class="row">
+    <!--Left Indentation-->
+    <div class="col"></div>
+
+    <!--Main-->
+    <div class="col-5 text-center" id="main">
+      <!--Top yellow bar-->
+      <nav class="navbar justify-content-center d-flex flex-fill">
+        <div class="container-fluid text-nowrap">
+          <a href="#" role="button"
+            ><i class="fas fa-chevron-left" id="backBtn"></i
+          ></a>
+          <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
+          <span
+            class="navbar-brand mb-0 h1 justify-content-left text-center"
+            id="navTxt"
+            ><strong>Account</strong></span
+          >
+          <button
+            type="button"
+            class="close font-weight-bold text-right"
+            id="navBtn"
+          >
+            ×
+          </button>
+        </div>
+      </nav>
+
+      <!--Main Body-->
+      <div>
+        <h5 id="info-text">Create your LEGO® Account</h5>
+
+        <p id="info-text2">Already have an account?</p>
+
+        <button id="regPageLoginBtn" type="submit" class="btn" [routerLink]="['/Login']">Log in</button>
+
+        <div class="d-flex" style="margin-bottom: 15px">
+          <button
+            id="continuewfbBtn"
+            class="text-center justify-content-center d-flex"
+          >
+            <i id="continuewfbIcon" class="fab fa-facebook-square"></i> Continue
+            with Facebook
+          </button>
+          <img
+            src="assets/images/Register-Login-Images/search.png"
+            id="searchIcon"
+          />
+          <img
+            src="assets/images/Register-Login-Images/apple.png"
+            id="appleIcon"
+          />
+        </div>
+
+        <div class="d-flex">
+          <hr class="line" />
+          <p id="useEmailParagraph">Or use your email</p>
+          <hr class="line" />
+        </div>
+
+        <img
+          src="assets/images/Register-Login-Images/Reg.PNG"
+          style="height: auto"
+          class="img-fluid"
+        />
+
+        <!--Sign up form-->
+
+        <div>
+          <form #regForm="ngForm" id="signupForm" (ngSubmit)="addnewCustomer()">
+            <!--email-->
+            <div class="mb-3 from-group">
+              <label
+                id="regEmailLabel"
+                for="emailRegTxt"
+                class="form-label text-left justify-content-left d-flex"
+                >Email address</label
+              >
+              <input
+                #newEmail="ngModel"
+                [(ngModel)]="email"
+                name="email"
+                type="text"
+                class="form-control"
+                id="emailRegTxt"
+                placeholder="example@domain.com"
+                required
+              />
+              <div class="text-danger text-left emailWarn" [hidden]="newEmail.valid">
+                Email is required
+              </div>
+            </div>
+
+            <!--password-->
+            <div class="mb-3 from-group">
+              <label
+                id="regPasswordLabel"
+                for="passwordRegTxt"
+                class="form-label text-left justify-content-left d-flex"
+                >Password</label
+              >
+              <input
+                #newPassword="ngModel"
+                [(ngModel)]="password"
+                name="password"
+                type="password"
+                class="form-control"
+                id="passwordRegTxt"
+                placeholder="* * * * * * * *"
+                required
+                min="10"
+              />
+              <div class="text-danger text-left passWarn" [hidden]="newPassword.valid">
+                The password must be at least 10 characters long
+                <br>
+                Password is required
+              </div>
+            </div>
+
+            <!--birthday-->
+            <div class="mb-3 from-group">
+              <label
+                id="regBDLabel"
+                for="birthdateTxt"
+                class="form-label text-left justify-content-left d-flex"
+                >Birthdate</label
+              >
+              <div id="birthdateTxt" class="d-flex">
+                <!--month-->
+                <div class="mb-3">
+                  <label
+                    id="regmonthLabel"
+                    for="monthDateTxt"
+                    class="form-label text-left justify-content-left d-flex"
+                    >Month</label
+                  >
+                  <input
+                    #newBDMonth="ngModel"
+                    [(ngModel)]="month"
+                    name="month"
+                    type="text"
+                    class="form-control"
+                    id="monthDateTxt"
+                    placeholder="MM"
+                    required
+                  />
+                </div>
+
+                <!--day-->
+                <div class="mb-3">
+                  <label
+                    id="regDayLabel"
+                    for="dayDateTxt"
+                    class="form-label text-left justify-content-left d-flex"
+                    >Day</label
+                  >
+                  <input
+                    #newBDDay="ngModel"
+                    [(ngModel)]="day"
+                    name="day"
+                    type="text"
+                    class="form-control"
+                    id="dayDateTxt"
+                    placeholder="DD"
+                    required
+                  />
+                </div>
+
+                <!--year-->
+                <div class="mb-3">
+                  <label
+                    id="regYearLabel"
+                    for="yearDateTxt"
+                    class="form-label text-left justify-content-left d-flex"
+                    >Year</label
+                  >
+                  <input
+                    #newBDYear="ngModel"
+                    [(ngModel)]="year"
+                    name="year"
+                    type="text"
+                    class="form-control"
+                    id="yearDateTxt"
+                    placeholder="YYYY"
+                    required
+                  />
+                </div>
+                <br>
+              </div>
+              <div class="text-danger text-left BDWarn" [hidden]="newBDMonth.valid && newBDDay.valid && newBDYear.valid">
+                Date of birth is required
+              </div>
+            </div>
+
+            <!--Country-->
+            <div class="mb-3 from-group">
+              <label
+                id="regCountryLabel"
+                for="countryRegTxt"
+                class="form-label text-left justify-content-left d-flex"
+                >Country</label
+              >
+              <select
+                id="countryRegTxt"
+                class="form-control"
+                placeholder="Country"
+              >
+                <option value="Afganistan">Afghanistan</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Anguilla">Anguilla</option>
+                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Aruba">Aruba</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Belize">Belize</option>
+                <option value="Benin">Benin</option>
+                <option value="Bermuda">Bermuda</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bonaire">Bonaire</option>
+                <option value="Bosnia & Herzegovina">
+                  Bosnia & Herzegovina
+                </option>
+                <option value="Botswana">Botswana</option>
+                <option value="Brazil">Brazil</option>
+                <option value="British Indian Ocean Ter">
+                  British Indian Ocean Ter
+                </option>
+                <option value="Brunei">Brunei</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Canada">Canada</option>
+                <option value="Canary Islands">Canary Islands</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Cayman Islands">Cayman Islands</option>
+                <option value="Central African Republic">
+                  Central African Republic
+                </option>
+                <option value="Chad">Chad</option>
+                <option value="Channel Islands">Channel Islands</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Christmas Island">Christmas Island</option>
+                <option value="Cocos Island">Cocos Island</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Congo">Congo</option>
+                <option value="Cook Islands">Cook Islands</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cote DIvoire">Cote DIvoire</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Curaco">Curacao</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="East Timor">East Timor</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                <option value="Eritrea">Eritrea</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Falkland Islands">Falkland Islands</option>
+                <option value="Faroe Islands">Faroe Islands</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="French Guiana">French Guiana</option>
+                <option value="French Polynesia">French Polynesia</option>
+                <option value="French Southern Ter">French Southern Ter</option>
+                <option value="Gabon">Gabon</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Gibraltar">Gibraltar</option>
+                <option value="Great Britain">Great Britain</option>
+                <option value="Greece">Greece</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Grenada">Grenada</option>
+                <option value="Guadeloupe">Guadeloupe</option>
+                <option value="Guam">Guam</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Iran">Iran</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Isle of Man">Isle of Man</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Kiribati">Kiribati</option>
+                <option value="Korea North">Korea North</option>
+                <option value="Korea Sout">Korea South</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                <option value="Laos">Laos</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Lesotho">Lesotho</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Libya">Libya</option>
+                <option value="Liechtenstein">Liechtenstein</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Macau">Macau</option>
+                <option value="Macedonia">Macedonia</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Malawi">Malawi</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Mali">Mali</option>
+                <option value="Malta">Malta</option>
+                <option value="Marshall Islands">Marshall Islands</option>
+                <option value="Martinique">Martinique</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mayotte">Mayotte</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Midway Islands">Midway Islands</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Nambia">Nambia</option>
+                <option value="Nauru">Nauru</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Netherland Antilles">Netherland Antilles</option>
+                <option value="Netherlands">
+                  Netherlands (Holland, Europe)
+                </option>
+                <option value="Nevis">Nevis</option>
+                <option value="New Caledonia">New Caledonia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Niue">Niue</option>
+                <option value="Norfolk Island">Norfolk Island</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Palau Island">Palau Island</option>
+                <option value="Palestine">Palestine</option>
+                <option value="Panama">Panama</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Phillipines">Philippines</option>
+                <option value="Pitcairn Island">Pitcairn Island</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Puerto Rico">Puerto Rico</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Republic of Montenegro">
+                  Republic of Montenegro
+                </option>
+                <option value="Republic of Serbia">Republic of Serbia</option>
+                <option value="Reunion">Reunion</option>
+                <option value="Romania">Romania</option>
+                <option value="Russia">Russia</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="St Barthelemy">St Barthelemy</option>
+                <option value="St Eustatius">St Eustatius</option>
+                <option value="St Helena">St Helena</option>
+                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                <option value="St Lucia">St Lucia</option>
+                <option value="St Maarten">St Maarten</option>
+                <option value="St Pierre & Miquelon">
+                  St Pierre & Miquelon
+                </option>
+                <option value="St Vincent & Grenadines">
+                  St Vincent & Grenadines
+                </option>
+                <option value="Saipan">Saipan</option>
+                <option value="Samoa">Samoa</option>
+                <option value="Samoa American">Samoa American</option>
+                <option value="San Marino">San Marino</option>
+                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Seychelles">Seychelles</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Solomon Islands">Solomon Islands</option>
+                <option value="Somalia">Somalia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Swaziland">Swaziland</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syria">Syria</option>
+                <option value="Tahiti">Tahiti</option>
+                <option value="Taiwan">Taiwan</option>
+                <option value="Tajikistan">Tajikistan</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Togo">Togo</option>
+                <option value="Tokelau">Tokelau</option>
+                <option value="Tonga">Tonga</option>
+                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                <option value="Tuvalu">Tuvalu</option>
+                <option value="Uganda">Uganda</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Erimates">
+                  United Arab Emirates
+                </option>
+                <option value="United States of America">
+                  United States of America
+                </option>
+                <option value="Uraguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Vanuatu">Vanuatu</option>
+                <option value="Vatican City State">Vatican City State</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Virgin Islands (Brit)">
+                  Virgin Islands (Brit)
+                </option>
+                <option value="Virgin Islands (USA)">
+                  Virgin Islands (USA)
+                </option>
+                <option value="Wake Island">Wake Island</option>
+                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zaire">Zaire</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+              </select>
+            </div>
+
+            <!--Terms abd Conditions check box-->
+            <div class="mb-3 from-group form-check">
+              <div class="d-flex">
+                <input
+                  #newTermsandConditionsCheck="ngModel"
+                  [(ngModel)]="termsandconditionsCheck"
+                  name="check"
+                  type="checkbox"
+                  class="form-check-input justify-content-left d-flex"
+                  id="acceptTermsCheck"
+                />
+                <a
+                  href="#"
+                  id="regTermsandConditionsLabel"
+                  class="form-check-label d-flex text-left justify-content-left"
+                  for="acceptTermsCheck"
+                  >I accept the terms and conditions</a
+                >
+              </div>
+              <p id="regModalLabel" class="text-left">
+                When you agree to the
+                <a href="#" data-toggle="modal" data-target="#myModal"
+                  >Terms and Conditions</a
+                >
+                you also consent to our use of your personal information to
+                process and operate your LEGO® Account. To see how to control
+                your personal data, please see our privacy policy.
+              </p>
+              <div class="text-danger text-left TermsandConditionsWarn" [hidden]="newTermsandConditionsCheck.valid == true">
+                You must accept Terms and Conditions
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="regForm.invalid" class="btn Confirmbtn">Confirm</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Terms and Conditions Modal-->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header 
+                <div class="modal-header">
+                  <h1 class="modal-title">Terms and conditions</h1>
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>-->
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h5 id="regModalHeaderTxt"><b>Terms and conditions</b></h5>
+              <div
+                class="text-left justify-content-left"
+                style="font-size: 14px"
+              >
+                <p class="modalBoldTxt">
+                  <b
+                    >LEGO® Account Terms 3.0<br />The basic stuff<br />Who are
+                    we?</b
+                  >
+                </p>
+                <p class="modalDetailsTxt">
+                  We are LEGO System A/S, a family-owned company. Our
+                  headquarters are in Billund, Denmark and we operate under
+                  Danish laws. Our company information can be found
+                  <a href="#">here</a>.
+                </p>
+
+                <p class="modalBoldTxt"><b>Why are you seeing this?</b></p>
+                <p class="modalDetailsTxt">
+                  If you are a parent or legal guardian, we are asking for your
+                  parental consent. If your child wants to use our Services that
+                  are not available for use by children under the age of 16
+                  without a parent giving consent, you will need to validate the
+                  account your child has created and provide us with valid
+                  contact information. This way you know what to expect from us
+                  and what we expect in return. Having an account will also give
+                  you the opportunity to control how your child can use our
+                  Services.<br /><br />
+                  If you are 16 years or older and want to use our Services for
+                  which you will be needing a LEGO® Account, you will need to
+                  give consent yourself.
+                </p>
+
+                <p class="modalBoldTxt"><b>What do these terms apply to?</b></p>
+                <p class="modalDetailsTxt">
+                  These terms apply to all LEGO Account validated apps and
+                  platforms described in these terms as our Services. The terms
+                  will also apply to your own use of our Services if you are 16
+                  years or older; please see more in the section “I am a 16
+                  years and older user – what applies”.<br /><br />
+                  For you to easily identify validated Services, please look for
+                  the LEGO Life logo and read the additional terms relevant for
+                  that specific service.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>I am a 16 years or older user – what applies? </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  These terms apply if you use our Services for your own
+                  purpose, and if you are 16 years or older – it goes without
+                  saying that we will not need your parents’ permission.
+                  <br /><br />
+                  This means that you will have the rights and obligations as
+                  stated in these terms – furthermore, you may have to accept
+                  additional terms that apply to the specific Services you want
+                  to use, e.g. terms for shop.LEGO.com, LEGO Ideas or LEGO VIP.
+                  Where such additional terms or policies apply, we will bring
+                  them to your attention, and they will become a part of these
+                  terms.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >Consenting as a parent or legal guardian<br />
+                    What are you consenting to in relation to your child?
+                  </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  As a parent or legal guardian, you are consenting to your
+                  child’s use of our Services and the terms connected thereto,
+                  and that we can collect personal information from your child
+                  and use your child’s user-generated content and make it
+                  accessible and usable on our LEGO platforms. <br /><br />
+                  When you have accepted our terms, you will get a LEGO Account.
+                  As a parental approver, your child’s account will be updated
+                  based on your consent and you will be given a separate
+                  parental Verified Account enabling you to have control.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>How will you be consenting as a parent?</b>
+                </p>
+                <p class="modalDetailsTxt">
+                  We collect your parental consent in two different situations.
+                  If your child just wants to play around in our Services with
+                  us knowing who your child is, but not disclosing it to others,
+                  we would ask for your consent by sending you a confirmation
+                  email – we call this the “LEGO Account”. <br /><br />
+
+                  If your child wants to engage more actively, disclosing his or
+                  her identity to other users or being more active, then we will
+                  need to verify your consent in a secure way – we call it a
+                  ”linked LEGO Account”, because it is linked with a “Verified
+                  Account” owned by a parent or a guardian. In both instances
+                  you guarantee us that you are the parent or legal guardian of
+                  the child and that you are 18 years or older. <br /><br />
+
+                  The solution we use is our best practice method, and just to
+                  be very transparent about this, there are not yet any detailed
+                  requirements under the EU GDPR (General Data Protection
+                  Regulation) or other relevant privacy laws of how verification
+                  is done in a secure way. This means that we might have to
+                  change the way we collect, confirm and verify your consent –
+                  and possibly also ask you to give, confirm or verify your
+                  consent again. <br /><br />
+
+                  In the US, we will also follow the rules of the Children’s
+                  Online Privacy Protection Act (COPPA) and comply with other
+                  relevant privacy legislation. In countries outside the US and
+                  EEA, we will comply with relevant local legislation.
+                  <br /><br />
+
+                  If our approach to collecting your consent leaves you with a
+                  concern or question, please just contact us – we will be happy
+                  to explain. <br />
+
+                  <b>The Services that I consent to or use myself</b>
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >What Services can my child access with a LEGO® Account?
+                    <br />
+                    What are you consenting to in relation to your child?
+                  </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  Besides playing around, your child can choose from various
+                  features such as signing up to different digital activities if
+                  eligible, choosing personalized avatars, making anonymous
+                  comments, uploading creations, and participating in our
+                  competitions. Activities will change, but we will make sure
+                  they are suited to the consent you have given.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >What Services can my child access with a Linked LEGO
+                    Account? <br />
+                    What are you consenting to in relation to your child?
+                  </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  All of the things mentioned under “What Services can my child
+                  access with a LEGO Account?”, and in addition the chat
+                  functions and the possibility of disclosing his or her
+                  identity in connection with different activities, such as
+                  uploading and sharing created content in all shapes and forms
+                  – basically having a safe children’s social media platform.<br /><br />
+
+                  More specifically, you can give your child permission to:
+                  <br />
+                  – Be creative: <br />
+                  Share photos, videos, creations, sound, programming code, web
+                  game high scores, and more on our Services <br />
+                  – Be social: Comment in free text or use our anonymous LEGO
+                  emoticon keyboard <br />
+
+                  – Make friends: Become anonymous online friends with other
+                  LEGO builders <br />
+                  – Create a personalized online experience for your child based
+                  on personal information we collect about your child’s
+                  preferences, e.g. which LEGO sets your child owns, what your
+                  child likes, views and uploads on our Services, allowing us to
+                  show your child digital products and advertisements based on
+                  their personal play preferences.<br /><br />
+
+                  You will be able to control the settings through your Verified
+                  Account – and control what features you have given your child
+                  permission to use.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >What Services can I access being 16 years or older? <br />
+                    What are you consenting to in relation to your child?
+                  </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  All of the above – there is no restriction in accessing our
+                  Services when you observe and agree to our terms and policies.
+                </p>
+
+                <p class="modalBoldTxt"><b>Safety</b></p>
+
+                <p class="modalBoldTxt">
+                  <b>What do we need your child to understand? </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  We provide your child with fun, safe, and enjoyable digital
+                  experiences on our Services while learning good digital
+                  behavior by having your child accept our safety pledge and you
+                  explaining to your child the obligations in these terms.
+                </p>
+
+                <p class="modalBoldTxt"><b>How do we moderate? </b></p>
+                <p class="modalDetailsTxt">
+                  On our channels directed at kids, we moderate everything
+                  before it goes live. On mixed age group channels such as LEGO
+                  Ideas, we ask for clear parental consent. Anything that is
+                  uploaded here will be post-moderated. We may remove any
+                  content or information you or your child posted on or via our
+                  Services if we believe that it violates our terms or is
+                  otherwise objectionable. <br /><br />
+
+                  Certain content that is sent through our Services (such as
+                  discussions in chats, upload of images etc.) may or may not be
+                  removed at our discretion. This is to ensure the continuity
+                  and safety of discussions in our Services.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >Advertisements and virtual currency<br />
+                    Do we serve advertisements on our Services?</b
+                  >
+                </p>
+                <p class="modalDetailsTxt">
+                  We will display advertisements in our Services, but we will
+                  only advertise for LEGO products. <br /><br />
+
+                  Our Services will also contain links to other age-appropriate
+                  sites, apps or other resources – you should review any website
+                  terms and conditions, privacy policies, and other disclosures
+                  that those sites or apps provide before interacting with those
+                  third parties or providing them with information about
+                  yourself or your child.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >Privacy and IP rights<br /><br />
+                    How about privacy rights?
+                  </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  To operate, customize, and optimize the experience on our
+                  Services, we collect and store personal information about you
+                  and your child.<br /><br />
+
+                  When we process personal information about your child, our
+                  legal basis is your parental consent (GDPR art. 6.1.a. and
+                  art. 8). You always have the right to withdraw your consent by
+                  contacting us or changing the profile settings. <br /><br />
+
+                  When we process personal information of users 16 years or
+                  older, our legal basis is fulfilment of a contract (GDPR art.
+                  6.1.b) and pursuit of our legitimate interests (GDPR art.
+                  6.1.f). In that case, our legitimate interests are to allow
+                  you to be creative, be social, make friends, and to create an
+                  online personal experience for you. We assess that our
+                  legitimate interests are not overridden by your interests or
+                  fundamental rights and freedom. <br /><br />
+
+                  The personal information we collect about your child and users
+                  older than 16 years are: IP addresses, online identifiers,
+                  preferences, and other personal information that your child or
+                  you provide when using our Services. See more about the
+                  feature of our Services under “The Services that I consent to
+                  or use myself” and about processing of personal information in
+                  our Privacy Policy. <br /><br />
+
+                  When collecting your parental consent for your child’s LEGO
+                  Account, we will collect your email address, the username of
+                  your child, his or her age, your username and your birth date.
+                  <br /><br />
+
+                  If we are collecting your verifiable parental consent for a
+                  linked LEGO Account and Verified Account, we will – in
+                  addition to the above – collect your credit card
+                  information.<br /><br />
+
+                  When we process your personal information as a parent giving
+                  your parental consent, our legal basis is fulfilment of a
+                  contract (GDPR art. 6.1.b). <br /><br />
+
+                  Please read our Privacy Policy to see more on how we store,
+                  use, and share personal information and how you can control it
+                  by exercising your rights. If you have given us your parental
+                  consent, please help your child in understanding what privacy
+                  rights mean and what these terms mean for your child in that
+                  respect. We will do ours and we hope you will support our
+                  efforts.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>How about your own and your child’s IP rights? </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  You and your child retain your individual copyright before
+                  submitting, posting or displaying content on or through our
+                  Services. However, you individually grant to us a limited
+                  license, so that we can make the content accessible and usable
+                  on our LEGO earned and owned platforms without any limitation
+                  for an indefinite period. The license you individually grant
+                  to us and companies within the LEGO Group is a non-exclusive,
+                  transferable, sub-licensee, royalty-free, worldwide license to
+                  use and modify the content submitted, posted or displayed on
+                  or through our Services, including for use on any platform or
+                  media for promotional purposes. <br /><br />
+
+                  Also, if you or your child posts content in a part of our
+                  Services that includes functions where multiple users may
+                  post, correct, edit or delete items, then by submitting the
+                  content to that area, you are individually allowing other
+                  users to use the submitted content in this way. Make sure that
+                  you and your child have the necessary rights to grant us this
+                  license for any content submitted to our Services. One
+                  important thing both of you should think about before posting:
+                  When you or your child makes something available e.g. on the
+                  Internet, it becomes practically impossible to take down all
+                  copies of it.
+                </p>
+
+                <p class="modalBoldTxt"><b>How about our IP rights? </b></p>
+                <p class="modalDetailsTxt">
+                  We own all materials that appear on our Services, including
+                  any trademarks, trade names, slogans, logos, designs,
+                  graphics, pictures, text, content, images, or other materials,
+                  including all copyright, trademark, patent, moral rights, and
+                  other intellectual property rights thereto. All such rights of
+                  the LEGO Group are hereby asserted and reserved, and you or
+                  your child may not make any unauthorized use of the content,
+                  including using content in a way that is likely to cause
+                  confusion among consumers, using content in a commercial
+                  manner, or otherwise infringing on the LEGO Group’s rights.
+                  <br /><br />
+
+                  We give you and your child a personal, worldwide,
+                  royalty-free, non-transferable, non-sublicensable and
+                  non-exclusive license to use the software and content provided
+                  by the Services, until either yours or your child’s account is
+                  terminated. This license is for the sole purpose of enabling
+                  you and your child to use and enjoy the benefit of the
+                  Services provided by us in the manner permitted by these
+                  terms.
+                </p>
+
+                <p class="modalBoldTxt"><b>Your and our obligations</b></p>
+                <br />
+                <p class="modalBoldTxt"><b>What is our obligation? </b></p>
+                <p class="modalDetailsTxt">
+                  Where applicable laws require so, we will respond to
+                  legitimate requests by authorities or court orders to disclose
+                  your and your child’s information.<br /><br />
+
+                  We monitor our users’ content and communications; however, we
+                  cannot guarantee that our Services are free of illegal
+                  material or other content that may be considered unacceptable.
+                  When it comes to our attention, we will review content to
+                  determine whether it is illegal or violates our terms, and we
+                  may remove or refuse to display it. In serious instances of
+                  abuse, we may also notify the police or relevant law
+                  enforcement agency. <br /><br />
+
+                  We provide and maintain our Services for personal
+                  entertainment, on an “as is” and “as available” basis. We give
+                  no warranty in connection with our Services, including that
+                  Services will work for a particular purpose or that the
+                  Services will always be available, or will work perfectly. To
+                  the maximum extent permitted by law, we exclude liability for
+                  any loss or damage of any kind arising out of your and/or your
+                  child’s use of our Services.
+                </p>
+
+                <p class="modalBoldTxt"><b>What is your obligation? </b></p>
+                <p class="modalDetailsTxt">
+                  We respect other people’s rights and expect you and your child
+                  to do the same. Neither you nor your child may post content or
+                  take any action on our Services that infringes or violates
+                  someone else’s rights, our rights or otherwise violates the
+                  law. <br /><br />
+
+                  You or your child may not use content from our Services unless
+                  you obtain permission from us, its owner or are otherwise
+                  permitted by law. If any of you see something that might be an
+                  issue and want to notify us, please contact us as specified
+                  below. <br /><br />
+
+                  You agree to indemnify and hold us harmless against all
+                  liability in respect to and arising out of your and/or your
+                  child’s use of our Services.
+                </p>
+
+                <p class="modalBoldTxt"><b>Termination and deletion</b></p>
+                <br />
+                <p class="modalBoldTxt"><b>When can you terminate? </b></p>
+                <p class="modalDetailsTxt">
+                  You and your child can stop using our Services at any time,
+                  although we will be sorry to see any of you go. If you and
+                  your child wish to stop using our Services, you should follow
+                  the instructions within the relevant service or by deleting
+                  the account <a href="#">here</a>. <br /><br />
+
+                  If you are a VIP program member and close your LEGO Account,
+                  you will no longer be able to access your VIP point status or
+                  earn or spend VIP points when shopping on shop.LEGO.com.
+                  However, you will still be able to earn and spend VIP points
+                  when shopping in the physical stores participating in the VIP
+                  program. <br /><br />
+
+                  When your child turns 16 years old, the Verified Account will
+                  automatically expire, and your child is more than welcome to
+                  continue using our Services; however, your child will then
+                  have to accept the terms him- or herself.
+                </p>
+
+                <p class="modalBoldTxt"><b>When can we terminate? </b></p>
+                <p class="modalDetailsTxt">
+                  If you or your child violate the letter or spirit of these
+                  terms, or otherwise create risk or possible legal exposure for
+                  us, we can stop providing all or part of our Services to you
+                  or your child with or without notice, and either of you may
+                  lose your content, any virtual items and account(s). In all
+                  such cases, our agreement will come to an end. <br /><br />
+
+                  We are entitled to terminate this agreement and immediately
+                  remove, cancel, or suspend access to and use of our Services
+                  for any reason.
+                </p>
+
+                <p class="modalBoldTxt"><b>Deletion </b></p>
+                <p class="modalDetailsTxt">
+                  In general, we do not retain your personal information for
+                  longer than necessary for the purposes for which it is
+                  processed. You can at any time choose to delete your account.
+                  <br /><br />
+
+                  However, be aware that we may need to retain some of the
+                  personal information relating to you and your child even if
+                  you delete the account, e.g. to exercise or defend against a
+                  legal claim. <br /><br />
+
+                  Furthermore, please note that content that is deleted from our
+                  Services may remain in back-up storage for some time. Such
+                  content may also be anonymous and aggregated and used for
+                  various purposes such as research and analysis. <br /><br />
+
+                  Please see our Privacy Policy to read more about deletion of
+                  your personal information.
+                </p>
+
+                <p class="modalBoldTxt"><b>Changing the Services</b></p>
+                <p class="modalDetailsTxt">
+                  How will we update functionalities? We are constantly changing
+                  and improving our Services. We may add or remove
+                  functionalities or features and we may suspend or stop our
+                  Services altogether. <br /><br />
+
+                  Occasionally, we may have to interrupt our Services and make
+                  changes to certain technical specifications and product
+                  features.
+                </p>
+
+                <p class="modalBoldTxt"><b>How will we update terms? </b></p>
+                <p class="modalDetailsTxt">
+                  We will certainly have to update our terms in the future, for
+                  example due to ongoing improvement and other changes in our
+                  Services and changes to the laws that apply to us and you.
+                  This also sometimes means getting a renewed consent from you
+                  as a parent or a legal guardian. <br /><br />
+
+                  When we update our terms, we will do our best to give you a
+                  notice in advance either by posting the change on our Services
+                  and/or by contacting you directly. <br /><br />
+
+                  However, in some situations, such as where a change is needed
+                  to meet legal requirements, an update to our terms may need to
+                  take effect immediately. If you do not agree to any changes,
+                  you should discontinue your own or your child’s use of our
+                  Services. <br /><br />
+
+                  If you or your child continue to use our Services after any
+                  update is announced, you will be considered to having agreed
+                  to these changes.
+                </p>
+
+                <p class="modalBoldTxt"><b>Contacting us</b></p>
+
+                <p class="modalBoldTxt"><b>Do you have questions? </b></p>
+                <p class="modalDetailsTxt">
+                  If you have any questions not related to safety or complaints
+                  or just want to give us feedback, please reach out to our
+                  Customer Service.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>Have you observed a safety issue? </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  If you have encountered a safety issue, please reach out to us
+                  via
+                  <a href="https://www.LEGO.com/service"
+                    >https://www.LEGO.com/service</a
+                  >.
+                </p>
+
+                <p class="modalBoldTxt"><b>Do you want to complain? </b></p>
+                <p class="modalDetailsTxt">
+                  If you have a complaint about our Services or its users, you
+                  may contact us at
+                  <a href="https://www.LEGO.com/service"
+                    >https://www.LEGO.com/service</a
+                  >.
+                </p>
+
+                <p class="modalBoldTxt"><b>Other information </b></p>
+
+                <p class="modalBoldTxt">
+                  <b>Entire agreement, applicable law and jurisdiction </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  These terms make up the entire agreement between us relating
+                  to our Services and override any prior agreements. These terms
+                  and our relationship will be governed by the laws of Denmark.
+                  You agree to submit to the exclusive jurisdiction of the
+                  Danish courts.
+                </p>
+              </div>
+
+              <button
+                id="modalCloseBtn"
+                type="button"
+                class="btn btn-danger"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col"></div>
+  </div>
+</div>

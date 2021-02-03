@@ -32,4 +32,14 @@ addCustomer(cust: ICustomer):Observable<any>
         
     return this.http.post<any>(`${environment.API_Link}/users`,cust, httpOptions);
   }
+  deleteCustomer(cust: number):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.delete<any>(`${environment.API_Link}/users/${cust}`, httpOptions);
+  }
 }

@@ -27,7 +27,7 @@ export class AddCategoryComponent implements OnInit {
     };
     this.catService.addCategory(this.newCategory).subscribe(
       (res) => {
-        // this.router.navigate([`/Admain/${this.newProduct.CategoryID}`]);//AdproID
+        this.router.navigate([`/Admin/Categories`]);
         alert("Category added....");
       },
       (err) => { console.log(err) }

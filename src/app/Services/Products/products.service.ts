@@ -34,6 +34,18 @@ export class ProductsService {
         
     return this.http.post<any>(`${environment.API_Link}/products`,prd, httpOptions);
   }
+
+  deleteProduct(prd: number):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.delete<any>(`${environment.API_Link}/products/${prd}`, httpOptions);
+  }
+
   getProductByID(pID:number): Observable<IProduct>{
     return this.http.get<IProduct>(`${environment.API_Link}/products/${pID}`);
   } 

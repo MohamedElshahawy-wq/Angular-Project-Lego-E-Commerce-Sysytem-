@@ -3,9 +3,9 @@
   <div class="col p-4 pt-5">
     <div class="d-flex">
       <h3 class="font-weight-bold darkBlue">Orders</h3>
-      <button class="ml-auto addBtn btn shadow-none font-weight-bold text-white" type="button">
+      <!-- <button class="ml-auto addBtn btn shadow-none font-weight-bold text-white" type="button">
         <i class="fa fa-plus mr-2"></i> Add Orders
-      </button>
+      </button> -->
     </div>
     <div class="input-group col-lg-4 col-md-6 col-12 ml-auto px-0 mt-3">
       <input autocomplete="off" class="form-control py-2 shadow-none border-right-0 border" type="search"
@@ -34,13 +34,14 @@
                 <td class="name text-truncate">{{getCustomerNameByID(item.userID)}}</td>
                 <td class="price text-truncate"><small>{{item.amount|currency}}</small></td>
                 <td class="date text-truncate"><small>{{item.date|date}}</small></td>
-                <!-- <td class="d-flex">
+                <td class="d-flex">
+                <!-- 
                   <button type="button" class="btn shadow-none darkBlue"><i class="fa fa-eye"
                       aria-hidden="true"></i></button>
-
-                  <button type="button" onclick="deletes('${element.id}')" class="btn shadow-none darkBlue"><i
+                 -->   
+                  <button type="button" (click)="deleteOrder(item.id)" class="btn shadow-none darkBlue"><i
                       class="fa fa-trash" aria-hidden="true"></i></button>
-
+                  <!--  
                   <button type="button" onclick="Update(
                                         '${element.id}',
                                         '${element.image}',

@@ -9,6 +9,10 @@ import { ProductComponent } from './components/product/product.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { HomeComponent } from './components/home/home.component';
 import { MyBBagComponent } from './components/my-bbag/my-bbag.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
@@ -25,6 +29,10 @@ const routes: Routes = [
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
+  {path :'Register',component: RegisterComponent},
+  {path :'Login',component: LoginComponent},
+  {path :'ForgotUsername',component: RecoverUsernameComponent},
+  {path :'ForgotPassword',component: RecoverPasswordComponent},
   {path:"",redirectTo:'Home',pathMatch:'full'},
 
 ];

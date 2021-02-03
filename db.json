@@ -17,6 +17,17 @@
       "phoneNumber": "01234567890",
       "totalOrdered": 200,
       "dateOfJoin": "12/02/2019"
+    },
+    {
+      "email": "sarah@gmail.com",
+      "password": "1234",
+      "birthday": {
+        "month": "4",
+        "day": "4",
+        "year": "4444"
+      },
+      "termsandconditionsCheck": true,
+      "id": 3
     }
   ],
   "admins": [
@@ -113,25 +124,6 @@
       "available": true,
       "rating": 5,
       "categoryID": 1
-    },
-    {
-      "name": "proTest",
-      "description": "pro Description Test",
-      "price": "2000",
-      "stock": "4",
-      "image": "https://picsum.photos/200",
-      "available": "on",
-      "rating": "15",
-      "categoryID": 1,
-      "id": 9
-    },
-    {
-      "id": 998,
-      "Name": "ekkde",
-      "Price": 15,
-      "Quantity": 0,
-      "CategoryID": 0,
-      "ImgURL": "xyzz"
     }
   ],
   "categories": [

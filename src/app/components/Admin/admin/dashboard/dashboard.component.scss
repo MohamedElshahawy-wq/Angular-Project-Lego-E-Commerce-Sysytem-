@@ -1,0 +1,138 @@
+.darkBlue {
+    color: #364a63;
+}
+
+.dash1 {
+    background-color: #583D72;
+}
+
+.dash1Bottom {
+    background-color: #51326e;
+}
+
+.dash2 {
+    background-color: #433D3C;
+}
+
+.dash2Bottom {
+    background-color: #3f3635;
+}
+
+.dash3 {
+    background-color: #654062;
+}
+
+.dash3Bottom {
+    background-color: #533150;
+}
+
+.dash4 {
+    background-color: #B83B5E;
+}
+
+.dash4Bottom {
+    background-color: #a82c4f;
+}
+
+.dash1,
+.dash2,
+.dash3,
+.dash4 {
+    transition: transform 0.5s;
+}
+
+.dash1:hover,
+.dash2:hover,
+.dash3:hover,
+.dash4:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.totalSalesDash {
+    background-color: #3A2272;
+}
+
+.totalSalesView {
+    color: #9D72FF;
+    transition: opacity 0.2s;
+}
+
+.totalSalesView:hover {
+    text-decoration: none;
+    opacity: 0.7;
+    color: #9D72FF;
+}
+
+.totalSalesDashTxt {
+    color: #d4c2ff;
+}
+
+.totalSalesDashPercentage,
+.averageOrderDashPercentage {
+    color: #1ee0ac;
+}
+
+.averageOrderDashTxt,
+.averageOrderDashIcon,
+.targetTxt,
+.recentOrders {
+    color: #364A63;
+}
+
+.targetSubTxt {
+    color: #797979;
+}
+
+.target {
+    font-size: 2rem;
+}
+
+.progress {
+    height: 7px;
+}
+
+.dashIcons {
+    opacity: 0.1;
+}
+
+.moreInfoBtn {
+    transition: opacity 0.8s;
+}
+
+.moreInfoBtn:hover {
+    opacity: 0.5;
+}
+
+.table-hover tbody tr td,
+.table-hover tbody tr th {
+    transition: transform 0.5s;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    transform: scale(1.05, 1.05);
+}
+
+thead>tr {
+    border-top: hidden;
+    color: #8094ae;
+}
+
+tbody>tr th {
+    font-weight: 500;
+    color: #7a3fff;
+}
+
+tbody>tr .name,
+tbody>tr .price {
+    color: #364a63;
+}
+
+tbody>tr .date {
+    color: #8094ae;
+}
+
+td {
+    min-width: 50px;
+    max-width: 120px;
+}

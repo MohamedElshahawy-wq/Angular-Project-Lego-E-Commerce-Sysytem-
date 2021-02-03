@@ -29,6 +29,20 @@ export class OrdersComponent implements OnInit {
     )
   }
 
+  deleteOrder(id) {
+    this.orderSrv.deleteOrder(id).subscribe(
+      (resp)=>{
+        this.orderSrv.getAllOrders().subscribe(
+          (res)=>{
+            this.orderList=res
+          },
+          (err)=>{console.log(err)}
+        )
+      },
+      (err)=>{console.log(err)}
+    )
+  }
+
   getCustomerNameByID(id:number) : string {
     let x = this.customerList?.find(element=> element.id == id);
     return `${x?.name}`
