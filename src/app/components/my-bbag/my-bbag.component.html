@@ -46,13 +46,13 @@
                   </tr>
       <!--              ///////////////////-->
       <!--              //////////////row 1 ///////////////////-->
-                  <tr>
-                    <th scope="row"><img src="tshirt.png" style="width:30%;height: auto"></th>
+                  <tr *ngFor="let prd of ProductList">
+                    <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
                     <td class="w-25">
-                  <small><b>Levi's xLEGO T-Shirt<br>(8-14)</b></small><br><br>
+                  <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
                         <small style="color: green">Available now</small><br><br>
                         <small>Qty:3</small><br><br>
-                        <small><b>$9.99</b></small>
+                        <small><b>{{prd.price}}</b></small>
                   </td>
                     <td><br><br>
                          <div class="btn-group" role="group" aria-label="Basic outlined example">
@@ -64,29 +64,9 @@
                     </td>
                    <td><br><br><i class="far fa-trash-alt" style="font-size: 19px;color:#1f8bff"></i></td>
                    <td><br><br><i class="far fa-heart"  style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><small><b>$29.9</b></small></td>
+                   <td><br><br><small><b>{{prd.price}}</b></small></td>
                   </tr>
-                  <tr>
-      <!--                /////////////// row 2 ///////////-->
-                    <th scope="row"><img src="weddinfavour2.png" style="width:40%;height: auto"></th>
-                    <td class="w-25">
-                  <small><b><a href="">Wedding Favour 2020</a><br></b></small><br><br>
-                        <small style="color: green">Available now</small><br><br>
-                        <small>Qty:3</small><br><br>
-                        <small><b>$9.99</b></small>
-                  </td>
-                    <td><br><br>
-                         <div class="btn-group" role="group" aria-label="Basic outlined example">
-                         <button type="button" class="btn btn-outline-primary">-</button>
-                         <button type="button" class="btn btn-outline-primary">3</button>
-                         <button type="button" class="btn btn-outline-primary">+</button>
-                            </div> 
-                      
-                    </td>
-                   <td><br><br><i class="far fa-trash-alt" style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><i class="far fa-heart"  style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><small><b>$22.9</b></small></td>
-                  </tr>
+                  -->
                 </tbody>
               </table>
                       </div>

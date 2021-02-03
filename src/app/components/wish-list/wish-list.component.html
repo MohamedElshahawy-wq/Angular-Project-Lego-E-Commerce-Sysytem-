@@ -36,13 +36,13 @@
             
     <!--              ///////////////////-->
     <!--              //////////////row 1 ///////////////////-->
-            <tr>
-              <th scope="row"><img src="tshirt.png" style="width:30%;height: auto"></th>
+            <tr  *ngFor="let prd of ProductList">
+              <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
               <td class="w-25">
-                <small><b>Levi's xLEGO T-Shirt<br>(8-14)</b></small><br><br>
+                <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
                       <small style="color: green">Available now</small><br><br>
                       <small>Qty:3</small><br><br>
-                      <small><b>$9.99</b></small>
+                      <small><b>{{prd.price}}</b></small>
                 </td>
               <td><br><br>
                      
