@@ -1,33 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ahmed",
-      "email": "ahmed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 100,
-      "dateOfJoin": "02/10/2020"
-    },
-    {
-      "id": 2,
-      "name": "Mohamed",
-      "email": "mohamed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 200,
-      "dateOfJoin": "12/02/2019"
-    },
-    {
       "email": "sarah@gmail.com",
       "password": "1234",
       "birthday": {
-        "month": "4",
-        "day": "4",
-        "year": "4444"
+        "month": "01",
+        "day": "04",
+        "year": "1994"
       },
       "termsandconditionsCheck": true,
-      "id": 3
+      "id": 1
+    },
+    {
+      "email": "nour@gmail.com",
+      "password": "1234",
+      "birthday": {
+        "month": "11",
+        "day": "14",
+        "year": "1998"
+      },
+      "termsandconditionsCheck": true,
+      "id": 2
     }
   ],
   "admins": [
