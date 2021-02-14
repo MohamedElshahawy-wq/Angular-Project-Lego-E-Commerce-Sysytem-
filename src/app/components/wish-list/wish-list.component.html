@@ -2,7 +2,7 @@
     <div class="row">
 <div class="col-lg-8">
         <br><br><br>
-<h3>wish list</h3><br><br><br>
+<h3>{{'wishList.wish'|translate}}</h3><br><br><br>
 
 
         <!-- <span>Your wish list is currently empty!</span> -->
@@ -11,7 +11,7 @@
         <table class="table table-image table-responsive">
           <thead>
             <tr style="background-color:#ededeb">
-              <th scope="col">Items</th> 
+              <th scope="col">{{'wishList.Items'|translate}}</th> 
               <th scope="col"></th>
               <th scope="col"></th>
               <th scope="col"></th>
@@ -22,7 +22,7 @@
 
 
               <th scope="col" class="tab-space"></th>
-                   <th scope="col" >Total</th>
+                   <th scope="col" >{{'wishList.Total'|translate}}</th>
             </tr>
           </thead>
           <tbody>
@@ -40,8 +40,8 @@
               <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
               <td class="w-25">
                 <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
-                      <small style="color: green">Available now</small><br><br>
-                      <small>Qty:3</small><br><br>
+                      <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br>
+                      <small>{{'Checkout.QTY'|translate}}:3</small><br><br>
                       <small><b>{{prd.price}}</b></small>
                 </td>
               <td><br><br>
@@ -61,19 +61,19 @@
 </div>
 <div class="col-lg-1">
         <br><br><br>
- <span><a href="Mybag2.html">my bag</a></span><br><br><br>
+ <span><a href="Mybag2.html">{{'wishList.bag'|translate}} </a></span><br><br><br>
 </div>
     
 <div class="col-lg-3" style="padding: 15px">
    <div class="card" style="width: 18rem;">
-    <br><h6>Discover the benefits of <br>creating a LEGO ID</h6>
+    <br><h6>{{'wishList.benefits'|translate}} <br> {{'wishList.ID'|translate}}</h6>
        <hr>
     <div class="card-body">
 <!--            <h5 class="card-title">Card title</h5>-->
-    <p class="card-text">Access your Wish List from any computer - even if it's on a space ship orbiting the moon.</p>
+    <p class="card-text">{{'wishList.computer'|translate}}</p>
 <!--            <a href="#" class="btn btn-primary">Sign in</a>-->
-        <button type="button" class="btn btn-outline-primary">sign in</button>
-        <p>Not a member yet?<a href="#">Sign Up</a></p>
+        <button type="button" class="btn btn-outline-primary">{{'wishList.SignIn'|translate}}</button>
+        <p>{{'wishList.Not'|translate}}<a href="#">{{'wishList.SignUp'|translate}}</a></p>
     </div>
   </div>
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" dir="auto">
   <div class="row">
     <div class="col"></div>
 
@@ -12,7 +12,7 @@
           <span
             class="navbar-brand mb-0 h1 justify-content-left text-center"
             id="navTxt"
-            ><strong>Account</strong></span
+            ><strong>{{'User.Account'|translate}}</strong></span
           >
           <button
             type="button"
@@ -39,7 +39,7 @@
                 id="signinEmailLabel"
                 for="usernameSigninTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >Username</label
+                >{{'login.Username' |translate}}</label
               >
               <input
                 #loginemail = "ngModel"
@@ -52,7 +52,7 @@
                 required
               />
               <div class="text-danger text-left emailWarn" [hidden]="loginemail.valid">
-                This field is required
+                {{'login.FRequired' |translate}}
               </div>
             </div>
 
@@ -61,7 +61,7 @@
                 id="signinPasswordLabel"
                 for="passwordSigninTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >Password</label
+                >{{'User.Password' | translate}}</label
               >
               <input
                 #loginpass = "ngModel"
@@ -74,7 +74,7 @@
                 required
               />
               <div class="text-danger text-left passWarn" [hidden]="loginpass.valid">
-                This field is required
+                {{'login.FRequired' |translate}}
               </div>
             </div>
 
@@ -92,38 +92,34 @@
                   href="#"
                   id="signinCheckLabel"
                   class="form-check-label d-flex text-left justify-content-left"
-                  for="rememberMeCheck"
-                  >Remember me</a
-                >
+                  for="rememberMeCheck">{{'login.Remember' |translate}}</a>
               </div>
               <p
                 id="logoutTxt"
-                class="text-left"
-              >
-                Remember to log out afterwards if you're using a shared<br />computer,
-                for example in a library or school.
+                class="text-left" >
+                {{'login.R' |translate}}<br />{{'login.R1' |translate}}
               </p>
             </div>
 
             <button type="submit" id="signInLogInBtn" class="btn">
-              Log in
+              {{'User.Log' |translate}}
             </button>
           </form>
 
           <div class="d-flex">
             <a href="#" id="forgotUsername" [routerLink]="['/ForgotUsername']"
-              ><strong>Forgot username?</strong></a
+              ><strong>{{'login.ForgotName' |translate}}</strong></a
             >
 
             <div class="vl"></div>
 
             <a href="#" id="forgotPassword" [routerLink]="['/ForgotPassword']"
-              ><strong>Forgot password?</strong></a
+              ><strong>{{'login.ForgotPass' |translate}}</strong></a
             >
           </div>
           <div class="d-flex">
             <hr class="Line" />
-            <p id="ORtxt">Or</p>
+            <p id="ORtxt">{{'login.or' |translate}}</p>
             <hr class="Line" />
           </div>
           <div class="d-flex">
@@ -131,8 +127,7 @@
               id="ContinueWFBbtn"
               class="text-center justify-content-center d-flex"
             >
-              <i class="fab fa-facebook-square" id="FBicon"></i> Continue with
-              Facebook
+              <i class="fab fa-facebook-square" id="FBicon"></i> {{'User.Facebook'|translate}}
           </button>
             <img
               src="assets/images/Register-Login-Images/search.png"
@@ -145,8 +140,8 @@
           </div>
           <br />
           <br />
-          <p style="margin-bottom: 3px">Don’t have a LEGO® Account?</p>
-          <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">Create Account</a>
+          <p style="margin-bottom: 3px">{{'login.Dont' |translate }}</p>
+          <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">{{'login.CrAccount' | translate}}</a>
         </div>
       </div>
       <br />

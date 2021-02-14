@@ -1,223 +1,185 @@
-    <!-- Start Body Main -->
-    <div class="container-fluid" style="padding-left: 0;padding-right: 0;overflow-x: hidden;">
-        <div class="container text-center">
-            <span class="header" routerLink="/About/AboutUs"routerLinkActive="active">About Us</span>
-            <nav class="navbar navbar-expand-md text-center">
-                <button class="navbar-toggler ml-auto" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false">
-                    <i class="fa fa-angle-down"></i>
-                </button>
-                <div id="my-nav" class="collapse navbar-collapse">
-                    <ul class="navbar-nav m-auto pb-4">
-                        <li class="nav-item mx-4 mr-auto drop">
-                            <a class="nav-link" routerLink="/About/legoGroup"routerLinkActive="active">The LEGO Group</a>
-                            <div class="dropdown-content text-left">
-                                <a href="#">Management</a>
-                                <a href="#">The LEGO Brand</a>
-                                <a href="#">Ownership</a>
-                                <a href="#">Policies and Reporting</a>
-                            </div>
-                        </li>
-                        <li class="nav-item mx-4 mr-auto drop">
-                            <a class="nav-link" routerLink="/About/sustainability"routerLinkActive="active">Sustainability</a>
-                            <div class="dropdown-content text-left">
-                                <a href="#">Children</a>
-                                <a href="#">Environment</a>
-                                <a href="#">People</a>
-                                <a href="#">Sustainability reporting</a>
-                                <a href="#">Discover</a>
-                                <a href="#">Newsroom</a>
-                            </div>
-                        </li>
-                        <li class="nav-item mx-4 mr-auto">
-                            <a class="nav-link" routerLink="/About/discover"routerLinkActive="active">Discover</a>
-                        </li>
-                        <li class="nav-item mx-4 mr-auto">
-                            <a class="nav-link" href="#">Newsroom</a>
-                        </li>
-                        <li class="nav-item mx-4 mr-auto drop">
-                            <a class="nav-link" href="#">Careers</a>
-                            <div class="dropdown-content text-left">
-                                <a routerLink="/About/whoWe"routerLinkActive="active">Who we are</a>
-                                <a href="#">Why join us</a>
-                                <a href="#">Behind the Bricks</a>
-                                <a href="#">Candidate Zone</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- main -->
-        <div class="container-fluid text-center mb-3">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Who we are</h1>
-                </div>
+<!-- Start Body Main -->
+<div class="container-fluid" style="padding-left: 0;padding-right: 0;overflow-x: hidden;" dir="auto">
+    <div class="container text-center">
+        <span class="header" routerLink="/About/AboutUs" routerLinkActive="active">{{'About.AboutUs' |translate}}</span>
+        <nav class="navbar navbar-expand-md text-center">
+            <button class="navbar-toggler ml-auto" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+                aria-expanded="false">
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav m-auto pb-4">
+                    <li class="nav-item mx-4 mr-auto drop">
+                        <a class="nav-link" routerLink="/About/legoGroup" routerLinkActive="active">{{'About.LEGOGroup'
+                            |translate}}</a>
+                        <div class="dropdown-content text-left">
+                            <a href="#">{{'About.Management' |translate}}</a>
+                            <a href="#">{{'About.LEGOBrand' |translate}}</a>
+                            <a href="#">{{'About.Ownership' |translate}}</a>
+                            <a href="#">{{'About.SusReporting' |translate}}</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-4 mr-auto drop">
+                        <a class="nav-link" routerLink="/About/sustainability"
+                            routerLinkActive="active">{{'About.Sustainability' |translate}}</a>
+                        <div class="dropdown-content text-left">
+                            <a href="#">{{'About.Children' |translate}}</a>
+                            <a href="#">{{'About.Environment' |translate}}</a>
+                            <a href="#">{{'About.People' |translate}}</a>
+                            <a href="#">{{'About.SusReporting' |translate}}</a>
+                            <a href="#">{{'About.Discover' |translate}}</a>
+                            <a href="#">{{'About.Newsroom' |translate}}</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-4 mr-auto">
+                        <a class="nav-link" routerLink="/About/discover" routerLinkActive="active">{{'About.Discover' |translate}}</a>
+                    </li>
+                    <li class="nav-item mx-4 mr-auto">
+                        <a class="nav-link" href="#">{{'About.Newsroom' |translate}}</a>
+                    </li>
+                    <li class="nav-item mx-4 mr-auto drop">
+                        <a class="nav-link" href="#">{{'About.Careers' |translate}}</a>
+                        <div class="dropdown-content text-left">
+                            <a routerLink="/About/whoWe" routerLinkActive="active">{{'About.Who' |translate}}</a>
+                            <a href="#">{{'About.WhyJoin' |translate}}</a>
+                            <a href="#">{{'About.BehindBricks' |translate}}</a>
+                            <a href="#">{{'About.CandidateZone' |translate}}</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12" style="padding: 0;">
-                    <img src="assets/images/Who_we_are_cover.jpg" width="100%">
-                </div>
-                <div class="col-12 text-center" style="padding: 0;font-size: 14px !important;">
-                    <h2 class="m-4">Hello</h2>
-                    <h6 class="m-4" style="font-weight: lighter;">Welcome to the LEGO Group – the company behind the
-                        bricks. We’ve been sparking children’s imaginations and inspiring the builders of tomorrow since
-                        1932. Our 18,000+ colleagues across the world keep this spirit alive today.</h6>
-                    <h6 class="m-4" style="font-weight: lighter;">To discover what we’re made of, where we work and how
-                        we do things, just have a look around.</h6>
-                    <button style="background: rgba(0, 0, 0, 0.781); color: #fff;border-radius: 5px;">Explore jobs at
-                        the LEGO Group</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid my-4">
-            <div class="row">
-                <div class="col-md-4 p-4 m-0" style="background: red; color: #fff;">
-                    <h2>Our locations</h2>
-                    <p>Billund, Denmark is our home, but we have 5 main hubs, 37 sales offices, 5 manufacturing sites,
-                        over 500 retail stores and awesome people all around the world. Here’s where you’ll find our
-                        main regional hubs.</p>
-                </div>
-                <div class="col-md-8" style="padding: 0;">
-                    <img src="assets/images/Locations.jpg" alt="" width="100%">
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid row" style="font-size: 14px !important;">
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/who1.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Billund, Denmark</h6>
-                <p>We care deeply for our people who are part of making LEGO® play experiences possible and are
-                    committed to upholding human rights and ensuring safe, healthy and respectful workplaces for our
-                    employees. We strive to champion responsible business principles across the company.</p>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/who2.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Enfield, USA</h6>
-                <p>We know that play is vital to every child’s development. When children play, they learn to solve
-                    problems, to be creative, and to become resilient. It helps them thrive in a complex and challenging
-                    world.</p>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/who3.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>London,UK</h6>
-                <p>We know that play is vital to every child’s development. When children play, they learn to solve
-                    problems, to be creative, and to become resilient. It helps them thrive in a complex and challenging
-                    world.</p>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/who4.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Shanghai, China</h6>
-                <p>We care deeply for our people who are part of making LEGO® play experiences possible and are
-                    committed to upholding human rights and ensuring safe, healthy and respectful workplaces for our
-                    employees. We strive to champion responsible business principles across the company.</p>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/who5.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Singapore</h6>
-                <p>We know that play is vital to every child’s development. When children play, they learn to solve
-                    problems, to be creative, and to become resilient. It helps them thrive in a complex and challenging
-                    world.</p>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8" style="padding: 0;">
-                    <img src="assets/images/Ownership_tall.jpg" alt="" width="100%">
-                </div>
-                <div class="col-md-4 p-2" style="background: #eee;">
-                    <p style="font-size: 14px;">Since Ole Kirk Cristiansen founded his carpentry business in 1932, the
-                        Kirk Kristiansen family have played a leading role in the business. This continues today, with
-                        our 4th generation owners, so the values, beliefs and traditions that Ole created still guide
-                        us.
-                        The family remains committed to making a positive difference to children around the world, via
-                        Learning-through-Play. This ambition is laid out in the LEGO® Idea Paper, which describes their
-                        fundamental belief that children are our role models. We see it come alive throughout the LEGO
-                        Brand Framework, which steers everything</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid row" style="font-size: 14px !important;">
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/DicHistory.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Our history</h6>
-                <p>We care deeply for our people who are part of making LEGO® play experiences possible and are
-                    committed to upholding human rights and ensuring safe, healthy and respectful workplaces for our
-                    employees.</p>
-                <div class="linkA  text-center">
-                    <a href="">Read more
-                        <i class="fa fa-angle-right ml-2 "></i></a>
-                </div>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/Brand.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Our brand framework</h6>
-                <p>We know that play is vital to every child’s development. When children play, they learn to solve
-                    problems, to be creative, and to become resilient. It helps them thrive in a complex and challenging
-                    world.</p>
-                <div class="linkA  text-center">
-                    <a href="">Read more
-                        <i class="fa fa-angle-right ml-2 "></i></a>
-                </div>
-            </div>
-            <div class="text-center cenDIV col-md-4 col-6">
-                <img src="assets/images/Building_for_tomorrow.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h6>Building for tomorrow</h6>
-                <p>We know that play is vital to every child’s development. When children play, they learn to solve
-                    problems, to be creative, and to become resilient. It helps them thrive in a complex and challenging
-                    world.</p>
-                <div class="linkA  text-center">
-                    <a href="">Read more
-                        <i class="fa fa-angle-right ml-2 "></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 p-2" style="background: #EE7500;color: #fff;">
-                    <h2 class="text-center">LEGO Group</h2>
-                    <p style="font-size: 14px;">Diversity and inclusion here is a living thing. It’s something everyone
-                        can contribute to, shape, and take further. And it starts with our global priorities, valuing
-                        differences and improving our representation. We’re working towards these by building the
-                        inclusion capability in our organisation, inspiring children from all walks of life to learn
-                        through play, improving our HR processes and tools, and much more. By getting colleagues
-                        involved worldwide, we bring our global ideas to life at a local level wherever we work.</p>
-                </div>
-                <div class="col-md-8" style="padding: 0;">
-                    <img src="assets/images/Inclusion.jpg" alt="" width="100%">
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid mb-4">
-            <div class="row">
-                <div class="col-md-8" style="padding: 0;">
-                    <img src="assets/images/Responsible_children_engagement.jpg" alt="" width="100%">
-                </div>
-                <div class="col-md-4 p-2" style="background: #009BD7;color: #fff;">
-                    <h2 class="text-center">with children</h2>
-                    <p style="font-size: 14px;">In 2014, we were proud to be the first company in the toy sector to sign
-                        the UNICEF Declaration of Child Rights & Business Principles. This began a partnership that has
-                        shaped our Child Safeguarding and Social Responsibility Strategies. Children are our role models
-                        and keeping them safe is at the centre of everything we do. This means ensuring children’s
-                        physical safety, but also building a sense of emotional safety – enabling them to explore, grow,
-                        learn and develop through amazing LEGO play experiences.
-                        For roles that regularly engage with children, we include child safeguarding background
-                        screening during</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid text-center" style="padding-bottom: 40px !important;">
-            <h2 style="font-weight: lighter;padding: 16px;">This is just a quick look at the LEGO Group, but there’s a
-                lot more to explore.</h2>
-            <div class="linkA  text-center" style="font-size: 12px;padding: 10px;">
-                <a class="mr-4" href="">Explore current opportunities
-                    <i class="fa fa-angle-right ml-2 "></i></a>
-                <a class="ml-4" href="">Find out why you should join us
-                    <i class="fa fa-angle-right ml-2 "></i></a>
-            </div>
-        </div>
-        <!-- end main -->
+        </nav>
     </div>
-    <!-- End Body Main -->
+    <!-- Start main -->
+    <div class="container-fluid text-center mb-3">
+        <div class="row">
+            <div class="col-12">
+                <h1>{{'About.Who' |translate}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" style="padding: 0;">
+                <img src="assets/images/Who_we_are_cover.jpg" width="100%">
+            </div>
+            <div class="col-12 text-center" style="padding: 0;font-size: 14px !important;">
+                <h2 class="m-4">{{'WHOWE.Hello'|translate}}</h2>
+                <h6 class="m-4" style="font-weight: lighter;">{{'WHOWE.Welcome'|translate}}</h6>
+                <h6 class="m-4" style="font-weight: lighter;">{{'WHOWE.discover'|translate}}</h6>
+                <button
+                    style="background: rgba(0, 0, 0, 0.781); color: #fff;border-radius: 5px;">{{'WHOWE.Explore'|translate}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col-md-4 p-4 m-0" style="background: red; color: #fff;">
+                <h2>{{'WHOWE.locations'|translate}}</h2>
+                <p>{{'WHOWE.Billund'|translate}}</p>
+            </div>
+            <div class="col-md-8" style="padding: 0;">
+                <img src="assets/images/Locations.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row" style="font-size: 14px !important;">
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/who1.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.Billund2'|translate}}</h6>
+            <p>{{'WHOWE.deeply'|translate}}</p>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/who2.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.Enfield'|translate}}</h6>
+            <p>{{'WHOWE.know'|translate}}</p>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/who3.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.London'|translate}}</h6>
+            <p>{{'WHOWE.know'|translate}}</p>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/who4.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.Shanghai'|translate}}</h6>
+            <p>{{'WHOWE.deeply'|translate}}</p>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/who5.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.Singapore'|translate}}</h6>
+            <p>{{'WHOWE.know'|translate}}</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8" style="padding: 0;">
+                <img src="assets/images/Ownership_tall.jpg" alt="" width="100%">
+            </div>
+            <div class="col-md-4 p-2" style="background: #eee;">
+                <p style="font-size: 14px;">{{'WHOWE.Kirk'|translate}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row" style="font-size: 14px !important;">
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/DicHistory.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.history'|translate}}</h6>
+            <p>{{'WHOWE.deeply'|translate}}</p>
+            <div class="linkA  text-center">
+                <a href="">{{'WHOWE.ReadMore'|translate}}
+                    <i class="fa fa-angle-right ml-2 "></i></a>
+            </div>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/Brand.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.framework'|translate}}</h6>
+            <p>{{'WHOWE.know'|translate}}</p>
+            <div class="linkA  text-center">
+                <a href="">{{'WHOWE.ReadMore'|translate}}
+                    <i class="fa fa-angle-right ml-2 "></i></a>
+            </div>
+        </div>
+        <div class="text-center cenDIV col-md-4 col-6">
+            <img src="assets/images/Building_for_tomorrow.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h6>{{'WHOWE.tomorrow'|translate}}</h6>
+            <p>{{'WHOWE.know'|translate}}</p>
+            <div class="linkA  text-center">
+                <a href="">{{'WHOWE.ReadMore'|translate}}
+                    <i class="fa fa-angle-right ml-2 "></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 p-2" style="background: #EE7500;color: #fff;">
+                <h2 class="text-center">{{'WHOWE.LEGOGroup'|translate}}</h2>
+                <p style="font-size: 14px;">{{'WHOWE.Diversity'|translate}}</p>
+            </div>
+            <div class="col-md-8" style="padding: 0;">
+                <img src="assets/images/Inclusion.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-4">
+        <div class="row">
+            <div class="col-md-8" style="padding: 0;">
+                <img src="assets/images/Responsible_children_engagement.jpg" alt="" width="100%">
+            </div>
+            <div class="col-md-4 p-2" style="background: #009BD7;color: #fff;">
+                <h2 class="text-center">{{'WHOWE.children'|translate}} </h2>
+                <p style="font-size: 14px;">{{'WHOWE.were'|translate}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center" style="padding-bottom: 40px !important;">
+        <h2 style="font-weight: lighter;padding: 16px;">{{'WHOWE.This'|translate}}</h2>
+        <div class="linkA  text-center" style="font-size: 12px;padding: 10px;">
+            <a class="mr-4" href="">{{'WHOWE.opportunities'|translate}}
+                <i class="fa fa-angle-right ml-2 "></i></a>
+            <a class="ml-4" href="">{{'WHOWE.join'|translate}}
+                <i class="fa fa-angle-right ml-2 "></i></a>
+        </div>
+    </div>
+    <!-- end main -->
+</div>
+<!-- End Body Main -->
