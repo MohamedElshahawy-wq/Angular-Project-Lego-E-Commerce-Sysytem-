@@ -10,6 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { I18nModule } from 'src/app/i18n/i18n.module';
 
 const routes: Routes = [
   {path: 'Dashboard', component: DashboardComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   declarations: [DashboardComponent, MenuComponent, CategoriesComponent, CustomersComponent, OrdersComponent, ProductsComponent, AddProductComponent, AddCategoryComponent],
   imports: [
     CommonModule,
+    I18nModule,
     RouterModule.forChild(routes),
     FormsModule
   ]

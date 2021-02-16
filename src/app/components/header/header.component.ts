@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild , ElementRef} from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -6,7 +8,9 @@ import { Component, OnInit, ViewChild , ElementRef} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('mySidenav') mySidenav:  ElementRef;
-  constructor() { }
+  
+  constructor(public translate: TranslateService) { }
+
   ngOnInit(): void {
   }
   openNav() {

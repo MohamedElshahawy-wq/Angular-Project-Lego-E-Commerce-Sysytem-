@@ -1,197 +1,192 @@
+<!-- -------------------header------------------------- -->
+<ul class="nav d-flex justify-content-between bg-warning text-justify" dir="auto">
+  <li class="nav-item ">
+    <a class="nav-link active" aria-current="page" href="Mybag2.html" style="padding-top: 30px">{{'Checkout.MyBag' |
+      translate}}</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="#"><img src="lego.png"
+        style="width: 75px; height: auto;margin-left: auto;margin-right: auto"></a>
+  </li>
+  <li class="nav-item">
+    <p class="nav-link" style="padding-top: 30px"><i class="fas fa-lock"></i> {{'Checkout.SecureCheckout' | translate}}
+    </p>
+    <!--          <p class="fs-6"><i class="fas fa-lock"></i>Secure Checkout</p>-->
 
+  </li>
+
+</ul>
 <!-- -------------------header------------------------- -->
-<ul class="nav d-flex justify-content-between bg-warning">
-    <li class="nav-item ">
-      <a class="nav-link active" aria-current="page" href="Mybag2.html"  style="padding-top: 30px">Back to My Bag</a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="#"><img src="lego.png" style="width: 75px; height: auto;margin-left: auto;margin-right: auto"></a>
-    </li>
-    <li class="nav-item">
-      <p class="nav-link"  style="padding-top: 30px"><i class="fas fa-lock"></i> Secure Checkout</p>
-  <!--          <p class="fs-6"><i class="fas fa-lock"></i>Secure Checkout</p>-->
-  
-    </li>
-    
-  </ul>
-<!-- -------------------header------------------------- -->
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid text-justify" dir="auto">
+  <div class="row">
     <div class="col-lg-9"><br>
-    <p class="fs-6"><i class="fas fa-check-circle"></i>Shipping Address</p>
-    <form>
-       
-            
+      <p class="fs-6"><i class="fas fa-check-circle"></i>{{'Checkout.ShippingAddress' | translate}}</p>
+      <form>
+        <div class="col-sm-15">
+          <input pattern="[A-Za-z]{3}" title="Three letter country code" type="text" name="xyz" class="form-control"
+            placeholder="Name" aria-label="Name">
+        </div><br>
 
+        <div class="row g-3">
+          <div class="col-sm-7">
+            <input pattern="[A-Za-z]{30}" title="City must Contain Letters Only" type="text" class="form-control"
+              placeholder="City" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <input type="text" class="form-control" placeholder="Street Address" aria-label="Street Address">
+          </div>
+          <div class="col-sm">
+            <input pattern="[0-9]{10}" type="number" class="form-control" placeholder="Zip" aria-label="Zip">
+          </div>
+        </div>
+        <br>
 
-            <div class="col-sm-15">
-              <input pattern="[A-Za-z]{3}" title="Three letter country code" type="text" name="xyz"   class="form-control" placeholder="Name"   aria-label="Name">
-              </div><br>
+        <p class="fs-4"><i class="fas fa-check-circle"></i>{{'Checkout.ContactInfo' | translate}} </p>
 
-            <div class="row g-3">
-                <div class="col-sm-7">
-                  <input pattern="[A-Za-z]{30}" title="City must Contain Letters Only" type="text" class="form-control" placeholder="City" aria-label="City">
-                </div>
-                <div class="col-sm">
-                  <input type="text" class="form-control" placeholder="Street Address" aria-label="Street Address">
-                </div>
-                <div class="col-sm">
-                  <input pattern="[0-9]{10}"  type="number" class="form-control" placeholder="Zip" aria-label="Zip">
-                </div>
-                </div> 
-              <br>
-              
-               <p class="fs-4"><i class="fas fa-check-circle"></i> Contact Info</p>
-              
+        <div class="row g-3">
+          <div class="col-sm-7">
+            <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+          </div>
+          <div class="col-sm">
+            <input type="number" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
+          </div>
+        </div>
+        <br>
+        <!--     //////////Accordion start//////////-->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <p class="fs-5">{{'Checkout.VIPCode' | translate}}</p>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+
+                <b>{{'Checkout.Got' | translate}} </b> <br><br>
+                {{'Checkout.Discount' | translate}} <br><br>
                 <div class="row g-3">
-                <div class="col-sm-7">
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email">
-                </div>
-                <div class="col-sm">
-                  <input type="number" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
-                </div>
-                </div>
-                   <br>
-                   <!--     //////////Accordion start//////////-->
-     <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <p class="fs-5">VIP Discount Code</p>
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-         
-               <b> Got a VIP Discount Code?</b> <br><br>
-                Enter your VIP Discount Code <br><br>
-              <div class="row g-3">
-                <div class="col-sm-15">
-                <input type="text" class="form-control" placeholder="VIP Discount Code" aria-label="Email">
-                </div><br>
-                  
-           <input class="btn btn-light" type="submit" value="Apply" style="border: 1px blue solid">
-      
-      
-                </div>
+                  <div class="col-sm-15">
+                    <input type="text" class="form-control" placeholder="VIP Discount Code" aria-label="Email">
+                  </div><br>
+
+                  <input class="btn btn-light" type="submit" value="Apply" style="border: 1px blue solid">
+
+
                 </div>
               </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <p class="fs-5">Pay With Gift Card</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <p class="fs-5">{{'Checkout.Gift' | translate}}</p>
               </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <b> Gift Card Information</b> <br><br>
-      <small>If you have a Gift Card, enter it here. If you would like to redeem more than one Gift Card, enter each number separately and click 'Apply Gift Card'. You may apply up to 3 Gift Cards.</small><br><br>
-              <div class="row g-3">
-                <div class="col-sm-15">
-                <input type="text" class="form-control" placeholder="Lego Gift Card Number" aria-label="Number">
-                </div><br>
-                  
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b>{{'Checkout.GiftInformation' | translate}} </b> <br><br>
+                <small>{{'Checkout.GiftCard' | translate}}
+                </small><br><br>
+                <div class="row g-3">
+                  <div class="col-sm-15">
+                    <input type="text" class="form-control" placeholder="Lego Gift Card Number" aria-label="Number">
+                  </div><br>
+
                   <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="PIN Code" aria-label="Email">
+                    <input type="text" class="form-control" placeholder="PIN Code" aria-label="Email">
+                  </div>
+
+                  <input class="btn btn-light" type="submit" value="Apply Gift Card" style="border: 1px blue solid">
+
+
                 </div>
-                  
-           <input class="btn btn-light" type="submit" value="Apply Gift Card" style="border: 1px blue solid">
-      
-      
-                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
 
-      <!--/////////////////////////Accord end/////////////////-->
-      <br>
-      <p class="fs-4"><i class="fas fa-check-circle"></i> Payment</p>
-   
+        <!--/////////////////////////Accord end/////////////////-->
+        <br>
+        <p class="fs-4"><i class="fas fa-check-circle"></i>{{'Checkout.Payment' | translate}} </p>
 
 
-<div class="col-sm-15">
-<input type="text" class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Card Number" aria-label="Card Number">
-</div><br>
 
-<div class="row g-3">
-    <div class="col-sm-3">
-     <input type="text" class="form-control" placeholder="Expiry Date" aria-label="Expiry Date">
-     </div>
-     <div class="col-sm-1">
-     <input type="text" class="form-control" placeholder="CVV" aria-label="CVV">
-     </div>
-    </div><br>
-    <button type="submit" class="btn btn-light" >Place Order</button>
-    </form>
+        <div class="col-sm-15">
+          <input type="text" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            placeholder="Card Number" aria-label="Card Number">
+        </div><br>
+
+        <div class="row g-3">
+          <div class="col-sm-3">
+            <input type="text" class="form-control" placeholder="Expiry Date" aria-label="Expiry Date">
+          </div>
+          <div class="col-sm-1">
+            <input type="text" class="form-control" placeholder="CVV" aria-label="CVV">
+          </div>
+        </div><br>
+        <button type="submit" class="btn btn-light">{{'Checkout.Place' | translate}}</button>
+      </form>
     </div>
-<!-- -------------------Right Left ------------------ -->
-<div class="col-lg-3" style="padding: 15px;">
-    <div class="card" style="width: 18rem;">
+    <!-- -------------------Right Left ------------------ -->
+    <div class="col-lg-3" style="padding: 15px;">
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Order Summary</h5>
-            <hr>
-          <p class="card-text" style="  word-spacing: 135px;">subtotal  $51.97</p>
-          <p class="card-text" style="  word-spacing: 80px;" >StandardShipping  Free</p>
-          <p class="card-text" style="  word-spacing: 170px;">TAX  $4.29</p>
-          <p class="card-title" style="  word-spacing: 105px;"><b>OrderTotal  $56.26</b></p>
-            <img src='freeholiday.png' style="width: 150px; height: auto;">
+          <h5 class="card-title">{{'Checkout.Order' | translate}}</h5>
+          <hr>
+          <p class="card-text" style="  word-spacing: 135px;">{{'Checkout.subtotal' | translate}} $51.97</p>
+          <p class="card-text" style="  word-spacing: 80px;">{{'Checkout.StandardShipping' | translate}} </p>
+          <p class="card-text" style="  word-spacing: 170px;">TAX $4.29</p>
+          <p class="card-title" style="  word-spacing: 105px;"><b>{{'Checkout.OrderTotal' | translate}} $56.26</b></p>
+          <img src='freeholiday.png' style="width: 150px; height: auto;">
         </div>
       </div>
       <!--/////////////////////////////////////////////////////-->
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Wedding favour set 2018</h5>
+          <h5 class="card-title">{{'Checkout.Wedding' | translate}} 2018</h5>
           <!-- <p class="card-text"><p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br>  <b>$9.99</b></p> -->
-          <p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br>  <b>$9.99</b>
+          <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br> {{'Checkout.QTY' | translate}} :
+          3 <br> <b>$9.99</b>
 
           <img src="weddingfavour.png" style="width: 150px; height: auto;">
-      
+
         </div>
       </div>
 
     </div>
 
 
-<!-- -------------------Right Left end------------------ -->
+    <!-- -------------------Right Left end------------------ -->
 
 
-</div>
+  </div>
 </div>
 
 
 <!-- -------------------Footer------------------------- -->
 
-  <footer>
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-7">
-          <p>
-            Customer Service
-1-800-835-4386
+<footer>
+  <div class="container-fluid text-justify" dir="auto">
+    <div class="row">
+      <div class="col-lg-7">
+        <p>{{'Checkout.prag' | translate}} </p>
 
-LEGO Brand Retail, Inc. 555 Taylor Road, Enfield, CT 06082, USA. Must be 18 years or older to purchase online.
+      </div>
+      <br><br><br><br><br><br>
+      <div class="col-lg-5">
+        <i class="fab fa-cc-mastercard" style="font-size: 50px"></i>
+        <i class="fab fa-cc-visa" style="font-size: 50px"></i>
+        <i class="fab fa-cc-discover" style="font-size: 50px"></i>
+        <i class="fab fa-cc-amex" style="font-size: 50px"></i>
+        <i class="fab fa-cc-paypal" style="font-size: 50px"></i>
+      </div>
 
-LEGO, the LEGO logo, the Minifigure, DUPLO, LEGENDS OF CHIMA, NINJAGO, BIONICLE, MINDSTORMS and MIXELS are trademarks and copyrights of the LEGO Group. ©2019 The LEGO Group. All rights reserved. Use of this site signifies your agreement to the terms of use.
-
-
-         </p>
-          
-          </div>
-          <br><br><br><br><br><br>
-           <div class="col-lg-5">
-          <i class="fab fa-cc-mastercard" style="font-size: 50px" ></i>
-          <i class="fab fa-cc-visa" style="font-size: 50px"></i>
-          <i class="fab fa-cc-discover" style="font-size: 50px"></i>
-           <i class="fab fa-cc-amex" style="font-size: 50px"></i>
-         <i class="fab fa-cc-paypal" style="font-size: 50px"></i>
-
-
-
-          </div>
-        
-      </div>  
     </div>
-    </footer>
+  </div>
+</footer>

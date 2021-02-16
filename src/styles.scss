@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'ae_Hani';
+    src: url('./assets/font/ae_Hani.ttf');
+}
+@font-face {
+    font-family: 'CeraProLight';
+    src: url('./assets/font/CeraProLight.otf');
+}
+* {
+    font-family: 'CeraProLight','ae_Hani' ;
+  }

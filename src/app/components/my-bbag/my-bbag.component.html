@@ -1,10 +1,10 @@
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid" >
+    <div class="row text-justify" dir="auto">
         <div class="col-lg-8">
 
-            <span class="text-start"><h3>My Cart</h3><a href="Wish.html" ><p class="text-end">View Wish List (1)</p></a></span> 
+            <span class="text-start"><h3>{{'MyBag.Cart'|translate}}</h3><a href="Wish.html" ><p class="text-end">{{'MyBag.View'|translate}} </p></a></span> 
             <div class="jumbotron" style="background-color: #ffeacc ;padding:10px ;border: 1px #cfcfcf solid ">
-                <p style="text-align: center">We’re currently receiving a lot of LEGO orders! We’re expecting delivery to take longer than usual. Please<br>order early and check your Order Status for updates.<br>
+                <p style="text-align: center">{{'MyBag.currently'|translate}}<br>{{'MyBag.currently2'|translate}}<br>
                 </p>
                   </div><br>
                   <!--//////////////////////-->
@@ -16,13 +16,13 @@
               <table class="table table-image table-responsive">
                 <thead>
                   <tr>
-                    <th scope="col">Detail</th> 
+                    <th scope="col">{{'MyBag.Detail'|translate}}</th> 
       		      <th scope="col"></th>
-                    <th scope="col" class="tab-space">Quantity</th>
+                    <th scope="col" class="tab-space">{{'MyBag.Quantity'|translate}}</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
 
-                     <th scope="col" >Total</th>
+                     <th scope="col" >{{'wishList.Total'|translate}}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -34,10 +34,10 @@
       -->
                     <th scope="row"><img src="freeholiday.png" style="width:20%;height: auto"></th>
                     <td class="w-25">
-             <span>You've qualified for a FREE </span>
+             <span>{{'MyBag.qualified'|translate}} </span>
                   </td>
                     <td>
-                   Holiday Gift  
+                      {{'MyBag.Holiday'|translate}}
                       
                     </td>
                    <td>2020 </td>
@@ -50,7 +50,7 @@
                     <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
                     <td class="w-25">
                   <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
-                        <small style="color: green">Available now</small><br><br>
+                        <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br>
                         <small>Qty:3</small><br><br>
                         <small><b>{{prd.price}}</b></small>
                   </td>
@@ -78,7 +78,7 @@
 
             </div>
             <div class="col-lg-4">
-                <br> <p class="fs-4">Order Summary</p> 
+                <br> <p class="fs-4">{{'Checkout.Order'|translate}}</p> 
             <hr>
                 <div class="accordion" id="accordionExample">
                     <!--     //////////Accordion 1 start//////////-->
@@ -86,14 +86,14 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <p class="fs-5">Enter Promo Code</p>
+          <p class="fs-5">{{'MyBag.Promo'|translate}}</p>
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
                 <div class="input-group mb-3">
              <input type="text" class="form-control" placeholder="Enter Code" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Apply</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{'MyBag.Apply'|translate}}</button>
             </div>
                 
     
@@ -106,7 +106,7 @@
                <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <p class="fs-5">Select Shipping</p>
+        <p class="fs-5">{{'MyBag.Shipping'|translate}}</p>
             </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -115,21 +115,21 @@
         <div class="form-check">
           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
          <label class="form-check-label" for="flexRadioDefault1">
-          <span style="  word-spacing: 195px;">StandardShipping Free </span> <br> <small>3-5 business days</small>
+          <span style="  word-spacing: 195px;">{{'MyBag.tandardShipping'|translate}} </span> <br> <small>{{'MyBag.business'|translate}}3-5 </small>
             </label>
          </div><br>
               
         <div class="form-check">
          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
          <label class="form-check-label" for="flexRadioDefault2">
-          <span style="  word-spacing: 215px;">ُExpressSaver $18.95</span><br> <small>2-3 business days</small>
+          <span style="  word-spacing: 215px;">ُ{{'MyBag.ExpressSaver'|translate}} $18.95</span><br> <small>{{'MyBag.business'|translate}}2-3 </small>
           </label>
           </div><br>
               
         <div class="form-check">
           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
          <label class="form-check-label" for="flexRadioDefault3">
-           <span style="  word-spacing: 250px;">Express $23.95</span><br> <small>1-2 business days</small>
+           <span style="  word-spacing: 250px;">{{'MyBag.Express'|translate}} $23.95</span><br> <small>{{'MyBag.business'|translate}}1-2 </small>
          </label>
          </div><br>
          
@@ -139,38 +139,38 @@
       </div>
     <!--         ///////////////Accord 2 end //////////////////////-->
     </div><br>
-    <p class="fs-6"><b>Enter a ZIP code to estimate tax and delivery</b></p>
+    <p class="fs-6"><b>{{'MyBag.estimate'|translate}}</b></p>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Example:96321" aria-label="Recipient's username" aria-describedby="button-addon2">
-     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Apply</button>
+     <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{'MyBag.Apply'|translate}}</button>
     </div>
     <div>  
         <!--             <div class="text-start">Subtotal (5) items</div><div class="text-end">$51.97</div>-->
-                     <div style="  word-spacing: 240px;">Subtotal(5)items $51.97</div> <br>
-                     <p style="  word-spacing: 240px;"> Standardshipping Free</p> 
+                     <div style="  word-spacing: 240px;">{{'Checkout.subtotal'|translate}}(5){{'wishList.Items'|translate}} $51.97</div> <br>
+                     <p style="  word-spacing: 240px;">{{'MyBag.Standardshipping'|translate}} </p> 
                      <div style="word-spacing: 340px;">TaX $989</div><br>
         
-                     <p style="  word-spacing: 280px;"> <b>Ordertotal $56.26</b></p> 
+                     <p style="  word-spacing: 280px;"> <b>{{'Checkout.OrderTotal'|translate}} $56.26</b></p> 
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-warning w-100"   type="button" ><i class="fas fa-lock"></i> <a href="CheckOut.html">Checkout Securely</a></button>
+                    <button class="btn btn-warning w-100"   type="button" ><i class="fas fa-lock"></i> <a href="CheckOut.html">{{'MyBag.Checkout'|translate}} </a></button>
                     </div>
                     <br>
 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary w-100" type="button" > Pay With <i><b>Pay Pall</b></i></button>
+                        <button class="btn btn-primary w-100" type="button" > {{'MyBag.PayWith'|translate}} <i><b>{{'MyBag.PayPall'|translate}}</b></i></button>
                         </div>
                          <br>
                          <div style="background-color: aquamarine ;padding:10px" >
-                            <p class="text-center">Congratulations - you get FREE shipping!</p>
+                            <p class="text-center">{{'MyBag.Congratulations'|translate}}</p>
                             </div><br>
                             
                             <div class="bg-light">
-                            Help with your order:<br><br>
-                           <a href="#">Shipping & Handling</a>
-                           <a>Returns</a><br><br>
-                           Payment methods<br>
+                              {{'MyBag.order'|translate}}<br><br>
+                           <a href="#">{{'MyBag.Handling'|translate}} </a>
+                           <a>{{'MyBag.Returns'|translate}}</a><br><br>
+                           {{'MyBag.PaymentMethods'|translate}}<br>
                               <span class="col-lg-5">  
                            
                             <i class="fab fa-cc-mastercard" style="font-size: 50px" ></i>
