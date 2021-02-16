@@ -51,7 +51,7 @@
                 placeholder="Username"
                 required
               />
-              <div class="text-danger text-left emailWarn" [hidden]="loginemail.valid">
+              <div class="text-danger text-left emailWarn" *ngIf="(!loginemail.valid && loginemail.touched)">
                 This field is required
               </div>
             </div>
@@ -73,7 +73,7 @@
                 placeholder="* * * * * * * *"
                 required
               />
-              <div class="text-danger text-left passWarn" [hidden]="loginpass.valid">
+              <div class="text-danger text-left passWarn" *ngIf="(!loginpass.valid && loginpass.touched)">
                 This field is required
               </div>
             </div>
