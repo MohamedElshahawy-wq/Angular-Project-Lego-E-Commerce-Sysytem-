@@ -197,13 +197,10 @@
                 </div>
                 <br>
               </div>
-<<<<<<< HEAD
               <div class="text-danger text-left BDWarn" *ngIf="(!newBDMonth.valid || !newBDDay.valid || !newBDYear.valid && newBDMonth.touched && newBDDay.touched && newBDYear.touched)">
                 Date of birth is required
-=======
               <div class="text-danger text-left BDWarn" [hidden]="newBDMonth.valid && newBDDay.valid && newBDYear.valid">
                 {{'User.DateRequired'|translate}}
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
               </div>
             </div>
 
