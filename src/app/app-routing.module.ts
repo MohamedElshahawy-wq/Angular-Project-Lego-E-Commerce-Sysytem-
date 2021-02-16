@@ -22,8 +22,7 @@ const routes: Routes = [
   {path: 'WishList' , component: WishListComponent},
   {path: 'WishList/:wID' , component: WishListComponent},
   {path: 'CheckOut' , component: CheckOutComponent},
-  {path: 'MyBBag' , component: MyBBagComponent},
-  
+  {path: 'MyBBag' , component: MyBBagComponent},  
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
   {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule)},
   {path :'Product/:PID',component:ProductComponent},

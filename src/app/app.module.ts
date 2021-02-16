@@ -10,7 +10,6 @@ import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
-
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { OffersComponent } from './components/offers/offers.component';
@@ -32,7 +31,6 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
     HeaderComponent,
     WishListComponent,
     CheckOutComponent,
-   
     FooterComponent,
     HomeComponent,
     OffersComponent,
