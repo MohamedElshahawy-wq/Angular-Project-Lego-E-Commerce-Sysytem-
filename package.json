@@ -28,12 +28,9 @@
     "chart.js": "^2.9.4",
     "firebase": "^8.2.7",
     "font-awesome": "^4.7.0",
-<<<<<<< HEAD
     "ngx-cookie-service": "^11.0.2",
-=======
     "jquery": "^3.5.1",
     "ngx-bootstrap": "^6.2.0",
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
