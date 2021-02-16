@@ -1,33 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ahmed",
-      "email": "ahmed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 100,
-      "dateOfJoin": "02/10/2020"
-    },
-    {
-      "id": 2,
-      "name": "Mohamed",
-      "email": "mohamed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 200,
-      "dateOfJoin": "12/02/2019"
-    },
-    {
       "email": "sarah@gmail.com",
       "password": "1234",
       "birthday": {
-        "month": "4",
-        "day": "4",
-        "year": "4444"
+        "month": "01",
+        "day": "04",
+        "year": "1994"
       },
       "termsandconditionsCheck": true,
-      "id": 3
+      "id": 1
+    },
+    {
+      "email": "nour@gmail.com",
+      "password": "1234",
+      "birthday": {
+        "month": "11",
+        "day": "14",
+        "year": "1998"
+      },
+      "termsandconditionsCheck": true,
+      "id": 2
     }
   ],
   "admins": [
@@ -46,7 +39,9 @@
       "image": "assets/images/75967.jpeg",
       "available": true,
       "rating": 5,
-      "categoryID": 1
+      "categoryID": 1,
+      "images":["assets/images/75967.jpeg","assets/images/75967_alt1 (2).jpeg","assets/images/75967_alt2 (1).png",
+        "assets/images/75967_alt3 (1).png"]
     },
     {
       "id": 2,
@@ -54,10 +49,12 @@
       "description": "this is product 2",
       "price": 12.99,
       "stock": 10,
-      "image": "assets/images/40373.jpeg",
+      "image": "assets/images/40373 (1).jpeg",
       "available": true,
       "rating": 5,
-      "categoryID": 1
+      "categoryID": 1,
+      "images":["assets/images/40373 (1).jpeg","assets/images/40373_alt1.jpeg","assets/images/40373_alt2.jpeg",
+        "assets/images/40373_alt2 (1).jpeg"]
     },
     {
       "id": 3,
@@ -65,10 +62,11 @@
       "description": "this is product 3",
       "price": 3.99,
       "stock": 10,
-      "image": "assets/images/40376.jpeg",
+      "image": "assets/images/40376 (1).jpeg",
       "available": true,
       "rating": 5,
-      "categoryID": 1
+      "categoryID": 1,
+      "images":["assets/images/40376 (1).jpeg","assets/images/40376_alt1.jpeg"]
     },
     {
       "id": 4,
@@ -199,6 +197,42 @@
         2,
         3
       ]
+    }
+  ],
+  "Reviews": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 1,
+      "OverallRating": 5,
+      "recommend": "true",
+      "reviewTitle": "good product",
+      "review": "I really enjoyed this set as it had alot of cool and interesting pieces. I loved the characters included that makes the set fun even after it is built. It was an intermediate skill level to build which makes it great for adults and children. It is definitely a set every Harry Potter fan should have in their collection. It has a great base (the book) and plentiful extra pieces to make play fun and long lasting. I truly appreciated the detail that was put into the design of this set."
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "productId": 1,
+      "OverallRating": 4,
+      "recommend": "true",
+      "reviewTitle": "good product",
+      "review": "I really enjoyed this set as it had alot of cool and interesting pieces. I loved the characters included that makes the set fun even after it is built. It was an intermediate skill level to build which makes it great for adults and children. It is definitely a set every Harry Potter fan should have in their collection. It has a great base (the book) and plentiful extra pieces to make play fun and long lasting. I truly appreciated the detail that was put into the design of this set."
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "OverallRating": 4,
+      "recommend": "true",
+      "reviewTitle": "good product",
+      "review": "I’ve always been a Harry Potter fan so building this lego set with my daughters was a lot of fun for me. The attention to detail is amazing. I really felt like I was being transported into the book. I was really impressed with the small details that definitely kept the Harry Potter books in mind. Each wizard has a unique wand just like in the Harry Potter books. They even gave the Neville minifigure shorter legs so he would be shorter than the other characters. The instructions are very clear and easy to read. Every step comes"
+    },
+    {
+      "productId": 1,
+      "OverallRating": "3",
+      "recommend": "true",
+      "reviewTitle": "nice",
+      "review": "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
+      "id": 4
     }
   ]
 }

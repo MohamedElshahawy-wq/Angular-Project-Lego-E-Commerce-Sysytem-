@@ -1,9 +1,9 @@
-<div class="container-fluid" id="banner">
+<div class="container-fluid text-justify" dir="auto" id="banner">
     <div class="row d-flex justify-content-center">
         <p>
             <img src="assets\images\40416-202011-Sitewide-Banner.png">
-            <small>Ice Skating Rink with purchases over $150</small>
-            <a href="#ff"> shop now</a>
+            <small>{{'Home.Skating'|translate}}</small>
+            <a href="#ff"> {{'VIP.shop'|translate}}</a>
         </p>
 
     </div>
@@ -11,11 +11,11 @@
 <!--end-->
 
 
-<div class="container-fluid firstbar">
+<div class="container-fluid firstbar text-justify" dir="auto" dir="auto">
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Harry Potter™</a></li>
+            <li class="breadcrumb-item"><a href="#">{{'header.Home'|translate}}</a></li>
+            <li class="breadcrumb-item"><a href="#">{{'Product.Harry'|translate}}</a></li>
             <li class="breadcrumb-item active">{{product.name}}</li>
         </ul>
     </div>
@@ -23,15 +23,11 @@
 
 
 <!--start-->
-<div class="container-fluid product">
+<div class="container-fluid product text-justify" dir="auto" dir="auto">
     <div class="row p-4">
         <div class="col-md-1 picelproduct">
-            <img src={{product.image}} id="picelproduct1">
-            <img src={{product.image}} id="picelproduct2">
-            <img src={{product.image}} id="picelproduct3">
-            <img src={{product.image}} id="picelproduct4">
-            <img src={{product.image}} id="picelproduct5">
-
+            <img *ngFor="let item of product.images;let indexOfelement=index;"
+             src={{item}} (click) ="ChangeImage(item)">
         </div>
         <div class="col-md-8">
             <div class=" picelproductkbera product1">
@@ -83,42 +79,53 @@
                         </g>
                     </svg>
                 </span>
-                <a href="#ff" class="mx-2 py-2">22 Reviews </a>
+<<<<<<< HEAD
+                <a href="#ff" class="mx-2 py-2">{{reviewNumber}} Reviews</a>
+=======
+                <a href="#ff" class="mx-2 py-2">22 {{'Product.Reviews'|translate}} </a>
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
             </div>
-            <div class="mb-3 lonazrq p-2">
+            <div class="mb-3 lonazrq p-2 text-justify" dir="auto">
                 <img class="float-left mr-2" src="assets\images\40416-PDPPage-202011-Promo-Badge.png">
-                <span>FREE exclusive Ice Skating Rink with purchases over $150.*</span>
+                <span>{{'Product.FREE'|translate}}*</span>
                 <br>
-                <a href="#ff">Learn More </a>
+                <a href="#ff">{{'VIP.more'|translate}} </a>
 
             </div>
             <div>
                 <h1>{{product.price | currency}}</h1>
-                <p style="color: rgb(14, 218, 14);">Available now</p>
+                <p style="color: rgb(14, 218, 14);">{{'Checkout.Available'|translate}}</p>
             </div>
             <div class="d-flex mb-3">
                 <div class="d-flex">
-                    <div class="border rounded-left py-2 px-3 mx-0" id="minus"> -</div>
-                    <div class="border py-2 px-4 mx-0" id="count">1</div>
-                    <div class="border rounded-right py-2 px-3 mx-0" id="plus">+</div>
+                    <div class="border rounded-left py-2 px-3 mx-0" id="minus" (click)="minus()"> -</div>
+                    <div class="border py-2 px-4 mx-0" id="count">{{count}}</div>
+                    <div class="border rounded-right py-2 px-3 mx-0" id="plus" (click)="plus()">+</div>
                 </div>
                 <div class="mx-2 py-2">
                     <span> Limit 3</span>
-                    <button id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
+                    <!--
+                    <button class="mx-2" id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
                         data-content=" We restrict the limit a household can buy in order to be fair 
                         to all of our fans. If you’ve already reached that limit through previous
                          orders your order may be cancelled.">i</button>
+                   -->
                 </div>
 
 
             </div>
+<<<<<<< HEAD
             <div class="mb-3">
+                <button (click)="addToBag()" type="button" class="btn w-100 py-3 "
+=======
+            <div class="mb-3 text-justify" dir="auto">
                 <button type="button" class="btn w-100 py-3 "
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
                     style="background-color: rgb(253,128,36); font-size: 0.85rem;">
-                    <strong>Add to Bag</strong>
+                    <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>
             </div>
-            <div class=" py-3   linkeswd border-bottom">
+            <div class=" py-3 linkeswd border-bottom text-justify" dir="auto">
                 <svg id="heart" width="100%" height="100%" viewBox="0 0 40 40" alt=""
                     class="WishlistButtonstyles__StyledWishlistIcon-d720r1-1 eDfAts">
                     <rect fill="#F8F8F8" width="40" height="40" rx="20"></rect>
@@ -130,12 +137,12 @@
                         fill="#006DB7">
                     </path>
                 </svg>
-                <a class="fontso8yr" href="#ff">Add to wishlist</a>
+                <a class="fontso8yr" href="#ff">{{'Product.AddWishlist'|translate}}</a>
             </div>
-            <div class=" py-3 linkeswd border-bottom">
-                <a data-toggle="collapse" data-target="#demo">Check store stock</a>
+            <div class=" py-3 linkeswd border-bottom text-justify" dir="auto">
+                <a data-toggle="collapse" data-target="#demo">{{'Product.Check'|translate}}</a>
                 <div id="demo" class="collapse">
-                    Enter your address to find a LEGO® Store near you then please call to ensure item availability.
+                    {{'Product.address'|translate}}
                     <div class=" mb-3 input-group input-group-lg">
                         <input type="text" class="form-control" placeholder="Enter a city and state or zip code"
                             aria-describedby="button-addon2">
@@ -150,10 +157,10 @@
                 </div>
 
             </div>
-            <div class="py-3">
-                <span>Shop more like this:</span><br>
-                <a class="pr-2" href="#ff">Harry Potter™</a>
-                <a class="pr-2" href="#ff">Fantasy</a>
+            <div class="py-3 text-justify" dir="auto">
+                <span>{{'Product.Shop'|translate}}</span><br>
+                <a class="pr-2" href="#ff">{{'Product.Harry'|translate}}</a>
+                <a class="pr-2" href="#ff">{{'Product.Fantasy'|translate}}</a>
 
             </div>
         </div>
@@ -164,11 +171,11 @@
 
 
 <!--start-->
-<div class="container-fluid ">
+<div class="container-fluid text-justify" dir="auto">
     <div class="row " style="background-color: white; border-bottom: rgb(206, 205, 205) solid 1px;">
         <div class="col-12 d-flex justify-content-center flex-wrap text-center">
 
-            <div class="product-details">
+            <div class=" product-details">
                 <div class="product-detailssvg pb-3">
                     <span class="text-center">
                         <svg width="34px" height="40px" aria-hidden="true" data-di-res-id="4b76a8eb-5528fdd0"
@@ -189,9 +196,9 @@
                     </span>
                 </div>
                 <h1>8+</h1>
-                <p>Ages</p>
+                <p>{{'Product.Ages'|translate}}</p>
             </div>
-            <div class="product-details">
+            <div class="product-details text-justify" dir="auto">
                 <div class="product-detailssvg pt-1  pb-3">
                     <span class="text-center">
                         <svg width="33px" height="40px" aria-hidden="true" data-di-res-id="4b76a8eb-b7f8e925"
@@ -211,9 +218,9 @@
                     </span>
                 </div>
                 <h1>253</h1>
-                <p>Pieces</p>
+                <p>{{'Product.Pieces'|translate}}</p>
             </div>
-            <div class="product-details">
+            <div class="product-details text-justify" dir="auto">
                 <div class="product-detailssvg pt-3 pb-3">
                     <svg width="37px" height="25px" aria-hidden="true" data-di-res-id="4b76a8eb-a938c954"
                         data-di-rand="1609076026408">
@@ -224,9 +231,9 @@
 
                 </div>
                 <h1>195</h1>
-                <p>VIP Points</p>
+                <p>{{'Product.VIPPoints'|translate}}</p>
             </div>
-            <div class="product-details" style="border-right:none ;">
+            <div class="product-details text-justify" dir="auto" style="border-right:none ;">
                 <div class="product-detailssvg pt-2 pb-3">
                     <svg width="36px" height="36px" aria-hidden="true" data-di-res-id="f3cacf8e-fce2d7d5"
                         data-di-rand="1609076026409">
@@ -237,7 +244,7 @@
 
                 </div>
                 <h1>75967</h1>
-                <p>Item</p>
+                <p>{{'wishList.Items'|translate}}</p>
             </div>
 
 
@@ -248,10 +255,10 @@
 <!--end-->
 
 <!--start-->
-<div class="container-fluid">
+<div class="container-fluidtext-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Features" id="fet1">
         <div class="col-12 d-flex justify-content-between">
-            <h3>Features</h3>
+            <h3>{{'Product.Features'|translate}}</h3>
             <div id="pluswminus1" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus2" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
 
@@ -260,100 +267,97 @@
             <div id="Feature1" class="mt-3">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero1-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
                 </picture>
                 <div id="Feature1content">
-                    <h1>Adventures in the Forbidden Forest</h1>
-                    <span>Kids role-play a fun story from Harry Potter and the Order of the Phoenix and dream up
-                        imaginative adventures of their own.</span>
+                    <h1>{{'Product.Adventures'|translate}}</h1>
+                    <span>{{'Product.imaginative'|translate}}</span>
                 </div>
                 <div id="Feature1content2">
-                    <h6 class="font-weight-bold">Adventures in the Forbidden Forest</h6>
-                    <span>Kids role-play a fun story from Harry Potter and the Order of the Phoenix and dream up
-                        imaginative adventures of their own.</span>
+                    <h6 class="font-weight-bold">{{'Product.Adventures'|translate}}</h6>
+                    <span>{{'Product.imaginative'|translate}</span>
                 </div>
             </div>
             <div id="Feature2">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero2-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Small.jpeg">
-                    <img src="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg" alt="Flowers" style="width:auto;">
+                    <img src="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg" alt="Flowers"
+                        style="width:auto;">
                 </picture>
                 <div id="Feature2content">
-                    <h1>Great for play and display</h1>
-                    <span>This large-scale set inspires endless creative play possibilities and looks awesome on
-                        display in kids' rooms.</span>
+                    <h1>{{'Product.Great'|translate}}</h1>
+                    <span>{{'Product.awesome'|translate}}</span>
                 </div>
                 <div id="Feature2content2">
-                    <h6 class="font-weight-bold">Great for play and display</h6>
-                    <span>This large-scale set inspires endless creative play possibilities and looks awesome on
-                        display in kids' rooms.</span>
+                    <h6 class="font-weight-bold">{{'Product.Great'|translate}}</h6>
+                    <span>{{'Product.awesome'|translate}}</span>
                 </div>
             </div>
             <div id="Feature3" class="row pt-5 ">
-                <h2 class="px-4 mb-3">LEGO Harry Potter Forbidden Forest: Umbridge's Encounter </h2>
+                <h2 class="px-4 mb-3">{{'Product.Forbidden'|translate}} </h2>
                 <div class="col-sm-4 col-xs-12">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-1.jpeg">
                     <div class="py-2">
-                        <h5 class="font-weight-bold">Hidden surprises in the tree</h5>
-                        <p>Open to reveal a lantern, bicycle parts, bone and a turkey leg.</p>
+                        <h5 class="font-weight-bold">{{'Product.Hidden'|translate}}</h5>
+                        <p>{{'Product.reveal'|translate}}</p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-2.jpeg">
                     <div class="py-2">
-                        <h5 class="font-weight-bold">Poseable giant</h5>
-                        <p>Kids pose the giant Grawp's limbs for play and display</p>
+                        <h5 class="font-weight-bold">{{'Product.Poseable'|translate}}</h5>
+                        <p>{{'Product.giant'|translate}}</p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-3.jpeg">
                     <div class="py-2">
-                        <h5 class="font-weight-bold">Popular characters</h5>
-                        <p>With Dolores Umbridge, Harry Potter, and Hermione Granger.</p>
+                        <h5 class="font-weight-bold">{{'Product.characters'|translate}}</h5>
+                        <p>{{'Product.With'|translate}}</p>
                     </div>
                 </div>
             </div>
             <div id="Feature1" class="mt-3">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero3-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
                 </picture>
                 <div id="Feature1content">
-                    <h1>Build Imaginations</h1>
-                    <span>This versatile playset puts open-ended play into kids' hands, developing skills and
-                        unlocking creative potential.</span>
+                    <h1>{{'Product.Imaginations'|translate}}</h1>
+                    <span>{{'Product.versatile'|translate}}</span>
                 </div>
                 <div id="Feature1content2">
-                    <h6 class="font-weight-bold">Build Imaginations</h6>
-                    <span>This versatile playset puts open-ended play into kids' hands, developing skills and
-                        unlocking creative potential.</span>
+                    <h6 class="font-weight-bold">{{'Product.Imaginations'|translate}}</h6>
+                    <span>{{'Product.versatile'|translate}}</span>
                 </div>
             </div>
             <div id="Feature1">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero4-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
                 </picture>
                 <div id="Feature1content">
-                    <h1>Great gift for Harry Potter fans</h1>
-                    <span>This feature-packed playset makes an ideal gift for kids aged 8 and up who enjoy
-                        imaginative play and magical adventure.</span>
+                    <h1>{{'Product.GreatGift'|translate}}</h1>
+                    <span>{{'Product.playset'|translate}}</span>
                 </div>
                 <div id="Feature1content2">
-                    <h6 class="font-weight-bold">Great gift for Harry Potter fans</h6>
-                    <span>This feature-packed playset makes an ideal gift for kids aged 8 and up who enjoy
-                        imaginative play and magical adventure.</span>
+                    <h6 class="font-weight-bold">{{'Product.GreatGift'|translate}}</h6>
+                    <span>{{'Product.playset'|translate}}</span>
                 </div>
             </div>
 
@@ -367,10 +371,10 @@
 <!--end-->
 
 <!--start-->
-<div class="container-fluid">
+<div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Specifications" id="speci">
         <div class="col-12 d-flex justify-content-between">
-            <h3>Specifications</h3>
+            <h3>{{'Product.Specifications'|translate}}</h3>
             <div id="pluswminus3" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus4" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
 
@@ -378,50 +382,24 @@
         <div id="Specifications" class="container-fluid collapse mt-3" style="background-color: white;">
             <div class="row">
                 <div class="col-sm-7 col-xs-12">
-                    <p>Harry Potter™ fans can create a magical world of giants, centaurs and enchanted trees as they
-                        enter the Forbidden Forest with LEGO® Harry Potter Forbidden Forest: Umbridge’s Encounter
-                        (75967).</p>
-                    <p>Minifigures and magical creatures in the Forbidden Forest<br>
-                        Kids enter the Forbidden Forest with 3 minifigures – Harry Potter, Hermione Granger™ and
-                        Dolores Umbridge™ – and cast a spell to open the large tree and reveal a selection of
-                        accessories: A lantern, bone and turkey leg. There are 2 centaur figures and a posable giant
-                        Grawp that kids can use to pick up Umbridge and take her… wherever they want. Young witches
-                        and wizards will love acting out classic moments from Harry Potter movies and dreaming up
-                        magical adventures.</p>
-                    <p>Choosing the best toy for Harry Potter fans<br>
-                        If you're looking for a special birthday or Christmas gift, LEGO Harry Potter toys recreate
-                        memorable scenes from the movies with favorite characters and cool creatures that'll put the
-                        Wizarding World right into your kids' hands.</p>
+                    <p>{{'Product.magical'|translate}}</p>
+                    <p>{{'Product.Forest'|translate}}<br>
+                        {{'Product.enter'|translate}}</p>
+                    <p>{{'Product.Choosing'|translate}}<br>
+                        {{'Product.looking'|translate}}</p>
                     <ul>
-                        <li> This popular Harry Potter and the Order of the Phoenix™ toy inspires kids’ creative
-                            thinking, problem solving and role-play fun as young witches and wizards recreate
-                            Forbidden Forest adventures.</li>
-                        <li>Harry Potter™ fans bring the magic to life with 3 minifigures – Harry Potter, Hermione
-                            Granger™, Dolores Umbridge™ – 2 centaurs, a posable Grawp giant and an opening tree
-                            containing a lantern, bone and a turkey leg.</li>
-                        <li>Engage and entertain kids with a journey into the Forbidden Forest where they encounter
-                            an opening tree with surprises inside, magical creatures and a plot to deal with the
-                            cruel Dolores Umbridge™ once and for all!</li>
-                        <li>LEGO® Harry Potter™ Forbidden Forest: Umbridge’s Encounter (75967) is a popular birthday
-                            gift for kids aged 7 and up who like action-packed playsets and cool building brick
-                            toys.</li>
-                        <li>The tree, when closed, measures over 4” (12cm) high and Grawp stands over 5” (13cm)
-                            high, providing a magical large-scale model for use as part of kids' role-play
-                            adventures or on display in their rooms.</li>
-                        <li>No batteries needed. This hands-on Harry Potter™ toy gives kids endless imaginative fun,
-                            whenever and wherever they want it.</li>
-                        <li>Get kids building and playing immediately with simple, clear instructions. For even more
-                            fun, kids can combine this playset with other LEGO® Harry Potter™ toys.</li>
-                        <li>With popular characters, amazing creatures and cool locations, LEGO® Harry Potter™ toys
-                            bring thrilling scenes from the movies to life! With these feature-packed sets, the
-                            magic is in kids' hands.</li>
-                        <li>LEGO® construction toys meet the highest industry standards to ensure every brick is
-                            consistent and compatible, connecting and pulling apart perfectly every time – no magic
-                            required!</li>
-                        <li>All LEGO® bricks and pieces are dropped, heated, crushed, twisted and analyzed to make
-                            sure each one meets the highest safety standards in the world.</li>
+                        <li>{{'Product.li1'|translate}} </li>
+                        <li>{{'Product.li2'|translate}}</li>
+                        <li>{{'Product.li3'|translate}}</li>
+                        <li>{{'Product.li4'|translate}}</li>
+                        <li>{{'Product.li5'|translate}}</li>
+                        <li>{{'Product.li6'|translate}}</li>
+                        <li>{{'Product.li7'|translate}}</li>
+                        <li>{{'Product.li8'|translate}}</li>
+                        <li>{{'Product.li9'|translate}}</li>
+                        <li>{{'Product.li10'|translate}}</li>
                     </ul>
-                    <button type="button" class="btn btn-primary p-3">Bulding Instructions</button>
+                    <button type="button" class="btn btn-primary p-3">{{'Product.Instructions'|translate}}</button>
 
                 </div>
                 <div class="col-sm-5 d-none d-sm-block text-center">
@@ -434,25 +412,30 @@
 <!--end-->
 
 <!--start-->
-<div class="container-fluid">
+<div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#DeliveriesandReturns" id="del">
         <div class="col-12 d-flex justify-content-between">
-            <h3>Deliveries and Returns</h3>
+            <h3>{{'Product.Deliveries'|translate}}</h3>
             <div id="pluswminus5" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus6" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
-
         </div>
         <div id="DeliveriesandReturns" class="container-fluid collapse" style="background-color: white;">
             <ul>
+<<<<<<< HEAD
                 <li>Free standard 3 to 5 business day shipping on all merchandise orders over $35!</li>
                 <li>Express shipping available at checkout.</li>
                 <li>Custom parts orders are sent separately from merchandise and take additional time to process and
                     deliver.</li>
-                <li>Unopened merchandise may be returned for a full refund within 90 days of receipt of your order.
-                </li>
+                <li>Unopened merchandise may be returned for a full refund within 90 days of receipt of your order.</li>
+=======
+                <li>{{'Product.Free'|translate}}</li>
+                <li>{{'Product.EXcheckout'|translate}}</li>
+                <li>{{'Product.take'|translate}}</li>
+                <li>{{'Product.Unopened'|translate}}</li>
 
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
             </ul>
-            <p>Some exclusions apply. Visit our <a href="#ff">Deliveries and Returns</a> page for more information.
+            <p>{{'Product.Some'|translate}} <a href="#ff">{{'Product.Deliveries'|translate}}</a> {{'Product.page'|translate}}
             </p>
         </div>
     </div>
@@ -462,17 +445,190 @@
 
 
 <!--start-->
+<<<<<<< HEAD
 <div class="container-fluid">
+    <div class="row rowselproduct" id="cusrev" (click)="CustomerReviews()">
+=======
+<div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#CustomerReviews" id="cusrev">
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
         <div class="col-12 d-flex justify-content-between">
-            <h3>Customer Reviews</h3>
+            <h3>{{'Product.Customer'|translate}}</h3>
             <div id="pluswminus7" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus8" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
-
         </div>
-        <div id="CustomerReviews" class="container-fluid collapse my-2" style="background-color: white;">
+    </div>
+    <div id="CustomerReviews" class="container-fluid collapse my-2" style="background-color: white;">
 
+<<<<<<< HEAD
+        <div class="mt-3 d-flex justify-content-between">
             <p class="font-weight-bold">Overall Rating</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Write a Review
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Customer Reviews</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="w-100 h-auto" src={{product.image}}>
+                                </div>
+                                <div class="col-9">
+                                    <h5 class="mb-5">Product Ratings</h5>
+                                    <h6 class="mb-2">Overall Rating</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios1" value="1" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Poor
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios2" value="2" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Fair
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios3" value="3" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            Avarge
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios4" value="4" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios4">
+                                            Good
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios5" value="5" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios5">
+                                            Excellent
+                                        </label>
+                                    </div>
+                                    <h6 class="mt-3 mb-2">I would recommend this product to a friend</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="exampleRadios6"
+                                            value="true" (change)="radioforRecommendChange($event)">
+                                        <label class="form-check-label" for="exampleRadios6">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="exampleRadios7"
+                                            value="false" (change)="radioforRecommendChange($event)">
+                                        <label class="form-check-label" for="exampleRadios7">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container my-5">
+                                <h5>About Me</h5>
+                                <div class="form-group">
+                                    <label for="exampleInputtext1">Your Nickname</label>
+                                    <input type="text" class="form-control" id="exampleInputtext1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1">
+                                </div>
+
+                            </div>
+                            <div class="container my-5">
+                                <h5>Share Your Opinion With Others And Write A Detailed Review</h5>
+                                <div class="form-group">
+                                    <label for="exampleInputtext2">Review Title</label>
+                                    <input [(ngModel)]="reviewTitle" type="text" class="form-control" id="exampleInputtext2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Review</label>
+                                    <textarea [(ngModel)]="reviewBody" class="form-control rounded-0" id="exampleFormControlTextarea1"
+                                        rows="10"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addReview()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="stars">
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#CACACA">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <span class="mx-2 ">4.2</span>
+            <span class="mx-2 ">({{reviewNumber}} Reviews)</span>
+        </div>
+        <p style="color: green;">91% would recommend this product.</p>
+        <div class="row my-2">
+            <div class=" col-lg-4 col-md-6 col-sm-12 font-weight-bold"
+                style="border-right: 1px solid rgb(202, 200, 200);">
+                <p class="font-weight-bold">Rating</p>
+                <div class="d-flex my-4">
+                    <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                    <div class="progress mr-3" style="width: 150px; height: 20px;">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span style="height: 20px;">13 Reviews</span>
+                </div>
+                <div class="d-flex  my-4">
+                    <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                    <div class="progress mr-3" style="width: 150px; height: 20px;">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+=======
+            <p class="font-weight-bold">{{'Product.Overall'|translate}}</p>
             <div id="stars">
                 <svg width="100%" height="100%" viewBox="0 0 50 49">
                     <g stroke="none" stroke-width="1" fill="#FFD500">
@@ -513,57 +669,81 @@
                 <span class="mx-2 ">(22 Reviews)</span>
             </div>
 
-            <p style="color: green;">91% would recommend this product.</p>
+            <p style="color: green;">91% {{'Product.recommend'|translate}}</p>
 
             <div class="row my-2">
                 <div class=" col-lg-4 col-md-6 col-sm-12 font-weight-bold"
                     style="border-right: 1px solid rgb(202, 200, 200);">
-                    <p class="font-weight-bold">Rating</p>
+                    <p class="font-weight-bold">{{'Product.Rating'|translate}}</p>
                     <div class="d-flex my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
                         <div class="progress mr-3" style="width: 150px; height: 20px;">
                             <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span style="height: 20px;">13 Reviews</span>
+                        <span style="height: 20px;">13 {{'Product.Reviews'|translate}}</span>
                     </div>
                     <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
                         <div class="progress mr-3" style="width: 150px; height: 20px;">
                             <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span style="height: 20px;">4 Reviews</span>
+                        <span style="height: 20px;">4 {{'Product.Reviews'|translate}}</span>
                     </div>
                     <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
                         <div class="progress mr-3" style="width: 150px; height: 20px;">
                             <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span style="height: 20px;">3 Reviews</span>
+                        <span style="height: 20px;">3 {{'Product.Reviews'|translate}}</span>
                     </div>
                     <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
                         <div class="progress mr-3" style="width: 150px; height: 20px;">
                             <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span style="height: 20px;">1 Reviews</span>
+                        <span style="height: 20px;">1 {{'Product.Reviews'|translate}}</span>
                     </div>
                     <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
                         <div class="progress mr-3" style="width: 150px; height: 20px;">
                             <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <span style="height: 20px;">1 Reviews</span>
+                        <span style="height: 20px;">1 {{'Product.Reviews'|translate}}</span>
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
                     </div>
-
+                    <span style="height: 20px;">4 Reviews</span>
                 </div>
+<<<<<<< HEAD
+                <div class="d-flex  my-4">
+                    <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                    <div class="progress mr-3" style="width: 150px; height: 20px;">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span style="height: 20px;">3 Reviews</span>
+                </div>
+                <div class="d-flex  my-4">
+                    <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                    <div class="progress mr-3" style="width: 150px; height: 20px;">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span style="height: 20px;">1 Reviews</span>
+                </div>
+                <div class="d-flex  my-4">
+                    <span class="mr-3" style="height: 20px;"> 5 stars</span>
+                    <div class="progress mr-3" style="width: 150px; height: 20px;">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+=======
                 <div class="col-lg-8 col-md-6 col-sm-12 font-weight-bold">
-                    <p>Overall Experience</p>
-                    <p class="mb-0"> Play Experience</p>
+                    <p>{{'Product.Experience'|translate}}</p>
+                    <p class="mb-0">{{'Product.Play'|translate}} </p>
                     <div class="mok3bat">
                         <svg width="100%" height="100%" viewBox="0 0 45 33">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -647,7 +827,7 @@
                         </svg>
                         <span class="ml-2">4.1</span>
                     </div>
-                    <p class="mt-3 mb-0"> Level of Difficulty</p>
+                    <p class="mt-3 mb-0"> {{'Product.Difficulty'|translate}}</p>
                     <div class="mok3bat">
                         <svg width="100%" height="100%" viewBox="0 0 45 33">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -715,7 +895,7 @@
                         </svg>
                         <span class="ml-2">2.3</span>
                     </div>
-                    <p class="mt-3 mb-0"> Value for Money</p>
+                    <p class="mt-3 mb-0">{{'Product.Money'|translate}}</p>
                     <div class="mok3bat">
                         <svg width="100%" height="100%" viewBox="0 0 45 33">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -798,12 +978,258 @@
                             </g>
                         </svg>
                         <span class="ml-2">4.1</span>
+>>>>>>> 8b51da18d6d44b235acd5a967b049f5a97b3dc5d
                     </div>
-
-
+                    <span style="height: 20px;">1 Reviews</span>
                 </div>
 
             </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 font-weight-bold">
+                <p>Overall Experience</p>
+                <p class="mb-0"> Play Experience</p>
+                <div class="mok3bat">
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#EBEBEB" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#D4D3D3" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#D4D3D3" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#EBEBEB" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <span class="ml-2">4.1</span>
+                </div>
+                <p class="mt-3 mb-0"> Level of Difficulty</p>
+                <div class="mok3bat">
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#EBEBEB" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#D4D3D3" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#D4D3D3" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#EBEBEB" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#EBEBEB" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#D4D3D3" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#D4D3D3" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#EBEBEB" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <span class="ml-2">2.3</span>
+                </div>
+                <p class="mt-3 mb-0"> Value for Money</p>
+                <div class="mok3bat">
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#FFCF00" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#E9AC05" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#E9AC05" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#FFCF00" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <svg width="100%" height="100%" viewBox="0 0 45 33">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon fill="#EBEBEB" fill-rule="nonzero"
+                                points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <polygon fill="#D4D3D3" fill-rule="nonzero"
+                                points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
+                            </polygon>
+                            <path
+                                d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
+                                fill="#D4D3D3" fill-rule="nonzero"></path>
+                            <path
+                                d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
+                                fill="#EBEBEB" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <span class="ml-2">4.1</span>
+                </div>
+            </div>
+
+        </div>
+        <div *ngFor="let item of reviews" class="my-3">
+            <hr>
+            <h5>{{item.reviewTitle}}</h5>
+            <h6 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h6>
+            <p>{{item.review}}</p>
         </div>
     </div>
 </div>

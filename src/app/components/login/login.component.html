@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container" dir="auto">
   <div class="row">
     <div class="col"></div>
 
     <div class="col-5 text-center" id="main">
       <nav class="navbar justify-content-center d-flex flex-fill">
-        <div class="container-fluid text-nowrap">
+        <div class="container-fluid text-nowrap text-justify" dir="auto">
           <a href="#" role="button"
             ><i class="fas fa-chevron-left" id="backBtn"></i
           ></a>
           <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
           <span
-            class="navbar-brand mb-0 h1 justify-content-left text-center"
+            class="navbar-brand mb-0 h1 justify-content-left text-justify" dir="auto"
             id="navTxt"
-            ><strong>Account</strong></span
+            ><strong>{{'User.Account'|translate}}</strong></span
           >
           <button
             type="button"
-            class="close font-weight-bold text-right"
+            class="close font-weight-bold text-justify" dir="auto"
             id="navBtn"
           >
             ×
@@ -38,8 +38,8 @@
               <label
                 id="signinEmailLabel"
                 for="usernameSigninTxt"
-                class="form-label text-left justify-content-left d-flex"
-                >Username</label
+                class="form-label text-justify justify-content-left d-flex" dir="auto"
+                >{{'login.Username' |translate}}</label
               >
               <input
                 #loginemail = "ngModel"
@@ -51,8 +51,13 @@
                 placeholder="Username"
                 required
               />
+<<<<<<< HEAD
               <div class="text-danger text-left emailWarn" *ngIf="(!loginemail.valid && loginemail.touched)">
                 This field is required
+=======
+              <div class="text-danger text-justify emailWarn"  dir="auto" [hidden]="loginemail.valid">
+                {{'login.FRequired' |translate}}
+>>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
               </div>
             </div>
 
@@ -60,8 +65,8 @@
               <label
                 id="signinPasswordLabel"
                 for="passwordSigninTxt"
-                class="form-label text-left justify-content-left d-flex"
-                >Password</label
+                class="form-label text-justify justify-content-left d-flex" dir="auto"
+                >{{'User.Password' | translate}}</label
               >
               <input
                 #loginpass = "ngModel"
@@ -73,8 +78,13 @@
                 placeholder="* * * * * * * *"
                 required
               />
+<<<<<<< HEAD
               <div class="text-danger text-left passWarn" *ngIf="(!loginpass.valid && loginpass.touched)">
                 This field is required
+=======
+              <div class="text-danger text-justify passWarn" [hidden]="loginpass.valid" dir="auto">
+                {{'login.FRequired' |translate}}
+>>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
               </div>
             </div>
 
@@ -91,48 +101,43 @@
                 <a
                   href="#"
                   id="signinCheckLabel"
-                  class="form-check-label d-flex text-left justify-content-left"
-                  for="rememberMeCheck"
-                  >Remember me</a
-                >
+                  class="form-check-label d-flex text-justify justify-content-left" dir="auto"
+                  for="rememberMeCheck">{{'login.Remember' |translate}}</a>
               </div>
               <p
                 id="logoutTxt"
-                class="text-left"
-              >
-                Remember to log out afterwards if you're using a shared<br />computer,
-                for example in a library or school.
+                class="text-justify" >
+                {{'login.R' |translate}}<br />{{'login.R1' |translate}}
               </p>
             </div>
 
             <button type="submit" id="signInLogInBtn" class="btn">
-              Log in
+              {{'User.Log' |translate}}
             </button>
           </form>
 
-          <div class="d-flex">
-            <a href="#" id="forgotUsername" [routerLink]="['/ForgotUsername']"
-              ><strong>Forgot username?</strong></a
+          <div class="d-flex" dir="auto">
+            <a href="#" id="forgotUsername" [routerLink]="['/ForgotUsername']" dir="auto"
+              ><strong>{{'login.ForgotName' |translate}}</strong></a
             >
 
             <div class="vl"></div>
 
-            <a href="#" id="forgotPassword" [routerLink]="['/ForgotPassword']"
-              ><strong>Forgot password?</strong></a
+            <a href="#" id="forgotPassword" [routerLink]="['/ForgotPassword']" dir="auto"
+              ><strong>{{'login.ForgotPass' |translate}}</strong></a
             >
           </div>
           <div class="d-flex">
             <hr class="Line" />
-            <p id="ORtxt">Or</p>
+            <p id="ORtxt">{{'login.or' |translate}}</p>
             <hr class="Line" />
           </div>
-          <div class="d-flex">
+          <div class="d-flex" dir="auto">
             <button
               id="ContinueWFBbtn"
-              class="text-center justify-content-center d-flex"
+              class="text-center justify-content-center d-flex" dir="auto"
             >
-              <i class="fab fa-facebook-square" id="FBicon"></i> Continue with
-              Facebook
+              <i class="fab fa-facebook-square" id="FBicon"></i> {{'User.Facebook'|translate}}
           </button>
             <img
               src="assets/images/Register-Login-Images/search.png"
@@ -145,8 +150,8 @@
           </div>
           <br />
           <br />
-          <p style="margin-bottom: 3px">Don’t have a LEGO® Account?</p>
-          <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">Create Account</a>
+          <p style="margin-bottom: 3px">{{'login.Dont' |translate }}</p>
+          <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">{{'login.CrAccount' | translate}}</a>
         </div>
       </div>
       <br />

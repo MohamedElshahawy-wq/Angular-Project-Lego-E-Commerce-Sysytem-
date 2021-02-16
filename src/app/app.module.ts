@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VipComponent } from './components/vip/vip.component';
@@ -10,7 +10,6 @@ import { LegoLifeComponent } from './components/lego-life/lego-life.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
-
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { OffersComponent } from './components/offers/offers.component';
@@ -21,6 +20,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { I18nModule } from './i18n/i18n.module';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -39,7 +39,6 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     HeaderComponent,
     WishListComponent,
     CheckOutComponent,
-   
     FooterComponent,
     HomeComponent,
     OffersComponent,
@@ -57,9 +56,13 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+=======
+    I18nModule,
+>>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
     ],
   providers: [NgAuthService],
   bootstrap: [AppComponent]
