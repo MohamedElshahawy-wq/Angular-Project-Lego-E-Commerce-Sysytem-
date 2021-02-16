@@ -5,6 +5,7 @@ export interface IProduct {
     price: number,
     stock: number,
     image: string,
+    images?:string[],
     available: boolean,
     rating: number,
     categoryID: number

@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
   list1() {
-
     if (document.getElementById("aboutuslist2").style.display == 'none') {
       document.getElementById("aboutuslist2").style.display = 'block'
     } else {

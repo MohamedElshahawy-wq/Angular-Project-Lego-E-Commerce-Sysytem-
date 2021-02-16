@@ -23,21 +23,21 @@
             <thead>
               <tr>
                 <th scope="col"><small>CustomerID</small></th>
-                <th scope="col"><small>Name</small></th>
+                <!-- <th scope="col"><small>Name</small></th> -->
                 <th scope="col"><small>Email</small></th>
-                <th scope="col"><small>Joined</small></th>
-                <th scope="col"><small>Ordered</small></th>
-                <th scope="col"><small>Phone</small></th>
+                <th scope="col"><small>Birth</small></th>
+                <!-- <th scope="col"><small>Ordered</small></th> -->
+                <!-- <th scope="col"><small>Phone</small></th> -->
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of customerList">
                 <th scope="row">#{{item.id}}</th>
-                <td class="name text-truncate">{{item.name}}</td>
+                <!-- <td class="name text-truncate">{{item.name}}</td> -->
                 <td class="name text-truncate">{{item.email}}</td>
-                <td class="date text-truncate"><small>{{item.dateOfJoin|date}}</small></td>
-                <td class="price text-truncate"><small>{{item.totalOrdered|currency}}</small></td>
-                <td class="phone"><small>{{item.phoneNumber}}</small></td>
+                <td class="date text-truncate"><small>{{item.birthday.day}}-{{item.birthday.month}}-{{item.birthday.year}}</small></td>
+                <!-- <td class="price text-truncate"><small>{{item.totalOrdered|currency}}</small></td> -->
+                <!-- <td class="phone"><small>{{item.phoneNumber}}</small></td> -->
                 
                 <td class="d-flex">
                 <!-- 

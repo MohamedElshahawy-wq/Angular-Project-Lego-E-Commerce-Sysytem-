@@ -1,10 +1,10 @@
 <app-header></app-header>
-<div class="theTitle">
+<div class="theTitle text-justify" dir="auto">
   <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
     <div class="row">
       <div class="col-12">
-        <h5 class="font-weight-bold">Spider-Man</h5>
-        <p>Builders will love to use their spidey sense to fight crime with their favorite superhero.</p>
+        <h5 class="font-weight-bold">{{'Themes.Spider'|translate}}</h5>
+        <p>{{'ProductTheme.Builders'|translate}}</p>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
       <div class="col-12 d-block d-lg-none my-4">
         <button type="button" name="ToggleFilters" (click)="ToggleFilters()"
           class="btn btn-primary btn-lg bg-white btn-block border-dark text-body shadow-none"><small
-            class="theFiltersBtn" #theFiltersBtn>Filter</small>
+            class="theFiltersBtn" #theFiltersBtn>{{'ProductTheme.Filter'|translate}}</small>
         </button>
       </div>
     </div>
@@ -30,7 +30,7 @@
             <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
               <p class="mb-0 text-uppercase filterTitle">
-                Product Type<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.ProductType'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -38,18 +38,17 @@
               <div class="card-body">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck1" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck1">Sets
+                  <label class="custom-control-label filterOption" for="customCheck1">{{'ProductTheme.Sets'|translate}}
                     [16]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck2" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck2">Minifigures
+                  <label class="custom-control-label filterOption" for="customCheck2">{{'ProductTheme.Minifigures'|translate}}
                     [1]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck3" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck3">Key
-                    Chains[1]</label>
+                  <label class="custom-control-label filterOption" for="customCheck3">{{'ProductTheme.KeyChains'|translate}}[1]</label>
                 </div>
               </div>
             </div>
@@ -60,7 +59,7 @@
             <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
               aria-expanded="true" aria-controls="collapseTwo">
               <p class="mb-0 text-uppercase filterTitle">
-                Age<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Age'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -95,7 +94,7 @@
             <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
               aria-expanded="true" aria-controls="collapseThree">
               <p class="mb-0 text-uppercase filterTitle">
-                Price<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Price'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -130,7 +129,7 @@
             <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour"
               aria-expanded="true" aria-controls="collapseFour">
               <p class="mb-0 text-uppercase filterTitle">
-                Featured<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Featured'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -138,7 +137,7 @@
               <div class="card-body">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck1111" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck1111">New
+                  <label class="custom-control-label filterOption" for="customCheck1111">{{'ProductTheme.New'|translate}}
                     [4]</label>
                 </div>
               </div>
@@ -150,7 +149,7 @@
             <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive"
               aria-expanded="true" aria-controls="collapseFive">
               <p class="mb-0 text-uppercase filterTitle">
-                Theme<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Theme'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -158,16 +157,16 @@
               <div class="card-body">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck11111" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck11111">Marvel
+                  <label class="custom-control-label filterOption" for="customCheck11111">{{'ProductTheme.Marvel'|translate}}
                     [18]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck22222" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck22222">Minifigures [1]</label>
+                  <label class="custom-control-label filterOption" for="customCheck22222">{{'ProductTheme.Minifigures'|translate}} [1]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck33333" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck33333">Spider-Man [18]</label>
+                  <label class="custom-control-label filterOption" for="customCheck33333">{{'Themes.Spider'|translate}} [18]</label>
                 </div>
               </div>
             </div>
@@ -178,7 +177,7 @@
             <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix"
               aria-expanded="true" aria-controls="collapseSix">
               <p class="mb-0 text-uppercase filterTitle">
-                Interest<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Interest'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -222,7 +221,7 @@
             <div class="card-header" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven"
               aria-expanded="true" aria-controls="collapseSeven">
               <p class="mb-0 text-uppercase filterTitle">
-                Piece Count<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.PieceCount'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -254,7 +253,7 @@
             <div class="card-header" id="headingEight" data-toggle="collapse" data-target="#collapseEight"
               aria-expanded="true" aria-controls="collapseEight">
               <p class="mb-0 text-uppercase filterTitle">
-                Availability<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'ProductTheme.Availability'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -262,16 +261,17 @@
               <div class="card-body">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck11111111" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck11111111">Out
-                    of Stock [12]</label>
+                  <label class="custom-control-label filterOption" for="customCheck11111111">
+                    {{'ProductTheme.Out'|translate}}
+                     [12]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck22222222" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck22222222">Coming Soon [4]</label>
+                  <label class="custom-control-label filterOption" for="customCheck22222222">{{'ProductTheme.Coming'|translate}} [4]</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheck33333333" autocomplete="off">
-                  <label class="custom-control-label filterOption" for="customCheck33333333">Available Now [2]</label>
+                  <label class="custom-control-label filterOption" for="customCheck33333333">{{'ProductTheme.AvailableNow'|translate}} [2]</label>
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@
             <div class="card-header" id="headingNine" data-toggle="collapse" data-target="#collapseNine"
               aria-expanded="true" aria-controls="collapseNine">
               <p class="mb-0 text-uppercase filterTitle">
-                Rating<i class="fa fa-chevron-down fa-lg float-right"></i>
+                {{'Product.Rating'|translate}}<i class="fa fa-chevron-down fa-lg float-right"></i>
               </p>
             </div>
 
@@ -343,11 +343,11 @@
             <p>Showing 1 - 18 of 18 results</p>
           </div>
           <div class="col-4">
-            <select autocomplete="off" class="custom-select custom-select-sm shadow-none">
-              <option value="1" selected>Featured</option>
-              <option value="2">Price: Low to High</option>
-              <option value="3">Price: High to Low</option>
-              <option value="4">Rating</option>
+            <select autocomplete="off" class="custom-select custom-select-sm shadow-none text-justify" dir="auto">
+              <option value="1" selected>{{'ProductTheme.Featured'|translate}}</option>
+              <option value="2">{{'ProductTheme.Price'|translate}}: {{'ProductTheme.Low2High'|translate}}</option>
+              <option value="3">{{'ProductTheme.Price'|translate}}: {{'ProductTheme.High2Low'|translate}}</option>
+              <option value="4">{{'Product.Rating'|translate}}</option>
             </select>
           </div>
         </div>
@@ -375,12 +375,12 @@
                 <div>
                   <button type="button" name="addToCart" (click)="addToBag()"
                     class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
-                      class="cardBtn">Add to cart</small></button>
+                      class="cardBtn">{{'ProductTheme.Add2cart'|translate}}</small></button>
                 </div>
                 <div class="mt-3">
                   <button type="button" class="btn shadow-none" (click)="addToWishlist()"><i
-                      class="far fa-heart mr-3 text-primary" aria-hidden="true"></i><small class="font-weight-bold"> Add
-                      to wishlist</small></button>
+                      class="far fa-heart mr-3 text-primary" aria-hidden="true"></i><small class="font-weight-bold">
+                        {{'Product.AddWishlist'|translate}}</small></button>
                 </div>
               </div>
             </div>
