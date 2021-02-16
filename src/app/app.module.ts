@@ -1,3 +1,8 @@
+
+
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; 
@@ -21,6 +26,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -45,11 +51,14 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
     RecoverPasswordComponent
   ],
   imports: [
+   
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

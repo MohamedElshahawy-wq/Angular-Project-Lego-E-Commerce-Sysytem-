@@ -8,6 +8,7 @@ import {  ParamMap } from '@angular/router';
 import { ProductsService } from 'src/app/Services/Products/products.service';
 import { IProduct } from 'src/app/ViewModels/IProduct';
 
+
 @Component({
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
@@ -21,15 +22,17 @@ export class WishListComponent implements OnInit {
   
   // newWishList:IWishList;
 
-  constructor(private wishSrv:WishListsService ,private activatedRoute:ActivatedRoute ,private prdSrv:ProductsService) { 
+  constructor(private wishSrv:WishListsService ,private activatedRoute:ActivatedRoute 
+              ,private prdSrv:ProductsService) { 
     // this.newWishList={
     //   id:0, userID:0,productsIDs:[]
     //  }
   }
 
   ngOnInit(): void {
-    this.wishSrv.getWishListByID(1).subscribe(
+    this.wishSrv.getWishListByID(2).subscribe(
       (res)=>{
+        console.log(res)
         this.wsh=res
         console.log(this.wsh)
        
@@ -78,6 +81,20 @@ export class WishListComponent implements OnInit {
     //   );
     // }
 
+  }
+   DeleteWishList(id) {
+    this.wishSrv.DeleteWishList(id).subscribe(
+      (resx)=>{
+       
+        this.wishSrv.getAllWishLists().subscribe(
+          (res)=>{
+            this.WishList=res
+          },
+          (err)=>{console.log(err)}
+        )
+      },
+      (err)=>{console.log(err)}
+    )
   }
 
 }
