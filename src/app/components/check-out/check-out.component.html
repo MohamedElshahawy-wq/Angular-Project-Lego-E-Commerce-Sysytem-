@@ -1,4 +1,18 @@
 <!-- -------------------header------------------------- -->
+<!-- <ul class="nav d-flex justify-content-between bg-warning">
+    <li class="nav-item ">
+      <a class="nav-link active" aria-current="page" href="Mybag2.html"  style="padding-top: 30px">Back to My Bag</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="#"><img src="assets/images/lego.png" style="width: 50px; height: auto;margin-left: auto;margin-right: auto"></a>
+    </li>
+    <li class="nav-item">
+      <p class="nav-link"  style="padding-top: 30px"><i class="fas fa-lock"></i> Secure Checkout</p>
+ 
+  
+    </li>
+    
+  </ul> -->
 <ul class="nav d-flex justify-content-between bg-warning text-justify" dir="auto">
   <li class="nav-item ">
     <a class="nav-link active" aria-current="page" href="Mybag2.html" style="padding-top: 30px">{{'Checkout.MyBag' |
@@ -68,6 +82,36 @@
                 <b>{{'Checkout.Got' | translate}} </b> <br><br>
                 {{'Checkout.Discount' | translate}} <br><br>
                 <div class="row g-3">
+                <div class="col-sm-7">
+                  <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                </div>
+                <div class="col-sm">
+                  <input type="number" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
+                </div>
+                </div>
+                   <br>
+                   <!--     //////////Accordion start//////////-->
+     <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <p class="fs-5">VIP Discount Code</p>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+         
+               <b> Got a VIP Discount Code?</b> <br><br>
+                Enter your VIP Discount Code <br><br>
+              <div class="row g-3">
+                <div class="col-sm-15">
+                <input type="text" class="form-control" placeholder="VIP Discount Code" aria-label="Email">
+                </div><br>
+                  
+           <input class="btn btn-light" type="submit" value="Apply" style="border: 1px blue solid">
+      
+      
+                </div>
                   <div class="col-sm-15">
                     <input type="text" class="form-control" placeholder="VIP Discount Code" aria-label="Email">
                   </div><br>
@@ -109,6 +153,7 @@
             </div>
           </div>
         </div>
+        </div> -->
 
         <!--/////////////////////////Accord end/////////////////-->
         <br>
@@ -137,6 +182,13 @@
     <div class="col-lg-3" style="padding: 15px;">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
+          <h5 class="card-title">Order Summary</h5>
+            <hr>
+          <p class="card-text" style="  word-spacing: 135px;">subtotal  $51.97</p>
+          <p class="card-text" style="  word-spacing: 80px;" >StandardShipping  Free</p>
+          <p class="card-text" style="  word-spacing: 170px;">TAX  $4.29</p>
+          <p class="card-title" style="  word-spacing: 105px;"><b>OrderTotal  $56.26</b></p>
+            <img src='assets/images/freeholiday.png' style="width: 150px; height: auto;"> 
           <h5 class="card-title">{{'Checkout.Order' | translate}}</h5>
           <hr>
           <p class="card-text" style="  word-spacing: 135px;">{{'Checkout.subtotal' | translate}} $51.97</p>
@@ -151,6 +203,11 @@
         <div class="card-body">
           <h5 class="card-title">{{'Checkout.Wedding' | translate}} 2018</h5>
           <!-- <p class="card-text"><p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br>  <b>$9.99</b></p> -->
+          <!-- <p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br><b>$9.99</b> -->
+           <p style="color: darkseagreen">Available now</p> <br>$9.99<br>
+
+          <img src="assets/images/weddingfavour.png" style="width: 150px; height: auto;">
+      
           <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br> {{'Checkout.QTY' | translate}} :
           3 <br> <b>$9.99</b>
 
@@ -188,5 +245,29 @@
       </div>
 
     </div>
+    </footer>
+
+
+
+    <!-- <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    
+      <p>This is the primary content of the panel.</p>
+    
+      <mat-action-row>
+        <button mat-button>Click me</button>
+      </mat-action-row>
+    </mat-expansion-panel> -->
+    
+
+
+   
   </div>
 </footer>

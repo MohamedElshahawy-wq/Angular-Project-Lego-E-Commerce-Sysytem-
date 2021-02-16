@@ -38,5 +38,16 @@ addWishList(wishList: IWishList):Observable<any>
   getWishListByID(wID:number): Observable<IWishList>{
     return this.http.get<IWishList>(`${environment.API_Link}/wishlists/${wID}`);
   } 
+
+ DeleteWishList(wiis: number):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.delete<any>(`${environment.API_Link}/wishlists/${wiis}`, httpOptions);
+  }
 }
 

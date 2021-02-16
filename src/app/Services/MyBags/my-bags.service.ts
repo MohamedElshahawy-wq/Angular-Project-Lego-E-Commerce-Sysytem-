@@ -40,4 +40,18 @@ addMyBag(mybag: IMyBag):Observable<any>
  getMyBagByID(bID:number): Observable<IMyBag>{
   return this.http.get<IMyBag>(`${environment.API_Link}/bags/${bID}`);
 } 
+
+
+
+
+addProductToBagByUserID(pprd: IMyBag):Observable<any>
+  {
+    const httpOptions = {headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      //,'Accept':' */*'
+      //,'Authorization': 'my-auth-token'
+        })};
+        
+    return this.http.put<any>(`${environment.API_Link}/bags`,pprd, httpOptions);
+  }
 }

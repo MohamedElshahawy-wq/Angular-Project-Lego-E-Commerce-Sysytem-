@@ -1,3 +1,8 @@
+
+
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; 
@@ -20,6 +25,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { I18nModule } from './i18n/i18n.module';
 
 import { AngularFireModule } from "@angular/fire";
@@ -51,15 +57,21 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     RecoverPasswordComponent
   ],
   imports: [
+   
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+=======
+    BrowserAnimationsModule
+>>>>>>> 694d33c1f7e170449fea65bac4a6d02c971997e0
 =======
     I18nModule,
 >>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
