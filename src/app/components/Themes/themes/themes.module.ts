@@ -7,6 +7,10 @@ import { HeaderComponent } from './Spiderman/header/header.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+// import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {path:'About', component: AboutComponent},
@@ -21,7 +25,9 @@ const routes: Routes = [
     TranslateModule.forChild({
       loader: { provide: TranslateLoader, useFactory: translateLoaderFactory, deps: [HttpClient] }
     }),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule
   ]
 })
 export class ThemesModule { }

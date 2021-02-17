@@ -6,12 +6,12 @@ export const environment = {
   production: false,
   API_Link: 'http://localhost:3000',
   firebase : {
-    apiKey: "AIzaSyB2sQC2aN45hmqPjzRlNltv0mIm5LcslYw",
-    authDomain: "legoangularproject.firebaseapp.com",
-    projectId: "legoangularproject",
-    storageBucket: "legoangularproject.appspot.com",
-    messagingSenderId: "547576791402",
-    appId: "1:547576791402:web:2ae0e0d06dad406625e513"
+    apiKey: "AIzaSyCeBKRyfV6o5c5jEcSt4ZihhGpnE7CKJ94",
+    authDomain: "rest-firestore-api.firebaseapp.com",
+    projectId: "rest-firestore-api",
+    storageBucket: "rest-firestore-api.appspot.com",
+    messagingSenderId: "38469763527",
+    appId: "1:38469763527:web:8de4cb7c2f9a72402e59e2"
   }
 };
 

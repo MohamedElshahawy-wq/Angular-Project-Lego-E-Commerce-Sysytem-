@@ -25,6 +25,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "angular-font-awesome": "^3.1.2",
+    "angularfire2": "^5.4.2",
     "chart.js": "^2.9.4",
     "firebase": "^8.2.7",
     "font-awesome": "^4.7.0",

@@ -286,6 +286,7 @@
         "CrAccount": "Create Account"
     },
     "FindStore": {
+        "input":"Search by city, zipcode or place of interest",
         "Stores": "Stores",
         "i": "i",
         "Most": "Most LEGO® Stores are now open. We are complying with local regulations and safety guidelines to keep our visitors and team members safe and healthy. Please check your local store page for current business hours or call the store before you visit. Thank you for your patience and support!",
