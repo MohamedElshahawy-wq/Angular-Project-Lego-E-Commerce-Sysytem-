@@ -24,7 +24,6 @@ const routes: Routes = [
   {path: 'CheckOut' , component: CheckOutComponent},
   {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},  
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
-  {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
