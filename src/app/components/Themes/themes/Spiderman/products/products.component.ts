@@ -5,8 +5,8 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import { ProductsService } from 'src/app/Services/Products/products.service';
-import { IProduct } from 'src/app/ViewModels/IProduct';
+import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
+import { ProductModel } from 'src/app/models/productModel';
 
 @Component({
   selector: 'app-products',
@@ -15,14 +15,39 @@ import { IProduct } from 'src/app/ViewModels/IProduct';
 })
 export class ProductsComponent implements OnInit {
 
-  productList: IProduct[];
+  // productList: IProduct[];
 
   @ViewChild('theFilters') filters: ElementRef;
   @ViewChild('allProducts') products: ElementRef;
   @ViewChild('theFiltersBtn') filterBtn: ElementRef;
   toggle: boolean = true;
 
-  constructor(private prdSrv: ProductsService) {}
+  productList;
+  constructor(private productsService: ProductsService) { }
+  ngOnInit() {
+    console.log("In OnInit");
+
+    this.productsService.getProducts().subscribe(data => {
+      this.productList = data.map(e => {
+        console.log(e.payload.doc.id, "   :e.payload.doc.id");
+        console.log(e.payload.doc.data(), "   :e.payload.doc.data()");
+
+        return e.payload.doc.data();
+        // {
+        //   id: e.payload.doc.id,
+        //   stock: e.payload.doc.data().stock,
+        //   rating: e.payload.doc.data().rating,
+        //   image: e.payload.doc.data().image,
+        //   categoryID: e.payload.doc.data().categoryID,
+        //   price: e.payload.doc.data().price,
+        //   description: e.payload.doc.data().description,
+        //   name: e.payload.doc.data().name,
+        //   available: e.payload.doc.data().available
+        // } as unknown as ProductModel;
+      }
+      )
+    });
+  }
 
   ToggleFilters() {
     if (this.toggle) {
@@ -53,15 +78,6 @@ export class ProductsComponent implements OnInit {
       this.filterBtn.nativeElement.innerHTML = "Filter";
       this.products.nativeElement.classList.remove('d-none');
     }
-  }
-
-  ngOnInit(): void {
-    this.prdSrv.getAllProducts().subscribe( 
-      (res) => {
-        this.productList = res
-      },
-      (err) => {console.log(err)}
-    )
   }
 
 }

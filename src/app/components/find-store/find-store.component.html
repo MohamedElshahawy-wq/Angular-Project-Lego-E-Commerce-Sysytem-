@@ -16,12 +16,18 @@
                 <div class="card-body">
                     <h2 class="card-text text-center">{{'FindStore.Find' | translate}}</h2>
                     <!-- <span class="plain">Search by city, zipcode or place of interest</span> -->
-                    <div class="input-group md-form form-sm form-2 pl-0 pt-4 pb-1">
+                      <mat-form-field class="example-full-width text-justify" dir="auto">
+                        <mat-label>{{'FindStore.input'|translate}}</mat-label>
+                        <input matInput >
+                        <mat-icon matSuffix><i class="fa fa-search text-grey"></i></mat-icon>
+                        </mat-form-field>
+                      <!-- Old Code-->
+                    <!-- <div class="input-group md-form form-sm form-2 pl-0 pt-4 pb-1">
                         <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search by city, zipcode or place of interest" aria-label="Search" style="border: none;">
                         <div class="input-group-append">
                           <span class="input-group-text" id="basic-text1" style="border: none;background: #fff;"><i class="fa fa-search text-grey"></i></span>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="text-center pt-4">
                         <button class="btnDark py-2" style="background: #4b4d4e;color: #fff;">{{'FindStore.ViewStore' | translate}}</button>
                         <button class="btnDark py-2 ml-2" style="background: #F8F8F8;color: #000;">{{'FindStore.ViewAll' | translate}}</button>

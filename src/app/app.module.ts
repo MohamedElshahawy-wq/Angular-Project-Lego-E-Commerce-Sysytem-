@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"; 
-import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VipComponent } from './components/vip/vip.component';
@@ -21,7 +21,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { I18nModule } from './i18n/i18n.module';
-
+import { MatInputModule } from '@angular/material/input';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,11 @@ import { I18nModule } from './i18n/i18n.module';
     HttpClientModule,
     ReactiveFormsModule,
     I18nModule,
-    ],
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule
+  ],
+  exports: [MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
