@@ -57,11 +57,8 @@ import { I18nModule } from './i18n/i18n.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
     BrowserAnimationsModule
-=======
     I18nModule,
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
     ],
   providers: [],
   bootstrap: [AppComponent]
