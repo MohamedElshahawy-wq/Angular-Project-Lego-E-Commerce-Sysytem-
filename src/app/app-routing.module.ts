@@ -11,7 +11,6 @@ import { HomeComponent } from './components/home/home.component';
 import { MyBBagComponent } from './components/my-bbag/my-bbag.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AuthGuard } from './components/AuthGuard/auth.guard';
 
@@ -21,9 +20,9 @@ const routes: Routes = [
   {path: 'LegoLife' , component: LegoLifeComponent},
   {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)},
   {path: 'WishList' , component: WishListComponent},
-  {path: 'WishList/:wID' , component: WishListComponent},
+  {path: 'WishList/:wID' , component: WishListComponent, canActivate: [AuthGuard]},
   {path: 'CheckOut' , component: CheckOutComponent},
-  {path: 'MyBBag' , component: MyBBagComponent},  
+  {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},  
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
   {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
   {path :'Product/:PID',component:ProductComponent},
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path :'Home',component:HomeComponent},
   {path :'Register',component: RegisterComponent},
   {path :'Login',component: LoginComponent},
-  {path :'ForgotUsername',component: RecoverUsernameComponent},
   {path :'ForgotPassword',component: RecoverPasswordComponent},
   {path:"",redirectTo:'Home',pathMatch:'full'},
 
