@@ -64,17 +64,12 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-=======
-    BrowserAnimationsModule
->>>>>>> 694d33c1f7e170449fea65bac4a6d02c971997e0
-=======
+    BrowserAnimationsModule,
     I18nModule,
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
     ],
   providers: [NgAuthService],
   bootstrap: [AppComponent]

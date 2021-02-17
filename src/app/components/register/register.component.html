@@ -86,13 +86,8 @@
                 placeholder="example@domain.com"
                 required
               />
-<<<<<<< HEAD
               <div class="text-danger text-left emailWarn" *ngIf="(!newEmail.valid && newEmail.touched)">
-                Email is required
-=======
-              <div class="text-danger text-left emailWarn" [hidden]="newEmail.valid">
                 {{'User.EmailRequired'|translate}}
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
               </div>
             </div>
 
@@ -115,13 +110,8 @@
                 required
                 min="10"
               />
-<<<<<<< HEAD
               <div class="text-danger text-left passWarn" *ngIf="(!newPassword.valid && newPassword.touched)">
-                The password must be at least 10 characters long
-=======
-              <div class="text-danger text-left passWarn" [hidden]="newPassword.valid">
                 {{'User.MustPass'|translate}}
->>>>>>> e365df0a8dd7bea0979ff17f8d51fd1e5532bfcf
                 <br>
                 {{'User.PasswordRequired'|translate}}
               </div>
