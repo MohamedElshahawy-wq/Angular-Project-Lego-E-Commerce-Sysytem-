@@ -107,11 +107,6 @@
           </form>
 
           <div class="d-flex" dir="auto">
-            <a href="#" id="forgotUsername" [routerLink]="['/ForgotUsername']" dir="auto"
-              ><strong>{{'login.ForgotName' |translate}}</strong></a>
-
-            <div class="vl"></div>
-
             <a href="#" id="forgotPassword" [routerLink]="['/ForgotPassword']" dir="auto"
               ><strong>{{'login.ForgotPass' |translate}}</strong></a>
           </div>
@@ -121,23 +116,6 @@
             <p id="ORtxt">{{'login.or' |translate}}</p>
             <hr class="Line" />
           </div>
-          <div class="d-flex" dir="auto">
-            <button
-              id="ContinueWFBbtn"
-              class="text-center justify-content-center d-flex" dir="auto"
-            >
-              <i class="fab fa-facebook-square" id="FBicon"></i> {{'User.Facebook'|translate}}
-            </button>
-            <img
-              src="assets/images/Register-Login-Images/search.png"
-              id="googleIcon" 
-            />
-            <img
-              src="assets/images/Register-Login-Images/apple.png" 
-              id="appleIcon"
-            />
-          </div>
-          <br />
           <br />
           <p style="margin-bottom: 3px">{{'login.Dont' |translate }}</p>
           <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">{{'login.CrAccount' | translate}}</a>
