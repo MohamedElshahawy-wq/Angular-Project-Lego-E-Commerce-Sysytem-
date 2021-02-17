@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { AuthGuard } from './components/AuthGuard/auth.guard';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: 'CheckOut' , component: CheckOutComponent},
   {path: 'MyBBag' , component: MyBBagComponent},  
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
-  {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule)},
+  {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
