@@ -57,17 +57,19 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     RecoverPasswordComponent
   ],
   imports: [
-   
-    
+  
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+=======
+>>>>>>> e2f63da61d78c862f9287feced210797d5430ec7
     BrowserAnimationsModule,
     I18nModule,
     ],

@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ahmed",
-      "email": "ahmed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 100,
-      "dateOfJoin": "02/10/2020"
-    },
-    {
-      "id": 2,
-      "name": "Mohamed",
-      "email": "mohamed@gmail.com",
-      "password": "123456",
-      "phoneNumber": "01234567890",
-      "totalOrdered": 200,
-      "dateOfJoin": "12/02/2019",
       "email": "sarah@gmail.com",
       "password": "1234",
       "birthday": {
@@ -152,28 +136,29 @@
       "totalOrdered": 50
     },
     {
-      "name": "\tSpiderman",
+      "name": "Spiderman",
       "totalOrdered": 50,
       "id": 3
     }
   ],
-  "wishlists": [ {
-    "id": 1,
-    "userID": 1,
-    "productsIDs": [
-      1,
-      2
-    ]
-  },
-  {
-    "id": 2,
-    "userID": 2,
-    "productsIDs": [
-      2,
-      3
-    ]
-  }],
-  
+  "wishlists": [
+    {
+      "id": 1,
+      "userID": 1,
+      "productsIDs": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "userID": 2,
+      "productsIDs": [
+        2,
+        3
+      ]
+    }
+  ],	
   "bags": [
     {
       "id": 1,
@@ -235,6 +220,7 @@
     },
     {
       "id": 3,
+      "userId": 3,
       "productId": 2,
       "OverallRating": 4,
       "recommend": "true",
@@ -242,6 +228,7 @@
       "review": "I’ve always been a Harry Potter fan so building this lego set with my daughters was a lot of fun for me. The attention to detail is amazing. I really felt like I was being transported into the book. I was really impressed with the small details that definitely kept the Harry Potter books in mind. Each wizard has a unique wand just like in the Harry Potter books. They even gave the Neville minifigure shorter legs so he would be shorter than the other characters. The instructions are very clear and easy to read. Every step comes"
     },
     {
+      "userId": 3,
       "productId": 1,
       "OverallRating": "3",
       "recommend": "true",
