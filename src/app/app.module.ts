@@ -50,14 +50,13 @@ import { I18nModule } from './i18n/i18n.module';
     RecoverPasswordComponent
   ],
   imports: [
-   
-    
+  
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     I18nModule,
     ],
   providers: [],
