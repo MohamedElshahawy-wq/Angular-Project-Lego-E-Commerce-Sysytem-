@@ -34,6 +34,9 @@ $FinalProj-theme: mat-light-theme((
 @include angular-material-theme($FinalProj-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @font-face {
     font-family: 'ae_Hani';
     src: url('./assets/font/ae_Hani.ttf');

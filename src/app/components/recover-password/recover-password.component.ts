@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgAuthService } from 'src/app/Services/Authentication/ng-auth.service';
 
 @Component({
   selector: 'app-recover-password',
@@ -9,7 +10,11 @@ export class RecoverPasswordComponent implements OnInit {
 
   forgotppass:string;
 
-  constructor() { }
+  constructor(public ngAuthService: NgAuthService) { }
+
+  resetPass(){
+    this.ngAuthService.ForgotPassword(this.forgotppass);
+  }
 
   ngOnInit(): void {
   }

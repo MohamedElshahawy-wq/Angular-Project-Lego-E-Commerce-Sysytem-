@@ -15,7 +15,7 @@
           <span
             class="navbar-brand mb-0 h1 justify-content-left text-center"
             id="navTxt"
-            ><strong>{{'User.Account'|translate}}</strong></span
+            ><strong>{{ "User.Account" | translate }}</strong></span
           >
           <button
             type="button"
@@ -29,13 +29,20 @@
 
       <!--Main Body-->
       <div>
-        <h5 id="info-text">{{'User.Create'|translate}}</h5>
+        <h5 id="info-text">{{ "User.Create" | translate }}</h5>
 
-        <p id="info-text2">{{'User.Already'|translate}}</p>
+        <p id="info-text2">{{ "User.Already" | translate }}</p>
 
-        <button id="regPageLoginBtn" type="submit" class="btn" [routerLink]="['/Login']">{{'User.Log'|translate}}</button>
+        <button
+          id="regPageLoginBtn"
+          type="submit"
+          class="btn"
+          [routerLink]="['/Login']"
+        >
+          {{ "User.Log" | translate }}
+        </button>
 
-        <div class="d-flex" style="margin-bottom: 15px">
+        <!--<div class="d-flex" style="margin-bottom: 15px">
           <button
             id="continuewfbBtn"
             class="text-center justify-content-center d-flex"
@@ -50,11 +57,11 @@
             src="assets/images/Register-Login-Images/apple.png"
             id="appleIcon"
           />
-        </div>
+        </div>-->
 
         <div class="d-flex">
           <hr class="line" />
-          <p id="useEmailParagraph">{{'User.email'|translate}}</p>
+          <p id="useEmailParagraph">{{ "User.email" | translate }}</p>
           <hr class="line" />
         </div>
 
@@ -74,7 +81,7 @@
                 id="regEmailLabel"
                 for="emailRegTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >{{'User.address'|translate}}</label
+                >{{ "User.address" | translate }}</label
               >
               <input
                 #newEmail="ngModel"
@@ -86,8 +93,11 @@
                 placeholder="example@domain.com"
                 required
               />
-              <div class="text-danger text-left emailWarn" [hidden]="newEmail.valid">
-                {{'User.EmailRequired'|translate}}
+              <div
+                class="text-danger text-left emailWarn"
+                *ngIf="!newEmail.valid && newEmail.touched"
+              >
+                {{ "User.EmailRequired" | translate }}
               </div>
             </div>
 
@@ -97,7 +107,7 @@
                 id="regPasswordLabel"
                 for="passwordRegTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >{{'User.Password'|translate}}</label
+                >{{ "User.Password" | translate }}</label
               >
               <input
                 #newPassword="ngModel"
@@ -110,10 +120,13 @@
                 required
                 min="10"
               />
-              <div class="text-danger text-left passWarn" [hidden]="newPassword.valid">
-                {{'User.MustPass'|translate}}
-                <br>
-                {{'User.PasswordRequired'|translate}}
+              <div
+                class="text-danger text-left passWarn"
+                *ngIf="!newPassword.valid && newPassword.touched"
+              >
+                {{ "User.MustPass" | translate }}
+                <br />
+                {{ "User.PasswordRequired" | translate }}
               </div>
             </div>
 
@@ -123,7 +136,7 @@
                 id="regBDLabel"
                 for="birthdateTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >{{'User.Birthdate'|translate}}</label
+                >{{ "User.Birthdate" | translate }}</label
               >
               <div id="birthdateTxt" class="d-flex">
                 <!--month-->
@@ -132,7 +145,7 @@
                     id="regmonthLabel"
                     for="monthDateTxt"
                     class="form-label text-left justify-content-left d-flex"
-                    >{{'User.Month'|translate}}</label
+                    >{{ "User.Month" | translate }}</label
                   >
                   <input
                     #newBDMonth="ngModel"
@@ -152,7 +165,7 @@
                     id="regDayLabel"
                     for="dayDateTxt"
                     class="form-label text-left justify-content-left d-flex"
-                    >{{'User.Day'|translate}}</label
+                    >{{ "User.Day" | translate }}</label
                   >
                   <input
                     #newBDDay="ngModel"
@@ -172,7 +185,7 @@
                     id="regYearLabel"
                     for="yearDateTxt"
                     class="form-label text-left justify-content-left d-flex"
-                    >{{'User.Year'|translate}}</label
+                    >{{ "User.Year" | translate }}</label
                   >
                   <input
                     #newBDYear="ngModel"
@@ -185,10 +198,27 @@
                     required
                   />
                 </div>
-                <br>
+                <br />
               </div>
-              <div class="text-danger text-left BDWarn" [hidden]="newBDMonth.valid && newBDDay.valid && newBDYear.valid">
-                {{'User.DateRequired'|translate}}
+              <div
+                class="text-danger text-left BDWarn"
+                *ngIf="
+                  !newBDMonth.valid ||
+                  !newBDDay.valid ||
+                  (!newBDYear.valid &&
+                    newBDMonth.touched &&
+                    newBDDay.touched &&
+                    newBDYear.touched)
+                "
+              >
+                <div
+                  class="text-danger text-left BDWarn"
+                  [hidden]="
+                    newBDMonth.valid && newBDDay.valid && newBDYear.valid
+                  "
+                >
+                  {{ "User.DateRequired" | translate }}
+                </div>
               </div>
             </div>
 
@@ -198,7 +228,7 @@
                 id="regCountryLabel"
                 for="countryRegTxt"
                 class="form-label text-left justify-content-left d-flex"
-                >{{'User.Country'|translate}}</label
+                >{{ "User.Country" | translate }}</label
               >
               <select
                 id="countryRegTxt"
@@ -492,22 +522,31 @@
                   id="regTermsandConditionsLabel"
                   class="form-check-label d-flex text-left justify-content-left"
                   for="acceptTermsCheck"
-                  >{{'User.Accept'|translate}}</a
+                  >{{ "User.Accept" | translate }}</a
                 >
               </div>
               <p id="regModalLabel" class="text-left">
-                {{'User.Agree'|translate}}
-                <a href="#" data-toggle="modal" data-target="#myModal"
-                  >{{'User.TermsConditions'|translate}}</a
-                >
-                {{'User.consent'|translate}}
+                {{ "User.Agree" | translate }}
+                <a href="#" data-toggle="modal" data-target="#myModal">{{
+                  "User.TermsConditions" | translate
+                }}</a>
+                {{ "User.consent" | translate }}
               </p>
-              <div class="text-danger text-left TermsandConditionsWarn" [hidden]="newTermsandConditionsCheck.valid == true">
-                {{'User.Conditions'|translate}}
+              <div
+                class="text-danger text-left TermsandConditionsWarn"
+                [hidden]="newTermsandConditionsCheck.valid == true"
+              >
+                {{ "User.Conditions" | translate }}
               </div>
             </div>
 
-            <button type="submit" [disabled]="regForm.invalid" class="btn Confirmbtn">{{'User.Confirm'|translate}}</button>
+            <button
+              type="submit"
+              [disabled]="regForm.invalid"
+              class="btn Confirmbtn"
+            >
+              {{ "User.Confirm" | translate }}
+            </button>
           </form>
         </div>
       </div>
@@ -524,270 +563,324 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <h5 id="regModalHeaderTxt"><b>{{'User.TermsConditions'|translate}}</b></h5>
+              <h5 id="regModalHeaderTxt">
+                <b>{{ "User.TermsConditions" | translate }}</b>
+              </h5>
               <div
                 class="text-left justify-content-left"
                 style="font-size: 14px"
               >
                 <p class="modalBoldTxt">
                   <b
-                    >{{'User.Terms'|translate}}<br />{{'User.stuff'|translate}}<br />{{'User.WhoWe'|translate}}</b>
+                    >{{ "User.Terms" | translate }}<br />{{
+                      "User.stuff" | translate
+                    }}<br />{{ "User.WhoWe" | translate }}</b
+                  >
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.company'|translate}}
-                  <a href="#"> {{'User.here'|translate}}</a>.
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.seeing'|translate}}</b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.legal'|translate}}<br /><br />
-                  {{'User.whichAccount'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.WhatDo'|translate}}</b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.termsApply'|translate}}
+                  {{ "User.company" | translate }}
+                  <a href="#"> {{ "User.here" | translate }}</a
+                  >.
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.olderUser'|translate}} </b>
+                  <b>{{ "User.seeing" | translate }}</b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.permission'|translate}}
+                  {{ "User.legal" | translate }}<br /><br />
+                  {{ "User.whichAccount" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.WhatDo" | translate }}</b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.termsApply" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.olderUser" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.permission" | translate }}
                   <br /><br />
-                  {{'User.rights'|translate}}
+                  {{ "User.rights" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.Consenting'|translate}}<br />
-                    {{'User.relation'|translate}}
+                  <b
+                    >{{ "User.Consenting" | translate }}<br />
+                    {{ "User.relation" | translate }}
                   </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.parentLegal'|translate}} <br /><br />
-                  {{'User.acceptedOur'|translate}}
+                  {{ "User.parentLegal" | translate }} <br /><br />
+                  {{ "User.acceptedOur" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.consentingParent'|translate}}</b>
+                  <b>{{ "User.consentingParent" | translate }}</b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.PartConsent'|translate}} <br /><br />
+                  {{ "User.PartConsent" | translate }} <br /><br />
 
-                  {{'User.yourChild'|translate}} <br /><br />
+                  {{ "User.yourChild" | translate }} <br /><br />
 
-                  {{'User.privacy'|translate}} <br /><br />
+                  {{ "User.privacy" | translate }} <br /><br />
 
-                  {{'User.willAlso'|translate}}
+                  {{ "User.willAlso" | translate }}
                   <br /><br />
 
-                  {{'User.approach'|translate}} <br />
+                  {{ "User.approach" | translate }} <br />
 
-                  <b>{{'User.Services'|translate}}</b>
+                  <b>{{ "User.Services" | translate }}</b>
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.access'|translate}}
+                  <b
+                    >{{ "User.access" | translate }}
                     <br />
-                    {{'User.relation'|translate}}
+                    {{ "User.relation" | translate }}
                   </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.Besides'|translate}}
+                  {{ "User.Besides" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.Linked'|translate}} <br />
-                    {{'User.relation'|translate}}
+                  <b
+                    >{{ "User.Linked" | translate }} <br />
+                    {{ "User.relation" | translate }}
                   </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.All'|translate}}<br /><br />
+                  {{ "User.All" | translate }}<br /><br />
 
-                  {{'User.specifically'|translate}}
+                  {{ "User.specifically" | translate }}
                   <br />
-                  {{'User.creative'|translate}} <br />
-                  {{'User.SharePhotos'|translate}} <br />
-                  {{'User.social'|translate}} <br />
+                  {{ "User.creative" | translate }} <br />
+                  {{ "User.SharePhotos" | translate }} <br />
+                  {{ "User.social" | translate }} <br />
 
-                  {{'User.friends'|translate}} <br />
-                  {{'User.personalized'|translate}}<br /><br />
+                  {{ "User.friends" | translate }} <br />
+                  {{ "User.personalized" | translate }}<br /><br />
 
-                  {{'User.willBeAble'|translate}}
+                  {{ "User.willBeAble" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.Services2'|translate}}<br />
-                    {{'User.relation'|translate}}
+                  <b
+                    >{{ "User.Services2" | translate }}<br />
+                    {{ "User.relation" | translate }}
                   </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.policies'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.Safety'|translate}}</b></p>
-
-                <p class="modalBoldTxt">
-                  <b>{{'User.understand'|translate}} </b>
-                </p>
-                <p class="modalDetailsTxt">
-                  {{'User.Experiences'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.moderate'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.channels'|translate}} <br /><br />
-                  {{'User.Certain'|translate}}
+                  {{ "User.policies" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.Advertisements'|translate}}<br />
-                    {{'User.ServeAdvertisements'|translate}}</b>
-                </p>
-                <p class="modalDetailsTxt">
-                  {{'User.willOnly'|translate}} <br /><br />
-
-                  {{'User.providing'|translate}}
+                  <b>{{ "User.Safety" | translate }}</b>
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.IP'|translate}}<br /><br />
-                    {{'User.privacyRights'|translate}}
+                  <b>{{ "User.understand" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.Experiences" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.moderate" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.channels" | translate }} <br /><br />
+                  {{ "User.Certain" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >{{ "User.Advertisements" | translate }}<br />
+                    {{ "User.ServeAdvertisements" | translate }}</b
+                  >
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.willOnly" | translate }} <br /><br />
+
+                  {{ "User.providing" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b
+                    >{{ "User.IP" | translate }}<br /><br />
+                    {{ "User.privacyRights" | translate }}
                   </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.ToOperate'|translate}}<br /><br />
+                  {{ "User.ToOperate" | translate }}<br /><br />
 
-                  {{'User.weProcess'|translate}} <br /><br />
+                  {{ "User.weProcess" | translate }} <br /><br />
 
-                  {{'User.personalInformation'|translate}} <br /><br />
+                  {{ "User.personalInformation" | translate }} <br /><br />
 
-                  {{'User.PrivacyPolicy'|translate}} <br /><br />
+                  {{ "User.PrivacyPolicy" | translate }} <br /><br />
 
-                  {{'User.collecting'|translate}}
+                  {{ "User.collecting" | translate }}
                   <br /><br />
 
-                  {{'User.verifiableParental'|translate}}<br /><br />
+                  {{ "User.verifiableParental" | translate }}<br /><br />
 
-                  {{'User.ourLegal'|translate}} <br /><br />
+                  {{ "User.ourLegal" | translate }} <br /><br />
 
-                  {{'User.seeMore'|translate}}
+                  {{ "User.seeMore" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.aboutYour'|translate}} </b>
+                  <b>{{ "User.aboutYour" | translate }} </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.LEGOEarned'|translate}} <br /><br />
+                  {{ "User.LEGOEarned" | translate }} <br /><br />
 
-                  {{'User.AlsoPost'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.AboutOur'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.picturesText'|translate}}
-                  <br /><br />
-
-                  {{'User.giveYou'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.obligations'|translate}}</b></p>
-                <br />
-                <p class="modalBoldTxt"><b>{{'User.ourObligations'|translate}}</b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.courtOrders'|translate}}<br /><br />
-
-                  {{'User.guarantee'|translate}} <br /><br />
-
-                  {{'User.entertainment'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.YourObligat'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.otherwise'|translate}} <br /><br />
-
-                  {{'User.contactUus'|translate}} <br /><br />
-
-                  {{'User.Agreechild’s'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.Termination'|translate}}</b></p>
-                <br />
-                <p class="modalBoldTxt"><b>{{'User.WhenTerminate'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.stopUsing'|translate}} <a href="#">{{'User.here'|translate}}</a>. <br /><br />
-
-                  {{'User.VIPprogram'|translate}} <br /><br />
-
-                  {{'User.childTurns'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.WhenTerminate'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.createRisk'|translate}} <br /><br />
-
-                  {{'User.suspendAccess'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.Deletion'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.deleteYour'|translate}}
-                  <br /><br />
-
-                  {{'User.informationRelating'|translate}} <br /><br />
-
-                  {{'User.Furthermore'|translate}} <br /><br />
-
-                  {{'User.aboutDeletion'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.ChangServices'|translate}}</b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.improving'|translate}} <br /><br />
-
-                  {{'User.Occasionally'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.update'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.legalGuardian'|translate}} <br /><br />
-
-                  {{'User.contactingYou'|translate}} <br /><br />
-
-                  {{'User.legalRequirements'|translate}} <br /><br />
-
-                  {{'User.announced'|translate}}
-                </p>
-
-                <p class="modalBoldTxt"><b>{{'User.ContactingUs'|translate}}</b></p>
-
-                <p class="modalBoldTxt"><b>{{'User.questions'|translate}} </b></p>
-                <p class="modalDetailsTxt">
-                  {{'User.feedback'|translate}}
+                  {{ "User.AlsoPost" | translate }}
                 </p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.observedA'|translate}} </b>
+                  <b>{{ "User.AboutOur" | translate }} </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.encounteredVia'|translate}}
-                  <a href="https://www.LEGO.com/service" >https://www.LEGO.com/service</a>.
+                  {{ "User.picturesText" | translate }}
+                  <br /><br />
+
+                  {{ "User.giveYou" | translate }}
                 </p>
 
-                <p class="modalBoldTxt"><b>{{'User.complain'|translate}} </b></p>
+                <p class="modalBoldTxt">
+                  <b>{{ "User.obligations" | translate }}</b>
+                </p>
+                <br />
+                <p class="modalBoldTxt">
+                  <b>{{ "User.ourObligations" | translate }}</b>
+                </p>
                 <p class="modalDetailsTxt">
-                  {{'User.complainAbout'|translate}}
+                  {{ "User.courtOrders" | translate }}<br /><br />
+
+                  {{ "User.guarantee" | translate }} <br /><br />
+
+                  {{ "User.entertainment" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.YourObligat" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.otherwise" | translate }} <br /><br />
+
+                  {{ "User.contactUus" | translate }} <br /><br />
+
+                  {{ "User.Agreechild’s" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.Termination" | translate }}</b>
+                </p>
+                <br />
+                <p class="modalBoldTxt">
+                  <b>{{ "User.WhenTerminate" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.stopUsing" | translate }}
+                  <a href="#">{{ "User.here" | translate }}</a
+                  >. <br /><br />
+
+                  {{ "User.VIPprogram" | translate }} <br /><br />
+
+                  {{ "User.childTurns" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.WhenTerminate" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.createRisk" | translate }} <br /><br />
+
+                  {{ "User.suspendAccess" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.Deletion" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.deleteYour" | translate }}
+                  <br /><br />
+
+                  {{ "User.informationRelating" | translate }} <br /><br />
+
+                  {{ "User.Furthermore" | translate }} <br /><br />
+
+                  {{ "User.aboutDeletion" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.ChangServices" | translate }}</b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.improving" | translate }} <br /><br />
+
+                  {{ "User.Occasionally" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.update" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.legalGuardian" | translate }} <br /><br />
+
+                  {{ "User.contactingYou" | translate }} <br /><br />
+
+                  {{ "User.legalRequirements" | translate }} <br /><br />
+
+                  {{ "User.announced" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.ContactingUs" | translate }}</b>
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.questions" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.feedback" | translate }}
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.observedA" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.encounteredVia" | translate }}
                   <a href="https://www.LEGO.com/service"
-                    >https://www.LEGO.com/service</a>.
+                    >https://www.LEGO.com/service</a
+                  >.
                 </p>
-
-                <p class="modalBoldTxt"><b>{{'User.OtherInformation'|translate}} </b></p>
 
                 <p class="modalBoldTxt">
-                  <b>{{'User.jurisdiction'|translate}} </b>
+                  <b>{{ "User.complain" | translate }} </b>
                 </p>
                 <p class="modalDetailsTxt">
-                  {{'User.submitTo'|translate}}
+                  {{ "User.complainAbout" | translate }}
+                  <a href="https://www.LEGO.com/service"
+                    >https://www.LEGO.com/service</a
+                  >.
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.OtherInformation" | translate }} </b>
+                </p>
+
+                <p class="modalBoldTxt">
+                  <b>{{ "User.jurisdiction" | translate }} </b>
+                </p>
+                <p class="modalDetailsTxt">
+                  {{ "User.submitTo" | translate }}
                 </p>
               </div>
 
@@ -797,7 +890,7 @@
                 class="btn btn-danger"
                 data-dismiss="modal"
               >
-              {{'User.Close'|translate}} 
+                {{ "User.Close" | translate }}
               </button>
               <br />
               <br />
@@ -808,6 +901,7 @@
       </div>
     </div>
 
+    <!--Right Indentation-->
     <div class="col"></div>
   </div>
 </div>

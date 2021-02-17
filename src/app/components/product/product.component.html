@@ -26,12 +26,7 @@
 <div class="container-fluid product text-justify" dir="auto" dir="auto">
     <div class="row p-4">
         <div class="col-md-1 picelproduct">
-            <img src={{product.image}} id="picelproduct1">
-            <img src={{product.image}} id="picelproduct2">
-            <img src={{product.image}} id="picelproduct3">
-            <img src={{product.image}} id="picelproduct4">
-            <img src={{product.image}} id="picelproduct5">
-
+            <img *ngFor="let item of product.images;let indexOfelement=index;" src={{item}} (click)="ChangeImage(item)">
         </div>
         <div class="col-md-8">
             <div class=" picelproductkbera product1">
@@ -83,7 +78,7 @@
                         </g>
                     </svg>
                 </span>
-                <a href="#ff" class="mx-2 py-2">22 {{'Product.Reviews'|translate}} </a>
+                <a href="#ff" class="mx-2 py-2">{{reviewNumber}} {{'Product.Reviews'|translate}}</a>
             </div>
             <div class="mb-3 lonazrq p-2 text-justify" dir="auto">
                 <img class="float-left mr-2" src="assets\images\40416-PDPPage-202011-Promo-Badge.png">
@@ -98,23 +93,25 @@
             </div>
             <div class="d-flex mb-3">
                 <div class="d-flex">
-                    <div class="border rounded-left py-2 px-3 mx-0" id="minus"> -</div>
-                    <div class="border py-2 px-4 mx-0" id="count">1</div>
-                    <div class="border rounded-right py-2 px-3 mx-0" id="plus">+</div>
+                    <div class="border rounded-left py-2 px-3 mx-0" id="minus" (click)="minus()"> -</div>
+                    <div class="border py-2 px-4 mx-0" id="count">{{count}}</div>
+                    <div class="border rounded-right py-2 px-3 mx-0" id="plus" (click)="plus()">+</div>
                 </div>
                 <div class="mx-2 py-2">
                     <span> Limit 3</span>
-                    <button id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
+                    <!--
+                    <button class="mx-2" id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
                         data-content=" We restrict the limit a household can buy in order to be fair 
                         to all of our fans. If you’ve already reached that limit through previous
                          orders your order may be cancelled.">i</button>
+                   -->
                 </div>
 
 
             </div>
             <div class="mb-3 text-justify" dir="auto">
-                <button type="button" class="btn w-100 py-3 "
-                    style="background-color: rgb(253,128,36); font-size: 0.85rem;">
+                <button (click)="addToBag()" type="button" class="btn w-100 py-3 "
+                    style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>
             </div>
@@ -168,7 +165,7 @@
     <div class="row " style="background-color: white; border-bottom: rgb(206, 205, 205) solid 1px;">
         <div class="col-12 d-flex justify-content-center flex-wrap text-center">
 
-            <div class="product-details">
+            <div class=" product-details">
                 <div class="product-detailssvg pb-3">
                     <span class="text-center">
                         <svg width="34px" height="40px" aria-hidden="true" data-di-res-id="4b76a8eb-5528fdd0"
@@ -248,7 +245,7 @@
 <!--end-->
 
 <!--start-->
-<div class="container-fluidtext-justify" dir="auto">
+<div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Features" id="fet1">
         <div class="col-12 d-flex justify-content-between">
             <h3>{{'Product.Features'|translate}}</h3>
@@ -260,7 +257,8 @@
             <div id="Feature1" class="mt-3">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero1-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero1-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
@@ -277,9 +275,11 @@
             <div id="Feature2">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero2-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero2-Standard-Small.jpeg">
-                    <img src="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg" alt="Flowers" style="width:auto;">
+                    <img src="assets\images\75967-PDP-202006-Hero2-Standard-Large.jpeg" alt="Flowers"
+                        style="width:auto;">
                 </picture>
                 <div id="Feature2content">
                     <h1>{{'Product.Great'|translate}}</h1>
@@ -317,7 +317,8 @@
             <div id="Feature1" class="mt-3">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero3-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero3-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
@@ -334,7 +335,8 @@
             <div id="Feature1">
                 <picture>
                     <source media="(min-width:901px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Large.jpeg">
-                    <source media="(min-width:601px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Medium.jpeg">
+                    <source media="(min-width:601px)"
+                        srcset="assets\images\75967-PDP-202006-Hero4-Standard-Medium.jpeg">
                     <source media="(max-width:600px)" srcset="assets\images\75967-PDP-202006-Hero4-Standard-Small.jpeg">
                     <img src="assets\images\40416-HomePage-202011-Hero-Standard-Large.jpg" alt="Flowers"
                         style="width:auto;">
@@ -406,7 +408,6 @@
             <h3>{{'Product.Deliveries'|translate}}</h3>
             <div id="pluswminus5" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus6" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
-
         </div>
         <div id="DeliveriesandReturns" class="container-fluid collapse" style="background-color: white;">
             <ul>
@@ -416,7 +417,8 @@
                 <li>{{'Product.Unopened'|translate}}</li>
 
             </ul>
-            <p>{{'Product.Some'|translate}} <a href="#ff">{{'Product.Deliveries'|translate}}</a> {{'Product.page'|translate}}
+            <p>{{'Product.Some'|translate}} <a href="#ff">{{'Product.Deliveries'|translate}}</a>
+                {{'Product.page'|translate}}
             </p>
         </div>
     </div>
@@ -426,348 +428,174 @@
 
 
 <!--start-->
+
 <div class="container-fluid text-justify" dir="auto">
-    <div class="row rowselproduct" data-toggle="collapse" data-target="#CustomerReviews" id="cusrev">
+    <div class="row rowselproduct" id="cusrev" (click)="CustomerReviews()">
         <div class="col-12 d-flex justify-content-between">
             <h3>{{'Product.Customer'|translate}}</h3>
             <div id="pluswminus7" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus8" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
-
         </div>
-        <div id="CustomerReviews" class="container-fluid collapse my-2" style="background-color: white;">
-
+    </div>
+    <div id="CustomerReviews" class="container-fluid collapse my-2" style="background-color: white;">
+        <!--hna-->
+        <div class="mt-3 d-flex justify-content-between">
             <p class="font-weight-bold">{{'Product.Overall'|translate}}</p>
-            <div id="stars">
-                <svg width="100%" height="100%" viewBox="0 0 50 49">
-                    <g stroke="none" stroke-width="1" fill="#FFD500">
-                        <path
-                            d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
-                            fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-                <svg width="100%" height="100%" viewBox="0 0 50 49">
-                    <g stroke="none" stroke-width="1" fill="#FFD500">
-                        <path
-                            d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
-                            fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-                <svg width="100%" height="100%" viewBox="0 0 50 49">
-                    <g stroke="none" stroke-width="1" fill="#FFD500">
-                        <path
-                            d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
-                            fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-                <svg width="100%" height="100%" viewBox="0 0 50 49">
-                    <g stroke="none" stroke-width="1" fill="#FFD500">
-                        <path
-                            d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
-                            fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-                <svg width="100%" height="100%" viewBox="0 0 50 49">
-                    <g stroke="none" stroke-width="1" fill="#CACACA">
-                        <path
-                            d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
-                            fill-rule="nonzero"></path>
-                    </g>
-                </svg>
-                <span class="mx-2 ">4.2</span>
-                <span class="mx-2 ">(22 Reviews)</span>
-            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Write a Review
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Customer Reviews</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="w-100 h-auto" src={{product.image}}>
+                                </div>
+                                <div class="col-9">
+                                    <h5 class="mb-5">Product Ratings</h5>
+                                    <h6 class="mb-2">Overall Rating</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios1"
+                                            value="1" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Poor
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios2"
+                                            value="2" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Fair
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios3"
+                                            value="3" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            Avarge
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios4"
+                                            value="4" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios4">
+                                            Good
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios5"
+                                            value="5" (change)="radioforRatingChange($event)">
+                                        <label class="form-check-label" for="exampleRadios5">
+                                            Excellent
+                                        </label>
+                                    </div>
+                                    <h6 class="mt-3 mb-2">I would recommend this product to a friend</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend"
+                                            id="exampleRadios6" value="true" (change)="radioforRecommendChange($event)">
+                                        <label class="form-check-label" for="exampleRadios6">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend"
+                                            id="exampleRadios7" value="false"
+                                            (change)="radioforRecommendChange($event)">
+                                        <label class="form-check-label" for="exampleRadios7">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container my-5">
+                                <h5>About Me</h5>
+                                <div class="form-group">
+                                    <label for="exampleInputtext1">Your Nickname</label>
+                                    <input type="text" class="form-control" id="exampleInputtext1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1">
+                                </div>
 
-            <p style="color: green;">91% {{'Product.recommend'|translate}}</p>
+                            </div>
+                            <div class="container my-5">
+                                <h5>Share Your Opinion With Others And Write A Detailed Review</h5>
+                                <div class="form-group">
+                                    <label for="exampleInputtext2">Review Title</label>
+                                    <input [(ngModel)]="reviewTitle" type="text" class="form-control"
+                                        id="exampleInputtext2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Review</label>
+                                    <textarea [(ngModel)]="reviewBody" class="form-control rounded-0"
+                                        id="exampleFormControlTextarea1" rows="10"></textarea>
+                                </div>
 
-            <div class="row my-2">
-                <div class=" col-lg-4 col-md-6 col-sm-12 font-weight-bold"
-                    style="border-right: 1px solid rgb(202, 200, 200);">
-                    <p class="font-weight-bold">{{'Product.Rating'|translate}}</p>
-                    <div class="d-flex my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
-                        <div class="progress mr-3" style="width: 150px; height: 20px;">
-                            <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
-                        <span style="height: 20px;">13 {{'Product.Reviews'|translate}}</span>
-                    </div>
-                    <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
-                        <div class="progress mr-3" style="width: 150px; height: 20px;">
-                            <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                (click)="addReview()">Add</button>
                         </div>
-                        <span style="height: 20px;">4 {{'Product.Reviews'|translate}}</span>
                     </div>
-                    <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
-                        <div class="progress mr-3" style="width: 150px; height: 20px;">
-                            <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span style="height: 20px;">3 {{'Product.Reviews'|translate}}</span>
-                    </div>
-                    <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
-                        <div class="progress mr-3" style="width: 150px; height: 20px;">
-                            <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span style="height: 20px;">1 {{'Product.Reviews'|translate}}</span>
-                    </div>
-                    <div class="d-flex  my-4">
-                        <span class="mr-3" style="height: 20px;"> 5 {{'Product.stars'|translate}}</span>
-                        <div class="progress mr-3" style="width: 150px; height: 20px;">
-                            <div class="progress-bar bg-warning " role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <span style="height: 20px;">1 {{'Product.Reviews'|translate}}</span>
-                    </div>
-
                 </div>
-                <div class="col-lg-8 col-md-6 col-sm-12 font-weight-bold">
-                    <p>{{'Product.Experience'|translate}}</p>
-                    <p class="mb-0">{{'Product.Play'|translate}} </p>
-                    <div class="mok3bat">
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#EBEBEB" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#D4D3D3" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#D4D3D3" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#EBEBEB" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <span class="ml-2">4.1</span>
-                    </div>
-                    <p class="mt-3 mb-0"> {{'Product.Difficulty'|translate}}</p>
-                    <div class="mok3bat">
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#EBEBEB" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#D4D3D3" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#D4D3D3" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#EBEBEB" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#EBEBEB" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#D4D3D3" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#D4D3D3" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#EBEBEB" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <span class="ml-2">2.3</span>
-                    </div>
-                    <p class="mt-3 mb-0">{{'Product.Money'|translate}}</p>
-                    <div class="mok3bat">
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#FFCF00" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#E9AC05" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#E9AC05" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#FFCF00" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <svg width="100%" height="100%" viewBox="0 0 45 33">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon fill="#EBEBEB" fill-rule="nonzero"
-                                    points="22.2352941 0 44.7352941 10.7380952 44.7352941 20.297619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <polygon fill="#D4D3D3" fill-rule="nonzero"
-                                    points="23.6911765 23.047619 23.6911765 33 0.264705882 20.4285714 0.264705882 10.8690476">
-                                </polygon>
-                                <path
-                                    d="M32.0294118,3.79761905 C31.5,1.70238095 27.2647059,0 22.3676471,0 C17.0735294,0 12.5735294,1.83333333 12.4411765,4.32142857 C12.4411765,4.32142857 12.7058824,10.4761905 12.7058824,10.6071429 C12.7058824,13.6190476 17.4705882,15.7142857 22.5,15.7142857 C27.6617647,15.7142857 32.2941176,13.6190476 32.2941176,10.6071429 C32.2941176,10.3452381 32.2941176,6.94047619 32.2941176,6.02380952 C32.2941176,6.02380952 32.5588235,4.58333333 32.0294118,3.79761905 Z"
-                                    fill="#D4D3D3" fill-rule="nonzero"></path>
-                                <path
-                                    d="M13.1029412,4.97619048 C13.2352941,2.61904762 17.3382353,0.654761905 22.3676471,0.654761905 C27.3970588,0.654761905 31.5,2.61904762 31.6323529,4.97619048 C31.7647059,7.46428571 27.6617647,9.42857143 22.3676471,9.42857143 C17.0735294,9.42857143 12.9705882,7.33333333 13.1029412,4.97619048 Z"
-                                    fill="#EBEBEB" fill-rule="nonzero"></path>
-                            </g>
-                        </svg>
-                        <span class="ml-2">4.1</span>
-                    </div>
-
-
-                </div>
-
             </div>
+        </div>
+        <div id="stars">
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#FFD500">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <svg width="100%" height="100%" viewBox="0 0 50 49">
+                <g stroke="none" stroke-width="1" fill="#CACACA">
+                    <path
+                        d="M49.9,18.1 C49.3,16.2 47.1,15.9 47.1,15.9 L34,13.9 L28,2 C28,2 27,0 25,0 C23,0 22,2 22,2 L16.1,13.9 L3,15.9 C3,15.9 0.8,16.2 0.2,18.1 C-0.4,20 1.2,21.6 1.2,21.6 L10.8,31 L8.3,44 C8.3,44 7.9,46.2 9.5,47.4 C11.1,48.6 13.1,47.6 13.1,47.6 L25,41.8 L37.1,47.7 C37.1,47.7 39.1,48.7 40.7,47.5 C42.3,46.3 41.9,44.1 41.9,44.1 L39.4,31.1 L49,21.7 C48.9,21.6 50.5,20 49.9,18.1 Z"
+                        fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <span class="mx-2 ">4.2</span>
+            <span class="mx-2 ">({{reviewNumber}} Reviews)</span>
+        </div>
+        <p style="color: green;">91% {{'Product.recommend'|translate}}</p>
+        <div *ngFor="let item of reviews" class="my-3">
+            <hr>
+            <h5>{{item.reviewTitle}}</h5>
+            <h6 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h6>
+            <p>{{item.review}}</p>
         </div>
     </div>
 </div>

@@ -83,22 +83,25 @@ img{
 }
 .picelproductkbera img{
     width: 100%;
-    height: auto;
-}
-#picelproduct1{
-    border: 2px solid rgb(49, 161, 224);
+    height: 700px;
+    background-color: white;
 }
 
 .product-details{
     margin-top: 2rem;
     margin-bottom: 2rem;
-
     padding-right: 4rem;
     padding-left: 4rem;
 
 }
 .product-details{
     border-right: rgb(206, 205, 205) solid 1px;
+}
+.rowselproduct h3{
+    font-family:Cera Pro Light,sans-serif !important;
+    font-size: 1.75rem !important;
+
+
 }
 .rowselproduct{
     background-color: rgb(248, 248, 248);
@@ -119,6 +122,12 @@ img{
 }
 @media screen and (max-width: 600px)
 {
+    .picelproductkbera img{
+        width: 100%;
+        height: 400px;
+        background-color: white;
+
+    }
     #Feature1content{
      display: none;
     }
@@ -127,6 +136,12 @@ img{
     }
 }
 @media screen and (min-width: 601px){
+    .picelproductkbera img{
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        margin-bottom: 20px;
+    }
     #Feature1content{
     top: 10%;
     max-width: 35%;
@@ -143,6 +158,12 @@ img{
 }
 @media screen and (min-width: 901px)
 {
+    .picelproductkbera img{
+        width: 100%;
+        height: 700px;
+        background-color: white;
+    
+    }
     #Feature1content{
     top: 30%;
     max-width: 35%;
@@ -223,3 +244,5 @@ text-align: center;
 width: 25px;
 height: 25px;
 }
+
+ 

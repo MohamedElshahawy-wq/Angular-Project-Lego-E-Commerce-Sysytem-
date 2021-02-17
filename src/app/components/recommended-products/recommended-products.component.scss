@@ -18,7 +18,7 @@ button{
 img{
     width: 230px;
     height: 200px;
-   
+    cursor: pointer;
 }
 #heart{
     height: 1.875rem;
@@ -37,4 +37,9 @@ img:hover{
     animation-duration: 1s;
     animation-fill-mode: forwards;
     
+}
+#pr_name{
+    font-size: 1rem !important;
+    font-family: Cera Pro Light !important;
+
 }

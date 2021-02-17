@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CustomersService } from 'src/app/Services/Customers/customers.service';
 import { ICustomer } from 'src/app/ViewModels/ICustomer';
+import { CookieService } from 'ngx-cookie-service';
+import { NgAuthService } from 'src/app/Services/Authentication/ng-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,18 +21,26 @@ export class LoginComponent implements OnInit {
   loginPassword: string;
   rememberMe: boolean;
 
-  constructor(private router:Router, private customerService: CustomersService) { }
+
+  constructor(public ngAuthService: NgAuthService/*private router:Router, private customerService: CustomersService, private cookie: CookieService*/) { }
 
   ngOnInit(): void {
+    
   }
 
   loginCustomer(){
-    this.customerService.getAllCustomers().subscribe((res)=>{
+
+    this.ngAuthService.SignIn(this.loginEmail, this.loginPassword);
+
+    /*this.customerService.getAllCustomers().subscribe((res)=>{
       this.getCustomer = res;
       for(let i=1;i<res.length;i++)
       {
         if(this.getCustomer[i].email === this.loginEmail && this.getCustomer[i].password === this.loginPassword)
         {
+          //set cookie
+          //this.cookie.set(this.getCustomer[i].email, this.getCustomer[i].id);
+        
           this.router.navigate(['/Home']);
         }
         else{
@@ -38,9 +48,12 @@ export class LoginComponent implements OnInit {
         }
     }
 
+    /*this.cookieTrial = this.cookie.get('mohamed@gmail.com');
+    console.log(this.cookieTrial);
+
     },(err)=>{
       console.log(err);
-    });
+    });*/
   }
 
 }

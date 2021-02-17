@@ -1,3 +1,8 @@
+
+
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -20,11 +25,18 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverUsernameComponent } from './components/recover-username/recover-username.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { I18nModule } from './i18n/i18n.module';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NgAuthService } from "./Services/Authentication/ng-auth.service";
+
+
 
 @NgModule({
   declarations: [
@@ -47,18 +59,24 @@ import { environment } from '../environments/environment';
     RecoverPasswordComponent
   ],
   imports: [
+  
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
     I18nModule,
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule
   ],
   exports: [MatInputModule],
-  providers: [],
+  providers: [NgAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
