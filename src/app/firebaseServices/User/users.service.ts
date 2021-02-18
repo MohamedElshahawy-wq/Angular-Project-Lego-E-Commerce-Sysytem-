@@ -12,8 +12,8 @@ export class UsersService {
   getUsers() {
     return this.firestore.collection('users').snapshotChanges();
   }
-  getSpcUser(userId: number) {
-    return this.firestore.collection('users/' + userId).snapshotChanges();
+  getSpcUser(userId: any) {
+    return this.firestore.collection('users').doc(userId).snapshotChanges();
   }
   createUser(user: UserModel) {
     return this.firestore.collection('users').add(user);

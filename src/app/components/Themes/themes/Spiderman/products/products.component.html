@@ -3,8 +3,10 @@
   <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
     <div class="row">
       <div class="col-12">
-        <h5 class="font-weight-bold">{{'Themes.Spider'|translate}}</h5>
-        <p>{{'ProductTheme.Builders'|translate}}</p>
+        <!-- <h5 class="font-weight-bold">{{'Themes.Spider'|translate}}</h5> -->
+        <h5 class="font-weight-bold">{{currentCategory?.name}}</h5>
+        <p>{{currentCategory?.description}}</p>
+        <!-- <p>{{'ProductTheme.Builders'|translate}}</p> -->
       </div>
     </div>
   </div>
@@ -25,7 +27,14 @@
   <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
     <div class="row">
       <div class="col-lg-3 col-12 d-none d-lg-block theFilters" #theFilters>
-        <div id="accordion1">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title">Choose Category</h4>
+            <hr>
+            <button *ngFor="let item of categoryList" type="button" name="" id="" (click)="changeCategory(item.id)" class="btn btn-light btn-lg btn-block">{{item.name}}</button>
+          </div>
+        </div>
+        <!-- <div id="accordion1">
           <div class="card rounded-0">
             <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
@@ -335,12 +344,12 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-lg-9 col-12 px-0 allProducts" #allProducts>
         <div class="row mt-4 mt-lg-0">
           <div class="col-8 mb-4">
-            <p>Showing 1 - 18 of 18 results</p>
+            <p>Showing {{filteredList.length}} results</p>
           </div>
           <div class="col-4">
             <select autocomplete="off" class="custom-select custom-select-sm shadow-none text-justify" dir="auto">
@@ -352,7 +361,7 @@
           </div>
         </div>
         <div class="row no-gutters" id="data">
-          <div *ngFor="let item of productList" class="col-lg-4 col-6">
+          <div *ngFor="let item of filteredList" class="col-lg-4 col-6">
             <div class="card rounded-0">
               <a  [routerLink]="['/Product', item.id]" class="d-flex imgLink">
                 <img class="card-img-top theImg" [src]="item.image" alt="Card image cap">

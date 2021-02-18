@@ -1,5 +1,5 @@
 export class OrderModel {
-    id?: number;
+    id?: any;
     userID: number;
     amount: number;
     date: string;

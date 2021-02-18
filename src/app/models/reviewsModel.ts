@@ -1,5 +1,5 @@
 export class ReviewModel {
-    id?: number;
+    id?: any;
     OverallRating?: number;
     productId: number;
     recommend: string;

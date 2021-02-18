@@ -12,8 +12,8 @@ export class WishlistService {
   getWishlists() {
     return this.firestore.collection('wishlist').snapshotChanges();
   }
-  getSpcWishlist(wishlistId: number) {
-    return this.firestore.collection('wishlist/' + wishlistId).snapshotChanges();
+  getSpcWishlist(wishlistId: any) {
+    return this.firestore.collection('wishlist').doc(wishlistId).snapshotChanges();
   }
   createWishlist(wishlist: WishListModel) {
     return this.firestore.collection('wishlist').add(wishlist);

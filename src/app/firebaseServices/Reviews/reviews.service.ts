@@ -12,8 +12,8 @@ export class ReviewsService {
   getReviews() {
     return this.firestore.collection('Reviews').snapshotChanges();
   }
-  getSpcReview(reviewId: number) {
-    return this.firestore.collection('Reviews/' + reviewId).snapshotChanges();
+  getSpcReview(reviewId: any) {
+    return this.firestore.collection('Reviews').doc(reviewId).snapshotChanges();
   }
   createReview(review: ReviewModel) {
     return this.firestore.collection('Reviews').add(review);

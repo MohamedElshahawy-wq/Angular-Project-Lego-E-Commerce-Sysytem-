@@ -6,7 +6,10 @@ import {
   ViewChild
 } from '@angular/core';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
+import { CategoriesService } from 'src/app/firebaseServices/Category/categories.service';
 import { ProductModel } from 'src/app/models/productModel';
+import { data } from 'jquery';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -22,31 +25,49 @@ export class ProductsComponent implements OnInit {
   @ViewChild('theFiltersBtn') filterBtn: ElementRef;
   toggle: boolean = true;
 
-  productList;
-  constructor(private productsService: ProductsService) { }
+  filteredList;
+  categoryList = [];
+  currentCategoryIndex = 0;
+  subscription:Subscription[] = [];
+  currentCategory;
+  constructor(private productsService: ProductsService,
+    private catService: CategoriesService) { }
   ngOnInit() {
-    console.log("In OnInit");
 
-    this.productsService.getProducts().subscribe(data => {
-      this.productList = data.map(e => {
-        console.log(e.payload.doc.id, "   :e.payload.doc.id");
-        console.log(e.payload.doc.data(), "   :e.payload.doc.data()");
+    this.catService.getCategories().subscribe(data => {
+      this.categoryList = data.map(e => {
+        return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+      })
 
-        return e.payload.doc.data();
-        // {
-        //   id: e.payload.doc.id,
-        //   stock: e.payload.doc.data().stock,
-        //   rating: e.payload.doc.data().rating,
-        //   image: e.payload.doc.data().image,
-        //   categoryID: e.payload.doc.data().categoryID,
-        //   price: e.payload.doc.data().price,
-        //   description: e.payload.doc.data().description,
-        //   name: e.payload.doc.data().name,
-        //   available: e.payload.doc.data().available
-        // } as unknown as ProductModel;
-      }
+      this.currentCategoryIndex = this.categoryList[0].id;
+
+      this.subscription.push(this.catService.getSpcCategory(this.currentCategoryIndex).subscribe(data => {
+        this.currentCategory = {id: data.payload.id, ...(data.payload.data() as {})};
+        })
       )
+
+      this.subscription.push(this.productsService.getProductsByCategoryID(this.currentCategoryIndex).subscribe(data => {
+        this.filteredList = data.map(e => {
+          return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+        })
+      }))
+    })
+  }
+
+  changeCategory(id: any) {
+    this.currentCategoryIndex = id;
+    this.subscription.forEach(element => {
+      element.unsubscribe();
     });
+    this.subscription.push(this.productsService.getProductsByCategoryID(this.currentCategoryIndex).subscribe(data => {
+      this.filteredList = data.map(e => {
+        return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+      })
+    }))
+    this.subscription.push(this.catService.getSpcCategory(this.currentCategoryIndex).subscribe(data => {
+      this.currentCategory = {id: data.payload.id, ...(data.payload.data() as {})};
+      })
+    )
   }
 
   ToggleFilters() {

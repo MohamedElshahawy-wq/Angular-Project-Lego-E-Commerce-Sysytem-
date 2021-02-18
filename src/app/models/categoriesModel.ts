@@ -1,5 +1,6 @@
 export class CategoryModel {
-    id?: number;
+    id?: any;
     name: string;
+    description: string;
     totalOrdered: number;
 }

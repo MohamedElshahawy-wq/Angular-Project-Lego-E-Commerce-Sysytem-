@@ -1,5 +1,5 @@
 export class MyBagModel {
-    id: number;
+    id?: any;
     userID: number;
     productsIDs: number[]
 }

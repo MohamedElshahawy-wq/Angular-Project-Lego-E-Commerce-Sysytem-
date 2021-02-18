@@ -1,5 +1,5 @@
 export class ProductModel {
-    id?: number;
+    id?: any;
     name: string;
     description: string;
     price: number;
@@ -7,5 +7,5 @@ export class ProductModel {
     image: string;
     available: boolean;
     rating: number;
-    categoryID: number
+    categoryID: any
 }
