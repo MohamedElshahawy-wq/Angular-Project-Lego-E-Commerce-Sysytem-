@@ -702,5 +702,7 @@
         "Add2cart":"Add to cart",
         "Low2High":"Low to High",
         "High2Low":"High to Low"
-    }
+    },
+    "NotFound":"The page you are looking for was not found.",
+    "BackToHome":"Back to Home"
 }
