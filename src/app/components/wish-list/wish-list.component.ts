@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
+import { WishListModel } from 'src/app/models/wishlistModel';
 
 
 @Component({
@@ -17,10 +18,12 @@ export class WishListComponent implements OnInit, OnDestroy {
   temp;
   userID;
 
+  newWishlist: WishListModel;
+
   subscription: Subscription[] = [];
 
   constructor(private wishSrv: WishlistService, private prdSrv: ProductsService,
-    private router:Router) {
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -50,8 +53,14 @@ export class WishListComponent implements OnInit, OnDestroy {
     });
   }
 
-  deleteProduct() {
-    alert('test');
+  deleteProduct(prdID: any) {
+    console.log(this.ProductList);
+    let theProducts = [...this.productsInWishlist];
+    const index = theProducts.indexOf(prdID);
+    if (index > -1) {
+      theProducts.splice(index, 1);
+    }
+    this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
   }
 
   goToProduct(id: number) {

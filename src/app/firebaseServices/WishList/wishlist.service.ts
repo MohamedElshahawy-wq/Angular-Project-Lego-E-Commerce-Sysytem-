@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { WishListModel } from 'src/app/models/wishlistModel';
 
 @Injectable({
@@ -7,7 +7,8 @@ import { WishListModel } from 'src/app/models/wishlistModel';
 })
 export class WishlistService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore,
+    public afs: AngularFirestore) { }
 
   getWishlists() {
     return this.firestore.collection('wishlist').snapshotChanges();
@@ -23,10 +24,18 @@ export class WishlistService {
   createWishlist(wishlist: WishListModel) {
     return this.firestore.collection('wishlist').add(wishlist);
   }
-  updateWishlist(wishlist: WishListModel) {
-    delete wishlist.id;
-    this.firestore.doc('wishlist/' + wishlist.id).update(wishlist);
+
+  updateWishlistByUserID(prds: any, forID: any) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`wishlist/${forID}`);
+      const userState: WishListModel = {
+        productsIDs: prds
+      }
+
+      return userRef.set(userState, {
+        merge: true
+      })
   }
+
   deleteWishlist(wishlistId: number) {
     this.firestore.doc('wishlist/' + wishlistId).delete();
   }

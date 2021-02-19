@@ -5,6 +5,8 @@ import { ParamMap } from '@angular/router';
 import { ReviewsService } from 'src/app/firebaseServices/Reviews/reviews.service';
 import { ReviewModel } from 'src/app/models/reviewsModel';
 import { Subscription } from 'rxjs';
+import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
+import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 
 @Component({
   selector: 'app-product',
@@ -25,12 +27,34 @@ export class ProductComponent implements OnInit, OnDestroy {
   reviewBody: string;
   subscription:Subscription[] = [];
 
+  userID: any;
+  bag: any;
+  wishlist: any;
+  productsInBag: any;
+  productsInWishlist: any;
+
   constructor(
     private productser: ProductsService,
     private activatedroute: ActivatedRoute,
-    private revservece: ReviewsService) { }
+    private revservece: ReviewsService,
+    private bagSrv: BagsService,
+    private wishSrv: WishlistService) { }
 
   ngOnInit(): void {
+    this.userID = JSON.parse(localStorage.getItem('user')).uid;
+    this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
+      this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInBag = this.bag.productsIDs;
+    })
+    );
+
+    this.subscription.push(this.wishSrv.getSpcWishlist(this.userID).subscribe(data => {
+      this.wishlist = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInWishlist = this.wishlist.productsIDs;
+    })
+    );
     this.activatedroute.paramMap.subscribe((params: ParamMap) => {
       let PID: string | null = params.get('PID');
       this.prdID = PID;
@@ -51,6 +75,25 @@ export class ProductComponent implements OnInit, OnDestroy {
       element.unsubscribe();
     });
   }
+
+  addToBag(prdID: any) {
+    let theProducts = [...this.productsInBag];
+    
+    theProducts.push(prdID);
+
+    this.bagSrv.updateBagByUserID(theProducts, this.userID);
+    alert('Added to cart')
+  }
+
+  addToWishlist(prdID: any) {
+    let theProducts = [...this.productsInWishlist];
+    
+    theProducts.push(prdID);
+
+    this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
+    alert('Added to wishlist')
+  }
+
   CustomerReviews() {
     this.isCustomerReviews = !this.isCustomerReviews;
     if (this.isCustomerReviews === true)
@@ -97,9 +140,6 @@ export class ProductComponent implements OnInit, OnDestroy {
     }
     else
       this.count--;
-  }
-  addToBag(){
-    //this.count
   }
   ChangeImage(img:string){
     this.product.image=img;

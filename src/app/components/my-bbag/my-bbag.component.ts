@@ -52,8 +52,13 @@ export class MyBBagComponent implements OnInit, OnDestroy {
     });
   }
 
-  deleteProduct() {
-    alert('test');
+  deleteProduct(prdID: any) {
+    let theProducts = [...this.productsInBag];
+    const index = theProducts.indexOf(prdID);
+    if (index > -1) {
+      theProducts.splice(index, 1);
+    }
+    this.bagSrv.updateBagByUserID(theProducts, this.userID);
   }
 
   goToProduct(id: number) {

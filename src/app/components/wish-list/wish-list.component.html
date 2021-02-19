@@ -15,6 +15,7 @@
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col"></th>
+            <th scope="col"></th>
             <th scope="col" class="tab-space"></th>
             <th scope="col">{{'wishList.Price'|translate}}</th>
           </tr>
@@ -32,7 +33,7 @@
 
 
             </td>
-            <td><br><br><i class="fa fa-trash" (click)="deleteProduct()" style="font-size: 19px;color:#1f8bff"></i></td>
+            <td><br><br><i class="fa fa-trash" (click)="deleteProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
             <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
             <td><br><br>
               <!-- <button type="button" (click)="DeleteWishList(prd?.id)" style="font-size: 16px;color:#1f8bff"><i

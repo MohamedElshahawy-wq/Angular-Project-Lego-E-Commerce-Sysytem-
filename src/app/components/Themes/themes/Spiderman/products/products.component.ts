@@ -11,6 +11,8 @@ import { CategoriesService } from 'src/app/firebaseServices/Category/categories.
 import { ProductModel } from 'src/app/models/productModel';
 import { data } from 'jquery';
 import { Subscription } from 'rxjs';
+import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
+import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 
 @Component({
   selector: 'app-products',
@@ -29,28 +31,49 @@ export class ProductsComponent implements OnInit, OnDestroy {
   filteredList = [];
   categoryList = [];
   currentCategoryIndex = 0;
-  subscription:Subscription[] = [];
+  subscription: Subscription[] = [];
   currentCategory;
+  userID: any;
+  bag: any;
+  wishlist: any;
+  productsInBag: any;
+  productsInWishlist: any;
   constructor(private productsService: ProductsService,
-    private catService: CategoriesService) { }
+    private catService: CategoriesService, private bagSrv: BagsService,
+    private wishSrv: WishlistService) { }
 
   ngOnInit() {
 
+    this.userID = JSON.parse(localStorage.getItem('user')).uid;
+    this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
+      this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInBag = this.bag.productsIDs;
+    })
+    );
+
+    this.subscription.push(this.wishSrv.getSpcWishlist(this.userID).subscribe(data => {
+      this.wishlist = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInWishlist = this.wishlist.productsIDs;
+    })
+    );
+
     this.catService.getCategories().subscribe(data => {
       this.categoryList = data.map(e => {
-        return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+        return { id: e.payload.doc.id, ...(e.payload.doc.data() as {}) };
       })
 
       this.currentCategoryIndex = this.categoryList[0].id;
 
       this.subscription.push(this.catService.getSpcCategory(this.currentCategoryIndex).subscribe(data => {
-        this.currentCategory = {id: data.payload.id, ...(data.payload.data() as {})};
-        })
+        this.currentCategory = { id: data.payload.id, ...(data.payload.data() as {}) };
+      })
       )
 
       this.subscription.push(this.productsService.getProductsByCategoryID(this.currentCategoryIndex).subscribe(data => {
         this.filteredList = data.map(e => {
-          return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+          return { id: e.payload.doc.id, ...(e.payload.doc.data() as {}) };
         })
       }))
     })
@@ -69,12 +92,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
     });
     this.subscription.push(this.productsService.getProductsByCategoryID(this.currentCategoryIndex).subscribe(data => {
       this.filteredList = data.map(e => {
-        return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+        return { id: e.payload.doc.id, ...(e.payload.doc.data() as {}) };
       })
     }))
     this.subscription.push(this.catService.getSpcCategory(this.currentCategoryIndex).subscribe(data => {
-      this.currentCategory = {id: data.payload.id, ...(data.payload.data() as {})};
-      })
+      this.currentCategory = { id: data.payload.id, ...(data.payload.data() as {}) };
+    })
     )
   }
 
@@ -91,11 +114,21 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.toggle = !this.toggle;
   }
 
-  addToBag() {
-    alert('Added to bag')
+  addToBag(prdID: any) {
+    let theProducts = [...this.productsInBag];
+    
+    theProducts.push(prdID);
+
+    this.bagSrv.updateBagByUserID(theProducts, this.userID);
+    alert('Added to cart')
   }
 
-  addToWishlist() {
+  addToWishlist(prdID: any) {
+    let theProducts = [...this.productsInWishlist];
+    
+    theProducts.push(prdID);
+
+    this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
     alert('Added to wishlist')
   }
 

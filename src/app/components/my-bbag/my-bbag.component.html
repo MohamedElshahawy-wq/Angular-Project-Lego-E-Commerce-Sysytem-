@@ -62,7 +62,7 @@
                             </div>  -->
                       
                     </td>
-                   <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct()" style="font-size: 19px;color:#1f8bff"></i></td>
+                   <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
                    <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
                    <td><br><br><small><b>{{prd?.price | currency}}</b></small></td>
                   </tr>
