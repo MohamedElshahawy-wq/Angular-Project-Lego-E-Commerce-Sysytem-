@@ -14,6 +14,11 @@ export class BagsService {
   getSpcMyBag(bagId:any) {
     return this.firestore.collection('bags').doc(bagId).snapshotChanges();
   }
+
+  getBagByUserID(userID: any) {
+    return this.firestore.collection('bags', ref => ref.where("userID","==", userID)).snapshotChanges();
+  }
+
   createMyBag(myBag: MyBagModel) {
     return this.firestore.collection('bags').add(myBag);
   }

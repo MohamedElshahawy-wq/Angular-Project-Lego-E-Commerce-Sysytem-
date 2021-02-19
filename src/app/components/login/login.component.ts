@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CustomersService } from 'src/app/Services/Customers/customers.service';
-import { ICustomer } from 'src/app/ViewModels/ICustomer';
-import { CookieService } from 'ngx-cookie-service';
 import { NgAuthService } from 'src/app/Services/Authentication/ng-auth.service';
 
 @Component({
@@ -13,8 +9,6 @@ import { NgAuthService } from 'src/app/Services/Authentication/ng-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-
-  getCustomer: ICustomer|any;
   customerSubscription: Subscription;
   
   loginEmail: string;

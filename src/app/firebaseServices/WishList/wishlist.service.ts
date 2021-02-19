@@ -15,6 +15,11 @@ export class WishlistService {
   getSpcWishlist(wishlistId: any) {
     return this.firestore.collection('wishlist').doc(wishlistId).snapshotChanges();
   }
+
+  getWishlistByUserID(userID: any) {
+    return this.firestore.collection('wishlist', ref => ref.where("userID","==", userID)).snapshotChanges();
+  }
+
   createWishlist(wishlist: WishListModel) {
     return this.firestore.collection('wishlist').add(wishlist);
   }

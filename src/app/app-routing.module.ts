@@ -13,23 +13,23 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AuthGuard } from './components/AuthGuard/auth.guard';
+import { LoginGuard } from './components/AuthGuard/login.guard';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
   {path: 'FindStore' , component: FindStoreComponent},
   {path: 'LegoLife' , component: LegoLifeComponent},
   {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)},
-  {path: 'WishList' , component: WishListComponent},
-  {path: 'WishList/:wID' , component: WishListComponent, canActivate: [AuthGuard]},
-  {path: 'CheckOut' , component: CheckOutComponent},
-  {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},  
+  {path: 'WishList' , component: WishListComponent, canActivate: [AuthGuard]},
+  {path: 'CheckOut' , component: CheckOutComponent, canActivate: [AuthGuard]},
+  {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
-  {path :'Register',component: RegisterComponent},
-  {path :'Login',component: LoginComponent},
-  {path :'ForgotPassword',component: RecoverPasswordComponent},
+  {path :'Register',component: RegisterComponent, canActivate: [LoginGuard]},
+  {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
+  {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
   {path:"",redirectTo:'Home',pathMatch:'full'},
 
 ];

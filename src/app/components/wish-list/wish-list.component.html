@@ -16,30 +16,31 @@
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col" class="tab-space"></th>
-            <th scope="col">{{'wishList.Total'|translate}}</th>
+            <th scope="col">{{'wishList.Price'|translate}}</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let prd of ProductList">
-            <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
+            <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
             <td class="w-25">
-              <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
-              <small style="color: green">Available now</small><br><br>
-              <small>Qty:3</small><br><br>
-              <small><b>{{prd.price}}</b></small>
+              <small><br><br><b>{{prd?.name}}</b></small><br><br>
+              <!-- <small style="color: green">Available now</small><br><br> -->
+              <!-- <small>Qty:3</small><br><br> -->
+              <!-- <small><b>{{prd?.price | currency}}</b></small> -->
             </td>
             <td><br><br>
 
 
             </td>
-            <!-- <td><br><br><i class="far fa-heart"  style="font-size: 19px;color:#1f8bff"></i></td> -->
+            <td><br><br><i class="fa fa-trash" (click)="deleteProduct()" style="font-size: 19px;color:#1f8bff"></i></td>
+            <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
             <td><br><br>
-              <button type="button" (click)="DeleteWishList(prd.id)" style="font-size: 16px;color:#1f8bff"><i
-                  class="fa fa-trash"></i></button>
+              <!-- <button type="button" (click)="DeleteWishList(prd?.id)" style="font-size: 16px;color:#1f8bff"><i
+                  class="fa fa-trash"></i></button> -->
             </td>
-            <td><br><br><i class="fas fa-shopping-bag" style="font-size: 19px;color:#1f8bff"></i></td>
+            <!-- <td><br><br><i class="fas fa-shopping-bag" style="font-size: 19px;color:#1f8bff"></i></td> -->
 
-            <td><br><br><small><b>$29.9</b></small></td>
+            <td><br><br><small><b>{{prd?.price | currency}}</b></small></td>
           </tr>
 
         </tbody>
@@ -47,34 +48,34 @@
 
       <!-- ---------------------New Table End------------------------- -->
     </div>
-    <div class="col-lg-1">
+    <!-- <div class="col-lg-1">
       <br><br><br>
       <span><a href="Mybag2.html">my bag</a></span><br><br><br>
-    </div>
+    </div> -->
 
     <div class="col-lg-3" style="padding: 15px">
       <div class="card" style="width: 18rem;">
-        <br>
+        <!-- <br>
         <h6>Discover the benefits of <br>creating a LEGO ID</h6>
         <hr>
         <div class="card-body">
-          <!--            <h5 class="card-title">Card title</h5>-->
+          <!--            <h5 class="card-title">Card title</h5>
           <p class="card-text">Access your Wish List from any computer - even if it's on a space ship orbiting the moon.
           </p>
-          <!--            <a href="#" class="btn btn-primary">Sign in</a>-->
+          <!--            <a href="#" class="btn btn-primary">Sign in</a>
           <button type="button" class="btn btn-outline-primary">sign in</button>
-          <p>Not a member yet?<a href="#">Sign Up</a></p>
-          <table>
+          <p>Not a member yet?<a href="#">Sign Up</a></p> -->
+          <!-- <table>
             <tbody>
 
 
               <tr *ngFor="let prd of ProductList">
-                <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
+                <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
                 <td class="w-25">
-                  <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
+                  <small><b>{{prd?.name}}<br>(8-14)</b></small><br><br>
                   <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br>
                   <small>{{'Checkout.QTY'|translate}}:3</small><br><br>
-                  <small><b>{{prd.price}}</b></small>
+                  <small><b>{{prd?.price}}</b></small>
                 </td>
                 <td><br><br>
                 </td>
@@ -85,14 +86,14 @@
               </tr>
 
             </tbody>
-          </table>
+          </table> -->
 
           <!-- ---------------------New Table End------------------------- -->
-        </div>
-        <div class="col-lg-1 text-justify" dir="auto">
+        <!-- </div> -->
+        <!-- <div class="col-lg-1 text-justify" dir="auto">
           <br><br><br>
           <span><a href="Mybag2.html">{{'wishList.bag'|translate}} </a></span><br><br><br>
-        </div>
+        </div> -->
 
         <div class="col-lg-3 text-justify" dir="auto" style="padding: 15px">
           <div class="card" style="width: 18rem;">

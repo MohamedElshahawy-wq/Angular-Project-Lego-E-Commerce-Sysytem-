@@ -1,5 +1,5 @@
 export class WishListModel {
     id?: any;
-    userID: number;
-    productsIDs: number[]
+    userID: any;
+    productsIDs: any[]
 }

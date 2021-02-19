@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  OnDestroy,
   OnInit,
   ViewChild
 } from '@angular/core';
@@ -16,7 +17,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
 
   // productList: IProduct[];
 
@@ -25,13 +26,14 @@ export class ProductsComponent implements OnInit {
   @ViewChild('theFiltersBtn') filterBtn: ElementRef;
   toggle: boolean = true;
 
-  filteredList;
+  filteredList = [];
   categoryList = [];
   currentCategoryIndex = 0;
   subscription:Subscription[] = [];
   currentCategory;
   constructor(private productsService: ProductsService,
     private catService: CategoriesService) { }
+
   ngOnInit() {
 
     this.catService.getCategories().subscribe(data => {
@@ -52,6 +54,12 @@ export class ProductsComponent implements OnInit {
         })
       }))
     })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.forEach(element => {
+      element.unsubscribe();
+    });
   }
 
   changeCategory(id: any) {

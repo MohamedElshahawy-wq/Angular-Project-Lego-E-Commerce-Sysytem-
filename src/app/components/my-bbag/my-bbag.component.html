@@ -22,7 +22,7 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
 
-                     <th scope="col" >{{'wishList.Total'|translate}}</th>
+                     <th scope="col" >{{'wishList.Price'|translate}}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -47,12 +47,12 @@
       <!--              ///////////////////-->
       <!--              //////////////row 1 ///////////////////-->
                   <tr *ngFor="let prd of ProductList">
-                    <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
+                    <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
                     <td class="w-25">
-                  <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
-                        <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br>
-                        <small>Qty:3</small><br><br>
-                        <small><b>{{prd.price}}</b></small>
+                  <small><b><br><br>{{prd?.name}}</b></small><br><br>
+                        <!-- <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br> -->
+                        <!-- <small>Qty:3</small><br><br> -->
+                        <!-- <small><b>{{prd?.price}}</b></small> -->
                   </td>
                     <td><br><br>
                          <!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
@@ -62,11 +62,11 @@
                             </div>  -->
                       
                     </td>
-                   <td><br><br><i class="far fa-trash-alt" style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><i class="far fa-heart"  style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><small><b>{{prd.price}}</b></small></td>
+                   <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct()" style="font-size: 19px;color:#1f8bff"></i></td>
+                   <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
+                   <td><br><br><small><b>{{prd?.price | currency}}</b></small></td>
                   </tr>
-                  -->
+                  
                 </tbody>
               </table>
                       </div>

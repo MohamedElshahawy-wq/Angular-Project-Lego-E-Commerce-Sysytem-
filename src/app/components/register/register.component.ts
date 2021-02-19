@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CustomersService } from 'src/app/Services/Customers/customers.service';
-import { ICustomer } from 'src/app/ViewModels/ICustomer';
-import { CookieService } from 'ngx-cookie-service';
 import { NgAuthService, User } from 'src/app/Services/Authentication/ng-auth.service';
 
 @Component({
@@ -13,7 +9,6 @@ import { NgAuthService, User } from 'src/app/Services/Authentication/ng-auth.ser
 })
 export class RegisterComponent implements OnInit {
 
-  newCustomer: ICustomer|any;
   /*getCustomer: ICustomer|any;*/
   customerSubscription: Subscription;
 

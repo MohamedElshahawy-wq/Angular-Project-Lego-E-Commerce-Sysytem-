@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { MyBagsService } from 'src/app/Services/MyBags/my-bags.service';
-
-import { IMyBag} from 'src/app/ViewModels/imy-bag';
-import { ActivatedRoute, Router } from '@angular/router';
-import {  ParamMap } from '@angular/router';
-import { ProductsService } from 'src/app/Services/Products/products.service';
-import { IProduct } from 'src/app/ViewModels/IProduct';
+import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
+import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-bbag',
@@ -14,54 +11,63 @@ import { IProduct } from 'src/app/ViewModels/IProduct';
   styleUrls: ['./my-bbag.component.scss']
 })
 
-export class MyBBagComponent implements OnInit {
+export class MyBBagComponent implements OnInit, OnDestroy {
 
-  MyBag:IMyBag[];
-MyOneBag:IMyBag;
-newBBag:IMyBag;
+  bag;
+  ProductList = [];
+  productsInBag;
+  temp;
 
+  subscription: Subscription[] = [];
+  userID: any;
 
-ProductList:IProduct[]=[];
-
-  constructor(private bagSrv:MyBagsService ,private activatedRoute:ActivatedRoute ,private prdSrv:ProductsService) { }
+  constructor(private bagSrv: BagsService, private prdSrv: ProductsService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.userID = JSON.parse(localStorage.getItem('user')).uid;
+    this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
+      this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
 
-    this.bagSrv.getMyBagByID(2).subscribe(
-      (res)=>{
-        this.MyOneBag=res
-        for(var i=0;i<this.MyOneBag.productsIDs.length;i++)
-        {
-          // console.log(this.wsh.productsIDs[i])
-          this.prdSrv.getProductByID(this.MyOneBag.productsIDs[i]).subscribe(
-            (Xres)=>{
-              console.log(Xres)
-              this.ProductList.push(Xres)
-             
-            }
-          )
-        }
-      },
-      (err)=>{console.log(err)}
-    )
+      this.productsInBag = this.bag.productsIDs;
 
-    this.bagSrv.addProductToBagByUserID(this.newBBag).subscribe(
-      (res) => {
-      console.log(res)
-      },
-      (err) => { console.log(err) }
+      this.ProductList = [];
+
+      this.productsInBag.forEach(element => {
+        this.subscription.push(this.prdSrv.getSpcProduct(element).subscribe(data => {
+          this.temp = { id: data.payload.id, ...(data.payload.data() as {}) };
+          if (!this.ProductList.some(item => item.id === this.temp.id)) {
+            this.ProductList.push(this.temp);
+          }
+        }))
+        console.log(this.ProductList);
+      })
+    })
     );
-
-   
   }
-   getTotal = function(){
+
+  ngOnDestroy(): void {
+    this.subscription.forEach(element => {
+      element.unsubscribe();
+    });
+  }
+
+  deleteProduct() {
+    alert('test');
+  }
+
+  goToProduct(id: number) {
+    this.router.navigate([`Product/${id}`]);
+  }
+
+  getTotal = function () {
     var total = 0;
-    for(var i = 0; i <  this.ProductList.length; i++){
-        var prd = this.ProductList[i];
-        total += prd.price ;
+    for (var i = 0; i < this.ProductList.length; i++) {
+      var prd = this.ProductList[i];
+      total += prd.price;
     }
     return total;
   }
- 
+
 
 }
