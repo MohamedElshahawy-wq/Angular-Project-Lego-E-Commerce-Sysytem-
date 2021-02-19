@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AuthGuard } from './components/AuthGuard/auth.guard';
 import { LoginGuard } from './components/AuthGuard/login.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
   {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
   {path:"",redirectTo:'Home',pathMatch:'full'},
-
+  {path:"**", component:NotFoundComponent}
 ];
 
 @NgModule({

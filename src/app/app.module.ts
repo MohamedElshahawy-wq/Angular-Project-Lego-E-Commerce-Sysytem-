@@ -1,8 +1,3 @@
-
-
-
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -35,6 +30,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NgAuthService } from "./Services/Authentication/ng-auth.service";
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -56,7 +52,8 @@ import { NgAuthService } from "./Services/Authentication/ng-auth.service";
     RegisterComponent,
     LoginComponent,
     RecoverUsernameComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    NotFoundComponent
   ],
   imports: [
   
