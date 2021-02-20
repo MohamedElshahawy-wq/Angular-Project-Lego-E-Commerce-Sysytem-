@@ -13,7 +13,7 @@ export class UsersService {
     return this.firestore.collection('users').snapshotChanges();
   }
   getSpcUser(userId: any) {
-    return this.firestore.collection('users/' + userId).snapshotChanges();
+    return this.firestore.collection('users').doc(userId).snapshotChanges();
   }
   createUser(user: UserModel) {
     return this.firestore.collection('users').add(user);

@@ -1,53 +1,101 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/Services/Products/products.service';
-import { IProduct } from 'src/app/ViewModels/IProduct';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ParamMap } from '@angular/router';
-import { ReviewsService } from 'src/app/Services/Reviews/Reviews.service';
-import { IReveiw } from 'src/app/ViewModels/iReveiw';
+import { ReviewsService } from 'src/app/firebaseServices/Reviews/reviews.service';
+import { ReviewModel } from 'src/app/models/reviewsModel';
+import { Subscription } from 'rxjs';
+import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
+import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
-  product: IProduct;
-  review: IReveiw;
+export class ProductComponent implements OnInit, OnDestroy {
+  product;
+  review: ReviewModel;
   reviewNumber:number =0;
   count:number=1;
-  prdID: number = 0;
+  prdID;
   isCustomerReviews: boolean = false;
-  reviews: IReveiw[] = [];
+  reviews = [];
   recommendValue: boolean;
-  rateValue: number;
+  rateValue: any;
   reviewTitle: string;
   reviewBody: string;
+  subscription:Subscription[] = [];
+
+  userID: any;
+  bag: any;
+  wishlist: any;
+  productsInBag: any;
+  productsInWishlist: any;
+
   constructor(
     private productser: ProductsService,
     private activatedroute: ActivatedRoute,
-    private revservece: ReviewsService) { }
+    private revservece: ReviewsService,
+    private bagSrv: BagsService,
+    private wishSrv: WishlistService) { }
+
   ngOnInit(): void {
+    this.userID = JSON.parse(localStorage.getItem('user')).uid;
+    this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
+      this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInBag = this.bag.productsIDs;
+    })
+    );
+
+    this.subscription.push(this.wishSrv.getSpcWishlist(this.userID).subscribe(data => {
+      this.wishlist = { id: data.payload.id, ...(data.payload.data() as {}) };
+
+      this.productsInWishlist = this.wishlist.productsIDs;
+    })
+    );
     this.activatedroute.paramMap.subscribe((params: ParamMap) => {
       let PID: string | null = params.get('PID');
-      this.prdID = PID ? parseInt(PID) : 0;
-      this.productser.getProductByID(this.prdID).subscribe((res) => {
-        this.product = res;
-      })
+      this.prdID = PID;
+      this.subscription.push(this.productser.getSpcProduct(this.prdID).subscribe(data => {
+        this.product = {id: data.payload.id, ...(data.payload.data() as {})};
+        })
+      )
+      this.subscription.push(this.revservece.getReviewsByProductId(this.prdID).subscribe(data => {
+        this.reviews = data.map(e => {
+          return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+        })
+        this.reviewNumber = this.reviews.length;
+      }))
     });
-    this.activatedroute.paramMap.subscribe((params: ParamMap) => {
-      let PID: string | null = params.get('PID');
-      this.prdID = PID ? parseInt(PID) : 0;
-      this.revservece.getReviewsByProductId(this.prdID).subscribe((res) => {
-        this.reviews = res;
-        this.reviewNumber=this.reviews.length;
-      })
-    });
-    
   }
+  ngOnDestroy(): void {
+    this.subscription.forEach(element => {
+      element.unsubscribe();
+    });
+  }
+
+  addToBag(prdID: any) {
+    let theProducts = [...this.productsInBag];
+    
+    theProducts.push(prdID);
+
+    this.bagSrv.updateBagByUserID(theProducts, this.userID);
+    alert('Added to cart')
+  }
+
+  addToWishlist(prdID: any) {
+    let theProducts = [...this.productsInWishlist];
+    
+    theProducts.push(prdID);
+
+    this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
+    alert('Added to wishlist')
+  }
+
   CustomerReviews() {
     this.isCustomerReviews = !this.isCustomerReviews;
-    console.log(this.isCustomerReviews)
     if (this.isCustomerReviews === true)
       document.getElementById("CustomerReviews").style.display = "block";
     else
@@ -55,16 +103,25 @@ export class ProductComponent implements OnInit {
   }
   radioforRecommendChange(event: any) {
     this.recommendValue = event.target.value;
+    if(event.target.value == "true") {
+      this.recommendValue = true;
+    } else {
+      this.recommendValue = false;
+    }
   }
   radioforRatingChange(event: any) {
     this.rateValue = event.target.value;
   }
   addReview() {
     this.review = {
-      "productId": this.prdID, "OverallRating": this.rateValue, "recommend": this.recommendValue,
-      "reviewTitle": this.reviewTitle, "review": this.reviewBody
+      productId: this.prdID,
+      OverallRating: parseInt(this.rateValue),
+      recommend: this.recommendValue,
+      reviewTitle: this.reviewTitle,
+      review: this.reviewBody,
+      // userId: "0"
     }
-    this.revservece.addReview(this.review).subscribe(
+    this.revservece.createReview(this.review).then(
       (res) => {
         console.log(res)
       },
@@ -83,9 +140,6 @@ export class ProductComponent implements OnInit {
     }
     else
       this.count--;
-  }
-  addToBag(){
-    //this.count
   }
   ChangeImage(img:string){
     this.product.image=img;

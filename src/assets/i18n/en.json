@@ -325,7 +325,7 @@
     "wishList": {
         "wish": "wish list",
         "Items": "Items",
-        "Total": "Total",
+        "Price": "Price",
         "SignUp": "Sign Up",
         "SignIn": "Sign in",
         "benefits": "Discover the benefits of",
@@ -541,6 +541,9 @@
         "Overall":"Overall Rating",
         "Customer":"Customer Reviews",
         "recommend":"would recommend this product.",
+        "HighRecommend":"Highly recommended.",
+        "LowRecommend":"Not recommended.",
+        "MixedRecommend":"Mixed ratings.",
         "Rating":"Rating",
         "stars":"stars",
         "Experience":"Overall Experience",
@@ -699,5 +702,7 @@
         "Add2cart":"Add to cart",
         "Low2High":"Low to High",
         "High2Low":"High to Low"
-    }
+    },
+    "NotFound":"The page you are looking for was not found.",
+    "BackToHome":"Back to Home"
 }

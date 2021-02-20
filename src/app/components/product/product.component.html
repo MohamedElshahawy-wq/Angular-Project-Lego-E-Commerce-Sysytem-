@@ -16,7 +16,7 @@
         <ul class="breadcrumb bg-white w-100 m-0">
             <li class="breadcrumb-item"><a href="#">{{'header.Home'|translate}}</a></li>
             <li class="breadcrumb-item"><a href="#">{{'Product.Harry'|translate}}</a></li>
-            <li class="breadcrumb-item active">{{product.name}}</li>
+            <li class="breadcrumb-item active">{{product?.name}}</li>
         </ul>
     </div>
 </div>
@@ -26,11 +26,11 @@
 <div class="container-fluid product text-justify" dir="auto" dir="auto">
     <div class="row p-4">
         <div class="col-md-1 picelproduct">
-            <img *ngFor="let item of product.images;let indexOfelement=index;" src={{item}} (click)="ChangeImage(item)">
+            <img *ngFor="let item of product?.images;let indexOfelement=index;" src={{item}} (click)="ChangeImage(item)">
         </div>
         <div class="col-md-8">
             <div class=" picelproductkbera product1">
-                <img src={{product.image}} id="Picelproductkbera">
+                <img src={{product?.image}} id="Picelproductkbera">
             </div>
         </div>
         <div class="col-md-3 product2 px-3 font-weight-bold">
@@ -38,10 +38,10 @@
                 <img src="assets\images\HarryPotter--2018--gl--logo.png">
             </div>
             <div class="mb-3">
-                <h3>{{product.name}}</h3>
+                <h3>{{product?.name}}</h3>
             </div>
             <div class="mb-3">
-                <span class="my-1" id="stars">
+                <!-- <span class="my-1" id="stars">
                     <svg width="100%" height="100%" viewBox="0 0 50 49">
                         <g stroke="none" stroke-width="1" fill="#FFD500">
                             <path
@@ -77,7 +77,8 @@
                                 fill-rule="nonzero"></path>
                         </g>
                     </svg>
-                </span>
+                </span> -->
+                <i *ngFor="let i of [].constructor(product?.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
                 <a href="#ff" class="mx-2 py-2">{{reviewNumber}} {{'Product.Reviews'|translate}}</a>
             </div>
             <div class="mb-3 lonazrq p-2 text-justify" dir="auto">
@@ -88,7 +89,7 @@
 
             </div>
             <div>
-                <h1>{{product.price | currency}}</h1>
+                <h1>{{product?.price | currency}}</h1>
                 <p style="color: rgb(14, 218, 14);">{{'Checkout.Available'|translate}}</p>
             </div>
             <div class="d-flex mb-3">
@@ -110,7 +111,7 @@
 
             </div>
             <div class="mb-3 text-justify" dir="auto">
-                <button (click)="addToBag()" type="button" class="btn w-100 py-3 "
+                <button (click)="addToBag(product?.id)" type="button" class="btn w-100 py-3 "
                     style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>
@@ -127,7 +128,7 @@
                         fill="#006DB7">
                     </path>
                 </svg>
-                <a class="fontso8yr" href="#ff">{{'Product.AddWishlist'|translate}}</a>
+                <a role="button" (click)="addToWishlist(product?.id)" class="fontso8yr" href="javascript:void(0)">{{'Product.AddWishlist'|translate}}</a>
             </div>
             <div class=" py-3 linkeswd border-bottom text-justify" dir="auto">
                 <a data-toggle="collapse" data-target="#demo">{{'Product.Check'|translate}}</a>
@@ -458,7 +459,7 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-3">
-                                    <img class="w-100 h-auto" src={{product.image}}>
+                                    <img class="w-100 h-auto" src={{product?.image}}>
                                 </div>
                                 <div class="col-9">
                                     <h5 class="mb-5">Product Ratings</h5>
@@ -551,7 +552,7 @@
                 </div>
             </div>
         </div>
-        <div id="stars">
+        <!-- <div id="stars">
             <svg width="100%" height="100%" viewBox="0 0 50 49">
                 <g stroke="none" stroke-width="1" fill="#FFD500">
                     <path
@@ -589,12 +590,18 @@
             </svg>
             <span class="mx-2 ">4.2</span>
             <span class="mx-2 ">({{reviewNumber}} Reviews)</span>
-        </div>
-        <p style="color: green;">91% {{'Product.recommend'|translate}}</p>
+        </div> -->
+        <i *ngFor="let i of [].constructor(product?.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
+        <span class="mx-2 ">({{reviewNumber}} {{'Product.Reviews'|translate}})</span>
+        <p *ngIf="product?.rating>3" style="color: green;">{{'Product.HighRecommend'|translate}}</p>
+        <p *ngIf="product?.rating==3" style="color: orange;">{{'Product.MixedRecommend'|translate}}</p>
+        <p *ngIf="product?.rating<3" style="color: red;">{{'Product.LowRecommend'|translate}}</p>
         <div *ngFor="let item of reviews" class="my-3">
             <hr>
             <h5>{{item.reviewTitle}}</h5>
+            <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning" aria-hidden="true"></i>
             <h6 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h6>
+            <h6 class="text-danger" *ngIf="!item.recommend">I would not recommend this to a friend!</h6>
             <p>{{item.review}}</p>
         </div>
     </div>

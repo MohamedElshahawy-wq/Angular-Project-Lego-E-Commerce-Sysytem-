@@ -11,6 +11,7 @@ import { FoundationComponent } from './foundation/foundation.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 const routes: Routes = [ 
   {path: 'AboutUs' , component: AboutUsComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'foundation' , component: FoundationComponent},
   {path: 'ventures' , component: VenturesComponent},
   {path: 'whoWe' , component: WhoWeComponent},
-  {path: '',   redirectTo: 'AboutUs', pathMatch: 'full' }
+  {path: '',   redirectTo: 'AboutUs', pathMatch: 'full' },
+  {path:"**", component:NotFoundComponent}
 ];
 
 @NgModule({

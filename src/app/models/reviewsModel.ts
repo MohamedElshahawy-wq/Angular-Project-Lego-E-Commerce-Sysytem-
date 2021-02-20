@@ -1,9 +1,9 @@
 export class ReviewModel {
-    id?: number;
+    id?: any;
     OverallRating?: number;
-    productId: number;
-    recommend: string;
+    productId: any;
+    recommend: boolean;
     review?: string;
     reviewTitle?: string;
-    userId?: number
+    userId?: any
 }

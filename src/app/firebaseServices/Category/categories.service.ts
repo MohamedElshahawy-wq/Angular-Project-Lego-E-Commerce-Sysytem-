@@ -12,8 +12,8 @@ export class CategoriesService {
   getCategories() {
     return this.firestore.collection('categories').snapshotChanges();
   }
-  getSpcCategory(catId:number) {
-    return this.firestore.collection('categories/'+ catId).snapshotChanges();
+  getSpcCategory(catId: any) {
+    return this.firestore.collection('categories').doc(catId).snapshotChanges();
   }
   createCategory(myCat: CategoryModel) {
     return this.firestore.collection('categories').add(myCat);

@@ -2,8 +2,8 @@ import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
-import { ICustomer } from 'src/app/ViewModels/ICustomer';
-import { identifierModuleUrl } from '@angular/compiler';
+import { MyBagModel } from 'src/app/models/bagModel';
+import { WishListModel } from 'src/app/models/wishlistModel';
 
 
 export interface User {
@@ -67,7 +67,9 @@ export class NgAuthService {
         .then((result) => {
           //this.SendVerificationMail();
           console.log(".then " + user.password);
-          this.SetUserData(user);
+          this.SetUserData(user, result.user);
+          this.SetBag(result.user);
+          this.SetWishlist(result.user);
           this.router.navigate(['/Home']);
         }).catch((error) => {
           console.log(error.message)
@@ -98,18 +100,41 @@ export class NgAuthService {
       return user.uid;
     }
   
-    SetUserData(user) {
-      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    SetUserData(user, forID) {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${forID.uid}`);
       const userState: User = {
-        uid: user.uid,
+        uid: forID.uid,
         email: user.email,
         password: user.password,
         displayName: user.displayName,
         birthday : user.birthday,
         termsandconditionsCheck: user.termsandconditionsCheck
-        
       }
       
+
+      return userRef.set(userState, {
+        merge: true
+      })
+    }
+
+    SetBag(forID) {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`bags/${forID.uid}`);
+      const userState: MyBagModel = {
+        userID: forID.uid,
+        productsIDs: []
+      }
+
+      return userRef.set(userState, {
+        merge: true
+      })
+    }
+
+    SetWishlist(forID) {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`wishlist/${forID.uid}`);
+      const userState: WishListModel = {
+        userID: forID.uid,
+        productsIDs: []
+      }
 
       return userRef.set(userState, {
         merge: true

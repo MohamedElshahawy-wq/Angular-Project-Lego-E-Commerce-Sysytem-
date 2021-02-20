@@ -16,18 +16,18 @@ import { AuthGuard } from './components/AuthGuard/auth.guard';
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
 import { EditInformationComponent } from './components/edit-information/edit-information.component';
 import { EditSecurityComponent } from './components/edit-security/edit-security.component';
+import { LoginGuard } from './components/AuthGuard/login.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
   {path: 'FindStore' , component: FindStoreComponent},
   {path: 'LegoLife' , component: LegoLifeComponent},
   {path: 'About' , loadChildren: () => import('./components/AboutUs/about.module').then(m => m.AboutModule)},
-  {path: 'WishList' , component: WishListComponent},
-  {path: 'WishList/:wID' , component: WishListComponent, canActivate: [AuthGuard]},
-  {path: 'CheckOut' , component: CheckOutComponent},
-  {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},  
+  {path: 'WishList' , component: WishListComponent, canActivate: [AuthGuard]},
+  {path: 'CheckOut' , component: CheckOutComponent, canActivate: [AuthGuard]},
+  {path: 'MyBBag' , component: MyBBagComponent, canActivate: [AuthGuard]},
   {path: 'Themes' , loadChildren: () => import('./components/Themes/themes/themes.module').then(m => m.ThemesModule)},
-  {path: 'Admin' , loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
@@ -37,8 +37,11 @@ const routes: Routes = [
   {path :'EditAccount',component: EditAccountComponent},
   {path :'EditInformation',component: EditInformationComponent},
   {path :'Security',component: EditSecurityComponent},
+  {path :'Register',component: RegisterComponent, canActivate: [LoginGuard]},
+  {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
+  {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
   {path:"",redirectTo:'Home',pathMatch:'full'},
-
+  {path:"**", component:NotFoundComponent}
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@
     <div class="row text-justify" dir="auto">
         <div class="col-lg-8">
 
-            <span class="text-start"><h3>{{'MyBag.Cart'|translate}}</h3><a href="Wish.html" ><p class="text-end">{{'MyBag.View'|translate}} </p></a></span> 
+            <span class="text-start"><h3>{{'MyBag.Cart'|translate}}</h3><a href="Wish.html" ></a><p class="text-end">{{'MyBag.View'|translate}} </p></span> 
             <div class="jumbotron" style="background-color: #ffeacc ;padding:10px ;border: 1px #cfcfcf solid ">
                 <p style="text-align: center">{{'MyBag.currently'|translate}}<br>{{'MyBag.currently2'|translate}}<br>
                 </p>
@@ -22,7 +22,7 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
 
-                     <th scope="col" >{{'wishList.Total'|translate}}</th>
+                     <th scope="col" >{{'wishList.Price'|translate}}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -47,12 +47,12 @@
       <!--              ///////////////////-->
       <!--              //////////////row 1 ///////////////////-->
                   <tr *ngFor="let prd of ProductList">
-                    <th scope="row"><img src={{prd.image}} style="width:30%;height: auto"></th>
+                    <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
                     <td class="w-25">
-                  <small><b>{{prd.name}}<br>(8-14)</b></small><br><br>
-                        <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br>
-                        <small>Qty:3</small><br><br>
-                        <small><b>{{prd.price}}</b></small>
+                  <small><b><br><br>{{prd?.name}}</b></small><br><br>
+                        <!-- <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br> -->
+                       <!-- <small>Qty:3</small><br><br> -->
+                        <!-- <small><b>{{prd?.price}}</b></small> -->
                   </td>
                     <td><br><br>
                          <!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
@@ -62,11 +62,11 @@
                             </div>  -->
                       
                     </td>
-                   <td><br><br><i class="far fa-trash-alt" style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><i class="far fa-heart"  style="font-size: 19px;color:#1f8bff"></i></td>
-                   <td><br><br><small><b>{{prd.price}}</b></small></td>
+                   <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
+                   <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)" style="font-size: 19px;color:#1f8bff"></i></td>
+                   <td><br><br><small><b>{{prd?.price | currency}}</b></small></td>
                   </tr>
-                  -->
+                  
                 </tbody>
               </table>
                       </div>
@@ -145,24 +145,20 @@
      <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{'MyBag.Apply'|translate}}</button>
     </div>
     <div>  
-        <!--             <div class="text-start">Subtotal (5) items</div><div class="text-end">$51.97</div>-->
-                     <div style="  word-spacing: 295px;">Subtotal :{{getTotal()}} </div> <br>
+       
+                     <div style="  word-spacing: 300px;">Subtotal {{getTotal()}} </div> <br>
                      <p style="  word-spacing: 240px;"> Standardshipping Free</p> 
                      <div style="word-spacing: 340px;">TaX 14%</div><br>
         
                      <!-- <p style="  word-spacing: 280px;"> <b>Ordertotal $56.26</b></p>  -->
-                     <p style="  word-spacing: 250px;"> <b>Ordertotal: {{ getTotal()+getTotal()*14/100 }}</b></p> 
+                     <p style="  word-spacing: 280px;"> <b>Ordertotal: {{ getTotal()+getTotal()*14/100 }}</b></p> 
                     
                      <!-- <td>Total: {{ getTotal() }}</td> -->
-                     <div style="  word-spacing: 240px;">{{'Checkout.subtotal'|translate}}(5){{'wishList.Items'|translate}} $51.97</div> <br>
-                     <p style="  word-spacing: 240px;">{{'MyBag.Standardshipping'|translate}} </p> 
-                     <div style="word-spacing: 340px;">TaX $989</div><br>
-        
-                     <p style="  word-spacing: 280px;"> <b>{{'Checkout.OrderTotal'|translate}} $56.26</b></p> 
+                
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-warning w-100"   type="button" ><i class="fas fa-lock"></i> <a href="CheckOut.html">{{'MyBag.Checkout'|translate}} </a></button>
+                    <button class="btn btn-warning w-100"   type="button" ><i class="fas fa-lock"></i> <a routerLink="/CheckOut">{{'MyBag.Checkout'|translate}} </a></button>
                     </div>
                     <br>
 

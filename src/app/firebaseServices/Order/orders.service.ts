@@ -12,8 +12,8 @@ export class OrdersService {
   getOrders() {
     return this.firestore.collection('orders').snapshotChanges();
   }
-  getSpcOrder(orderId: number) {
-    return this.firestore.collection('orders/' + orderId).snapshotChanges();
+  getSpcOrder(orderId: any) {
+    return this.firestore.collection('orders').doc(orderId).snapshotChanges();
   }
   createOrder(order: OrderModel) {
     return this.firestore.collection('orders').add(order);

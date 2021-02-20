@@ -13,8 +13,11 @@ export class ProductsService {
   getProducts() {
     return this.firestore.collection('products').snapshotChanges();
   }
-  getSpcProduct(prodId: number) {
-    return this.firestore.collection('products/' + prodId).snapshotChanges();
+  getSpcProduct(prodId: any) {
+    return this.firestore.collection('products').doc(prodId).snapshotChanges();
+  }
+  getProductsByCategoryID(catID: any) {
+    return this.firestore.collection('products', ref => ref.where("categoryID","==", catID)).snapshotChanges();
   }
   createProduct(prod: ProductModel) {
     return this.firestore.collection('products').add(prod);

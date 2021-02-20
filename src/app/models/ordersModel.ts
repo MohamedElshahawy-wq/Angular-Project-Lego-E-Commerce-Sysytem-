@@ -1,7 +1,7 @@
 export class OrderModel {
-    id?: number;
-    userID: number;
+    id?: any;
+    userID: any;
     amount: number;
     date: string;
-    productsIDs: number[];
+    productsIDs: any[];
 }

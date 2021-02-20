@@ -10,12 +10,14 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { NotFoundComponent } from '../../not-found/not-found.component';
 // import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {path:'About', component: AboutComponent},
   {path:'Products', component: ProductsComponent},
-  {path: '',   redirectTo: 'About', pathMatch: 'full'}
+  {path: '',   redirectTo: 'About', pathMatch: 'full'},
+  {path:"**", component:NotFoundComponent}
 ]
 
 @NgModule({
