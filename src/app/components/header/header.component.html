@@ -192,6 +192,7 @@
         Admin Dashboard
       </span>
     </a> -->
+    
     <a [routerLink]="['/About']">
       <span class="font-weight-bold">
         <img src="assets\images\aboutus-7416dc11232ec122683d85e4781bee75.png">
@@ -237,6 +238,16 @@
       <div>
         <img class="mx-2" src="assets\images\bag-486c00daf1b11d5a5700f4842a176ad6.png">
         <p class="p-0 m-0 text-center font-weight-bold" style="font-size: 10px;">0</p>
+      </div>
+      <div>
+        <a class="nav-link">
+          <label class="form-control" for="lang" style="font-weight: bold;color: darkblue; display: inline;">{{'header.Lang' | translate}}:
+            <select style="border: none;" id="lang" #langSelect (change)="translate.use(langSelect.value)">
+              <option *ngFor="let lang of translate.getLangs()" [value]="lang"
+                [attr.selected]="lang === translate.currentLang ? '' : null">{{lang}}</option>
+            </select>
+          </label>
+        </a>
       </div>
 
     </div>

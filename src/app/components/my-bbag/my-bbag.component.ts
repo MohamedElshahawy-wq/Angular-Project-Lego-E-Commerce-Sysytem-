@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { Subscription } from 'rxjs';

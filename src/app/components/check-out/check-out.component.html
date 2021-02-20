@@ -22,20 +22,22 @@
       <p class="fs-6"><i class="fas fa-check-circle"></i>{{'Checkout.ShippingAddress' | translate}}</p>
       <form>
         <div class="col-sm-15">
-          <input pattern="[A-Za-z]{3}" title="Three letter country code" type="text" name="xyz" class="form-control"
+          <input [(ngModel)]="Username" pattern="[A-Za-z]{3}" title="Three letter country code" type="text" name="xyz" class="form-control"
             placeholder="Name" aria-label="Name">
+           
         </div><br>
 
         <div class="row g-3">
           <div class="col-sm-7">
-            <input pattern="[A-Za-z]{30}" title="City must Contain Letters Only" type="text" class="form-control"
-              placeholder="City" aria-label="City">
+            <input [(ngModel)]="City"  pattern="[A-Za-z]{30}" title="City must Contain Letters Only" type="text" class="form-control"
+              placeholder="City" name="city" aria-label="City">
+            
           </div>
           <div class="col-sm">
-            <input type="text" class="form-control" placeholder="Street Address" aria-label="Street Address">
+            <input name="street" [(ngModel)]="Street" type="text" class="form-control" placeholder="Street Address" aria-label="Street Address">
           </div>
           <div class="col-sm">
-            <input pattern="[0-9]{10}" type="number" class="form-control" placeholder="Zip" aria-label="Zip">
+            <input name="zip" [(ngModel)]="Zip" pattern="[0-9]{10}" type="number" class="form-control" placeholder="Zip" aria-label="Zip">
           </div>
         </div>
         <br>
@@ -44,10 +46,10 @@
 
         <div class="row g-3">
           <div class="col-sm-7">
-            <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+            <input name="email" type="email" class="form-control" placeholder="Email" aria-label="Email">
           </div>
           <div class="col-sm">
-            <input type="number" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
+            <input name="mobilephone" [(ngModel)]="mobilePhone" type="text" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
           </div>
         </div>
         <br>
@@ -97,7 +99,7 @@
             <input type="text" class="form-control" placeholder="CVV" aria-label="CVV">
           </div>
         </div><br>
-        <button type="submit" class="btn btn-light">{{'Checkout.Place' | translate}}</button>
+        <button type="submit" class="btn btn-primary" (click)="addOrder()">{{'Checkout.Place' | translate}}</button>
 
       </form>
     </div>
@@ -107,10 +109,10 @@
         <div class="card-body">
           <h5 class="card-title">Order Summary</h5>
           <hr>
-          <p class="card-text" style="  word-spacing: 135px;">subtotal $51.97</p>
+          <p class="card-text" style="  word-spacing: 135px;">subtotal {{getTotal() | currency}}</p>
           <p class="card-text" style="  word-spacing: 80px;">StandardShipping Free</p>
-          <p class="card-text" style="  word-spacing: 170px;">TAX $4.29</p>
-          <p class="card-title" style="  word-spacing: 105px;"><b>OrderTotal $56.26</b></p>
+          <p class="card-text" style="  word-spacing: 170px;">TAX {{tax | currency}}</p>
+          <p class="card-title" style="  word-spacing: 105px;"><b>OrderTotal {{ getTotal()+getTotal()*14/100 | currency}}</b></p>
           <img src='assets/images/freeholiday.png' style="width: 150px; height: auto;">
           
         </div>
