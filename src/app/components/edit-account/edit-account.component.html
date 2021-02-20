@@ -1,0 +1,241 @@
+<div class="container">
+  <div class="row">
+    <!--Left Indentation-->
+    <div class="col"></div>
+
+    <!--Main-->
+    <div class="col-5 text-center" id="main">
+      <!--Top yellow bar-->
+      <nav class="navbar justify-content-center d-flex flex-fill">
+        <div class="container-fluid text-nowrap">
+          <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
+          <span
+            class="navbar-brand mb-0 h1 justify-content-left text-center"
+            id="navTxt"
+            ><strong>Account</strong></span
+          >
+          <button
+            type="button"
+            class="close font-weight-bold text-right"
+            id="navBtn"
+            (click)="closeEdit()"
+          >
+            ×
+          </button>
+        </div>
+      </nav>
+
+      <h3 class="text-center" id="editTxt">
+        Edit Profile
+      </h3>
+      <h3 class="text-center" id="avatarTxt">
+        Avatar
+      </h3>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- The slideshow -->
+        <div class="carousel-inner" data-interval="false">
+          <div class="carousel-item active">
+            <img
+              src="assets\images\Register-Login-Images\Icons\dj.png"
+              alt="Icon1"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\lego (1).png"
+              alt="Icon2"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\lego (2).png"
+              alt="Icon3"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\lego (3).png"
+              alt="Icon4"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\lego (4).png"
+              alt="Icon5"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\lego (5).png"
+              alt="Icon6"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\legoo.png"
+              alt="Icon7"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\pirate.png"
+              alt="Icon8"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\spiderman.png"
+              alt="Icon9"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets\images\Register-Login-Images\Icons\spy.png"
+              alt="Icon10"
+              class="imgEdit img-thumbnail rounded-circle"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a
+          class="carousel-control-prev"
+          href="#demo"
+          data-slide="prev"
+          style="color: black"
+        >
+          <span class="LRSpan"
+            ><i
+              class="fas fa-chevron-left"
+              class="LRIcons"
+              style="
+                font-size: 35px;
+                color: black;
+                margin-left: 100px;
+              "
+            ></i
+          ></span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#demo"
+          data-slide="next"
+        >
+          <span class="LRSpan"
+            ><i
+              class="fas fa-chevron-right"
+              class="LRIcons"
+              style="
+                font-size: 35px;
+                color: black;
+                margin-left: -190px;
+              "
+            ></i
+          ></span>
+        </a>
+      </div>
+
+      <br />
+
+      <!--username-->
+      <div class="container">
+        <form #editUsernameForm="ngForm" (ngSubmit)="editUsername()">
+          <div class="mb-3 form-group">
+            <label
+              for="editUsernameTXT"
+              id= "editUsernameLBL"
+              class="text-left justify-content-left d-flex font-weight-bold"
+              >Username</label
+            >
+            <input
+              #newEmailUsername="ngModel"
+              [(ngModel)]="username"
+              type="text"
+              id="editUsernameTXT"
+              class="form-control"
+              value= ngModel
+              required
+            /><!--<i class="fas fa-pencil-alt"></i>-->
+          </div>
+        </form>
+      </div>
+
+      <!--btns-->
+      <div class="container">
+        <form>
+          <div class="mb-3 form-group" style="margin-left: 20px">
+            <button
+              class="form-control text-left btnn"
+              id="informationBtn"
+              (click) = "EditInformation()"
+            >
+              <i
+                class="far fa-square"
+                id= "informationBtnIcon"
+              ></i>
+              My Information
+              <i class="fas fa-chevron-right" style="margin-left: 200px"></i>
+            </button>
+
+            <br />
+
+            <button
+              class="form-control text-left btnn"
+              id="securityBtn"
+              (click) = "security()"
+            >
+              <i
+                class="fas fa-shield-alt"
+                id= "securityBtnIcon"
+              ></i>
+              Security
+              <i class="fas fa-chevron-right" style="margin-left: 240px"></i>
+            </button>
+
+            <br />
+            
+            <button
+              id="logoutbtn"
+              class="form-control text-left btnn"
+              (click) = "logout()"
+            >
+              <i
+                class="fas fa-sign-out-alt"
+                id="logoutBtnIcon"
+              ></i>
+              Logout
+              <span class="text-right">
+                <i class="fas fa-chevron-right" style="margin-left: 245px"></i
+              ></span>
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+      <button class='btn btn-primary' (click) = "setUser()">Click here</button>
+
+      <!--savebtn class="disabled"-->
+      <button
+        id="save"
+        class="btn btn-primary h-25 w-25 border border-0 rounded"
+        [disabled]="editUsernameForm.invalid"
+      >
+        Save
+      </button>
+    </div>
+
+    <!--Right Indentation-->
+    <div class="col"></div>
+  </div>
+</div>

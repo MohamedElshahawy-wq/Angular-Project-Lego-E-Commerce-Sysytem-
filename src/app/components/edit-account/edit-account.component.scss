@@ -1,0 +1,138 @@
+body {
+  background-color: rgb(242, 245, 247);
+  font-family: "PT Sans", sans-serif;
+}
+
+#main {
+  /*display:flex;*/
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: white;
+  border-width: 4px;
+  height: 80%;
+}
+
+/*navigation bar*/
+nav {
+  background-color: rgb(255, 207, 0);
+  margin-left: -15px;
+  margin-right: -15px;
+  height: 80%;
+  margin-bottom: 20px;
+}
+
+#backBtn {
+  font-size: 28px;
+  color: rgb(74, 74, 74);
+}
+
+#backBtn:hover {
+  color: gray;
+}
+
+#navImg {
+  width: 8%;
+  height: 8%;
+  margin-left: 110px;
+}
+
+#navTxt {
+  margin-right: 90px;
+  font-size: 25px;
+}
+
+#navBtn {
+  font-size: 55px;
+  color: rgb(74, 74, 74);
+}
+
+//Texts
+#editTxt {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+#avatarTxt {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/*Avatar Images*/
+.imgEdit {
+  width: 20%;
+  height: 20%;
+}
+
+/*carousel buttons*/
+.LRSpan {
+  border: none;
+  width: 70%;
+  height: 50%;
+}
+
+.btnn {
+  border-color: rgb(201, 201, 201);
+  width: 95%;
+  border-width: 2px;
+  font-size: 14px;
+  height: 50px;
+}
+
+.btnn:hover {
+  border-color: rgb(151, 151, 151);
+}
+
+//Edit Username
+#editUsernameLBL {
+  color: rgb(51, 60, 69);
+  font-size: 12px;
+  margin-left: 22px;
+  margin-bottom: 0px;
+}
+
+#editUsernameTXT {
+  color: black;
+  font-size: 15px;
+  height: 45px;
+  border-width: 2px;
+  width: 90%;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  border-color: rgb(201, 201, 201);
+}
+
+//buttons
+#informationBtn,
+#securityBtn {
+  margin-bottom: -15px;
+}
+
+#informationBtnIcon,
+#securityBtnIcon {
+  color: rgb(160, 178, 206);
+  margin-right: 10px;
+}
+
+#logoutbtn {
+  margin-bottom: 25px;
+}
+
+#logoutBtnIcon {
+  color: rgb(160, 178, 206);
+  margin-right: 10px;
+}
+
+//save button
+#save {
+  //width: 40%;
+  //height: 53px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  //border: none;
+  //border-radius: 5px;
+}
+
+#activationCodeTXT {
+  font-family: FontAwesome;
+}

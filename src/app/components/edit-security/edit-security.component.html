@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <!--Left Indentation-->
+        <div class="col">
+        </div>
+
+        <!--Main-->
+        <div class="col-5 text-center" id="main" >
+          <!--Navigation Bar-->
+          <nav class="navbar justify-content-center d-flex flex-fill">
+              <div class="container-fluid text-nowrap">
+                  <i class="fas fa-chevron-left" style="font-size: 20px;" (click)="goBack()"></i>
+                  <img id="navImg" src="assets\images\Register-Login-Images\lego.png">
+                  <span class="navbar-brand mb-0 h1 justify-content-left text-center" id="navTxt"><strong>Account</strong></span>
+                  <button type="button" class="close font-weight-bold text-right" id="navBtn" (click)="closeBtn()"> × </button>
+              </div>
+          </nav>
+
+          <h4 class="text-center" style="margin-bottom: 20px;">Security</h4>
+
+          <div class="d-flex  text-center justify-content-center" style="margin-left: 30px;" >
+              <hr class="hLine1" style="width:10%;">
+              <p class="pLine" style="font-size: 15px;">Do you want to change your password?</p>
+              <hr class="hLine1" style="width:10%; margin-right: 30px;">
+          </div>
+
+          <!--Change password textbox-->
+          <div class="container-fluid">
+              <div>
+                <form>
+                    <div class="mb-3">
+                      <label for="newPassTXT" id="newPassLabel" class="form-label text-left justify-content-left d-flex">Your New Password</label>
+                      <input type="password" class="form-control" id="newPassTXT" placeholder="* * * * * * * *"  onblur="warnMSG()" onfocus="removeWarn()">
+                      <div id="newPasswarnTXT" class="form-label text-left justify-content-left d-flex"></div>
+                    </div>
+
+                    <!--This will save the new password to the user's profile-->
+                    <button id="saveNewPass" type="submit" class="disabled">Save</button>
+                  </form>
+              </div>
+          </div>
+
+          <div class="d-flex">
+            <hr class="hLine1" style="width: 24%;">
+            <p class ="pLine" style="font-size: 13px;" class="font-weight-bold">Delete Your Account</p>
+            <hr class="hLine2" style="width: 24%;">
+          </div>
+
+
+          <!--Delete Btn--> <!--This will delete the account-->
+          <button id="deleteBtn" type="btn" class="text-white">Delete</button>
+          <br>
+
+          <!--Bo back btn--> <!--This will go to the main edit profile page-->
+          <a id="gobackLink" class="text-center font-weight-bold" (click)="closeBtn()">Go back</a>
+          <br>
+          <br>
+
+        </div>
+
+        <!--Right Indentation-->
+        <div class="col">
+        </div>
+    </div>
+</div>

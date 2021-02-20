@@ -1,0 +1,191 @@
+body {
+  background-color: rgb(242, 245, 247);
+  font-family: "PT Sans", sans-serif;
+}
+
+#main {
+  border-style: solid;
+  border-color: white;
+  border-width: 4px;
+  height: 80%;
+}
+
+/*navigation bar*/
+nav {
+  background-color: rgb(255, 207, 0);
+  margin-left: -15px;
+  margin-right: -15px;
+  height: 80%;
+  margin-bottom: 20px;
+}
+
+#navImg {
+  width: 8%;
+  height: 8%;
+  margin-left: 80px;
+}
+
+#navTxt {
+  margin-right: 90px;
+  font-size: 25px;
+}
+
+#navBtn {
+  font-size: 55px;
+  color: rgb(74, 74, 74);
+}
+
+/*new password text*/
+#newPassLabel {
+  color: rgb(51, 50, 50);
+  font-size: 14px;
+  margin-left: 23px;
+}
+
+#newPassTXT {
+  color: rgb(160, 178, 206);
+  font-size: 13px;
+  height: 53px;
+  border-width: 2px;
+  width: 90%;
+  margin-left: 20px;
+}
+
+#newPasswarnTXT {
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 5px;
+  display: none;
+}
+
+/*Lines*/
+.hLine1 {
+  border: 1px solid rgb(186, 219, 244);
+  margin-right: 13px;
+}
+
+.pLine {
+  padding-left: -20px;
+  margin-top: 5px;
+}
+
+.hLine2 {
+  border: 1px solid rgb(186, 219, 244);
+  margin-right: 30px;
+}
+
+/*social media buttons*/
+#fbBtn {
+  background-color: rgb(66, 103, 178);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  line-height: 40px;
+  width: 85%;
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+#fbIcon {
+  font-size: 25px;
+  margin-right: 7px;
+  padding-top: 8px;
+}
+
+#GooBtn {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-width: 1px;
+  line-height: 40px;
+  width: 85%;
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+#GooIcon {
+  font-size: 25px;
+  margin-right: 7px;
+  padding-top: 8px;
+  color: rgb(234, 67, 53);
+}
+
+#appleBtn {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  line-height: 40px;
+  width: 85%;
+  margin-left: 35px;
+  margin-bottom: 20px;
+}
+
+#appleIcon {
+  font-size: 25px;
+  margin-right: 7px;
+  padding-top: 8px;
+}
+
+/*save password btn*/
+#saveNewPass {
+  width: 40%;
+  background-color: rgb(185, 185, 185);
+  color: white;
+  height: 53px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+/*checkbox*/
+#twoFacAuth {
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+  margin-left: 38px;
+  background-color: rgb(160, 178, 206);
+  border-radius: 25px;
+}
+
+#twoFacAuthLbl {
+  margin-left: 45px;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+/*device history*/
+#devHist {
+  font-size: 14px;
+  height: 50px;
+  width: 95%;
+  margin-left: 15px;
+  margin-bottom: 30px;
+  border-width: 2px;
+}
+
+/*delete btn*/
+#deleteBtn {
+  background-color: rgb(227, 0, 11);
+  width: 40%;
+  height: 53px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+#deleteBtn:hover {
+  background-color: rgb(227, 37, 46);
+}
+
+/*go back btn*/
+#gobackLink {
+  font-size: 14px;
+  color: rgb(0, 108, 182);
+}

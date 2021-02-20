@@ -13,6 +13,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AuthGuard } from './components/AuthGuard/auth.guard';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { EditInformationComponent } from './components/edit-information/edit-information.component';
+import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
@@ -31,6 +34,9 @@ const routes: Routes = [
   {path :'Register',component: RegisterComponent},
   {path :'Login',component: LoginComponent},
   {path :'ForgotPassword',component: RecoverPasswordComponent},
+  {path :'EditAccount',component: EditAccountComponent},
+  {path :'EditInformation',component: EditInformationComponent},
+  {path :'Security',component: EditSecurityComponent},
   {path:"",redirectTo:'Home',pathMatch:'full'},
 
 ];
