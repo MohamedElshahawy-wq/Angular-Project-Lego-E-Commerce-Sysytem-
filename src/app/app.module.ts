@@ -30,14 +30,11 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NgAuthService } from "./Services/Authentication/ng-auth.service";
-<<<<<<< HEAD
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
 import { EditInformationComponent } from './components/edit-information/edit-information.component';
 import { EditSecurityComponent } from './components/edit-security/edit-security.component';
-=======
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
->>>>>>> 7fd99c2c33c75fa3ae6d7bebff27bc90a05882c4
 
 
 @NgModule({
@@ -59,13 +56,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LoginComponent,
     RecoverUsernameComponent,
     RecoverPasswordComponent,
-<<<<<<< HEAD
     EditAccountComponent,
     EditInformationComponent,
     EditSecurityComponent,
-=======
     NotFoundComponent
->>>>>>> 7fd99c2c33c75fa3ae6d7bebff27bc90a05882c4
   ],
   imports: [
   

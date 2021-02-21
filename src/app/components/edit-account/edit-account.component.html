@@ -109,14 +109,14 @@
 
         <!-- Left and right controls -->
         <a
-          class="carousel-control-prev"
+          class="carousel-control-prev "
           href="#demo"
           data-slide="prev"
           style="color: black"
         >
           <span class="LRSpan"
             ><i
-              class="fas fa-chevron-left"
+              class="fas fa-chevron-left bg-dark"
               class="LRIcons"
               style="
                 font-size: 35px;
@@ -149,7 +149,7 @@
 
       <!--username-->
       <div class="container">
-        <form #editUsernameForm="ngForm" (ngSubmit)="editUsername()">
+        <form #editUsernameForm="ngForm">
           <div class="mb-3 form-group">
             <label
               for="editUsernameTXT"
@@ -163,7 +163,7 @@
               type="text"
               id="editUsernameTXT"
               class="form-control"
-              value= ngModel
+              name = "Username"
               required
             /><!--<i class="fas fa-pencil-alt"></i>-->
           </div>
@@ -223,13 +223,12 @@
         </form>
       </div>
 
-      <button class='btn btn-primary' (click) = "setUser()">Click here</button>
-
       <!--savebtn class="disabled"-->
       <button
         id="save"
         class="btn btn-primary h-25 w-25 border border-0 rounded"
         [disabled]="editUsernameForm.invalid"
+        (click)="save()"
       >
         Save
       </button>

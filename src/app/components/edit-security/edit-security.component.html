@@ -30,12 +30,13 @@
                 <form>
                     <div class="mb-3">
                       <label for="newPassTXT" id="newPassLabel" class="form-label text-left justify-content-left d-flex">Your New Password</label>
-                      <input type="password" class="form-control" id="newPassTXT" placeholder="* * * * * * * *"  onblur="warnMSG()" onfocus="removeWarn()">
+                      <input type="password" class="form-control" id="newPassTXT" placeholder="* * * * * * * *" #newpassword="ngModel"
+                      [(ngModel)]="password" name = "password">
                       <div id="newPasswarnTXT" class="form-label text-left justify-content-left d-flex"></div>
                     </div>
 
                     <!--This will save the new password to the user's profile-->
-                    <button id="saveNewPass" type="submit" class="disabled">Save</button>
+                    <button id="saveNewPass" type="submit" class="btn btn-primary" (click)="save()">Save</button>
                   </form>
               </div>
           </div>
@@ -48,11 +49,11 @@
 
 
           <!--Delete Btn--> <!--This will delete the account-->
-          <button id="deleteBtn" type="btn" class="text-white">Delete</button>
+          <button id="deleteBtn" type="btn" class="text-white" (click)="deleteBtn()">Delete</button>
           <br>
 
           <!--Bo back btn--> <!--This will go to the main edit profile page-->
-          <a id="gobackLink" class="text-center font-weight-bold" (click)="closeBtn()">Go back</a>
+          <a id="gobackLink" class="text-center font-weight-bold" (click)="goBack()">Go back</a>
           <br>
           <br>
 

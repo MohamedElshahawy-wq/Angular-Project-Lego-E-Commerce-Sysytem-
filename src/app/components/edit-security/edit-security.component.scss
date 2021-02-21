@@ -130,43 +130,11 @@ nav {
 /*save password btn*/
 #saveNewPass {
   width: 40%;
-  background-color: rgb(185, 185, 185);
-  color: white;
   height: 53px;
   font-size: 20px;
   margin-bottom: 30px;
   border: none;
   border-radius: 5px;
-  cursor: not-allowed;
-}
-
-/*checkbox*/
-#twoFacAuth {
-  top: 0;
-  left: 0;
-  height: 17px;
-  width: 17px;
-  background-color: #eee;
-  margin-left: 38px;
-  background-color: rgb(160, 178, 206);
-  border-radius: 25px;
-}
-
-#twoFacAuthLbl {
-  margin-left: 45px;
-  font-size: 14px;
-  margin-top: 2px;
-  margin-bottom: 10px;
-}
-
-/*device history*/
-#devHist {
-  font-size: 14px;
-  height: 50px;
-  width: 95%;
-  margin-left: 15px;
-  margin-bottom: 30px;
-  border-width: 2px;
 }
 
 /*delete btn*/

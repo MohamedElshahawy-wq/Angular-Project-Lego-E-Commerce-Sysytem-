@@ -39,10 +39,8 @@ export class NgAuthService {
       this.afAuth.authState.subscribe(user => {
         if (user) {
           this.userState = user;
-          console.log(this.userState);
           localStorage.setItem('user', JSON.stringify(this.userState));
           JSON.parse(localStorage.getItem('user'));
-          console.log(JSON.parse(localStorage.getItem('user')));
         } else {
           localStorage.setItem('user', null);
           JSON.parse(localStorage.getItem('user'));
