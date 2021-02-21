@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
 
   email?:string;
   password?:string;
+  displayName : string = 'Lego User';
   month: number;
   day:number;
   year:number;
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
       uid: Math.random().toString(),
       email: this.email,
       password: this.password,
+      displayName: this.displayName,
       birthday:{
         month: this.month,
         day:this.day,
@@ -44,35 +46,6 @@ export class RegisterComponent implements OnInit {
 
     
     this.ngAuthService.SignUp(this.user);
-    /*this.newCustomer = {email:this.email, password:this.password, birthday:{month:this.month, day:this.day, year:this.year},termsandconditionsCheck:this.termsandconditionsCheck}
-    this.customerService.addCustomer(this.newCustomer).subscribe((response)=>{
-      console.log("Customer Added!");
-      console.log(this.newCustomer);
-      console.log("Response" + response);
-      //this.setCustomerCookie();
-      this.router.navigate(['/Home']);
-    },
-    (err)=>{
-      console.log(err);
-    })
-  }
-
-  /*setCustomerCookie(){
-    this.customerService.getAllCustomers().subscribe((res)=>{
-      this.getCustomer = res;
-      for(let i=1;i<res.length;i++)
-      {
-        if(this.getCustomer[i].email === this.email && this.getCustomer[i].password === this.password)
-        {
-          //set cookie
-          this.cookie.set(this.getCustomer[i].email, this.getCustomer[i].id);
-
-        }
-    }
-
-    },(err)=>{
-      console.log(err);
-    });*/
   }
 
   

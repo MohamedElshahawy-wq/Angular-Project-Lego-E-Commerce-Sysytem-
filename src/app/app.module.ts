@@ -30,6 +30,9 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NgAuthService } from "./Services/Authentication/ng-auth.service";
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { EditInformationComponent } from './components/edit-information/edit-information.component';
+import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
@@ -53,6 +56,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LoginComponent,
     RecoverUsernameComponent,
     RecoverPasswordComponent,
+    EditAccountComponent,
+    EditInformationComponent,
+    EditSecurityComponent,
     NotFoundComponent
   ],
   imports: [

@@ -19,8 +19,8 @@ export class UsersService {
     return this.firestore.collection('users').add(user);
   }
   updateUser(user: UserModel) {
-    delete user.id;
-    this.firestore.doc('users/' + user.id).update(user);
+    //delete user.uid;
+    this.firestore.doc('users/' + user.uid).update(user);
   }
   deleteUser(userId: number) {
     this.firestore.doc('users/' + userId).delete();

@@ -10,6 +10,7 @@ export interface User {
   uid: string,
   email: string,
   password: string,
+  displayName: string,
   birthday: {
     month: number,
     day: number,
@@ -71,14 +72,7 @@ export class NgAuthService {
         }).catch((error) => {
           console.log(error.message)
         })
-    }
-
-    /*SendVerificationMail() {
-        return this.afAuth.currentUser.then(u => u.sendEmailVerification())
-        .then(() => {
-          this.router.navigate(['email-verification']);
-        })
-    }*/    
+    }   
   
     ForgotPassword(passwordResetEmail) {
       return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
@@ -94,21 +88,15 @@ export class NgAuthService {
       return (user !== null) ? true : false;
     }
   
-    /*GoogleAuth() {
-      return this.AuthLogin(new auth.GoogleAuthProvider());
+    get userLoggedID(): string{
+      const user = JSON.parse(localStorage.getItem('user'));
+      return user.uid;
     }
-  
-    AuthLogin(provider) {
-      return this.afAuth.signInWithPopup(provider)
-      .then((result) => {
-         this.ngZone.run(() => {
-            this.router.navigate(['/Home']);
-          })
-        this.SetUserData(result.user);
-      }).catch((error) => {
-        window.alert(error)
-      })
-    }*/
+
+    getUser(){
+      const user = JSON.parse(localStorage.getItem('user'));
+      return user.uid;
+    }
   
     SetUserData(user, forID) {
       const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${forID.uid}`);
@@ -116,11 +104,11 @@ export class NgAuthService {
         uid: forID.uid,
         email: user.email,
         password: user.password,
+        displayName: user.displayName,
         birthday : user.birthday,
         termsandconditionsCheck: user.termsandconditionsCheck
       }
-      console.log(user);
-      console.log(userState.password);
+      
 
       return userRef.set(userState, {
         merge: true
@@ -154,7 +142,7 @@ export class NgAuthService {
     SignOut() {
       return this.afAuth.signOut().then(() => {
         localStorage.removeItem('user');
-        this.router.navigate(['/Login']);
+        this.router.navigate(['/Home']);
       })
     }  
 }

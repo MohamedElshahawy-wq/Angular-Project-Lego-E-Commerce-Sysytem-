@@ -13,6 +13,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AuthGuard } from './components/AuthGuard/auth.guard';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { EditInformationComponent } from './components/edit-information/edit-information.component';
+import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 import { LoginGuard } from './components/AuthGuard/login.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
@@ -28,6 +31,12 @@ const routes: Routes = [
   {path :'Product/:PID',component:ProductComponent},
   {path :'Offers&Sales',component:OffersComponent},
   {path :'Home',component:HomeComponent},
+  {path :'Register',component: RegisterComponent},
+  {path :'Login',component: LoginComponent},
+  {path :'ForgotPassword',component: RecoverPasswordComponent},
+  {path :'EditAccount',component: EditAccountComponent},
+  {path :'EditInformation',component: EditInformationComponent},
+  {path :'Security',component: EditSecurityComponent},
   {path :'Register',component: RegisterComponent, canActivate: [LoginGuard]},
   {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
   {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
