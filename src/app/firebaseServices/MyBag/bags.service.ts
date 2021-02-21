@@ -35,7 +35,7 @@ export class BagsService {
     return this.firestore.collection('bags').add(myBag);
   }
   updateMyBag(myBag: MyBagModel){
-    delete myBag.id;
+    //delete myBag.id;
     this.firestore.doc('bags/' + myBag.id).update(myBag);
 }
 deleteMyBag(bagId:number){

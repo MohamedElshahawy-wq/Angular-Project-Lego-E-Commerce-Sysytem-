@@ -4,6 +4,7 @@ import { ProductsService } from 'src/app/firebaseServices/Product/products.servi
 import { Subscription } from 'rxjs';
 import { OrderModel } from 'src/app/models/ordersModel';
 import { OrdersService } from 'src/app/firebaseServices/Order/orders.service';
+import { MyBagModel } from 'src/app/models/bagModel';
 
 @Component({
   selector: 'app-check-out',
@@ -23,6 +24,7 @@ export class CheckOutComponent implements OnInit {
   ordarTotal:number =0;
   mobilePhone:string;
   bag;
+  newBag :MyBagModel;
   ProductList = [];
   productsInBag;
   temp;
@@ -86,6 +88,11 @@ export class CheckOutComponent implements OnInit {
       console.log(res)
       console.log(this.order)
     })
+    this.newBag ={
+      userID:this.userID,
+      productsIDs:[]
+    }
+    this.bagSrv.updateBagByUserID([],this.userID);
     alert("order is added");
 
   }
