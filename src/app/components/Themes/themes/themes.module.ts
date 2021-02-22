@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { NotFoundComponent } from '../../not-found/not-found.component';
+import { ToastrModule } from 'ngx-toastr';
 // import { environment } from '../environments/environment';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   declarations: [AboutComponent, ProductsComponent, HeaderComponent],
   imports: [
     CommonModule,
+    ToastrModule.forRoot(), // ToastrModule added
     TranslateModule.forChild({
       loader: { provide: TranslateLoader, useFactory: translateLoaderFactory, deps: [HttpClient] }
     }),

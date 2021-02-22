@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
     }
 
     /*this.cookieTrial = this.cookie.get('mohamed@gmail.com');
-    console.log(this.cookieTrial);
 
     },(err)=>{
       console.log(err);

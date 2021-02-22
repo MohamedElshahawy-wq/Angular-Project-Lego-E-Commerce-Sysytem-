@@ -13,6 +13,7 @@ import { data } from 'jquery';
 import { Subscription } from 'rxjs';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -40,7 +41,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   productsInWishlist: any;
   constructor(private productsService: ProductsService,
     private catService: CategoriesService, private bagSrv: BagsService,
-    private wishSrv: WishlistService) { }
+    private wishSrv: WishlistService, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -143,7 +144,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
     theProducts.push(prd);
 
     this.bagSrv.updateBagByUserID(theProducts, this.userID);
-    alert('Added to cart')
+    // alert('Added to cart')
+    this.toastr.success(`Added to cart.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   addToWishlist(prdID: any) {
@@ -152,7 +158,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
     theProducts.push(prdID);
 
     this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
-    alert('Added to wishlist')
+    // alert('Added to wishlist')
+    this.toastr.success(`Added to wishlist.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   @HostListener('window:resize', ['$event'])

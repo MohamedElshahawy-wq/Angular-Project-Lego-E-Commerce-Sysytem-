@@ -174,7 +174,7 @@
     <a [routerLink]="['/Offers&Sales']" class="font-weight-bold cap">{{'header.OfferSale' | translate}}</a>
     <a href="javascript:void(0)" class="font-weight-bold cap"> {{'header.Exclusives' | translate}}</a>
     <a href="javascript:void(0)" class="font-weight-bold cap"> {{'header.Support' | translate}}</a>
-    <a href="javascript:void(0)">
+    <a [routerLink]="['/EditAccount']">
       <span class="font-weight-bold">
         <img src="assets\images\account-747c349c92ac5a41cc81e55c9e9b74b7.png">
         <span>{{'header.MyAccount' | translate}} </span>
@@ -229,15 +229,15 @@
       </a>
     </div>
     <div class="navbargdedaswr d-flex">
-      <a href="javascript:void(0)"><i class="fas fa-search mt-1 mx-1" style="color:rgb(0,109,183);"></i></a>
+      <a [routerLink]="['/EditAccount']"><i class="fas fa-search mt-1 mx-1" style="color:rgb(0,109,183);"></i></a>
       <img class="mt-1 mx-2" src="assets\images\account-747c349c92ac5a41cc81e55c9e9b74b7.png">
       <div>
         <img class="mx-2" src="assets\images\wishlist-6a9c0bed142a5eac6ded4132391e5e55.png">
-        <p class="p-0 m-0 text-center font-weight-bold" style="font-size: 10px;">0</p>
+        <!-- <p class="p-0 m-0 text-center font-weight-bold" style="font-size: 10px;">0</p> -->
       </div>
       <div>
         <img class="mx-2" src="assets\images\bag-486c00daf1b11d5a5700f4842a176ad6.png">
-        <p class="p-0 m-0 text-center font-weight-bold" style="font-size: 10px;">0</p>
+        <!-- <p class="p-0 m-0 text-center font-weight-bold" style="font-size: 10px;">0</p> -->
       </div>
       <div>
         <a class="nav-link">

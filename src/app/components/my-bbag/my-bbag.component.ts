@@ -39,7 +39,6 @@ export class MyBBagComponent implements OnInit, OnDestroy {
             this.ProductList.push(this.temp);
           }
         }))
-        console.log(this.ProductList);
       })
     })
     );

@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -70,6 +71,8 @@ import { AfterCheckoutComponent } from './components/after-checkout/after-checko
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

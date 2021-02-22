@@ -21,10 +21,8 @@ export class EditAccountComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.ngAuthService.userLoggedID;
-    console.log(id);
     this.userService.getSpcUser(id).subscribe((data)=>{
       //this.user = {uid: data.payload.id, ...(data.payload.data() as {})};
-      console.log(data.payload.data());
       this.obj = data.payload.data();
       this.username = this.obj.displayName;
     })
@@ -47,7 +45,6 @@ export class EditAccountComponent implements OnInit {
   }
 
   editUsername(){
-    console.log("console log")
   }
 
   save(){

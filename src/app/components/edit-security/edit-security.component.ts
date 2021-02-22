@@ -19,10 +19,8 @@ export class EditSecurityComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.ngAuthService.userLoggedID;
-    console.log(id);
     this.userService.getSpcUser(id).subscribe((data)=>{
       //this.user = {uid: data.payload.id, ...(data.payload.data() as {})};
-      console.log(data.payload.data());
       this.obj = data.payload.data();
     })
   }

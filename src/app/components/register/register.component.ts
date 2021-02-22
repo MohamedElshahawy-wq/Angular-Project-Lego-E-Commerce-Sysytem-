@@ -28,9 +28,6 @@ export class RegisterComponent implements OnInit {
   }
 
   addnewCustomer(){
-    console.log(this.email);
-    console.log(this.password);
-
     this.user={
       uid: Math.random().toString(),
       email: this.email,

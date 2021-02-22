@@ -54,7 +54,6 @@ export class WishListComponent implements OnInit, OnDestroy {
   }
 
   deleteProduct(prdID: any) {
-    console.log(this.ProductList);
     let theProducts = [...this.productsInWishlist];
     const index = theProducts.indexOf(prdID);
     if (index > -1) {

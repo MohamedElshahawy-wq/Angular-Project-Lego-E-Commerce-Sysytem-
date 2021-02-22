@@ -7,6 +7,7 @@ import { ReviewModel } from 'src/app/models/reviewsModel';
 import { Subscription } from 'rxjs';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -38,7 +39,8 @@ export class ProductComponent implements OnInit, OnDestroy {
     private activatedroute: ActivatedRoute,
     private revservece: ReviewsService,
     private bagSrv: BagsService,
-    private wishSrv: WishlistService) { }
+    private wishSrv: WishlistService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.userID = JSON.parse(localStorage.getItem('user')).uid;
@@ -105,7 +107,12 @@ export class ProductComponent implements OnInit, OnDestroy {
     theProducts.push(prd);
 
     this.bagSrv.updateBagByUserID(theProducts, this.userID);
-    alert('Added to cart')
+    // alert('Added to cart')
+    this.toastr.success(`Added to cart.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   addToWishlist(prdID: any) {
@@ -114,7 +121,12 @@ export class ProductComponent implements OnInit, OnDestroy {
     theProducts.push(prdID);
 
     this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
-    alert('Added to wishlist')
+    // alert('Added to wishlist')
+    this.toastr.success(`Added to wishlist.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   CustomerReviews() {
@@ -144,12 +156,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       review: this.reviewBody,
       // userId: "0"
     }
-    this.revservece.createReview(this.review).then(
-      (res) => {
-        console.log(res)
-      },
-      (err) => { console.log(err) }
-    )
+    this.revservece.createReview(this.review)
   }
   plus(){
     if(this.count>=this.product.stock)

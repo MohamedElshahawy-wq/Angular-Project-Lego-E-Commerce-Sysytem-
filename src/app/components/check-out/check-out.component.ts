@@ -6,6 +6,7 @@ import { OrderModel } from 'src/app/models/ordersModel';
 import { OrdersService } from 'src/app/firebaseServices/Order/orders.service';
 import { MyBagModel } from 'src/app/models/bagModel';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-check-out',
@@ -35,7 +36,7 @@ export class CheckOutComponent implements OnInit, OnDestroy {
   constructor(private bagSrv: BagsService,
     private prdSrv: ProductsService,
     private orderser: OrdersService,
-    private router: Router) { }
+    private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -76,13 +77,16 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     var newStock;
     this.totalPrice = this.getTotal();
     var create = true;
-    console.log(this.productsInBag);
-    console.log(this.ProductList);
     for(var i = 0;i<this.ProductList.length; i++) {
       var element = this.ProductList[i];
       newStock = element.stock - element.theQty;
       if (newStock < 0) {
-        alert(`${element.name} is not in stock any more, edit your bag.`);
+        // alert(`${element.name} is not in stock any more, edit your bag.`);
+        this.toastr.error(`${element.name} is not in stock any more, edit your bag.`, 'Error', {
+          closeButton: true,
+          timeOut: 5000,
+          progressBar: true
+        });
         create = false;
         break;
       }

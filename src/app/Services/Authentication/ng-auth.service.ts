@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 import { MyBagModel } from 'src/app/models/bagModel';
 import { WishListModel } from 'src/app/models/wishlistModel';
 
@@ -34,7 +35,8 @@ export class NgAuthService {
       public afs: AngularFirestore,
       public afAuth: AngularFireAuth,
       public router: Router,
-      public ngZone: NgZone
+      public ngZone: NgZone,
+      private toastr: ToastrService
     ) {
       this.afAuth.authState.subscribe(user => {
         if (user) {
@@ -56,7 +58,12 @@ export class NgAuthService {
           });
           //this.SetUserData(result.user);
         }).catch((error) => {
-          window.alert(error.message)
+          // window.alert(error.message)
+          this.toastr.error(`${error.message}`, 'Error', {
+            closeButton: true,
+            timeOut: 5000,
+            progressBar: true
+          });
         })
     }
   
@@ -64,7 +71,6 @@ export class NgAuthService {
       return this.afAuth.createUserWithEmailAndPassword(user.email, user.password)
         .then((result) => {
           //this.SendVerificationMail();
-          console.log(".then " + user.password);
           this.SetUserData(user, result.user);
           this.SetBag(result.user);
           this.SetWishlist(result.user);
@@ -77,7 +83,12 @@ export class NgAuthService {
     ForgotPassword(passwordResetEmail) {
       return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        // window.alert('Password reset email sent, check your inbox.');
+        this.toastr.info(`Password reset email sent, check your inbox.`, 'Info', {
+          closeButton: true,
+          timeOut: 5000,
+          progressBar: true
+        });
       }).catch((error) => {
         console.log(error)
       })
