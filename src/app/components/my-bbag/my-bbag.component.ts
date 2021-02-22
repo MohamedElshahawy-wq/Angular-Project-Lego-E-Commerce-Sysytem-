@@ -14,7 +14,7 @@ export class MyBBagComponent implements OnInit, OnDestroy {
 
   bag;
   ProductList = [];
-  productsInBag;
+  productsInBag:any = 0;
   temp;
 
   subscription: Subscription[] = [];

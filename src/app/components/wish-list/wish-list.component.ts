@@ -14,7 +14,7 @@ import { WishListModel } from 'src/app/models/wishlistModel';
 export class WishListComponent implements OnInit, OnDestroy {
   wishlist;
   ProductList = [];
-  productsInWishlist;
+  productsInWishlist:any = 0;
   temp;
   userID;
 
