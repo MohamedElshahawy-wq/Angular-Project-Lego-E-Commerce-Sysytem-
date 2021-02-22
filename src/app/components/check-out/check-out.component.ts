@@ -78,16 +78,19 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     var create = true;
     console.log(this.productsInBag);
     console.log(this.ProductList);
-    this.ProductList.forEach(element => {
+    for(var i = 0;i<this.ProductList.length; i++) {
+      var element = this.ProductList[i];
       newStock = element.stock - element.theQty;
       if (newStock < 0) {
         alert(`${element.name} is not in stock any more, edit your bag.`);
         create = false;
+        break;
       }
       else {
         this.prdSrv.updateStock(newStock, element.id);
       }
-    });
+    }
+    if(!create) return;
     if (create) {
       this.order = {
         userID: this.userID,
