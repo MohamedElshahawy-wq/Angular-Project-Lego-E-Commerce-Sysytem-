@@ -75,7 +75,7 @@
                                     
                                     <br>{{product.price | currency}}
                                 </p>
-                                <button (click)="addToBag(product?.id)" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" [disabled]="product?.stock<=0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                     </span><br>
                                     {{product.price | currency}}
                                 </p>
-                                <button class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" [disabled]="product?.stock<=0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
                             </div>
                         </div>
                     </div>

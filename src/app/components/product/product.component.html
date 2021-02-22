@@ -90,7 +90,7 @@
             </div>
             <div>
                 <h1>{{product?.price | currency}}</h1>
-                <p style="color: rgb(14, 218, 14);">{{'Checkout.Available'|translate}}</p>
+                <!-- <p style="color: rgb(14, 218, 14);">{{'Checkout.Available'|translate}}</p> -->
             </div>
             <div class="d-flex mb-3">
                 <div class="d-flex">
@@ -99,7 +99,7 @@
                     <div class="border rounded-right py-2 px-3 mx-0" id="plus" (click)="plus()">+</div>
                 </div>
                 <div class="mx-2 py-2">
-                    <span> Limit 3</span>
+                    <span> Limit {{product?.stock}}</span>
                     <!--
                     <button class="mx-2" id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
                         data-content=" We restrict the limit a household can buy in order to be fair 
@@ -111,7 +111,7 @@
 
             </div>
             <div class="mb-3 text-justify" dir="auto">
-                <button (click)="addToBag(product?.id)" type="button" class="btn w-100 py-3 "
+                <button [disabled]="product?.stock<=0" (click)="addToBag(product?.id)" type="button" class="btn w-100 py-3 "
                     style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>

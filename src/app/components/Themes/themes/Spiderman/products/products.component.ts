@@ -116,8 +116,31 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   addToBag(prdID: any) {
     let theProducts = [...this.productsInBag];
+    let prd;
+
+    var result = theProducts.find(obj => {
+      return obj.id === prdID
+    })
+
+    if (result) {
+      const index = theProducts.indexOf(result);
+      const totalQty = theProducts[index].qty + 1;
+      if (index > -1) {
+        theProducts.splice(index, 1);
+      }
+      prd = {
+        id: prdID,
+        qty: totalQty
+      }
+    } else {
+      prd = {
+        id: prdID,
+        qty: 1
+      }
+    }
+
     
-    theProducts.push(prdID);
+    theProducts.push(prd);
 
     this.bagSrv.updateBagByUserID(theProducts, this.userID);
     alert('Added to cart')
@@ -125,7 +148,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   addToWishlist(prdID: any) {
     let theProducts = [...this.productsInWishlist];
-    
+
     theProducts.push(prdID);
 
     this.wishSrv.updateWishlistByUserID(theProducts, this.userID);

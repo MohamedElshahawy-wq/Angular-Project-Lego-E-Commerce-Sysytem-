@@ -34,6 +34,7 @@ import { EditAccountComponent } from './components/edit-account/edit-account.com
 import { EditInformationComponent } from './components/edit-information/edit-information.component';
 import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AfterCheckoutComponent } from './components/after-checkout/after-checkout.component';
 
 
 
@@ -59,7 +60,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     EditAccountComponent,
     EditInformationComponent,
     EditSecurityComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AfterCheckoutComponent
   ],
   imports: [
   

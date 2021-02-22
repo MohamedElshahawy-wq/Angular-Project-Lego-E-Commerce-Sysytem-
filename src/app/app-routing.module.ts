@@ -18,6 +18,7 @@ import { EditInformationComponent } from './components/edit-information/edit-inf
 import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 import { LoginGuard } from './components/AuthGuard/login.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AfterCheckoutComponent } from './components/after-checkout/after-checkout.component';
 
 const routes: Routes = [ 
   {path: 'VIP' , component: VipComponent},
@@ -34,12 +35,13 @@ const routes: Routes = [
   {path :'Register',component: RegisterComponent},
   {path :'Login',component: LoginComponent},
   {path :'ForgotPassword',component: RecoverPasswordComponent},
-  {path :'EditAccount',component: EditAccountComponent},
-  {path :'EditInformation',component: EditInformationComponent},
+  {path :'EditAccount',component: EditAccountComponent, canActivate: [AuthGuard]},
+  {path :'EditInformation',component: EditInformationComponent, canActivate: [AuthGuard]},
   {path :'Security',component: EditSecurityComponent},
   {path :'Register',component: RegisterComponent, canActivate: [LoginGuard]},
   {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
   {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
+  {path :'AfterCheckout',component: AfterCheckoutComponent},
   {path:"",redirectTo:'Home',pathMatch:'full'},
   {path:"**", component:NotFoundComponent}
 ];
