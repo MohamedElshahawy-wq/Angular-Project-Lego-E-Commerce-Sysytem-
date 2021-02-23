@@ -15,7 +15,7 @@
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
             <li class="breadcrumb-item"><a href="#">{{'header.Home'|translate}}</a></li>
-            <li class="breadcrumb-item"><a href="#">{{'Product.Harry'|translate}}</a></li>
+            <li class="breadcrumb-item"><a href="#">{{product.description[0]}}</a></li>
             <li class="breadcrumb-item active">{{product?.name}}</li>
         </ul>
     </div>
@@ -35,10 +35,10 @@
         </div>
         <div class="col-md-3 product2 px-3 font-weight-bold">
             <div class="my-3">
-                <img src="assets\images\HarryPotter--2018--gl--logo.png">
+                <img src={{product.logoImage}}>
             </div>
             <div class="mb-3">
-                <h3>{{product?.name}}</h3>
+                <h1>{{product?.name}}</h1>
             </div>
             <div class="mb-3">
                 <!-- <span class="my-1" id="stars">
@@ -150,8 +150,8 @@
             </div>
             <div class="py-3 text-justify" dir="auto">
                 <span>{{'Product.Shop'|translate}}</span><br>
-                <a class="pr-2" href="#ff">{{'Product.Harry'|translate}}</a>
-                <a class="pr-2" href="#ff">{{'Product.Fantasy'|translate}}</a>
+                <a class="pr-2" href="#ff" *ngFor="let item of product.description">{{item}}</a>
+
 
             </div>
         </div>

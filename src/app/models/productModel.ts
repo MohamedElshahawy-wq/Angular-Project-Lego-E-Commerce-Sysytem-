@@ -5,6 +5,8 @@ export class ProductModel {
     price?: number;
     stock?: number;
     image?: string;
+    images?:string[];
+    logoImage?:string;
     available?: boolean;
     rating?: number;
     categoryID?: any
