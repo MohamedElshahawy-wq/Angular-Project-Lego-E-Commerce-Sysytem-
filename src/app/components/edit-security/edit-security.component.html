@@ -7,13 +7,40 @@
         <!--Main-->
         <div class="col-5 text-center" id="main" >
           <!--Navigation Bar-->
-          <nav class="navbar justify-content-center d-flex flex-fill">
-              <div class="container-fluid text-nowrap text-justify" dir="auto">
-                  <i class="fas fa-chevron-left" style="font-size: 20px;" (click)="goBack()"></i>
-                  <img id="navImg" src="assets\images\Register-Login-Images\lego.png">
-                  <span class="navbar-brand mb-0 h1 justify-content-left text-justify" dir="auto" id="navTxt"><strong>{{'header.Account'|translate}}</strong></span>
-                  <button type="button" class="close font-weight-bold text-justify" dir="auto" id="navBtn" (click)="closeBtn()"> × </button>
-              </div>
+          <nav class="navbar navbar-expand-sm navbar-dark justify-content-center" id="nav">
+            <ul class="navbar-nav">
+              <li class="nav-item mr-5">
+                <a role="button"
+                ><i
+                  class="fas fa-chevron-left"
+                  id="backBtn"
+                  (click)="goBack()"
+                ></i
+              ></a>
+              </li>
+            </ul>
+            <!-- Brand/logo -->
+            <img class="navbar-brand " src="assets/images/Register-Login-Images/lego.png" alt="logo" style="width:40px;">
+            
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item ml-4">
+                <span
+                  class="navbar-brand nav-item h1 text-dark font-weight-bold " id="navTxt"
+                  ><strong>{{'header.Account'|translate}}</strong>
+                </span>
+              </li>
+              <li class="nav-item float-right mb-2">
+                <button
+                  type="button"
+                  class="close font-weight-bold text-right ml-3"
+                  id="navBtn"
+                  (click)="closeBtn()"
+                >
+                  ×
+                </button>
+              </li>
+            </ul>
           </nav>
 
           <h4 class="text-center" style="margin-bottom: 20px;">{{'Security'|translate}}</h4>

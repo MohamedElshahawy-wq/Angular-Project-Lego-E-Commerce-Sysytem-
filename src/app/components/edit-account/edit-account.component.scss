@@ -16,10 +16,6 @@ body {
 /*navigation bar*/
 nav {
   background-color: rgb(255, 207, 0);
-  margin-left: -15px;
-  margin-right: -15px;
-  height: 80%;
-  margin-bottom: 20px;
 }
 
 #backBtn {
@@ -31,26 +27,21 @@ nav {
   color: gray;
 }
 
-#navImg {
-  width: 8%;
-  height: 8%;
-  margin-left: 110px;
-}
-
 #navTxt {
-  margin-right: 90px;
-  font-size: 25px;
+  font-size: 30px; 
+  margin-top: 13px;
 }
 
 #navBtn {
-  font-size: 55px;
-  color: rgb(74, 74, 74);
+  font-size: 50px;
+  color: rgb(61, 59, 59);
 }
 
 //Texts
 #editTxt {
   font-size: 23px;
   margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 #avatarTxt {
