@@ -3,7 +3,7 @@
     <div *ngIf="productsInWishlist==0" class="col-lg-8">
       <div class="d-flex align-items-center min-vh-100">
         <div class="container text-center">
-          <p class="display-4">No products in wishlist</p>
+          <p class="display-4">{{'Noproductswishlist'|translate}}</p>
         </div>
     </div>
     </div>
@@ -64,11 +64,11 @@
     <div class="col-lg-3" style="padding: 15px">
       <div class="card" style="width: 18rem;">
         <br>
-        <h3>Discover the benefits of <br>creating a LEGO ID</h3>
+        <h3>{{'wishList.benefits'|translate}} <br>{{'wishList.ID'|translate}}</h3>
         <hr>
         <!-- <div class="card-body"> -->
                     <!-- <h5 class="card-title">Card title</h5> -->
-          <p class="card-text">Access your Wish List from any computer - even if it's on a space ship orbiting the moon.
+          <p class="card-text">{{'wishList.computer'|translate}}
           </p>
                    <!-- <a href="#" class="btn btn-primary">Sign in</a> -->
           <!-- <button type="button" class="btn btn-outline-primary">sign in</button>

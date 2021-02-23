@@ -7,7 +7,7 @@
     <div class="col-5 text-center" id="main">
       <!--Navigation Bar-->
       <nav class="navbar justify-content-center d-flex flex-fill">
-        <div class="container-fluid text-nowrap">
+        <div class="container-fluid text-nowrap text-justify" dir="auto">
           <a role="button"
             ><i
               class="fas fa-chevron-left"
@@ -17,13 +17,13 @@
           ></a>
           <img id="navImg" src="assets\images\Register-Login-Images\lego.png" />
           <span
-            class="navbar-brand mb-0 h1 justify-content-left text-center"
+            class="navbar-brand mb-0 h1 justify-content-left text-justify" dir="auto"
             id="navTxt"
-            ><strong>Account</strong></span
+            ><strong>{{'header.Account'|translate}}</strong></span
           >
           <button
             type="button"
-            class="close font-weight-bold text-right"
+            class="close font-weight-bold text-justify" dir="auto"
             id="navBtn"
             (click)="closeBtn()"
           >
@@ -33,7 +33,7 @@
       </nav>
 
       <h4 class="text-center" style="margin-bottom: 20px; font-size: 22px">
-        Edit Profile
+        {{'EditProfile'|translate}}
       </h4>
 
       <!--form-->
@@ -41,12 +41,12 @@
         <div class="row">
           <form>
             <!--Username-->
-            <div class="mb-3">
+            <div class="mb-3 text-justify" dir="auto">
               <label
                 for="usernmShowTxt"
                 id="usernmShowLbl"
                 class="form-label text-left justify-content-left d-flex"
-                >Username</label
+                >{{'login.Username'|translate}}</label
               >
               <input
                 type="text"
@@ -61,12 +61,12 @@
             </div>
 
             <!--email-->
-            <div class="mb-3">
+            <div class="mb-3 text-justify" dir="auto">
               <label
                 for="passwordShowTxt"
                 id="passwordShowLbl"
                 class="form-label text-left justify-content-left d-flex"
-                >Email Address</label
+                >{{'RecoverPass.EmailAdd'|translate}}</label
               >
               <input
                 type="email"
@@ -79,7 +79,7 @@
             </div>
 
             <!--birthdate-->
-            <div class="mb-3">
+            <div class="mb-3 text-justify" dir="auto">
               <label
                 for="birthdateShow"
                 class="form-label text-left justify-content-left d-flex"
@@ -88,7 +88,7 @@
                   font-size: 14px;
                   margin-left: 23px;
                 "
-                >Date of Birth</label
+                >{{'DateBirth'|translate}}</label
               >
               <div id="birthdateShow" class="d-flex">
                 <div class="mb-3">
@@ -96,7 +96,7 @@
                     for="monthDateShow"
                     id="monthShowLbl"
                     class="form-label text-left justify-content-left d-flex"
-                    >Month</label
+                    >{{'User.Month'|translate}}</label
                   >
                   <input
                     type="text"
@@ -116,7 +116,7 @@
                     for="dayDateShow"
                     id="dayShowLbl"
                     class="form-label text-left justify-content-left d-flex"
-                    >Day</label
+                    >{{'User.Day'|translate}}</label
                   >
                   <input
                     type="text"
@@ -136,7 +136,7 @@
                     for="yearDateShow"
                     id="yearShowLbl"
                     class="form-label text-left justify-content-left d-flex"
-                    >Year</label
+                    >{{'User.Year'|translate}}</label
                   >
                   <input
                     type="text"
@@ -154,7 +154,7 @@
             </div>
 
             <!--country-->
-            <div class="mb-3">
+            <div class="mb-3 text-justify" dir="auto">
               <label
                 for="countryShowTxt"
                 class="form-label text-left justify-content-left d-flex"
@@ -163,7 +163,7 @@
                   font-size: 14px;
                   margin-left: 23px;
                 "
-                >Country and region</label
+                >{{'CountryReg'|translate}}</label
               >
               <select
                 id="countryShowTxt"
@@ -448,7 +448,7 @@
               type="submit"
               (click)="save()"
             >
-              Save
+              {{'Save'|translate}}
             </button>
             <br />
             <!--Bo back btn-->
@@ -457,7 +457,7 @@
               id="gobackLink"
               class="text-center font-weight-bold"
               (click)="goBackBtn()"
-              >Go back</a
+              >{{'Goback'|translate}}</a
             >
             <br />
             <br />

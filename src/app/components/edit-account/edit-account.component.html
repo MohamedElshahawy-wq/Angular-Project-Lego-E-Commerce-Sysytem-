@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"dir="auto">
   <div class="row">
     <!--Left Indentation-->
     <div class="col"></div>
@@ -7,16 +7,16 @@
     <div class="col-5 text-center" id="main">
       <!--Top yellow bar-->
       <nav class="navbar justify-content-center d-flex flex-fill">
-        <div class="container-fluid text-nowrap">
+        <div class="container-fluid text-nowrap text-justify" dir="auto">
           <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
           <span
-            class="navbar-brand mb-0 h1 justify-content-left text-center"
+            class="navbar-brand mb-0 h1 justify-content-left text-justify" dir="auto"
             id="navTxt"
-            ><strong>Account</strong></span
+            ><strong>{{'header.Account'|translate}}</strong></span
           >
           <button
             type="button"
-            class="close font-weight-bold text-right"
+            class="close font-weight-bold text-justify" dir="auto"
             id="navBtn"
             (click)="closeEdit()"
           >
@@ -26,10 +26,10 @@
       </nav>
 
       <h3 class="text-center" id="editTxt">
-        Edit Profile
+        {{'EditProfile'|translate}}
       </h3>
       <h3 class="text-center" id="avatarTxt">
-        Avatar
+        {{'Avatar'|translate}}
       </h3>
 
       <div id="demo" class="carousel slide" data-ride="carousel">
@@ -154,8 +154,8 @@
             <label
               for="editUsernameTXT"
               id= "editUsernameLBL"
-              class="text-left justify-content-left d-flex font-weight-bold"
-              >Username</label
+              class=" justify-content-between d-flex font-weight-bold text-justify" dir="auto"
+              >{{'login.Username'|translate}}</label
             >
             <input
               #newEmailUsername="ngModel"
@@ -172,10 +172,10 @@
 
       <!--btns-->
       <div class="container">
-        <form>
-          <div class="mb-3 form-group" style="margin-left: 20px">
+        <form >
+          <div class="mb-3 form-group  text-justify" dir="auto" style="margin-left: 20px">
             <button
-              class="form-control text-left btnn"
+              class="form-control text-justify btnn"
               id="informationBtn"
               (click) = "EditInformation()"
             >
@@ -183,14 +183,14 @@
                 class="far fa-square"
                 id= "informationBtnIcon"
               ></i>
-              My Information
-              <i class="fas fa-chevron-right" style="margin-left: 200px"></i>
+              {{'MyInformation'|translate}}
+              <!-- <i class="fas fa-chevron-right m-auto" ></i> -->
             </button>
 
             <br />
 
             <button
-              class="form-control text-left btnn"
+              class="form-control text-justify btnn" dir="auto"
               id="securityBtn"
               (click) = "security()"
             >
@@ -198,25 +198,26 @@
                 class="fas fa-shield-alt"
                 id= "securityBtnIcon"
               ></i>
-              Security
-              <i class="fas fa-chevron-right" style="margin-left: 240px"></i>
+              {{'Security'|translate}}
+              <!-- <i class="fas fa-chevron-right" style="margin-left: 240px"></i> -->
             </button>
 
             <br />
             
             <button
               id="logoutbtn"
-              class="form-control text-left btnn"
+              class="form-control text-justify btnn" dir="auto"
               (click) = "logout()"
             >
               <i
                 class="fas fa-sign-out-alt"
                 id="logoutBtnIcon"
               ></i>
-              Logout
-              <span class="text-right">
-                <i class="fas fa-chevron-right" style="margin-left: 245px"></i
-              ></span>
+              {{'Logout'|translate}}
+              <!-- <i class="fas fa-chevron-right" style="margin-left: 245px"></i> -->
+              <!-- <span class="text-right">
+                
+              ></span> -->
             </button>
 
           </div>
@@ -230,7 +231,7 @@
         [disabled]="editUsernameForm.invalid"
         (click)="save()"
       >
-        Save
+      {{'Save'|translate}}
       </button>
     </div>
 
