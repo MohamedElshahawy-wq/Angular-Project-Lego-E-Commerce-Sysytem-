@@ -5,24 +5,30 @@
 
     <!--Main-->
     <div class="col-5 text-center" id="main">
-      <!--Top yellow bar-->
-      <nav class="navbar justify-content-center d-flex flex-fill">
-        <div class="container-fluid text-nowrap">
-          <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
-          <span
-            class="navbar-brand mb-0 h1 justify-content-left text-center"
-            id="navTxt"
-            ><strong>Account</strong></span
-          >
-          <button
-            type="button"
-            class="close font-weight-bold text-right"
-            id="navBtn"
-            (click)="closeEdit()"
-          >
-            ×
-          </button>
-        </div>
+
+      <nav class="navbar navbar-expand-sm navbar-dark justify-content-center" id="nav">
+        <!-- Brand/logo -->
+        <img class="navbar-brand" src="assets/images/Register-Login-Images/lego.png" alt="logo" style="width:40px;">
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item ml-4">
+            <span
+              class="navbar-brand nav-item h1 text-dark font-weight-bold " id="navTxt"
+              ><strong>Account</strong>
+            </span>
+          </li>
+          <li class="nav-item float-right mb-2">
+            <button
+              type="button"
+              class="close font-weight-bold text-right ml-5"
+              id="navBtn"
+              (click)="closeEdit()"
+            >
+              ×
+            </button>
+          </li>
+        </ul>
       </nav>
 
       <h3 class="text-center" id="editTxt">
@@ -184,7 +190,6 @@
                 id= "informationBtnIcon"
               ></i>
               My Information
-              <i class="fas fa-chevron-right" style="margin-left: 200px"></i>
             </button>
 
             <br />
@@ -199,7 +204,6 @@
                 id= "securityBtnIcon"
               ></i>
               Security
-              <i class="fas fa-chevron-right" style="margin-left: 240px"></i>
             </button>
 
             <br />
@@ -214,9 +218,6 @@
                 id="logoutBtnIcon"
               ></i>
               Logout
-              <span class="text-right">
-                <i class="fas fa-chevron-right" style="margin-left: 245px"></i
-              ></span>
             </button>
 
           </div>

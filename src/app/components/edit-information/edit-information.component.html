@@ -5,7 +5,7 @@
 
     <!--Main-->
     <div class="col-5 text-center" id="main">
-      <!--Navigation Bar-->
+      <!--Navigation Bar
       <nav class="navbar justify-content-center d-flex flex-fill">
         <div class="container-fluid text-nowrap">
           <a role="button"
@@ -30,9 +30,45 @@
             ×
           </button>
         </div>
+      </nav>-->
+
+      <nav class="navbar navbar-expand-sm navbar-dark justify-content-center" id="nav">
+        <ul class="navbar-nav">
+          <li class="nav-item mr-4">
+            <a role="button"
+            ><i
+              class="fas fa-chevron-left"
+              id="backBtn"
+              (click)="goBackBtn()"
+            ></i
+          ></a>
+          </li>
+        </ul>
+        <!-- Brand/logo -->
+        <img class="navbar-brand " src="assets/images/Register-Login-Images/lego.png" alt="logo" style="width:40px;">
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item ml-4">
+            <span
+              class="navbar-brand nav-item h1 text-dark font-weight-bold " id="navTxt"
+              ><strong>Account</strong>
+            </span>
+          </li>
+          <li class="nav-item float-right mb-2">
+            <button
+              type="button"
+              class="close font-weight-bold text-right ml-5"
+              id="navBtn"
+              (click)="closeBtn()"
+            >
+              ×
+            </button>
+          </li>
+        </ul>
       </nav>
 
-      <h4 class="text-center" style="margin-bottom: 20px; font-size: 22px">
+      <h4 class="text-center" id="editTxt">
         Edit Profile
       </h4>
 
