@@ -18,6 +18,9 @@ export class OrdersService {
   createOrder(order: OrderModel) {
     return this.firestore.collection('orders').add(order);
   }
+  getOrderByUserID(userID: any) {
+    return this.firestore.collection('orders', ref => ref.where("userID","==", userID)).snapshotChanges();
+  }
   updateOrder(order: OrderModel) {
     delete order.id;
     this.firestore.doc('orders/' + order.id).update(order);

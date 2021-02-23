@@ -382,7 +382,7 @@
                   <p class="font-weight-bold">{{item?.price | currency}}</p>
                 </div>
                 <div>
-                  <button type="button" name="addToCart" (click)="addToBag(item?.id)"
+                  <button type="button" [disabled]="item?.stock<=0" name="addToCart" (click)="addToBag(item?.id)"
                     class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
                       class="cardBtn">{{'ProductTheme.Add2cart'|translate}}</small></button>
                 </div>

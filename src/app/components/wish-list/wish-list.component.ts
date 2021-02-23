@@ -14,7 +14,7 @@ import { WishListModel } from 'src/app/models/wishlistModel';
 export class WishListComponent implements OnInit, OnDestroy {
   wishlist;
   ProductList = [];
-  productsInWishlist;
+  productsInWishlist:any = 0;
   temp;
   userID;
 
@@ -54,7 +54,6 @@ export class WishListComponent implements OnInit, OnDestroy {
   }
 
   deleteProduct(prdID: any) {
-    console.log(this.ProductList);
     let theProducts = [...this.productsInWishlist];
     const index = theProducts.indexOf(prdID);
     if (index > -1) {

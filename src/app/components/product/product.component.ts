@@ -7,6 +7,7 @@ import { ReviewModel } from 'src/app/models/reviewsModel';
 import { Subscription } from 'rxjs';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -26,7 +27,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   reviewTitle: string;
   reviewBody: string;
   subscription:Subscription[] = [];
-
   userID: any;
   bag: any;
   wishlist: any;
@@ -38,7 +38,8 @@ export class ProductComponent implements OnInit, OnDestroy {
     private activatedroute: ActivatedRoute,
     private revservece: ReviewsService,
     private bagSrv: BagsService,
-    private wishSrv: WishlistService) { }
+    private wishSrv: WishlistService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.userID = JSON.parse(localStorage.getItem('user')).uid;
@@ -78,11 +79,39 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   addToBag(prdID: any) {
     let theProducts = [...this.productsInBag];
+    let prd;
+
+    var result = theProducts.find(obj => {
+      return obj.id === prdID
+    })
+
+    if (result) {
+      const index = theProducts.indexOf(result);
+      const totalQty = theProducts[index].qty + this.count;
+      if (index > -1) {
+        theProducts.splice(index, 1);
+      }
+      prd = {
+        id: prdID,
+        qty: totalQty
+      }
+    } else {
+      prd = {
+        id: prdID,
+        qty: this.count
+      }
+    }
+
     
-    theProducts.push(prdID);
+    theProducts.push(prd);
 
     this.bagSrv.updateBagByUserID(theProducts, this.userID);
-    alert('Added to cart')
+    // alert('Added to cart')
+    this.toastr.success(`Added to cart.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   addToWishlist(prdID: any) {
@@ -91,7 +120,12 @@ export class ProductComponent implements OnInit, OnDestroy {
     theProducts.push(prdID);
 
     this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
-    alert('Added to wishlist')
+    // alert('Added to wishlist')
+    this.toastr.success(`Added to wishlist.`, 'Done', {
+      closeButton: true,
+      timeOut: 5000,
+      progressBar: true
+    });
   }
 
   CustomerReviews() {
@@ -121,21 +155,18 @@ export class ProductComponent implements OnInit, OnDestroy {
       review: this.reviewBody,
       // userId: "0"
     }
-    this.revservece.createReview(this.review).then(
-      (res) => {
-        console.log(res)
-      },
-      (err) => { console.log(err) }
-    )
+    this.revservece.createReview(this.review)
+    var rate = this.overallRating();
+    this.productser.updateRate(rate,this.prdID)
   }
   plus(){
-    if(this.count>=3)
-      this.count=3;
+    if(this.count>=this.product.stock)
+      this.count=this.product.stock;
     else
       this.count++;
   }
   minus(){
-    if(this.count ===1){
+    if(this.count <=1){
       this.count=1;
     }
     else
@@ -143,6 +174,19 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
   ChangeImage(img:string){
     this.product.image=img;
+  }
+  overallRating(){
+    var sum =0;
+    var avg ;
+    if(this.reviews.length>0){
+      for(let i =0;i<this.reviews.length;i++){
+        sum+=this.reviews[i].OverallRating;
+      }
+      avg = sum/this.reviews.length;
+      return Math.ceil(avg);
+    }
+    else return 0;
+  
   }
 
 }

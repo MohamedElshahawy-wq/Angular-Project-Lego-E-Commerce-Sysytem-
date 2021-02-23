@@ -1,6 +1,13 @@
 <div class="container-fluid text-justify" dir="auto">
   <div class="row">
-    <div class="col-lg-8">
+    <div *ngIf="productsInWishlist==0" class="col-lg-8">
+      <div class="d-flex align-items-center min-vh-100">
+        <div class="container text-center">
+          <p class="display-4">No products in wishlist</p>
+        </div>
+    </div>
+    </div>
+    <div *ngIf="productsInWishlist!=0" class="col-lg-8">
       <br><br><br>
       <h3>{{'wishList.wish'|translate}}</h3><br><br><br>
 

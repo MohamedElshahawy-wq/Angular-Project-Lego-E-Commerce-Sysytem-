@@ -23,10 +23,8 @@ export class EditInformationComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.ngAuthService.userLoggedID;
-    console.log(id);
     this.userService.getSpcUser(id).subscribe((data)=>{
       //this.user = {uid: data.payload.id, ...(data.payload.data() as {})};
-      console.log(data.payload.data());
       this.obj = data.payload.data();
       this.username = this.obj.displayName;
       this.email = this.obj.email;
@@ -45,7 +43,6 @@ export class EditInformationComponent implements OnInit {
   }
 
   save(){
-      console.log("Helloooooo");
       this.editedUser = {
         uid: this.obj.uid,
         email: this.email,

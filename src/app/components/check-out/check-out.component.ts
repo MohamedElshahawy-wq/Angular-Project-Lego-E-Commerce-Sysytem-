@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { Subscription } from 'rxjs';
 import { OrderModel } from 'src/app/models/ordersModel';
 import { OrdersService } from 'src/app/firebaseServices/Order/orders.service';
+import { MyBagModel } from 'src/app/models/bagModel';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-check-out',
@@ -12,26 +15,28 @@ import { OrdersService } from 'src/app/firebaseServices/Order/orders.service';
 })
 
 
-export class CheckOutComponent implements OnInit {
+export class CheckOutComponent implements OnInit, OnDestroy {
 
-  Username:string;
-  City:string;
-  Street:string;
-  Zip:string;
-  totalPrice:number =0;
-  tax : number =14;
-  ordarTotal:number =0;
-  mobilePhone:string;
+  Username: string;
+  City: string;
+  Street: string;
+  Zip: string;
+  totalPrice: number = 0;
+  tax: number = 14;
+  ordarTotal: number = 0;
+  mobilePhone: string;
   bag;
+  newBag: MyBagModel;
   ProductList = [];
   productsInBag;
   temp;
   subscription: Subscription[] = [];
   userID: any;
-  order:OrderModel;
-  constructor( private bagSrv: BagsService ,
-               private prdSrv: ProductsService,
-               private orderser :OrdersService  ) { }
+  order: OrderModel;
+  constructor(private bagSrv: BagsService,
+    private prdSrv: ProductsService,
+    private orderser: OrdersService,
+    private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -40,13 +45,10 @@ export class CheckOutComponent implements OnInit {
       this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
       this.productsInBag = this.bag.productsIDs;
       this.ProductList = [];
-      console.log(this.productsInBag)
       this.productsInBag.forEach(element => {
-        console.log("---"+element)
-        this.subscription.push(this.prdSrv.getSpcProduct(element).subscribe(data => {
-          this.temp = { id: data.payload.id, ...(data.payload.data() as {}) };
+        this.subscription.push(this.prdSrv.getSpcProduct(element.id).subscribe(data => {
+          this.temp = { id: data.payload.id, theQty: element.qty, ...(data.payload.data() as {}) };
           if (!this.ProductList.some(item => item.id === this.temp.id)) {
-            console.log("hna")
             this.ProductList.push(this.temp);
           }
 
@@ -54,40 +56,66 @@ export class CheckOutComponent implements OnInit {
       })
     })
     );
-   
-
-
   }
+
+  ngOnDestroy(): void {
+    this.subscription.forEach(element => {
+      element.unsubscribe();
+    });
+  }
+
   getTotal = function () {
     var total = 0;
     for (var i = 0; i < this.ProductList.length; i++) {
       var prd = this.ProductList[i];
-      total += prd.price;
+      total += (prd.price * prd.theQty);
     }
     return total;
   }
-  addOrder(){
-    var dateoftoday =new Date();
-    this.totalPrice =this.getTotal();
-    this.order ={
-      userID:this.userID,
-      totalPrice:this.totalPrice,
-      date: dateoftoday.toString(),
-      productsIDs: this.productsInBag,
-      address: {
-         city: this.City,
-         street:this.Street,
-         zip: this.Zip
-      },
-      mobilePhone:this.mobilePhone
+  addOrder() {
+    var dateoftoday = new Date();
+    var newStock;
+    this.totalPrice = this.getTotal();
+    var create = true;
+    for(var i = 0;i<this.ProductList.length; i++) {
+      var element = this.ProductList[i];
+      newStock = element.stock - element.theQty;
+      if (newStock < 0) {
+        // alert(`${element.name} is not in stock any more, edit your bag.`);
+        this.toastr.error(`${element.name} is not in stock any more, edit your bag.`, 'Error', {
+          closeButton: true,
+          timeOut: 5000,
+          progressBar: true
+        });
+        create = false;
+        break;
+      }
+      else {
+        this.prdSrv.updateStock(newStock, element.id);
+      }
     }
-    console.log(this.order)
-    this.orderser.createOrder(this.order).then((res)=>{
-      console.log(res)
-      console.log(this.order)
-    })
-    alert("order is added");
-
+    if(!create) return;
+    if (create) {
+      this.order = {
+        userID: this.userID,
+        totalPrice: this.totalPrice,
+        date: dateoftoday.toString(),
+        productsIDs: this.productsInBag,
+        address: {
+          city: this.City,
+          street: this.Street,
+          zip: this.Zip
+        },
+        mobilePhone: this.mobilePhone
+      }
+      this.orderser.createOrder(this.order);
+      this.newBag = {
+        userID: this.userID,
+        productsIDs: []
+      }
+      this.bagSrv.updateBagByUserID([], this.userID);
+      this.router.navigate(['/AfterCheckout']);
+    }
   }
 
 

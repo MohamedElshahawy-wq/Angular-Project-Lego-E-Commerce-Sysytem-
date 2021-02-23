@@ -14,14 +14,14 @@ export class MyBBagComponent implements OnInit, OnDestroy {
 
   bag;
   ProductList = [];
-  productsInBag;
+  productsInBag:any = 0;
   temp;
 
   subscription: Subscription[] = [];
   userID: any;
 
   constructor(private bagSrv: BagsService, private prdSrv: ProductsService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.userID = JSON.parse(localStorage.getItem('user')).uid;
@@ -33,13 +33,12 @@ export class MyBBagComponent implements OnInit, OnDestroy {
       this.ProductList = [];
 
       this.productsInBag.forEach(element => {
-        this.subscription.push(this.prdSrv.getSpcProduct(element).subscribe(data => {
-          this.temp = { id: data.payload.id, ...(data.payload.data() as {}) };
+        this.subscription.push(this.prdSrv.getSpcProduct(element.id).subscribe(data => {
+          this.temp = { id: data.payload.id, theQty: element.qty, ...(data.payload.data() as {}) };
           if (!this.ProductList.some(item => item.id === this.temp.id)) {
             this.ProductList.push(this.temp);
           }
         }))
-        console.log(this.ProductList);
       })
     })
     );
@@ -53,7 +52,12 @@ export class MyBBagComponent implements OnInit, OnDestroy {
 
   deleteProduct(prdID: any) {
     let theProducts = [...this.productsInBag];
-    const index = theProducts.indexOf(prdID);
+
+    var result = theProducts.find(obj => {
+      return obj.id === prdID
+    })
+
+    const index = theProducts.indexOf(result);
     if (index > -1) {
       theProducts.splice(index, 1);
     }
@@ -64,11 +68,15 @@ export class MyBBagComponent implements OnInit, OnDestroy {
     this.router.navigate([`Product/${id}`]);
   }
 
+  goToCheckout() {
+    this.router.navigate(['CheckOut'])
+  }
+
   getTotal = function () {
     var total = 0;
     for (var i = 0; i < this.ProductList.length; i++) {
       var prd = this.ProductList[i];
-      total += prd.price;
+      total += (prd.price * prd.theQty);
     }
     return total;
   }

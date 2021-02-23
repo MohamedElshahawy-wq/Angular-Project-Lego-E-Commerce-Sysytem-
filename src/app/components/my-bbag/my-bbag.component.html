@@ -1,6 +1,13 @@
 <div class="container-fluid">
   <div class="row text-justify" dir="auto">
-    <div class="col-lg-8">
+    <div *ngIf="productsInBag==0" class="col-lg-8">
+      <div class="d-flex align-items-center min-vh-100">
+        <div class="container text-center">
+          <p class="display-4">No products in bag</p>
+        </div>
+    </div>
+    </div>
+    <div *ngIf="productsInBag!=0" class="col-lg-8">
 
       <span class="text-start">
         <h3>{{'MyBag.Cart'|translate}}</h3><a href="Wish.html"></a>
@@ -57,14 +64,15 @@
                       <!-- <small>Qty:3</small><br><br> -->
                       <!-- <small><b>{{prd?.price}}</b></small> -->
                     </td>
-                    <td><br><br>
+                    <!-- <td><br><br> -->
                       <!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
                          <button type="button" class="btn btn-outline-primary">-</button>
                          <button type="button" class="btn btn-outline-primary">3</button>
                          <button type="button" class="btn btn-outline-primary">+</button>
                             </div>  -->
 
-                    </td>
+                    <!-- </td> -->
+                    <td><br><br><small><b>Qty: {{prd?.theQty}}</b></small></td>
                     <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct(prd?.id)"
                         style="font-size: 19px;color:#1f8bff"></i></td>
                     <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)"
@@ -153,25 +161,25 @@
       </div>
       <div>
 
-        <div style="  word-spacing: 300px;">Subtotal {{getTotal()}} </div> <br>
+        <div style="  word-spacing: 300px;">Subtotal {{getTotal() | currency}} </div> <br>
         <p style="  word-spacing: 240px;"> Standardshipping Free</p>
         <div style="word-spacing: 340px;">TaX 14%</div><br>
 
         <!-- <p style="  word-spacing: 280px;"> <b>Ordertotal $56.26</b></p>  -->
-        <p style="  word-spacing: 280px;"> <b>Ordertotal: {{ getTotal()+getTotal()*14/100 }}</b></p>
+        <p style="  word-spacing: 280px;"> <b>Ordertotal: {{ (getTotal()+getTotal()*14/100) | currency }}</b></p>
 
         <!-- <td>Total: {{ getTotal() }}</td> -->
 
       </div>
 
       <div class="d-grid gap-2">
-        <button class="btn btn-warning w-100" type="button"><i class="fas fa-lock"></i> <a
-            routerLink="/CheckOut">{{'MyBag.Checkout'|translate}} </a></button>
+        <button [disabled]="productsInBag==0" (click)="goToCheckout()" class="btn btn-warning w-100" type="button"><i class="fas fa-lock"></i>
+            {{'MyBag.Checkout'|translate}}</button>
       </div>
       <br>
 
       <div class="d-grid gap-2">
-        <button class="btn btn-primary w-100" type="button"> {{'MyBag.PayWith'|translate}}
+        <button [disabled]="productsInBag==0" class="btn btn-primary w-100" type="button"> {{'MyBag.PayWith'|translate}}
           <i><b>{{'MyBag.PayPall'|translate}}</b></i></button>
       </div>
       <br>

@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -34,6 +35,7 @@ import { EditAccountComponent } from './components/edit-account/edit-account.com
 import { EditInformationComponent } from './components/edit-information/edit-information.component';
 import { EditSecurityComponent } from './components/edit-security/edit-security.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AfterCheckoutComponent } from './components/after-checkout/after-checkout.component';
 
 
 
@@ -59,7 +61,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     EditAccountComponent,
     EditInformationComponent,
     EditSecurityComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AfterCheckoutComponent
   ],
   imports: [
   
@@ -68,6 +71,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
