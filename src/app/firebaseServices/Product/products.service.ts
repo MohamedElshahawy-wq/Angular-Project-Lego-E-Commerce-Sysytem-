@@ -30,6 +30,15 @@ export class ProductsService {
         merge: true
       })
   }
+  updateRate(rating: any, forID: any) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`products/${forID}`);
+      const userState: ProductModel = {
+        rating: rating
+      }
+      return userRef.set(userState, {
+        merge: true
+      })
+  }
 
   createProduct(prod: ProductModel) {
     return this.firestore.collection('products').add(prod);

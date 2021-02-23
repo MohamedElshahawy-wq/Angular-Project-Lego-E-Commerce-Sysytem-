@@ -26,7 +26,8 @@
 <div class="container-fluid product text-justify" dir="auto" dir="auto">
     <div class="row p-4">
         <div class="col-md-1 picelproduct">
-            <img *ngFor="let item of product?.images;let indexOfelement=index;" src={{item}} (click)="ChangeImage(item)">
+            <img *ngFor="let item of product?.images;let indexOfelement=index;" src={{item}}
+                (click)="ChangeImage(item)">
         </div>
         <div class="col-md-8">
             <div class=" picelproductkbera product1">
@@ -78,8 +79,10 @@
                         </g>
                     </svg>
                 </span> -->
-                <i *ngFor="let i of [].constructor(product?.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i *ngFor="let i of [].constructor(overallRating())" class="fa fa-star text-warning"
+                    aria-hidden="true"></i>
                 <a href="#ff" class="mx-2 py-2">{{reviewNumber}} {{'Product.Reviews'|translate}}</a>
+
             </div>
             <div class="mb-3 lonazrq p-2 text-justify" dir="auto">
                 <img class="float-left mr-2" src="assets\images\40416-PDPPage-202011-Promo-Badge.png">
@@ -111,8 +114,8 @@
 
             </div>
             <div class="mb-3 text-justify" dir="auto">
-                <button [disabled]="product?.stock<=0" (click)="addToBag(product?.id)" type="button" class="btn w-100 py-3 "
-                    style="background-color: #fd8024; font-size: 0.85rem;">
+                <button [disabled]="product?.stock<=0" (click)="addToBag(product?.id)" type="button"
+                    class="btn w-100 py-3 " style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>
             </div>
@@ -128,7 +131,8 @@
                         fill="#006DB7">
                     </path>
                 </svg>
-                <a role="button" (click)="addToWishlist(product?.id)" class="fontso8yr" href="javascript:void(0)">{{'Product.AddWishlist'|translate}}</a>
+                <a role="button" (click)="addToWishlist(product?.id)" class="fontso8yr"
+                    href="javascript:void(0)">{{'Product.AddWishlist'|translate}}</a>
             </div>
             <div class=" py-3 linkeswd border-bottom text-justify" dir="auto">
                 <a data-toggle="collapse" data-target="#demo">{{'Product.Check'|translate}}</a>
@@ -151,8 +155,6 @@
             <div class="py-3 text-justify" dir="auto">
                 <span>{{'Product.Shop'|translate}}</span><br>
                 <a class="pr-2" href="#ff" *ngFor="let item of product.description">{{item}}</a>
-
-
             </div>
         </div>
     </div>
@@ -265,7 +267,7 @@
                         style="width:auto;">
                 </picture>
                 <div id="Feature1content">
-                    <h1>{{'Product.Adventures'|translate}}</h1>
+                    <h1 style="text-align: center;">{{'Product.Adventures'|translate}}</h1>
                     <span>{{'Product.imaginative'|translate}}</span>
                 </div>
                 <div id="Feature1content2">
@@ -291,23 +293,24 @@
                     <span>{{'Product.awesome'|translate}}</span>
                 </div>
             </div>
-            <div id="Feature3" class="row pt-5 ">
-                <h2 class="px-4 mb-3">{{'Product.Forbidden'|translate}} </h2>
-                <div class="col-sm-4 col-xs-12">
+            <h2 class="px-4 mb-3">{{'Product.Forbidden'|translate}} </h2>
+
+            <div id="Feature3" class="row pt-5">
+                <div class="col-sm-4 col-xs-12 mx-0">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-1.jpeg">
                     <div class="py-2">
                         <h5 class="font-weight-bold">{{'Product.Hidden'|translate}}</h5>
                         <p>{{'Product.reveal'|translate}}</p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12 mx-0">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-2.jpeg">
                     <div class="py-2">
                         <h5 class="font-weight-bold">{{'Product.Poseable'|translate}}</h5>
                         <p>{{'Product.giant'|translate}}</p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12 mx-0">
                     <img src="assets\images\75967-PDP-202006-Block-Standard-3.jpeg">
                     <div class="py-2">
                         <h5 class="font-weight-bold">{{'Product.characters'|translate}}</h5>
@@ -441,7 +444,7 @@
     <div id="CustomerReviews" class="container-fluid collapse my-2" style="background-color: white;">
         <!--hna-->
         <div class="mt-3 d-flex justify-content-between">
-            <p class="font-weight-bold">{{'Product.Overall'|translate}}</p>
+            <h3 class="font-weight-bold">{{'Product.Overall'|translate}}</h3>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Write a Review
             </button>
@@ -591,18 +594,21 @@
             <span class="mx-2 ">4.2</span>
             <span class="mx-2 ">({{reviewNumber}} Reviews)</span>
         </div> -->
-        <i *ngFor="let i of [].constructor(product?.rating)" class="fa fa-star text-warning" aria-hidden="true"></i>
-        <span class="mx-2 ">({{reviewNumber}} {{'Product.Reviews'|translate}})</span>
-        <p *ngIf="product?.rating>3" style="color: green;">{{'Product.HighRecommend'|translate}}</p>
-        <p *ngIf="product?.rating==3" style="color: orange;">{{'Product.MixedRecommend'|translate}}</p>
-        <p *ngIf="product?.rating<3" style="color: red;">{{'Product.LowRecommend'|translate}}</p>
-        <div *ngFor="let item of reviews" class="my-3">
-            <hr>
-            <h5>{{item.reviewTitle}}</h5>
-            <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning" aria-hidden="true"></i>
-            <h6 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h6>
-            <h6 class="text-danger" *ngIf="!item.recommend">I would not recommend this to a friend!</h6>
-            <p>{{item.review}}</p>
-        </div>
+            <i *ngFor="let i of [].constructor(overallRating())" class="fa fa-star text-warning" aria-hidden="true"></i>
+            <span class="mx-2 ">({{reviewNumber}} {{'Product.Reviews'|translate}})</span>
+            <p *ngIf="product?.rating>3" style="color: green;">{{'Product.HighRecommend'|translate}}</p>
+            <p *ngIf="product?.rating==3" style="color: orange;">{{'Product.MixedRecommend'|translate}}</p>
+            <p *ngIf="product?.rating<3 && product?.rating>0" style="color: red;">{{'Product.LowRecommend'|translate}}
+            </p>
+
+            <div *ngFor="let item of reviews" class="my-3">
+                <hr>
+                <h3>{{item.reviewTitle}}</h3>
+                <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning"
+                    aria-hidden="true"></i>
+                <h3 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h3>
+                <h3 class="text-danger" *ngIf="!item.recommend">I would not recommend this to a friend!</h3>
+                <h4>{{item.review}}</h4>
+            </div>
     </div>
 </div>

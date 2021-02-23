@@ -27,7 +27,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   reviewTitle: string;
   reviewBody: string;
   subscription:Subscription[] = [];
-
   userID: any;
   bag: any;
   wishlist: any;
@@ -157,6 +156,8 @@ export class ProductComponent implements OnInit, OnDestroy {
       // userId: "0"
     }
     this.revservece.createReview(this.review)
+    var rate = this.overallRating();
+    this.productser.updateRate(rate,this.prdID)
   }
   plus(){
     if(this.count>=this.product.stock)
@@ -173,6 +174,19 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
   ChangeImage(img:string){
     this.product.image=img;
+  }
+  overallRating(){
+    var sum =0;
+    var avg ;
+    if(this.reviews.length>0){
+      for(let i =0;i<this.reviews.length;i++){
+        sum+=this.reviews[i].OverallRating;
+      }
+      avg = sum/this.reviews.length;
+      return Math.ceil(avg);
+    }
+    else return 0;
+  
   }
 
 }
