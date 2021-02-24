@@ -27,9 +27,9 @@
   <div class="container-fluid px-sm-5 px-3 my-sm-5 my-4">
     <div class="row">
       <div class="col-lg-3 col-12 d-none d-lg-block theFilters" #theFilters>
-        <div class="card text-left">
+        <div class="card text-justify" dir="auto">
           <div class="card-body">
-            <h4 class="card-title">Choose Category</h4>
+            <h4 class="card-title">{{'ChooseCategory'|translate}}</h4>
             <hr>
             <button *ngFor="let item of categoryList" type="button" name="" id="" (click)="changeCategory(item?.id)" class="btn btn-light btn-lg btn-block">{{item?.name}}</button>
           </div>
@@ -349,7 +349,7 @@
       <div class="col-lg-9 col-12 px-0 allProducts" #allProducts>
         <div class="row mt-4 mt-lg-0">
           <div class="col-8 mb-4">
-            <p>Showing {{filteredList.length}} results</p>
+            <p>{{'Showing'|translate}} {{filteredList.length}} {{'results'|translate}}</p>
           </div>
           <div class="col-4">
             <select autocomplete="off" class="custom-select custom-select-sm shadow-none text-justify" dir="auto">
@@ -368,7 +368,7 @@
               </a>
               <div class="card-body">
                 <div class="theBadge">
-                  <span class="badge badge-warning rounded-0 p-2 theBadgeTxt">New</span>
+                  <span class="badge badge-warning rounded-0 p-2 theBadgeTxt">{{'ProductTheme.New'|translate}}</span>
                 </div>
                 <div class="theTitle">
                   <a [routerLink]="['/Product', item?.id]">

@@ -102,7 +102,7 @@
                     <div class="border rounded-right py-2 px-3 mx-0" id="plus" (click)="plus()">+</div>
                 </div>
                 <div class="mx-2 py-2">
-                    <span> Limit {{product?.stock}}</span>
+                    <span> {{'Limit'|translate}} {{product?.stock}}</span>
                     <!--
                     <button class="mx-2" id="ipopover" href="#" title="limit" data-toggle="popover" data-trigger="focus"
                         data-content=" We restrict the limit a household can buy in order to be fair 
@@ -446,7 +446,7 @@
         <div class="mt-3 d-flex justify-content-between">
             <h3 class="font-weight-bold">{{'Product.Overall'|translate}}</h3>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                Write a Review
+                {{'WriteReview'|translate}}
             </button>
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
@@ -454,7 +454,7 @@
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Customer Reviews</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">{{'Product.Customer'|translate}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -465,49 +465,49 @@
                                     <img class="w-100 h-auto" src={{product?.image}}>
                                 </div>
                                 <div class="col-9">
-                                    <h5 class="mb-5">Product Ratings</h5>
-                                    <h6 class="mb-2">Overall Rating</h6>
+                                    <h5 class="mb-5">{{'ProductRatings'|translate}}</h5>
+                                    <h6 class="mb-2">{{'Product.Overall'|translate}}</h6>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="Rate" id="exampleRadios1"
                                             value="1" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            Poor
+                                            {{'Poor'|translate}}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="Rate" id="exampleRadios2"
                                             value="2" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios2">
-                                            Fair
+                                            {{'Fair'|translate}}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="Rate" id="exampleRadios3"
                                             value="3" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios3">
-                                            Avarge
+                                            {{'Avarge'|translate}}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="Rate" id="exampleRadios4"
                                             value="4" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios4">
-                                            Good
+                                            {{'Good'|translate}}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="Rate" id="exampleRadios5"
                                             value="5" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios5">
-                                            Excellent
+                                            {{'Excellent'|translate}}
                                         </label>
                                     </div>
-                                    <h6 class="mt-3 mb-2">I would recommend this product to a friend</h6>
+                                    <h6 class="mt-3 mb-2">{{'Irecommendfriend'|translate}}</h6>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="recommend"
                                             id="exampleRadios6" value="true" (change)="radioforRecommendChange($event)">
                                         <label class="form-check-label" for="exampleRadios6">
-                                            Yes
+                                            {{'Yes'|translate}}
                                         </label>
                                     </div>
                                     <div class="form-check">
@@ -515,32 +515,32 @@
                                             id="exampleRadios7" value="false"
                                             (change)="radioforRecommendChange($event)">
                                         <label class="form-check-label" for="exampleRadios7">
-                                            No
+                                            {{'No'|translate}}
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="container my-5">
-                                <h5>About Me</h5>
+                                <h5>{{'AboutMe'|translate}}</h5>
                                 <div class="form-group">
-                                    <label for="exampleInputtext1">Your Nickname</label>
+                                    <label for="exampleInputtext1">{{'YourNickname'|translate}}</label>
                                     <input type="text" class="form-control" id="exampleInputtext1">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
+                                    <label for="exampleInputEmail1">{{'User.address'|translate}}</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1">
                                 </div>
 
                             </div>
                             <div class="container my-5">
-                                <h5>Share Your Opinion With Others And Write A Detailed Review</h5>
+                                <h5>{{'DetailedReview'|translate}}</h5>
                                 <div class="form-group">
-                                    <label for="exampleInputtext2">Review Title</label>
+                                    <label for="exampleInputtext2">{{'ReviewTitle'|translate}}</label>
                                     <input [(ngModel)]="reviewTitle" type="text" class="form-control"
                                         id="exampleInputtext2">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Review</label>
+                                    <label for="exampleFormControlTextarea1">{{'Review'|translate}}</label>
                                     <textarea [(ngModel)]="reviewBody" class="form-control rounded-0"
                                         id="exampleFormControlTextarea1" rows="10"></textarea>
                                 </div>
@@ -549,7 +549,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                (click)="addReview()">Add</button>
+                                (click)="addReview()">{{'Add'|translate}}</button>
                         </div>
                     </div>
                 </div>

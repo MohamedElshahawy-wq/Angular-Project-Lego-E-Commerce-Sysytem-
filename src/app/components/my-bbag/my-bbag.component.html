@@ -3,7 +3,7 @@
     <div *ngIf="productsInBag==0" class="col-lg-8">
       <div class="d-flex align-items-center min-vh-100">
         <div class="container text-center">
-          <p class="display-4">No products in bag</p>
+          <p class="display-4">{{'Noproductsbag'|translate}}</p>
         </div>
     </div>
     </div>
@@ -72,7 +72,7 @@
                             </div>  -->
 
                     <!-- </td> -->
-                    <td><br><br><small><b>Qty: {{prd?.theQty}}</b></small></td>
+                    <td><br><br><small><b>{{'Checkout.QTY'|translate}}: {{prd?.theQty}}</b></small></td>
                     <td><br><br><i class="far fa-trash-alt" (click)="deleteProduct(prd?.id)"
                         style="font-size: 19px;color:#1f8bff"></i></td>
                     <td><br><br><i class="fa fa-eye" (click)="goToProduct(prd?.id)"
@@ -159,14 +159,14 @@
           aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{'MyBag.Apply'|translate}}</button>
       </div>
-      <div>
+      <div class="text-justify" dir="auto">
 
-        <div style="  word-spacing: 300px;">Subtotal {{getTotal() | currency}} </div> <br>
-        <p style="  word-spacing: 240px;"> Standardshipping Free</p>
-        <div style="word-spacing: 340px;">TaX 14%</div><br>
+        <div style="  word-spacing: 300px;">{{'Checkout.Subtotal'|translate}} {{getTotal() | currency}} </div> <br>
+        <p style="  word-spacing: 240px;">{{'Checkout.StandardShipping'|translate}} </p>
+        <div style="word-spacing: 340px;">{{'TAX'|translate}} 14%</div><br>
 
         <!-- <p style="  word-spacing: 280px;"> <b>Ordertotal $56.26</b></p>  -->
-        <p style="  word-spacing: 280px;"> <b>Ordertotal: {{ (getTotal()+getTotal()*14/100) | currency }}</b></p>
+        <p style="  word-spacing: 280px;"> <b>{{'Checkout.Ordertotal'|translate}}: {{ (getTotal()+getTotal()*14/100) | currency }}</b></p>
 
         <!-- <td>Total: {{ getTotal() }}</td> -->
 

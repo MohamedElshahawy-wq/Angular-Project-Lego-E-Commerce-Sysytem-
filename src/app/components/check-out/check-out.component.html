@@ -109,21 +109,21 @@
         <div class="card-body">
           <h5 class="card-title">Order Summary</h5>
           <hr>
-          <p class="card-text" style="  word-spacing: 135px;">subtotal {{getTotal() | currency}}</p>
-          <p class="card-text" style="  word-spacing: 80px;">StandardShipping Free</p>
-          <p class="card-text" style="  word-spacing: 170px;">TAX {{tax}}%</p>
-          <p class="card-title" style="  word-spacing: 105px;"><b>OrderTotal {{ getTotal()+getTotal()*14/100 | currency}}</b></p>
+          <p class="card-text" style="  word-spacing: 135px;">{{'Checkout.subtotal'|translate}} {{getTotal() | currency}}</p>
+          <p class="card-text" style="  word-spacing: 80px;">{{'Checkout.StandardShipping'|translate}}</p>
+          <p class="card-text" style="  word-spacing: 170px;">{{'TAX'|translate}} {{tax}}%</p>
+          <p class="card-title" style="  word-spacing: 105px;"><b>{{'Checkout.OrderTotal'|translate}} {{ getTotal()+getTotal()*14/100 | currency}}</b></p>
           <img src='assets/images/freeholiday.png' style="width: 150px; height: auto;">
           
         </div>
       </div>
       <!--/////////////////////////////////////////////////////-->
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
+      <div class="card text-center" style="width: 18rem;" dir="auto">
+        <div class="card-body text-justify" dir="auto">
           <h5 class="card-title">{{'Checkout.Wedding' | translate}} 2018</h5>
           <!-- <p class="card-text"><p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br>  <b>$9.99</b></p> -->
           <!-- <p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br><b>$9.99</b> -->
-          <p style="color: darkseagreen">Available now</p> <br>$9.99<br>
+          <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br>$9.99<br>
 
           <img src="assets/images/weddingfavour.png" style="width: 150px; height: auto;">
 
