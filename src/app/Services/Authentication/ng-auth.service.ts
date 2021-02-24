@@ -18,6 +18,7 @@ export interface User {
     year: number
   };
   termsandconditionsCheck?: boolean;
+  isAdmin?: boolean;
 }
 
 
@@ -117,7 +118,8 @@ export class NgAuthService {
         password: user.password,
         displayName: user.displayName,
         birthday : user.birthday,
-        termsandconditionsCheck: user.termsandconditionsCheck
+        termsandconditionsCheck: user.termsandconditionsCheck,
+        isAdmin: user.isAdmin
       }
       
 

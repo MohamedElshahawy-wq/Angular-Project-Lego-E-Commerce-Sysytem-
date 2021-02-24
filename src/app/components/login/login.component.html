@@ -2,27 +2,43 @@
   <div class="row">
     <div class="col"></div>
 
-    <div class="col-5 text-center" id="main">
-      <nav class="navbar justify-content-center d-flex flex-fill">
-        <div class="container-fluid text-nowrap text-justify" dir="auto">
-          <a href="#" role="button"
-            ><i class="fas fa-chevron-left" id="backBtn"></i
-          ></a>
-          <img id="navImg" src="assets/images/Register-Login-Images/lego.png" />
+    <div class="col-lg-5 col-sm-12 text-center" id="main">
+
+      <nav style="display: flex; justify-content: space-evenly; align-items: center;">
+        <div>
+          <a role="button"
+              ><i
+                class="fas fa-chevron-left"
+                id="backBtn"
+                (click)="goBackBtn()"
+              ></i
+            ></a>
+        </div>
+
+        <div>
+          <img src="assets/images/Register-Login-Images/lego.png" alt="logo" style="width:40px;">
+        </div>
+
+        <div>
           <span
-            class="navbar-brand mb-0 h1 justify-content-left text-justify" dir="auto"
-            id="navTxt"
-            ><strong>{{'User.Account'|translate}}</strong></span
-          >
+            class="h1 text-dark font-weight-bold " id="navTxt"
+            ><strong>{{'User.Account'|translate}}</strong>
+          </span>
+        </div>
+
+        <div>
           <button
             type="button"
-            class="close font-weight-bold text-justify" dir="auto"
+            class="close font-weight-bold text-right"
             id="navBtn"
+            (click)="closeBtn()"
           >
             ×
           </button>
         </div>
+
       </nav>
+
       <br />
       <img
         src="assets/images/Register-Login-Images/avatar.png"

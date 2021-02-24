@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NgAuthService, User } from 'src/app/Services/Authentication/ng-auth.service';
 
@@ -19,12 +20,13 @@ export class RegisterComponent implements OnInit {
   day:number;
   year:number;
   termsandconditionsCheck:boolean;
+  isAdmin: boolean = false;
 
   user: User;
 
   cookieTrial:string;
 
-  constructor(public ngAuthService: NgAuthService /*,private router:Router, private customerService: CustomersService,  /*private cookie: CookieService*/) {
+  constructor(public ngAuthService: NgAuthService, public router: Router /*,private router:Router, private customerService: CustomersService,  /*private cookie: CookieService*/) {
   }
 
   addnewCustomer(){
@@ -38,11 +40,20 @@ export class RegisterComponent implements OnInit {
         day:this.day,
         year: this.year
       },
-      termsandconditionsCheck: this.termsandconditionsCheck
+      termsandconditionsCheck: this.termsandconditionsCheck,
+      isAdmin: this.isAdmin
     }
 
     
     this.ngAuthService.SignUp(this.user);
+  }
+
+  goBackBtn(){
+    this.router.navigate(['/EditAccount']);
+  }
+
+  closeBtn(){
+    this.router.navigate(['/Home']);
   }
 
   
