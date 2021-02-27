@@ -15,7 +15,7 @@
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
             <li class="breadcrumb-item"><a href="#">{{'header.Home'|translate}}</a></li>
-            <li class="breadcrumb-item"><a href="#">{{product.description[0]}}</a></li>
+            <li class="breadcrumb-item"><a href="#">{{product.relatedProducts[0]}}</a></li>
             <li class="breadcrumb-item active">{{product?.name}}</li>
         </ul>
     </div>
@@ -154,7 +154,7 @@
             </div>
             <div class="py-3 text-justify" dir="auto">
                 <span>{{'Product.Shop'|translate}}</span><br>
-                <a class="pr-2" href="#ff" *ngFor="let item of product.description">{{item}}</a>
+                <a class="pr-2" href="#ff" *ngFor="let item of product.relatedProducts">{{item}}</a>
             </div>
         </div>
     </div>
@@ -247,7 +247,7 @@
 </div>
 <!--end-->
 
-<!--start-->
+<!--
 <div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Features" id="fet1">
         <div class="col-12 d-flex justify-content-between">
@@ -361,10 +361,9 @@
 
     </div>
 </div>
+end-->
 
-<!--end-->
-
-<!--start-->
+<!--
 <div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Specifications" id="speci">
         <div class="col-12 d-flex justify-content-between">
@@ -403,8 +402,27 @@
         </div>
     </div>
 </div>
-<!--end-->
+end-->
 
+
+
+
+<!--start-->
+<div class="container-fluid text-justify" dir="auto">
+    <div class="row rowselproduct" data-toggle="collapse" data-target="#Specifications" id="speci">
+        <div class="col-12 d-flex justify-content-between">
+            <h3>Description</h3>
+            <div id="pluswminus3" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
+            <div id="pluswminus4" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
+        </div>
+        <div id="Specifications" class="container-fluid collapse mt-3" style="background-color: white;">
+            <div class="container-fluid">
+            <h4> {{product.description}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
 <!--start-->
 <div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#DeliveriesandReturns" id="del">
