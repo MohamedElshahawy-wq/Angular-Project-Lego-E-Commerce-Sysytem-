@@ -107,12 +107,25 @@
     <div class="col-lg-3" style="padding: 15px;">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Order Summary</h5>
+          <h5 class="card-title">{{'Checkout.Order'|translate}}</h5>
+
           <hr>
-          <p class="card-text" style="  word-spacing: 135px;">{{'Checkout.subtotal'|translate}} {{getTotal() | currency}}</p>
-          <p class="card-text" style="  word-spacing: 80px;">{{'Checkout.StandardShipping'|translate}}</p>
-          <p class="card-text" style="  word-spacing: 170px;">{{'TAX'|translate}} {{tax}}%</p>
-          <p class="card-title" style="  word-spacing: 105px;"><b>{{'Checkout.OrderTotal'|translate}} {{ getTotal()+getTotal()*14/100 | currency}}</b></p>
+          <div class="d-flex justify-content-between">
+            <p>{{'Checkout.subtotal'|translate}}</p>
+            <p>{{getTotal() | currency}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>{{'Checkout.StandardShipping'|translate}}</p>
+            <p>{{'Checkout.Free'|translate}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>{{'TAX'|translate}}</p>
+            <p>14%</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>{{'Checkout.OrderTotal'|translate}}</p>
+            <p>{{ (getTotal()+getTotal()*14/100) | currency }}</p>
+          </div>
           <img src='assets/images/freeholiday.png' style="width: 150px; height: auto;">
           
         </div>

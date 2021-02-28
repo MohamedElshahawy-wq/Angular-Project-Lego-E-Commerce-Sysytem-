@@ -59,7 +59,8 @@
                   <tr *ngFor="let prd of ProductList">
                     <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
                     <td class="w-25">
-                      <small><b><br><br>{{prd?.name}}</b></small><br><br>
+                      <small *ngIf="translate.currentLang=='en'"><b><br><br>{{prd?.name}}</b></small><br><br>
+                      <small *ngIf="translate.currentLang=='ar'"><b><br><br>{{prd?.arabicName}}</b></small><br><br>
                       <!-- <small style="color: green">{{'Checkout.Available'|translate}}</small><br><br> -->
                       <!-- <small>Qty:3</small><br><br> -->
                       <!-- <small><b>{{prd?.price}}</b></small> -->
@@ -160,16 +161,22 @@
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">{{'MyBag.Apply'|translate}}</button>
       </div>
       <div class="text-justify" dir="auto">
-
-        <div style="  word-spacing: 300px;">{{'Checkout.Subtotal'|translate}} {{getTotal() | currency}} </div> <br>
-        <p style="  word-spacing: 240px;">{{'Checkout.StandardShipping'|translate}} </p>
-        <div style="word-spacing: 340px;">{{'TAX'|translate}} 14%</div><br>
-
-        <!-- <p style="  word-spacing: 280px;"> <b>Ordertotal $56.26</b></p>  -->
-        <p style="  word-spacing: 280px;"> <b>{{'Checkout.Ordertotal'|translate}}: {{ (getTotal()+getTotal()*14/100) | currency }}</b></p>
-
-        <!-- <td>Total: {{ getTotal() }}</td> -->
-
+        <div class="d-flex justify-content-between">
+          <p>{{'MyBag.subtotal'|translate}}</p>
+          <p>{{getTotal() | currency}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p>{{'MyBag.StandardShipping'|translate}}</p>
+          <p>{{'MyBag.Free'|translate}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p>{{'TAX'|translate}}</p>
+          <p>14%</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p>{{'Checkout.OrderTotal'|translate}}</p>
+          <p>{{ (getTotal()+getTotal()*14/100) | currency }}</p>
+        </div>
       </div>
 
       <div class="d-grid gap-2">

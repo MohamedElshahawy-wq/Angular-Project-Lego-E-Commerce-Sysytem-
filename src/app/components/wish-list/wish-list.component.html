@@ -31,7 +31,8 @@
           <tr *ngFor="let prd of ProductList">
             <th scope="row"><img src={{prd?.image}} style="width:30%;height: auto"></th>
             <td class="w-25">
-              <small><br><br><b>{{prd?.name}}</b></small><br><br>
+              <small *ngIf="translate.currentLang=='en'"><br><br><b>{{prd?.name}}</b></small><br><br>
+              <small *ngIf="translate.currentLang=='ar'"><br><br><b>{{prd?.arabicName}}</b></small><br><br>
               <!-- <small style="color: green">Available now</small><br><br> -->
               <!-- <small>Qty:3</small><br><br> -->
               <!-- <small><b>{{prd?.price | currency}}</b></small> -->

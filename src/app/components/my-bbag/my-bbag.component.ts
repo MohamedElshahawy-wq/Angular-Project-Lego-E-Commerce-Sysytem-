@@ -3,6 +3,7 @@ import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-bbag',
@@ -21,7 +22,7 @@ export class MyBBagComponent implements OnInit, OnDestroy {
   userID: any;
 
   constructor(private bagSrv: BagsService, private prdSrv: ProductsService,
-    private router: Router) { }
+    private router: Router, public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.userID = JSON.parse(localStorage.getItem('user')).uid;

@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-products',
@@ -41,7 +42,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
   productsInWishlist: any;
   constructor(private productsService: ProductsService,
     private catService: CategoriesService, private bagSrv: BagsService,
-    private wishSrv: WishlistService, private toastr: ToastrService) { }
+    private wishSrv: WishlistService, private toastr: ToastrService,
+    public translate: TranslateService) { }
 
   ngOnInit() {
 

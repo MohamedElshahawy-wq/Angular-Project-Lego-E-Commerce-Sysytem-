@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ProductsService } from 'src/app/firebaseServices/Product/products.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
@@ -23,7 +24,7 @@ export class WishListComponent implements OnInit, OnDestroy {
   subscription: Subscription[] = [];
 
   constructor(private wishSrv: WishlistService, private prdSrv: ProductsService,
-    private router: Router) {
+    private router: Router, public translate: TranslateService) {
   }
 
   ngOnInit(): void {

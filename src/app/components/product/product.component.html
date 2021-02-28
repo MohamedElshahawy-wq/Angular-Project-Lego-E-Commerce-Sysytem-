@@ -15,8 +15,9 @@
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
             <li class="breadcrumb-item"><a href="#">{{'header.Home'|translate}}</a></li>
-            <li class="breadcrumb-item"><a href="#">{{product.relatedProducts[0]}}</a></li>
-            <li class="breadcrumb-item active">{{product?.name}}</li>
+            <li class="breadcrumb-item"><a href="#">{{product?.relatedProducts[0]}}</a></li>
+            <li *ngIf="translate.currentLang=='en'" class="breadcrumb-item active">{{product?.name}}</li>
+            <li *ngIf="translate.currentLang=='ar'" class="breadcrumb-item active">{{product?.arabicName}}</li>
         </ul>
     </div>
 </div>
@@ -36,10 +37,12 @@
         </div>
         <div class="col-md-3 product2 px-3 font-weight-bold">
             <div class="my-3">
-                <img src={{product.logoImage}}>
+                <!-- <img src={{product?.logoImage}}> -->
+                <img src={{getlogoByID(product?.categoryID)}}>
             </div>
             <div class="mb-3">
-                <h1>{{product?.name}}</h1>
+                <h1 *ngIf="translate.currentLang=='en'">{{product?.name}}</h1>
+                <h1 *ngIf="translate.currentLang=='ar'">{{product?.arabicName}}</h1>
             </div>
             <div class="mb-3">
                 <!-- <span class="my-1" id="stars">
@@ -154,7 +157,7 @@
             </div>
             <div class="py-3 text-justify" dir="auto">
                 <span>{{'Product.Shop'|translate}}</span><br>
-                <a class="pr-2" href="#ff" *ngFor="let item of product.relatedProducts">{{item}}</a>
+                <a class="pr-2" href="#ff" *ngFor="let item of product?.relatedProducts">{{item}}</a>
             </div>
         </div>
     </div>
@@ -411,13 +414,14 @@ end-->
 <div class="container-fluid text-justify" dir="auto">
     <div class="row rowselproduct" data-toggle="collapse" data-target="#Specifications" id="speci">
         <div class="col-12 d-flex justify-content-between">
-            <h3>Description</h3>
+            <h3>{{'Product.Description'|translate}}</h3>
             <div id="pluswminus3" style="font-size: 20px;"><i class="fas fa-plus-circle"></i></div>
             <div id="pluswminus4" style="font-size: 20px; display: none;"><i class="fas fa-minus-circle"></i></div>
         </div>
         <div id="Specifications" class="container-fluid collapse mt-3" style="background-color: white;">
             <div class="container-fluid">
-            <h4> {{product.description}}</h4>
+            <h4 *ngIf="translate.currentLang=='en'"> {{product?.description}}</h4>
+            <h4 *ngIf="translate.currentLang=='ar'"> {{product?.arabicDescription}}</h4>
             </div>
         </div>
     </div>
@@ -624,8 +628,8 @@ end-->
                 <h3>{{item.reviewTitle}}</h3>
                 <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning"
                     aria-hidden="true"></i>
-                <h3 class="text-success" *ngIf="item.recommend">I would recommend this to a friend!</h3>
-                <h3 class="text-danger" *ngIf="!item.recommend">I would not recommend this to a friend!</h3>
+                <h3 class="text-success" *ngIf="item.recommend">{{'Product.IRecommend'|translate}}</h3>
+                <h3 class="text-danger" *ngIf="!item.recommend">{{'Product.INotRecommend'|translate}}</h3>
                 <h4>{{item.review}}</h4>
             </div>
     </div>

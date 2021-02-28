@@ -8,6 +8,8 @@ import { Subscription } from 'rxjs';
 import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
+import { CategoriesService } from 'src/app/firebaseServices/Category/categories.service';
 
 @Component({
   selector: 'app-product',
@@ -32,6 +34,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   wishlist: any;
   productsInBag: any;
   productsInWishlist: any;
+  categoryList: any;
 
   constructor(
     private productser: ProductsService,
@@ -39,7 +42,9 @@ export class ProductComponent implements OnInit, OnDestroy {
     private revservece: ReviewsService,
     private bagSrv: BagsService,
     private wishSrv: WishlistService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    public translate: TranslateService,
+    private catService: CategoriesService) { }
 
   ngOnInit(): void {
     this.userID = JSON.parse(localStorage.getItem('user')).uid;
@@ -70,6 +75,11 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.reviewNumber = this.reviews.length;
       }))
     });
+    this.catService.getCategories().subscribe(data => {
+      this.categoryList = data.map(e => {
+        return { id: e.payload.doc.id, ...(e.payload.doc.data() as {}) };
+      })
+    })
   }
   ngOnDestroy(): void {
     this.subscription.forEach(element => {
@@ -112,6 +122,11 @@ export class ProductComponent implements OnInit, OnDestroy {
       timeOut: 5000,
       progressBar: true
     });
+  }
+
+  getlogoByID(id:any) : string {
+    let x = this.categoryList?.find(element=> element.id == id);
+    return `${x?.logo}`
   }
 
   addToWishlist(prdID: any) {
