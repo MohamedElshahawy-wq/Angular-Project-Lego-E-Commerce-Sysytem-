@@ -6,6 +6,7 @@ import { BagsService } from 'src/app/firebaseServices/MyBag/bags.service';
 import { WishlistService } from 'src/app/firebaseServices/WishList/wishlist.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { NgAuthService } from 'src/app/Services/Authentication/ng-auth.service';
 
 @Component({
   selector: 'app-recommended-products',
@@ -25,36 +26,39 @@ export class RecommendedProductsComponent implements OnInit, OnDestroy {
   subscription: Subscription[] = [];
 
   AllProducts = [];
-  constructor(private prodserv :ProductsService,
-              private route:Router,
-              private bagSrv:BagsService,
-              private wishSrv:WishlistService,
-              private toastr:ToastrService,
-              public translate: TranslateService){ }
-              
+  constructor(private prodserv: ProductsService,
+    private route: Router,
+    private bagSrv: BagsService,
+    private wishSrv: WishlistService,
+    private toastr: ToastrService,
+    public translate: TranslateService,
+    public ngAuthService: NgAuthService) { }
+
   ngOnInit(): void {
 
-    this.userID = JSON.parse(localStorage.getItem('user')).uid;
-    this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
-      this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
+    if (this.ngAuthService.isLoggedIn === true) {
+      this.userID = JSON.parse(localStorage.getItem('user')).uid;
+      this.subscription.push(this.bagSrv.getSpcMyBag(this.userID).subscribe(data => {
+        this.bag = { id: data.payload.id, ...(data.payload.data() as {}) };
 
-      this.productsInBag = this.bag.productsIDs;
-    })
-    );
+        this.productsInBag = this.bag.productsIDs;
+      })
+      );
 
-    this.subscription.push(this.wishSrv.getSpcWishlist(this.userID).subscribe(data => {
-      this.wishlist = { id: data.payload.id, ...(data.payload.data() as {}) };
+      this.subscription.push(this.wishSrv.getSpcWishlist(this.userID).subscribe(data => {
+        this.wishlist = { id: data.payload.id, ...(data.payload.data() as {}) };
 
-      this.productsInWishlist = this.wishlist.productsIDs;
-    })
-    );
+        this.productsInWishlist = this.wishlist.productsIDs;
+      })
+      );
+    }
 
     this.subscription.push(this.prodserv.getProducts().subscribe(data => {
       this.AllProducts = data.map(e => {
-        return {id: e.payload.doc.id, ...(e.payload.doc.data() as {})};
+        return { id: e.payload.doc.id, ...(e.payload.doc.data() as {}) };
       })
-      this.ProductList1=this.AllProducts.slice(0,4)
-      this.ProductList2=this.AllProducts.slice(4,8)
+      this.ProductList1 = this.AllProducts.slice(0, 4)
+      this.ProductList2 = this.AllProducts.slice(4, 8)
     }))
   }
 
@@ -65,57 +69,75 @@ export class RecommendedProductsComponent implements OnInit, OnDestroy {
   }
 
   addToBag(prdID: any) {
-    let theProducts = [...this.productsInBag];
-    let prd;
+    if (this.ngAuthService.isLoggedIn === true) {
 
-    var result = theProducts.find(obj => {
-      return obj.id === prdID
-    })
+      let theProducts = [...this.productsInBag];
+      let prd;
 
-    if (result) {
-      const index = theProducts.indexOf(result);
-      const totalQty = theProducts[index].qty + 1;
-      if (index > -1) {
-        theProducts.splice(index, 1);
+      var result = theProducts.find(obj => {
+        return obj.id === prdID
+      })
+
+      if (result) {
+        const index = theProducts.indexOf(result);
+        const totalQty = theProducts[index].qty + 1;
+        if (index > -1) {
+          theProducts.splice(index, 1);
+        }
+        prd = {
+          id: prdID,
+          qty: totalQty
+        }
+      } else {
+        prd = {
+          id: prdID,
+          qty: 1
+        }
       }
-      prd = {
-        id: prdID,
-        qty: totalQty
-      }
+
+
+      theProducts.push(prd);
+
+      this.bagSrv.updateBagByUserID(theProducts, this.userID);
+      // alert('Added to cart')
+      this.toastr.success(`Added to cart.`, 'Done', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
     } else {
-      prd = {
-        id: prdID,
-        qty: 1
-      }
+      this.toastr.error(`You need to login first.`, 'Error', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
     }
-
-    
-    theProducts.push(prd);
-
-    this.bagSrv.updateBagByUserID(theProducts, this.userID);
-    // alert('Added to cart')
-    this.toastr.success(`Added to cart.`, 'Done', {
-      closeButton: true,
-      timeOut: 5000,
-      progressBar: true
-    });
   }
 
   addToWishlist(prdID: any) {
-    let theProducts = [...this.productsInWishlist];
-    
-    theProducts.push(prdID);
+    if (this.ngAuthService.isLoggedIn === true) {
 
-    this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
-    // alert('Added to wishlist')
-    this.toastr.success(`Added to wishlist.`, 'Done', {
-      closeButton: true,
-      timeOut: 5000,
-      progressBar: true
-    });
+      let theProducts = [...this.productsInWishlist];
+
+      theProducts.push(prdID);
+
+      this.wishSrv.updateWishlistByUserID(theProducts, this.userID);
+      // alert('Added to wishlist')
+      this.toastr.success(`Added to wishlist.`, 'Done', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
+    } else {
+      this.toastr.error(`You need to login first.`, 'Error', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
+    }
   }
 
-  ShowProduct(id:number){
-    this.route.navigate(['Product',id]);
+  ShowProduct(id: number) {
+    this.route.navigate(['Product', id]);
   }
 }

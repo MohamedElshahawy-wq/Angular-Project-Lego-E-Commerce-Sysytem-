@@ -41,7 +41,7 @@ const routes: Routes = [
   {path :'Register',component: RegisterComponent, canActivate: [LoginGuard]},
   {path :'Login',component: LoginComponent, canActivate: [LoginGuard]},
   {path :'ForgotPassword',component: RecoverPasswordComponent, canActivate: [LoginGuard]},
-  {path :'AfterCheckout',component: AfterCheckoutComponent},
+  {path :'AfterCheckout',component: AfterCheckoutComponent, canActivate: [AuthGuard]},
   {path:"",redirectTo:'Home',pathMatch:'full'},
   {path:"**", component:NotFoundComponent}
 ];
