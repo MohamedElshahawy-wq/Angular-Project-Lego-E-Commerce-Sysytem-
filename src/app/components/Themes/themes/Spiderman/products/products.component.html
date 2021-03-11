@@ -399,7 +399,11 @@
                   <p class="font-weight-bold">{{item?.price | currency}}</p>
                 </div>
                 <div>
-                  <button type="button" [disabled]="item?.stock<=0" name="addToCart" (click)="addToBag(item?.id)"
+                  <button type="button" *ngIf="item?.stock<=0" disabled name="addToCart" (click)="addToBag(item?.id)"
+                    class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
+                      class="cardBtn">{{'ProductTheme.Add2cartOut'|translate}}</small></button>
+
+                  <button type="button" *ngIf="item?.stock>0" name="addToCart" (click)="addToBag(item?.id)"
                     class="btn addToCartBtn btn-primary btn-lg btn-block text-body shadow-none"><small
                       class="cardBtn">{{'ProductTheme.Add2cart'|translate}}</small></button>
                 </div>

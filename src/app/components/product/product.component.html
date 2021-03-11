@@ -117,7 +117,11 @@
 
             </div>
             <div class="mb-3 text-justify" dir="auto">
-                <button [disabled]="product?.stock<=0" (click)="addToBag(product?.id)" type="button"
+                <button *ngIf="product?.stock<=0" disabled (click)="addToBag(product?.id)" type="button"
+                    class="btn w-100 py-3 " style="background-color: #fd8024; font-size: 0.85rem;">
+                    <strong>{{'RecommendedForYou.BagOut'|translate}}</strong>
+                </button>
+                <button *ngIf="product?.stock>0" (click)="addToBag(product?.id)" type="button"
                     class="btn w-100 py-3 " style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>

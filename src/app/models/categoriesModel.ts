@@ -5,5 +5,4 @@ export class CategoryModel {
     arabicDescription: string;
     description: string;
     logo: string;
-    totalOrdered: number;
 }

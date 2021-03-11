@@ -76,7 +76,8 @@
                                     
                                     <br>{{product?.price | currency}}
                                 </p>
-                                <button (click)="addToBag(product?.id)" [disabled]="product?.stock<=0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" *ngIf="product?.stock<=0" disabled class="btn text-justify" dir="auto">{{'RecommendedForYou.BagOut'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" *ngIf="product?.stock>0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
                             </div>
                         </div>
                     </div>
@@ -155,7 +156,8 @@
                                     
                                     {{product?.price | currency}}
                                 </p>
-                                <button (click)="addToBag(product?.id)" [disabled]="product?.stock<=0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" *ngIf="product?.stock<=0" disabled class="btn text-justify" dir="auto">{{'RecommendedForYou.BagOut'|translate}}</button>
+                                <button (click)="addToBag(product?.id)" *ngIf="product?.stock>0" class="btn text-justify" dir="auto">{{'RecommendedForYou.Bag'|translate}}</button>
                             </div>
                         </div>
                     </div>

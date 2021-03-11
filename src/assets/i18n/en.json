@@ -386,6 +386,7 @@
     "RecommendedForYou": {
         "Recommended": "Recommended For You",
         "Bag": "Add To Bag",
+        "BagOut": "Out of stock",
         "Exclusives": "Exclusives",
         "Next": "Next",
         "Previous": "Previous"
@@ -706,6 +707,7 @@
         "Coming":"Coming Soon",
         "AvailableNow":"Available Now",
         "Add2cart":"Add to cart",
+        "Add2cartOut":"Out of stock",
         "Low2High":"Low to High",
         "High2Low":"High to Low"
     },

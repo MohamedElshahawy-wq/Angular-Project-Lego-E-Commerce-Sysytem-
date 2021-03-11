@@ -385,6 +385,7 @@
     "RecommendedForYou": {
         "Recommended": "موصى به لك",
         "Bag": "أضف الى الحقيبة",
+        "BagOut":"غير متوفر",
         "Exclusives": "حصريات",
         "Next": "التالي",
         "Previous": "السابق"
@@ -705,6 +706,7 @@
         "Coming":"قريبا",
         "AvailableNow":"متوفر في الوقت الحاضر",
         "Add2cart":"أضف إلى الحقيبة",
+        "Add2cartOut":"غير متوفر",
         "Low2High":"من أسفل إلى أعلى",
         "High2Low":"من الأعلى إلى الأقل"
     },

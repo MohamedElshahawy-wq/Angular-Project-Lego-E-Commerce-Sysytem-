@@ -11,6 +11,5 @@ export class UserModel {
     };
     termsandconditionsCheck?: boolean;
     phoneNumber?: string;
-    totalOrdered?: number;
     dateOfJoin?: string
 }
