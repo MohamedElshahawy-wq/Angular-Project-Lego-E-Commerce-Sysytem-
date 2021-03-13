@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "rest-firestore-api"
+  },
+  "targets": {
+    "rest-firestore-api": {
+      "hosting": {
+        "FinalProj": [
+          "rest-firestore-api"
+        ]
+      }
+    }
   }
 }

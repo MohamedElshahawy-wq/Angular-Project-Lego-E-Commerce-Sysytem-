@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild , ElementRef} from '@angular/core';
+import { Component, OnInit, ViewChild , ElementRef, AfterViewInit} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,12 +6,19 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,AfterViewInit {
   @ViewChild('mySidenav') mySidenav:  ElementRef;
+  @ViewChild('langSelect') langSelect:  ElementRef;
   
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) { 
+    console.log("Language: "+translate.getBrowserLang());
+  }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit(): void {
+    console.log("LANG. "+ this.langSelect.nativeElement.value);
+    console.log("LANG. "+ this.translate.getDefaultLang());
   }
   openNav() {
     this.mySidenav.nativeElement.style.width = "350px";

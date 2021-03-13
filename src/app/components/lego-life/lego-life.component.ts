@@ -8,9 +8,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LegoLifeComponent implements OnInit {
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) { 
+    //Done
+    console.log("LegoLifeComponent(translate.currentLang): "+translate.currentLang);
+  }
 
   ngOnInit(): void {
   }
-
 }

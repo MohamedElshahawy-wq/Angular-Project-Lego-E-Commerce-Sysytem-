@@ -23,8 +23,9 @@ export class I18nModule {
   constructor(translate: TranslateService) {
     translate.addLangs(['en', 'ar']);
     const browserLang = translate.getBrowserLang();
+    
     translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
-  }
+    }
 }
 
 export function translateLoaderFactory(httpClient: HttpClient) {
