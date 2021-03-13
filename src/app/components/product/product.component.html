@@ -121,8 +121,8 @@
                     class="btn w-100 py-3 " style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.BagOut'|translate}}</strong>
                 </button>
-                <button *ngIf="product?.stock>0" (click)="addToBag(product?.id)" type="button"
-                    class="btn w-100 py-3 " style="background-color: #fd8024; font-size: 0.85rem;">
+                <button *ngIf="product?.stock>0" (click)="addToBag(product?.id)" type="button" class="btn w-100 py-3 "
+                    style="background-color: #fd8024; font-size: 0.85rem;">
                     <strong>{{'RecommendedForYou.Bag'|translate}}</strong>
                 </button>
             </div>
@@ -424,8 +424,8 @@ end-->
         </div>
         <div id="Specifications" class="container-fluid collapse mt-3" style="background-color: white;">
             <div class="container-fluid">
-            <h4 *ngIf="translate.currentLang=='en'"> {{product?.description}}</h4>
-            <h4 *ngIf="translate.currentLang=='ar'"> {{product?.arabicDescription}}</h4>
+                <h4 *ngIf="translate.currentLang=='en'"> {{product?.description}}</h4>
+                <h4 *ngIf="translate.currentLang=='ar'"> {{product?.arabicDescription}}</h4>
             </div>
         </div>
     </div>
@@ -485,17 +485,21 @@ end-->
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+
                         <div class="modal-body">
+
                             <div class="row">
+
                                 <div class="col-3">
                                     <img class="w-100 h-auto" src={{product?.image}}>
                                 </div>
                                 <div class="col-9">
+
                                     <h5 class="mb-5">{{'ProductRatings'|translate}}</h5>
                                     <h6 class="mb-2">{{'Product.Overall'|translate}}</h6>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="Rate" id="exampleRadios1"
-                                            value="1" (change)="radioforRatingChange($event)">
+                                        <input checked class="form-check-input" type="radio" name="Rate"
+                                            id="exampleRadios1" value="1" (change)="radioforRatingChange($event)">
                                         <label class="form-check-label" for="exampleRadios1">
                                             {{'Poor'|translate}}
                                         </label>
@@ -530,7 +534,7 @@ end-->
                                     </div>
                                     <h6 class="mt-3 mb-2">{{'Irecommendfriend'|translate}}</h6>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="recommend"
+                                        <input checked class="form-check-input" type="radio" name="recommend"
                                             id="exampleRadios6" value="true" (change)="radioforRecommendChange($event)">
                                         <label class="form-check-label" for="exampleRadios6">
                                             {{'Yes'|translate}}
@@ -544,39 +548,103 @@ end-->
                                             {{'No'|translate}}
                                         </label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="container my-5">
-                                <h5>{{'AboutMe'|translate}}</h5>
-                                <div class="form-group">
-                                    <label for="exampleInputtext1">{{'YourNickname'|translate}}</label>
-                                    <input type="text" class="form-control" id="exampleInputtext1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">{{'User.address'|translate}}</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1">
-                                </div>
 
-                            </div>
-                            <div class="container my-5">
-                                <h5>{{'DetailedReview'|translate}}</h5>
-                                <div class="form-group">
-                                    <label for="exampleInputtext2">{{'ReviewTitle'|translate}}</label>
-                                    <input [(ngModel)]="reviewTitle" type="text" class="form-control"
-                                        id="exampleInputtext2">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">{{'Review'|translate}}</label>
-                                    <textarea [(ngModel)]="reviewBody" class="form-control rounded-0"
-                                        id="exampleFormControlTextarea1" rows="10"></textarea>
-                                </div>
 
+
+                                </div>
                             </div>
+                            <form #revform="ngForm" >
+                                <div class="container my-5">
+                                    <h5>{{'AboutMe'|translate}}</h5>
+                                    <div class="form-group">
+                                        <label for="exampleInputtext1">{{'YourNickname'|translate}}</label>
+                                        <input name="nickname" [(ngModel)]="nickname" type="text" class="form-control"
+                                            id="exampleInputtext1" #name="ngModel" minlength="3" required>
+
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="name.errors.required">
+                                                Name is required.
+                                            </div>
+                                            <div *ngIf="name.errors.minlength">
+                                                Name must be at least 3 characters long.
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">{{'User.address'|translate}}</label>
+                                        <input name="email" [(ngModel)]="email" type="email" class="form-control"
+                                            id="exampleInputEmail1" #useremail="ngModel" email="true" required>
+
+                                        <div *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="useremail.invalid ">
+                                                please enter a valid email
+                                            </div>
+                                            <div *ngIf="useremail.errors.required">
+                                                email is required.
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="container my-5">
+                                    <h5>{{'DetailedReview'|translate}}</h5>
+                                    <div class="form-group">
+                                        <label for="exampleInputtext2">{{'ReviewTitle'|translate}}</label>
+                                        <input name="reviewTitle" [(ngModel)]="reviewTitle" type="text"
+                                            class="form-control" id="exampleInputtext2" #rev="ngModel" required
+                                            minlength="4">
+                                        <div *ngIf="rev.invalid && (rev.dirty || rev.touched)"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="rev.errors.required">
+                                                review is required.
+                                            </div>
+                                            <div *ngIf="rev.errors.minlength">
+                                                review must be at least 4 characters long.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">{{'Review'|translate}}</label>
+                                        <textarea name="reviewBody" [(ngModel)]="reviewBody"
+                                            class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"
+                                            #revb="ngModel" required minlength="10"></textarea>
+                                        <div *ngIf="revb.invalid && (revb.dirty || revb.touched)"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="revb.errors.required">
+                                                review is required.
+                                            </div>
+                                            <div *ngIf="revb.errors.minlength">
+                                                review body must be at least 10 characters long.
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <button type="button" class="btn btn-primary"
+                                        (click)="addReview()"
+                                        [disabled]="revform.invalid">{{'Add'|translate}}
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                (click)="addReview()">{{'Add'|translate}}</button>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -620,21 +688,21 @@ end-->
             <span class="mx-2 ">4.2</span>
             <span class="mx-2 ">({{reviewNumber}} Reviews)</span>
         </div> -->
-            <i *ngFor="let i of [].constructor(overallRating())" class="fa fa-star text-warning" aria-hidden="true"></i>
-            <span class="mx-2 ">({{reviewNumber}} {{'Product.Reviews'|translate}})</span>
-            <p *ngIf="product?.rating>3" style="color: green;">{{'Product.HighRecommend'|translate}}</p>
-            <p *ngIf="product?.rating==3" style="color: orange;">{{'Product.MixedRecommend'|translate}}</p>
-            <p *ngIf="product?.rating<3 && product?.rating>0" style="color: red;">{{'Product.LowRecommend'|translate}}
-            </p>
+        <i *ngFor="let i of [].constructor(overallRating())" class="fa fa-star text-warning" aria-hidden="true"></i>
+        <span class="mx-2 ">({{reviewNumber}} {{'Product.Reviews'|translate}})</span>
+        <p *ngIf="product?.rating>3" style="color: green;">{{'Product.HighRecommend'|translate}}</p>
+        <p *ngIf="product?.rating<=3" style="color: orange;">{{'Product.MixedRecommend'|translate}}</p>
+        <p *ngIf="product?.rating<2 && product?.rating>0" style="color: red;">{{'Product.LowRecommend'|translate}}
+        </p>
 
-            <div *ngFor="let item of reviews" class="my-3">
-                <hr>
-                <h3>{{item.reviewTitle}}</h3>
-                <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning"
-                    aria-hidden="true"></i>
-                <h3 class="text-success" *ngIf="item.recommend">{{'Product.IRecommend'|translate}}</h3>
-                <h3 class="text-danger" *ngIf="!item.recommend">{{'Product.INotRecommend'|translate}}</h3>
-                <h4>{{item.review}}</h4>
-            </div>
+        <div *ngFor="let item of reviews" class="my-3">
+            <hr>
+            <h3>{{item.reviewTitle}}</h3>
+            <i *ngFor="let i of [].constructor(item.OverallRating)" class="fa fa-star text-warning"
+                aria-hidden="true"></i>
+            <h3 class="text-success" *ngIf="item.recommend">{{'Product.IRecommend'|translate}}</h3>
+            <h3 class="text-danger" *ngIf="!item.recommend">{{'Product.INotRecommend'|translate}}</h3>
+            <h4>{{item.review}}</h4>
+        </div>
     </div>
 </div>

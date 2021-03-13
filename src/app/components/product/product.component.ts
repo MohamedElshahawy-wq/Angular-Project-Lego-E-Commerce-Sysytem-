@@ -25,10 +25,9 @@ export class ProductComponent implements OnInit, OnDestroy {
   prdID;
   isCustomerReviews: boolean = false;
   reviews = [];
-  recommendValue: boolean;
-  rateValue: any;
-  reviewTitle: string;
-  reviewBody: string;
+  recommendValue: boolean =true;
+  rateValue: any =1;
+
   subscription: Subscription[] = [];
   userID: any;
   bag: any;
@@ -37,6 +36,12 @@ export class ProductComponent implements OnInit, OnDestroy {
   productsInWishlist: any;
   categoryList: any;
 
+  nickname:string = "";
+  email :string= "";
+  reviewTitle: string ="";
+  reviewBody: string="";
+
+ 
   constructor(
     private productser: ProductsService,
     private activatedroute: ActivatedRoute,
@@ -179,22 +184,27 @@ export class ProductComponent implements OnInit, OnDestroy {
     } else {
       this.recommendValue = false;
     }
+    
   }
   radioforRatingChange(event: any) {
+
     this.rateValue = event.target.value;
+   
   }
   addReview() {
-    this.review = {
-      productId: this.prdID,
-      OverallRating: parseInt(this.rateValue),
-      recommend: this.recommendValue,
-      reviewTitle: this.reviewTitle,
-      review: this.reviewBody,
-      // userId: "0"
-    }
-    this.revservece.createReview(this.review)
-    var rate = this.overallRating();
-    this.productser.updateRate(rate, this.prdID)
+      this.review = {
+        productId: this.prdID,
+        OverallRating: parseInt(this.rateValue),
+        recommend: this.recommendValue,
+        reviewTitle: this.reviewTitle,
+        review: this.reviewBody,
+      }
+      console.log(this.review)
+      this.revservece.createReview(this.review)
+      var rate = this.overallRating();
+      this.productser.updateRate(rate, this.prdID)
+      
+  
   }
   plus() {
     if (this.count >= this.product.stock)
