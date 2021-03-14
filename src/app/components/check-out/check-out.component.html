@@ -19,25 +19,53 @@
 <div class="container-fluid text-justify" dir="auto">
   <div class="row">
     <div class="col-lg-9"><br>
-      <p class="fs-6"><i class="fas fa-check-circle"></i>{{'Checkout.ShippingAddress' | translate}}</p>
-      <form>
+      <form #orderForm="ngForm">
         <div class="col-sm-15">
-          <input [(ngModel)]="Username" pattern="[A-Za-z]{3}" title="Three letter country code" type="text" name="xyz" class="form-control"
-            placeholder="Name" aria-label="Name">
-           
-        </div><br>
+          <input [(ngModel)]="Username" title="Three letter country code" type="text" name="xyz" class="form-control"
+            placeholder="Name" aria-label="Name" #name="ngModel" minlength="4" required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
 
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 3 characters long.
+            </div>
+
+          </div>
+
+        </div><br>
+        <p class="fs-6"><i class="fas fa-check-circle"></i>{{'Checkout.ShippingAddress' | translate}}</p>
         <div class="row g-3">
           <div class="col-sm-7">
-            <input [(ngModel)]="City"  pattern="[A-Za-z]{30}" title="City must Contain Letters Only" type="text" class="form-control"
-              placeholder="City" name="city" aria-label="City">
-            
+            <input [(ngModel)]="City" title="City must Contain Letters Only" type="text" class="form-control"
+              placeholder="City" name="city" aria-label="City" #city1="ngModel" required>
+            <div *ngIf="city1.invalid && (city1.dirty || city1.touched)" class="alert alert-danger">
+              <div *ngIf="city1.errors.required">
+                city is required.
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="col-sm">
+            <input name="street" [(ngModel)]="Street" type="text" class="form-control" placeholder="Street Address"
+              aria-label="Street Address" required #street1="ngModel">
+            <div *ngIf="street1.invalid && (street1.dirty || street1.touched)" class="alert alert-danger">
+              <div *ngIf="street1.errors.required">
+                street is required.
+              </div>
+            </div>
           </div>
           <div class="col-sm">
-            <input name="street" [(ngModel)]="Street" type="text" class="form-control" placeholder="Street Address" aria-label="Street Address">
-          </div>
-          <div class="col-sm">
-            <input name="zip" [(ngModel)]="Zip" pattern="[0-9]{10}" type="number" class="form-control" placeholder="Zip" aria-label="Zip">
+            <input name="zip" [(ngModel)]="Zip" type="number" class="form-control" placeholder="Zip" aria-label="Zip"
+              #Z="ngModel" required>
+            <div *ngIf="Z.invalid && (Z.dirty || Z.touched)" class="alert alert-danger">
+              <div *ngIf="Z.errors.required">
+                ZIP is required.
+              </div>
+            </div>
           </div>
         </div>
         <br>
@@ -46,10 +74,35 @@
 
         <div class="row g-3">
           <div class="col-sm-7">
-            <input name="email" type="email" class="form-control" placeholder="Email" aria-label="Email">
+            <input name="email" type="email" [(ngModel)]="email" class="form-control" placeholder="Email"
+              aria-label="Email" #u="ngModel" email="true" required>
+            <div *ngIf="u.invalid && (u.dirty || u.touched)" class="alert alert-danger">
+              <div *ngIf="u.invalid ">
+                please enter a valid email
+              </div>
+              <div *ngIf="u.errors.required">
+                email is required.
+              </div>
+
+
+            </div>
+
+
           </div>
           <div class="col-sm">
-            <input name="mobilephone" [(ngModel)]="mobilePhone" type="text" class="form-control" placeholder="Mobile Phone" aria-label="Mobile Phone">
+            <input name="mobilephone" [(ngModel)]="mobilePhone" type="text" class="form-control"
+              placeholder="Mobile Phone" aria-label="Mobile Phone" required pattern="[0-9]{11}" #phone="ngModel">
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+
+              <div *ngIf="phone.errors.required">
+                phone is required.
+              </div>
+              <div *ngIf="phone.invalid">
+                phone numer must containes 11 numbers
+              </div>
+
+
+            </div>
           </div>
         </div>
         <br>
@@ -62,7 +115,7 @@
                 <p class="fs-5">{{'Checkout.VIPCode' | translate}}</p>
               </button>
             </h2> -->
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            <!-- <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
 
@@ -79,7 +132,7 @@
                 <br>
 
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!--/////////////////////////Accord end/////////////////-->
@@ -88,18 +141,35 @@
         <div class="col-sm-15">
           <input type="text" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-            placeholder="Card Number" aria-label="Card Number">
+            placeholder="Card Number" aria-label="Card Number"
+            [(ngModel)]="card"
+            required name="cardnum" #cardn="ngModel">
+          <div *ngIf="cardn.invalid && (cardn.dirty || cardn.touched)" class="alert alert-danger">
+            
+            <div *ngIf="cardn.errors.required">
+              Card Number is required.
+            </div>
+
+            <div *ngIf="cardn.invalid">
+              Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
+            </div>
+           
+
+          </div>
+
         </div><br>
 
         <div class="row g-3">
           <div class="col-sm-3">
             <input type="text" class="form-control" placeholder="Expiry Date" aria-label="Expiry Date">
           </div>
-          <div class="col-sm-1">
+          <div class="col-sm-2">
             <input type="text" class="form-control" placeholder="CVV" aria-label="CVV">
           </div>
         </div><br>
-        <button type="submit" class="btn btn-primary" (click)="addOrder()">{{'Checkout.Place' | translate}}</button>
+        <button type="submit" class="btn btn-primary"
+        [disabled]="orderForm.invalid"
+        (click)="addOrder()">{{'Checkout.Place' | translate}}</button>
 
       </form>
     </div>
@@ -127,7 +197,7 @@
             <p>{{ (getTotal()+getTotal()*14/100) | currency }}</p>
           </div>
           <img src='assets/images/freeholiday.png' style="width: 150px; height: auto;">
-          
+
         </div>
       </div>
       <!--/////////////////////////////////////////////////////-->

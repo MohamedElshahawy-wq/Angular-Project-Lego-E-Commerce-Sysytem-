@@ -203,6 +203,12 @@ export class ProductComponent implements OnInit, OnDestroy {
       this.revservece.createReview(this.review)
       var rate = this.overallRating();
       this.productser.updateRate(rate, this.prdID)
+
+      this.toastr.success(`thank you for sharing your experince with us `, 'Done', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
       
   
   }
