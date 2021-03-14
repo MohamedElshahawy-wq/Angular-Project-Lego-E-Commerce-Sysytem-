@@ -14,7 +14,7 @@
 <div class="container-fluid firstbar text-justify" dir="auto" dir="auto">
     <div class="row py-3">
         <ul class="breadcrumb bg-white w-100 m-0">
-            <li class="breadcrumb-item"><a [routerLink]="['/Home']"></a>{{'header.Home'|translate}}</a></li>
+            <li class="breadcrumb-item"><a [routerLink]="['/Home']">{{'header.Home'|translate}}</a></li>
             <li class="breadcrumb-item"><a href="javascript:void(0)">{{product?.relatedProducts[0]}}</a></li>
             <li *ngIf="translate.currentLang=='en'" class="breadcrumb-item active">{{product?.name}}</li>
             <li *ngIf="translate.currentLang=='ar'" class="breadcrumb-item active">{{product?.arabicName}}</li>
