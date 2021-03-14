@@ -16,11 +16,13 @@ import { ToastrService } from 'ngx-toastr';
 
 
 export class CheckOutComponent implements OnInit, OnDestroy {
-
+  
   Username: string;
   City: string;
   Street: string;
   Zip: string;
+  email:string;
+  card:string;
   totalPrice: number = 0;
   tax: number = 14;
   ordarTotal: number = 0;

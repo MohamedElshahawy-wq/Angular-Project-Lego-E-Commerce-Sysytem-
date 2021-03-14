@@ -191,6 +191,19 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.rateValue = event.target.value;
    
   }
+  overallRating() {
+    var sum = 0;
+    var avg;
+    if (this.reviews.length > 0) {
+      for (let i = 0; i < this.reviews.length; i++) {
+        sum += this.reviews[i].OverallRating;
+      }
+      avg = sum / this.reviews.length;
+      return Math.ceil(avg);
+    }
+    else return 0;
+
+  }
   addReview() {
       this.review = {
         productId: this.prdID,
@@ -200,9 +213,18 @@ export class ProductComponent implements OnInit, OnDestroy {
         review: this.reviewBody,
       }
       console.log(this.review)
-      this.revservece.createReview(this.review)
-      var rate = this.overallRating();
-      this.productser.updateRate(rate, this.prdID)
+      this.revservece.createReview(this.review).then((value)=>{
+        var rate = this.overallRating();
+        this.productser.updateRate(rate, this.prdID).then((value)=>console.log('hna'));
+
+      })
+     
+
+      this.toastr.success(`thank you for sharing your experince with us `, 'Done', {
+        closeButton: true,
+        timeOut: 5000,
+        progressBar: true
+      });
       
   
   }
@@ -222,18 +244,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   ChangeImage(img: string) {
     this.product.image = img;
   }
-  overallRating() {
-    var sum = 0;
-    var avg;
-    if (this.reviews.length > 0) {
-      for (let i = 0; i < this.reviews.length; i++) {
-        sum += this.reviews[i].OverallRating;
-      }
-      avg = sum / this.reviews.length;
-      return Math.ceil(avg);
-    }
-    else return 0;
-
-  }
+  
 
 }
