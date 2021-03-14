@@ -1,96 +1,126 @@
-    <!-- Start Body Main -->
-    <div class="container-fluid" style="padding-left: 0;padding-right: 0;" dir="auto">
-        <div class="container text-center">
-            <span class="header" onclick="location.href='find-store.html'">{{'FindStore.Stores' | translate}}</span>            
-        </div>
-        <div class="container-fluid p-0 py-md-2 px-md-4" style="background: #EEEEEE;font-size: 18px;">
-            <div class="card smallD" style="background: #F8F8F8;border-left: 5px #0092BC solid;transform: scale(0.7) ;">
-                <div class="card-body row text-center pl-4" dir="auto">
-                    <div class="col-1 text-center mt-md-2 mt-4" style="background: #0092BC;color: #fff; border-radius: 50px;padding-top: 11px;height: 60px;"><h2>{{'FindStore.i' | translate}}</h2></div>
-                    <p class="card-text col-11 text-justify">{{'FindStore.Most' | translate}}</p>
+<div id="map" class="map"></div>
+
+<!-- Start Body Main -->
+<div class="container-fluid" style="padding-left: 0;padding-right: 0;" dir="auto">
+    <div class="container text-center">
+        <span class="header" onclick="location.href='find-store.html'">{{'FindStore.Stores' | translate}}</span>
+    </div>
+    <div class="container-fluid p-0 py-md-2 px-md-4" style="background: #EEEEEE;font-size: 18px;">
+        <div class="card smallD" style="background: #F8F8F8;border-left: 5px #0092BC solid;transform: scale(0.7) ;">
+            <div class="card-body row text-center pl-4" dir="auto">
+                <div class="col-1 text-center mt-md-2 mt-4"
+                    style="background: #0092BC;color: #fff; border-radius: 50px;padding-top: 11px;height: 60px;">
+                    <h2>{{'FindStore.i' | translate}}</h2>
                 </div>
+                <p class="card-text col-11 text-justify">{{'FindStore.Most' | translate}}</p>
             </div>
         </div>
-        <div class="container-fluid smallD2">
-            <div class="card" style="background: #F8F8F8;padding-bottom: 20px; border-radius: 10px;margin-left: 70px;margin-right: 70px;">
-                <div class="card-body">
-                    <h2 class="card-text text-center">{{'FindStore.Find' | translate}}</h2>
-                    <!-- <span class="plain">Search by city, zipcode or place of interest</span> -->
-                      <mat-form-field class="example-full-width text-justify" dir="auto">
-                        <mat-label>{{'FindStore.input'|translate}}</mat-label>
-                        <input matInput >
-                        <mat-icon matSuffix><i class="fa fa-search text-grey"></i></mat-icon>
-                        </mat-form-field>
-                      <!-- Old Code-->
-                    <!-- <div class="input-group md-form form-sm form-2 pl-0 pt-4 pb-1">
+    </div>
+    <div class="container-fluid smallD2">
+        <div class="card"
+            style="background: #F8F8F8;padding-bottom: 20px; border-radius: 10px;margin-left: 70px;margin-right: 70px;">
+            <div class="card-body">
+                <h2 class="card-text text-center">{{'FindStore.Find' | translate}}</h2>
+                <!-- <span class="plain">Search by city, zipcode or place of interest</span> -->
+                <mat-form-field class="example-full-width text-justify" dir="auto">
+                    <mat-label>{{'FindStore.input'|translate}}</mat-label>
+                    <input matInput #findStoreSearch>
+                    <mat-icon matSuffix><i class="fa fa-search text-grey"></i></mat-icon>
+                </mat-form-field>
+                <!-- Old Code-->
+                <!-- <div class="input-group md-form form-sm form-2 pl-0 pt-4 pb-1">
                         <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search by city, zipcode or place of interest" aria-label="Search" style="border: none;">
                         <div class="input-group-append">
                           <span class="input-group-text" id="basic-text1" style="border: none;background: #fff;"><i class="fa fa-search text-grey"></i></span>
                         </div>
                     </div> -->
-                    <div class="text-center pt-4">
-                        <button class="btnDark py-2" style="background: #4b4d4e;color: #fff;">{{'FindStore.ViewStore' | translate}}</button>
-                        <button class="btnDark py-2 ml-2" style="background: #F8F8F8;color: #000;">{{'FindStore.ViewAll' | translate}}</button>
+                <!-- New Code-->
+                <div class="text-center pt-4">
+                    <button (click)="viewStore()" class="btnDark py-2" style="background: #4b4d4e;color: #fff;">{{'FindStore.ViewStore' |
+                        translate}}</button>
+                    <button (click)="viewAll()" class="btnDark py-2 ml-2" style="background: #F8F8F8;color: #000;">{{'FindStore.ViewAll' |
+                        translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center pb-1 pt-4" style="background: #EEEEEE;">
+        <h2 class="big">{{'FindStore.WhatHappening' | translate}}</h2>
+    </div>
+    <!--  -->
+    <div class="container-fluid justify-content-center" style="background: #EEEEEE;padding-bottom: 90px !important;">
+        <div class="row">
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/Olaf.png" class="rounded mb-3" alt="Cinque 1" width="100%">
+                <span>{{'FindStore.FreeOlaf' | translate}}</span>
+            </div>
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/BB8.png" class="rounded mb-3" alt="Cinque 2" width="100%">
+                <span>{{'FindStore.FreePurchases' | translate}}</span>
+            </div>
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/Ice_Skating_Rink.jpg" class="rounded mb-3" alt="Cinque 3" width="100%">
+                <span>{{'FindStore.FreeExclusive' | translate}}</span>
+            </div>
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/VIP_Gift_Set.jpg" class="rounded mb-3" alt="Cinque 4" width="100%">
+                <span>{{'FindStore.FreeHoliday' | translate}}</span>
+            </div>
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/train.jpg" class="rounded mb-3" alt="Cinque 5" width="100%">
+                <span>{{'FindStore.InStores' | translate}}</span>
+            </div>
+            <div class="text-center cenDIV col-md-4 col-6">
+                <img src="assets/images/Capture.PNG" class="rounded mb-3" alt="Cinque 6" width="100%">
+                <span>{{'FindStore.VIPsONLY' | translate}}</span>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container-fluid blueDIV">
+        <div class="row">
+            <div class="col-md-6 m-md-4 m-0 text-justify" dir="auto">
+                <h2>{{'FindStore.storecalender' | translate}}</h2>
+                <p>{{'FindStore.happening' | translate}}</p>
+                <button class="btnImag py-md-1" onclick="window.location.href='assets/03_March_Calendar_US.pdf'" download>{{'FindStore.DownloadPDF' | translate}} &nbsp;<i
+                        class="fa fa-arrow-circle-down"></i></button>
+                <button class="btnImag py-md-1" data-toggle="modal" data-target="#myModal">{{'FindStore.OpenTo' |
+                    translate}} &nbsp; <i class="fa fa-arrows-alt"></i></button>
+            </div>
+            <img class="col-md-5 mt-4" src="assets/images/PDFL.jpeg" alt="">
+        </div>
+    </div>
+    <div class="container-fluid text-center p-4">
+        <h2 class="big mb-2">{{'FindStore.VisitUs' | translate}}</h2>
+    </div>
+    <div class="container-fluid row justify-content-center" style="background: #FBFBFB; padding-bottom: 80px;">
+        <div class="text-center cenDIV col-6">
+            <img src="assets/images/come1.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h5>{{'FindStore.EarnPoints' | translate}}</h5>
+        </div>
+        <div class="text-center cenDIV col-6">
+            <img src="assets/images/come2.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
+            <h5>{{'FindStore.Come' | translate}}</h5>
+        </div>
+    </div>
+</div>
+<!-- End Body Main -->
+<div class="container">
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <embed src="assets/03_March_Calendar_US.pdf" frameborder="0" width="100%" height="500px">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{'User.Close'|translate}}</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-center pb-1 pt-4" style="background: #EEEEEE;">
-            <h2 class="big">{{'FindStore.WhatHappening' | translate}}</h2>
-        </div>
-        <!--  -->
-        <div class="container-fluid justify-content-center" style="background: #EEEEEE;padding-bottom: 90px !important;">
-            <div class="row">
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/Olaf.png" class="rounded mb-3" alt="Cinque 1" width="100%">
-                    <span>{{'FindStore.FreeOlaf' | translate}}</span>
-                </div>
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/BB8.png" class="rounded mb-3" alt="Cinque 2" width="100%">
-                    <span>{{'FindStore.FreePurchases' | translate}}</span>
-                </div>
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/Ice_Skating_Rink.jpg" class="rounded mb-3" alt="Cinque 3" width="100%">
-                    <span>{{'FindStore.FreeExclusive' | translate}}</span>
-                </div>
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/VIP_Gift_Set.jpg" class="rounded mb-3" alt="Cinque 4" width="100%">
-                    <span>{{'FindStore.FreeHoliday' | translate}}</span>
-                </div>
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/train.jpg" class="rounded mb-3" alt="Cinque 5" width="100%">
-                    <span>{{'FindStore.InStores' | translate}}</span>
-                </div>
-                <div class="text-center cenDIV col-md-4 col-6">
-                    <img src="assets/images/Capture.PNG" class="rounded mb-3" alt="Cinque 6" width="100%">
-                    <span>{{'FindStore.VIPsONLY' | translate}}</span>
-                </div>
-            </div>
-        </div>
-        <!--  -->
-        <div class="container-fluid blueDIV">
-            <div class="row">
-                <div class="col-md-6 m-md-4 m-0 text-justify" dir="auto">
-                    <h2>{{'FindStore.storecalender' | translate}}</h2>
-                    <p>{{'FindStore.happening' | translate}}</p>
-                    <button class="btnImag py-md-1">{{'FindStore.DownloadPDF' | translate}} &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
-                    <button class="btnImag py-md-1">{{'FindStore.OpenTo' | translate}} &nbsp; <i class="fa fa-arrows-alt"></i></button>
-                </div>
-                <img class="col-md-5 mt-4" src="assets/images/PDFL.jpeg" alt="">
-            </div>
-        </div>
-        <div class="container-fluid text-center p-4">
-            <h2 class="big mb-2">{{'FindStore.VisitUs' | translate}}</h2>
-        </div>
-        <div class="container-fluid row justify-content-center" style="background: #FBFBFB; padding-bottom: 80px;">
-            <div class="text-center cenDIV col-6">
-                <img src="assets/images/come1.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h5>{{'FindStore.EarnPoints' | translate}}</h5>
-            </div>
-            <div class="text-center cenDIV col-6">
-                <img src="assets/images/come2.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
-                <h5>{{'FindStore.Come' | translate}}</h5>
-            </div>
-        </div>
     </div>
-    <!-- End Body Main -->
+</div>

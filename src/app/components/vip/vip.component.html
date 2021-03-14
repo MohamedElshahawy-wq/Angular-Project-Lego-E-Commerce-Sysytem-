@@ -19,7 +19,7 @@
                                     <h2>{{'VIP.Rewarded' |translate}}</h2>
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn">{{'VIP.Rewards' |translate}}</button>
-                                        <button type="button" class="btn butt2">{{'VIP.Online' |translate}}</button>
+                                        <button type="button" class="btn butt2" routerLink="/EditAccount">{{'VIP.Online' |translate}}</button>
                                     </div>
                                     <div><img class="imgBlue" src="assets/images/VIP.png" alt="VIP"></div>
                                     <div class="row customFont">
@@ -27,7 +27,7 @@
                                             <p>{{'VIP.HaveAccount' |translate}}</p>
                                         </div>
                                         <div class="col-md-7">
-                                            <button type="button" class="btn">{{'wishList.SignIn' |translate}} <span>></span></button>
+                                            <button type="button" class="btn" routerLink="/EditAccount">{{'wishList.SignIn' |translate}} <span>></span></button>
                                         </div>
                                     </div>
                                     <hr>
@@ -55,7 +55,7 @@
                                 <img class="text-justify" dir="auto"src="assets/images/logo 1997.JPG" alt="">
                                 <h2 class="text-justify" dir="auto">{{'VIP.limited' |translate}}</h2>
                                 <p class="text-justify" dir="auto">{{'VIP.chance' |translate}}</p>
-                                <button class="btn" style="font-size: 20px;width: 200px;">{{'VIP.more' |translate}} <span>></span></button>
+                                <button class="btn" style="font-size: 20px;width: 200px;" data-toggle="modal" data-target="#exampleModalLong">{{'VIP.more' |translate}} <span>></span></button>
                             </div>
                             <img class="col-6" src="assets/images/Originals_HighSnobiety-Home-202012-Hero-Standard-Large2.webp" width="100%">
                         </div>
@@ -122,7 +122,7 @@
                                 <h2 style="font-weight: 400;">{{'VIP.TodayBuild' |translate}}</h2>
                                 <p>{{'VIP.following' |translate}}</p>
                                 <p style="font-weight: 375;">{{'VIP.stores' |translate}}</p>
-                                <button class="btn">{{'VIP.joinNow' |translate}}<span>></span></button>
+                                <button class="btn" routerLink="/EditAccount">{{'VIP.joinNow' |translate}}<span>></span></button>
                             </div>
                         </div>
                     </div>
@@ -180,9 +180,37 @@
                     <h2>{{'VIP.AWESOME' |translate}}</h2>
                     <p>{{'VIP.Visit' |translate}}</p>
                 </div>
-                <button class="btn">{{'VIP.joinNow'|translate}} <span><i class="fa fa-angle-right"></i></span></button>
+                <button class="btn" routerLink="/EditAccount">{{'VIP.joinNow'|translate}} <span><i class="fa fa-angle-right"></i></span></button>
                 <img src="assets/images/VIP_Landing_Page_Gallery-Standard-Large.webp">
             </div>
             <!-- The End -->
         </div>
         <!-- End Body Main -->
+
+        
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{'LegoLife.Life' | translate}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>{{'modal1'|translate}}</p>
+            <p>{{'modal2'|translate}}</p>
+            <p>{{'modal3'|translate}}</p>
+            <p>​{{'modal4'|translate}}</p>
+            <p>{{'modal5'|translate}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'User.Close'|translate}}</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal -->

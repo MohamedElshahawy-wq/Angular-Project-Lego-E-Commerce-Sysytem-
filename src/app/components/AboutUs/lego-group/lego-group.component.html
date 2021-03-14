@@ -62,7 +62,7 @@
                 <div class="col-12 text-center p-4">
                     <h2 class="m-4" style="font-weight: bold;">{{'Sustainability.privately' | translate}}</h2>
                 </div>
-                <div class="col-12 linkA  text-center p-4">
+                <div class="col-12 linkA  text-center p-4" data-toggle="modal" data-target="#exampleModalLong">
                     <a href="javascript:void(0)">{{'About.LearnAbout' | translate}}
                     <i class="fa fa-angle-right ml-2 "></i></a>
                 </div>
@@ -73,7 +73,7 @@
                 <img src="assets/images/group1.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
                 <h3>{{'About.LEGOBrand'|translate}}</h3>
                 <p>{{'WHOWE.deeply'|translate}}</p>
-                <div class="col-12 linkA  text-center p-4">
+                <div class="col-12 linkA  text-center p-4"data-toggle="modal" data-target="#exampleModalLong">
                     <a href="javascript:void(0)">{{'Sustainability.Brand'|translate}}
                     <i class="fa fa-angle-right ml-2 "></i></a>
                 </div>
@@ -82,7 +82,7 @@
                 <img src="assets/images/group2.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
                 <h3>{{'Sustainability.Promises'|translate}}</h3>
                 <p>{{'WHOWE.know'|translate}}</p>
-                <div class="col-12 linkA  text-center p-4">
+                <div class="col-12 linkA  text-center p-4"data-toggle="modal" data-target="#exampleModalLong">
                     <a href="javascript:void(0)">{{'Sustainability.OurPromise'|translate}}
                     <i class="fa fa-angle-right ml-2 "></i></a>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="text-center col-12" style="cursor: pointer;">
                     <img src="assets/images/Ownership_tall.jpg" class="rounded mb-3" alt="Cinque 1" width="100%">
                     <p>{{'Sustainability.Foundation'|translate}}</p>
-                    <div class="linkA p-2">
+                    <div class="linkA p-2" data-toggle="modal" data-target="#exampleModalLong">
                         <a href="javascript:void(0)">{{'Sustainability.information'|translate}}
                         <i class="fa fa-angle-right ml-2 "></i></a>
                     </div>
@@ -115,3 +115,29 @@
         <!--  -->
     </div>
     <!-- End Body Main -->
+        
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{'LegoLife.Life' | translate}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>{{'modal1'|translate}}</p>
+            <p>{{'modal2'|translate}}</p>
+            <p>{{'modal3'|translate}}</p>
+            <p>​{{'modal4'|translate}}</p>
+            <p>{{'modal5'|translate}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'User.Close'|translate}}</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal -->

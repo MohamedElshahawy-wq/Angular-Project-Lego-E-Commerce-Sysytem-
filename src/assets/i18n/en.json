@@ -305,7 +305,7 @@
         "storecalender": "store calender",
         "happening": "see what's happening this month",
         "DownloadPDF": "Download PDF",
-        "OpenTo": "Open to full view",
+        "OpenTo": "Open to view",
         "VisitUs": "Come Visit Us",
         "EarnPoints": "Earn points when you shop in-store",
         "Come": "Come and shop in-store"
@@ -752,5 +752,10 @@
     "CountryReg":"Country and region",
     "Avatar":"Avatar",
     "MyInformation":"My Information",
-    "Logout":"Logout"
+    "Logout":"Logout",
+    "modal1":"LEGO® Life Magazine is a FREE magazine created towards kids between ages 5 and 9 that is mailed to your home 5 times a year. Every issue is packed full of LEGO news and behind-the-bricks interviews, comic adventures, games and puzzles, building challenges and Cool Creations built by LEGO fans. Not to mention, sneak peeks at the latest sets and themes.",
+    "modal2":"Parents and guardians can sign up children between the ages of 5 and 9. If your child is under the age of 5, there are lots of fun experiences better suited to our youngest builders at our DUPLO® site here. If your child is older than 9, he or she would more likely enjoy the cool, personalized experiences of the LEGO® Life app",
+    "modal3":"Sometimes magazines become lost in the post or cannot be delivered due to an unforeseen issue. Always remember to keep your address updated by clicking here. For any other issue, contact Customer Service who can replace a lost magazine.",
+    "modal4":"It really is absolutely free! The magazine is printed and posted to you free of charge. It’s our way of celebrating LEGO® fans all around the world.",
+    "modal5":"Starting with Issue 4 2020, there are two versions of the LEGO Life Magazine available. These feature unique material for children younger than 7 and children above 7."
 }

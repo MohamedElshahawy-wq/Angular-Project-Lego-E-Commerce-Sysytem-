@@ -53,7 +53,7 @@
         <div class="container text-center">
             <div class="head">{{'About.OnlyGood' | translate}}</div>
             <p class="prag px-4">{{'About.children1' | translate}}<span class="specail">{{'About.children2' | translate}}</span>{{'About.children3' | translate}}</p>
-            <div class="linkA">
+            <div class="linkA"data-toggle="modal" data-target="#exampleModalLong">
                 <a href="javascript:void(0)">{{'About.LearnAbout' | translate}}
                     <i class="fa fa-angle-right ml-2 "></i></a>
             </div>
@@ -63,7 +63,7 @@
         <div class="container text-center">
             <div class="head">{{'About.Inspire' | translate}}</div>
             <p class="prag px-4">{{'About.Inspire1' | translate}}<span class="specail">{{'About.Inspire2' | translate}}</span> {{'About.Inspire3' | translate}}</p>
-            <div class="linkA">
+            <div class="linkA"data-toggle="modal" data-target="#exampleModalLong">
                 <a href="javascript:void(0)">{{'About.Inspire4' | translate}}
                     <i class="fa fa-angle-right ml-2 "></i></a>
             </div>
@@ -75,11 +75,11 @@
                 <div class="container">
                     <h1>{{'About.History' | translate}}</h1>
                     <h5>{{'About.History1' | translate}}</h5>
-                    <div class="linkA">
+                    <div class="linkA"data-toggle="modal" data-target="#exampleModalLong">
                         <a href="javascript:void(0)">{{'About.History2' | translate}}
                             <i class="fa fa-angle-right ml-2 "></i></a>
                     </div>
-                    <div class="linkA">
+                    <div class="linkA"data-toggle="modal" data-target="#exampleModalLong">
                         <a href="javascript:void(0)">{{'About.History3' | translate}}
                             <i class="fa fa-angle-right ml-2 "></i></a>
                     </div>
@@ -141,3 +141,31 @@
     </div>
 </div>
 <!-- End Body Main -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{'LegoLife.Life' | translate}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>{{'modal1'|translate}}</p>
+            <p>{{'modal2'|translate}}</p>
+            <p>{{'modal3'|translate}}</p>
+            <p>​{{'modal4'|translate}}</p>
+            <p>{{'modal5'|translate}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'User.Close'|translate}}</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal -->
+
+
