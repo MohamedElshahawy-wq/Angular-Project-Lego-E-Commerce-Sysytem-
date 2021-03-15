@@ -10,7 +10,8 @@
     <div *ngIf="productsInBag!=0" class="col-lg-8">
 
       <span class="text-start">
-        <h3>{{'MyBag.Cart'|translate}}</h3><a href="Wish.html"></a>
+        <h3>{{'MyBag.Cart'|translate}}</h3>
+        <!-- <a href="Wish.html"></a> -->
         <p class="text-end">{{'MyBag.View'|translate}} </p>
       </span>
       <div class="jumbotron" style="background-color: #ffeacc ;padding:10px ;border: 1px #cfcfcf solid ">
@@ -196,7 +197,7 @@
 
       <div class="bg-light">
         {{'MyBag.order'|translate}}<br><br>
-        <a href="#">{{'MyBag.Handling'|translate}} </a>
+        <p>{{'MyBag.Handling'|translate}} </p>
         <a>{{'MyBag.Returns'|translate}}</a><br><br>
         {{'MyBag.PaymentMethods'|translate}}<br>
         <span class="col-lg-5">

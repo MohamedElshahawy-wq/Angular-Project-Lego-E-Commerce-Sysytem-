@@ -105,7 +105,7 @@
                   id="rememberMeCheck"
                 />
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   id="signinCheckLabel"
                   class="form-check-label d-flex text-justify justify-content-left" dir="auto"
                   for="rememberMeCheck">{{'login.Remember' |translate}}</a>
@@ -123,7 +123,7 @@
           </form>
 
           <div class="d-flex" dir="auto">
-            <a href="#" id="forgotPassword" [routerLink]="['/ForgotPassword']" dir="auto"
+            <a id="forgotPassword" [routerLink]="['/ForgotPassword']" dir="auto"
               ><strong>{{'login.ForgotPass' |translate}}</strong></a>
           </div>
           
@@ -134,7 +134,7 @@
           </div>
           <br />
           <p style="margin-bottom: 3px">{{'login.Dont' |translate }}</p>
-          <a href="#" style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">{{'login.CrAccount' | translate}}</a>
+          <a style="font-size: 14px" class="nav-link" [routerLink]="['/Register']">{{'login.CrAccount' | translate}}</a>
         </div>
       </div>
       <br />
