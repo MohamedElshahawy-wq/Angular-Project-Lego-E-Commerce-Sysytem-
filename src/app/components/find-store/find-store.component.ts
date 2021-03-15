@@ -59,6 +59,6 @@ viewAll(){
   console.log("value: ",this.findStoreSearch.nativeElement.value);
   var view = this.map.getView();
   view.setCenter(ol.proj.fromLonLat([ 73.8500, 22.5204]));
-  // view.setZoom(8)
+  // view.setZoom(8);
 }
 }
