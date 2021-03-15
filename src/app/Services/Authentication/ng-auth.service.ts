@@ -77,7 +77,11 @@ export class NgAuthService {
           this.SetWishlist(result.user);
           this.router.navigate(['/Home']);
         }).catch((error) => {
-          console.log(error.message)
+          this.toastr.error(`${error.message}`, 'Error', {
+            closeButton: true,
+            timeOut: 5000,
+            progressBar: true
+          });
         })
     }   
   
@@ -91,7 +95,11 @@ export class NgAuthService {
           progressBar: true
         });
       }).catch((error) => {
-        console.log(error)
+        this.toastr.error(`${error.message}`, 'Error', {
+          closeButton: true,
+          timeOut: 5000,
+          progressBar: true
+        });
       })
     }
   
