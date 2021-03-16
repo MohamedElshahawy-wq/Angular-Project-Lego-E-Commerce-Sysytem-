@@ -17,27 +17,27 @@ export class FindStoreComponent implements OnInit {
 
   }
 // 
-viewStore() {
-  if(this.findStoreSearch.nativeElement.value == 'egypt')
-  {
-  console.log("value: ",this.findStoreSearch.nativeElement.value);
-  this.map = new ol.Map({
-      target: 'map',
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([22.5204, 73.8500]),
-        zoom: 8
-      })
-    });
-    // 
-    console.log("value: ", this.findStoreSearch.nativeElement.value);
-    var view = this.map.getView();
-    view.setCenter(ol.proj.fromLonLat([73.8500, 22.5204]));
-    // view.setZoom(8);
-  }
-}
+// viewStore() {
+//   if(this.findStoreSearch.nativeElement.value == 'egypt')
+//   {
+//   console.log("value: ",this.findStoreSearch.nativeElement.value);
+//   // this.map = new ol.Map({
+//   //     target: 'map',
+//   //     layers: [
+//   //       new ol.layer.Tile({
+//   //         source: new ol.source.OSM()
+//   //       })
+//   //     ],
+//   //     view: new ol.View({
+//   //       center: ol.proj.fromLonLat([22.5204, 73.8500]),
+//   //       zoom: 8
+//   //     })
+//   //   });
+//     // 
+//     console.log("value: ", this.findStoreSearch.nativeElement.value);
+//     // var view = this.map.getView();
+//     // view.setCenter(ol.proj.fromLonLat([73.8500, 22.5204]));
+//     // view.setZoom(8);
+//   }
+// }
 }

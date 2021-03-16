@@ -16,17 +16,17 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid smallD2">
+    <!-- <div class="container-fluid smallD2">
         <div class="card"
             style="background: #F8F8F8;padding-bottom: 20px; border-radius: 10px;margin-left: 70px;margin-right: 70px;">
             <div class="card-body">
-                <h2 class="card-text text-center">{{'FindStore.Find' | translate}}</h2>
+                <h2 class="card-text text-center">{{'FindStore.Find' | translate}}</h2> -->
                 <!-- <span class="plain">Search by city, zipcode or place of interest</span> -->
-                <mat-form-field class="example-full-width text-justify" dir="auto">
+                <!-- <mat-form-field class="example-full-width text-justify" dir="auto">
                     <mat-label>{{'FindStore.input'|translate}}</mat-label>
                     <input matInput #findStoreSearch>
                     <mat-icon matSuffix><i class="fa fa-search text-grey"></i></mat-icon>
-                </mat-form-field>
+                </mat-form-field> -->
                 <!-- Old Code-->
                 <!-- <div class="input-group md-form form-sm form-2 pl-0 pt-4 pb-1">
                         <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search by city, zipcode or place of interest" aria-label="Search" style="border: none;">
@@ -35,15 +35,29 @@
                         </div>
                     </div> -->
                 <!-- New Code-->
-                <div class="text-center pt-4">
+                <!-- <div class="text-center pt-4">
                     <button (click)="viewStore()" class="btnDark py-2" style="background: #4b4d4e;color: #fff;">{{'FindStore.ViewStore' |
                         translate}}</button>
-                    <button (click)="viewAll()" class="btnDark py-2 ml-2" style="background: #F8F8F8;color: #000;">{{'FindStore.ViewAll' |
+                    <button (click)="viewStore()" class="btnDark py-2 ml-2" style="background: #F8F8F8;color: #000;">{{'FindStore.ViewAll' |
                         translate}}</button>
                 </div>
             </div>
+        </div> -->
+    <!-- </div> -->
+    <div class="container-fluid blueDIV">
+        <div class="row">
+            <div class="col-md-6 m-md-4 m-0 text-justify" dir="auto">
+                <h2>{{'FindStore.storecalender' | translate}}</h2>
+                <p>{{'FindStore.happening' | translate}}</p>
+                <button class="btnImag py-md-1" onclick="window.location.href='assets/03_March_Calendar_US.pdf'" download>{{'FindStore.DownloadPDF' | translate}} &nbsp;<i
+                        class="fa fa-arrow-circle-down"></i></button>
+                <button class="btnImag py-md-1" data-toggle="modal" data-target="#myModal">{{'FindStore.OpenTo' |
+                    translate}} &nbsp; <i class="fa fa-arrows-alt"></i></button>
+            </div>
+            <img class="col-md-5 mt-4" src="assets/images/PDFL.jpeg" alt="">
         </div>
     </div>
+    <!--  -->
     <div class="container-fluid text-center pb-1 pt-4" style="background: #EEEEEE;">
         <h2 class="big">{{'FindStore.WhatHappening' | translate}}</h2>
     </div>
@@ -77,19 +91,7 @@
         </div>
     </div>
     <!--  -->
-    <div class="container-fluid blueDIV">
-        <div class="row">
-            <div class="col-md-6 m-md-4 m-0 text-justify" dir="auto">
-                <h2>{{'FindStore.storecalender' | translate}}</h2>
-                <p>{{'FindStore.happening' | translate}}</p>
-                <button class="btnImag py-md-1" onclick="window.location.href='assets/03_March_Calendar_US.pdf'" download>{{'FindStore.DownloadPDF' | translate}} &nbsp;<i
-                        class="fa fa-arrow-circle-down"></i></button>
-                <button class="btnImag py-md-1" data-toggle="modal" data-target="#myModal">{{'FindStore.OpenTo' |
-                    translate}} &nbsp; <i class="fa fa-arrows-alt"></i></button>
-            </div>
-            <img class="col-md-5 mt-4" src="assets/images/PDFL.jpeg" alt="">
-        </div>
-    </div>
+    
     <div class="container-fluid text-center p-4">
         <h2 class="big mb-2">{{'FindStore.VisitUs' | translate}}</h2>
     </div>
