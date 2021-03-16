@@ -60,7 +60,7 @@
           </div>
           <div class="col-sm">
             <input name="zip" [(ngModel)]="Zip" type="number" class="form-control" placeholder="Zip" aria-label="Zip"
-              #Z="ngModel" required>
+              #Z="ngModel" required  min="0" oninput="validity.valid||(value='');">
             <div *ngIf="Z.invalid && (Z.dirty || Z.touched)" class="alert alert-danger">
               <div *ngIf="Z.errors.required">
                 ZIP is required.
@@ -139,10 +139,10 @@
         <br>
         <p class="fs-4"><i class="fas fa-check-circle"></i>{{'Checkout.Payment' | translate}} </p>
         <div class="col-sm-15">
-          <input type="text" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+          <input type="number" class="form-control" 
+            
             placeholder="Card Number" aria-label="Card Number"
-            [(ngModel)]="card"
+            [(ngModel)]="card"  min="0" oninput="validity.valid||(value='');"
             required name="cardnum" #cardn="ngModel">
           <div *ngIf="cardn.invalid && (cardn.dirty || cardn.touched)" class="alert alert-danger">
             
@@ -151,7 +151,7 @@
             </div>
 
             <div *ngIf="cardn.invalid">
-              Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
+              Must contain numbers Only
             </div>
            
 
@@ -160,12 +160,12 @@
         </div><br>
 
         <div class="row g-3">
-          <div class="col-sm-3">
+          <!-- <div class="col-sm-3">
             <input type="text" class="form-control" placeholder="Expiry Date" aria-label="Expiry Date">
           </div>
           <div class="col-sm-2">
             <input type="text" class="form-control" placeholder="CVV" aria-label="CVV">
-          </div>
+          </div> -->
         </div><br>
         <button type="submit" class="btn btn-primary"
         [disabled]="orderForm.invalid"
@@ -203,15 +203,15 @@
       <!--/////////////////////////////////////////////////////-->
       <div class="card text-center" style="width: 18rem;" dir="auto">
         <div class="card-body text-justify" dir="auto">
-          <h5 class="card-title">{{'Checkout.Wedding' | translate}} 2018</h5>
+          <h5 class="card-title card text-center">{{'Checkout.Wedding' | translate}} 2018</h5>
           <!-- <p class="card-text"><p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br>  <b>$9.99</b></p> -->
           <!-- <p style="color: darkseagreen">Available now</p> <br> QTY : 3 <br><b>$9.99</b> -->
-          <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br>$9.99<br>
+          <!-- <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br>$9.99<br> -->
 
           <img src="assets/images/weddingfavour.png" style="width: 150px; height: auto;">
 
-          <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br> {{'Checkout.QTY' | translate}} :
-          3 <br> <b>$9.99</b>
+          <!-- <p style="color: darkseagreen">{{'Checkout.Available' | translate}}</p> <br> {{'Checkout.QTY' | translate}} : -->
+          <br> <b class="card text-center"  >$9.99</b>
           <!-- <img src="weddingfavour.png" style="width: 150px; height: auto;"> -->
 
         </div>
