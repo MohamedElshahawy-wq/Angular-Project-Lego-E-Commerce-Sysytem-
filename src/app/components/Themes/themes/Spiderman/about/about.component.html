@@ -1,252 +1,455 @@
 <app-header></app-header>
+<p>test</p>
 <div class="theSpiderInformation">
-    <div class="container-fluid">
-        <div class="row spiderBar align-items-center">
-            <div class="col-sm-6 order-sm-1 order-2 text-white">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 text-justify" dir="auto">
-                        <h2 class="spiderInfoH2">{{'Themes.Marvel'|translate}}</h2>
-                        <p class="spiderInfo mt-4">{{'Themes.friendly'|translate}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
-                <img class="img-fluid spiderImg" src="/assets/themes/about/spider-man.jpg" alt="Marvel">
-            </div>
+  <div class="container-fluid">
+    <div class="row spiderBar align-items-center">
+      <div class="col-sm-6 order-sm-1 order-2 text-white">
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-justify" dir="auto">
+            <h2 class="spiderInfoH2">{{ "Themes.Marvel" | translate }}</h2>
+            <p class="spiderInfo mt-4">{{ "Themes.friendly" | translate }}</p>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
+        <img
+          class="img-fluid spiderImg"
+          src="/assets/themes/about/spider-man.jpg"
+          alt="Marvel"
+        />
+      </div>
     </div>
+  </div>
 </div>
 <div class="selectCategory mt-3">
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12 py-3">
-                <div class="row justify-content-center">
-                    <a class="mr-sm-5 mr-3" routerLink='/Themes/About'>
-                        <img class="img-fluid" src="/assets/themes/about/marvel-spider-man-icon.jpg" alt="">
-                        <p class="text-body">{{'Themes.Spider'|translate}}</p>
-                    </a>
-                    <a class="mr-sm-5 mr-3" routerLink='/Themes/About'>
-                        <img class="img-fluid" src="/assets/themes/about/marvel-avengers-icon.jpg" alt="">
-                        <p class="text-body">{{'Themes.Avengers'|translate}}</p>
-                    </a>
-                    <a class="mr-sm-5 mr-3" routerLink='/Themes/About'>
-                        <img class="img-fluid" src="/assets/themes/about/marvel-characters-icon.jpg" alt="">
-                        <p class="text-body">{{'Themes.Characters'|translate}}</p>
-                    </a>
-                    <a routerLink='/Themes/About'>
-                        <img class="img-fluid" src="/assets/themes/about/marvel-games-icon.jpg" alt="">
-                        <p class="text-body">{{'Themes.Games'|translate}}</p>
-                    </a>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-12 py-3">
+        <div class="row justify-content-center">
+          <a class="mr-sm-5 mr-3" routerLink="/Themes/About">
+            <img
+              class="img-fluid"
+              src="/assets/themes/about/marvel-spider-man-icon.jpg"
+              alt=""
+            />
+            <p class="text-body">{{ "Themes.Spider" | translate }}</p>
+          </a>
+          <a class="mr-sm-5 mr-3" routerLink="/Themes/About">
+            <img
+              class="img-fluid"
+              src="/assets/themes/about/marvel-avengers-icon.jpg"
+              alt=""
+            />
+            <p class="text-body">{{ "Themes.Avengers" | translate }}</p>
+          </a>
+          <a class="mr-sm-5 mr-3" routerLink="/Themes/About">
+            <img
+              class="img-fluid"
+              src="/assets/themes/about/marvel-characters-icon.jpg"
+              alt=""
+            />
+            <p class="text-body">{{ "Themes.Characters" | translate }}</p>
+          </a>
+          <a routerLink="/Themes/About">
+            <img
+              class="img-fluid"
+              src="/assets/themes/about/marvel-games-icon.jpg"
+              alt=""
+            />
+            <p class="text-body">{{ "Themes.Games" | translate }}</p>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="playsets mt-5">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-8 text-justify" dir="auto">
-                <h2 class="playsetsH2 text-uppercase">{{'Themes.new'|translate}}</h2>
-            </div>
-            <div class="col-4">
-                <a routerLink='/Themes/About'><u class="text-body">{{'Themes.View'|translate}}</u><i
-                        class="fa fa-chevron-right ml-2 text-body" aria-hidden="true"></i></a>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8 text-justify" dir="auto">
+        <h2 class="playsetsH2 text-uppercase">
+          {{ "Themes.new" | translate }}
+        </h2>
+      </div>
+      <div class="col-4">
+        <a routerLink="/Themes/About"
+          ><u class="text-body">{{ "Themes.View" | translate }}</u
+          ><i class="fa fa-chevron-right ml-2 text-body" aria-hidden="true"></i
+        ></a>
+      </div>
     </div>
+  </div>
 </div>
 <div class="theMoltenInformation">
-    <div class="container-fluid">
-        <div class="row moltenBar align-items-center">
-            <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
-                <img class="img-fluid moltenImg" src="/assets/themes/about/molten-man.jpg" alt="Marvel">
-            </div>
-            <div class="col-sm-6 order-sm-1 order-2 text-white">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 pb-4 text-justify" dir="auto">
-                        <h2 class="moltenInfoH2 text-uppercase">{{'Themes.molten'|translate}}</h2>
-                        <p class="moltenInfo mt-4">{{'Themes.heat'|translate}}
-                        </p>
-                    </div>
-                    <div class="col-md-10 pb-4">
-                        <button type="button" class="btn btn3 btn-outline-light rounded text-body shadow-none bg-white">
-                            {{'Themes.Shop'|translate}}<i class="fa fa-chevron-right ml-2 text-body"
-                                aria-hidden="true"></i></button>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row moltenBar align-items-center">
+      <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
+        <img
+          class="img-fluid moltenImg"
+          src="/assets/themes/about/molten-man.jpg"
+          alt="Marvel"
+        />
+      </div>
+      <div class="col-sm-6 order-sm-1 order-2 text-white">
+        <div class="row justify-content-center">
+          <div class="col-md-10 pb-4 text-justify" dir="auto">
+            <h2 class="moltenInfoH2 text-uppercase">
+              {{ "Themes.molten" | translate }}
+            </h2>
+            <p class="moltenInfo mt-4">{{ "Themes.heat" | translate }}</p>
+          </div>
+          <div class="col-md-10 pb-4">
+            <button
+              type="button"
+              class="
+                btn
+                btn3
+                btn-outline-light
+                rounded
+                text-body
+                shadow-none
+                bg-white
+              "
+            >
+              {{ "Themes.Shop" | translate
+              }}<i
+                class="fa fa-chevron-right ml-2 text-body"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="imagesCarousel1">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 px-0">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-Tall-Large_1.jpg"
-                                alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-Tall-Large_2.jpg"
-                                alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-Tall-Large_3.jpg"
-                                alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Previous'|translate}}</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Next'|translate}}</span>
-                    </a>
-                </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 px-0">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-Tall-Large_1.jpg"
+                alt="First slide"
+              />
             </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-Tall-Large_2.jpg"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-Tall-Large_3.jpg"
+                alt="Third slide"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Previous" | translate
+            }}</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Next" | translate
+            }}</span>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="theHydroInformation">
-    <div class="container-fluid">
-        <div class="row hydroBar align-items-center">
-            <div class="col-sm-6 order-sm-1 order-2 text-white">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 pb-4 text-justify" dir="auto">
-                        <h2 class="hydroInfoH2 text-uppercase">{{'Themes.attack'|translate}}</h2>
-                        <p class="hydroInfo mt-4">{{'Themes.coffee'|translate}}
-                        </p>
-
-                    </div>
-                    <div class="col-md-10 pb-4">
-                        <button type="button" class="btn btn3 btn-outline-light rounded text-body shadow-none bg-white">
-                            {{'Themes.Shop'|translate}}<i class="fa fa-chevron-right ml-2 text-body"
-                                aria-hidden="true"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
-                <img class="img-fluid hydroImg" src="/assets/themes/about/hydro-man.jpg" alt="Marvel">
-            </div>
+  <div class="container-fluid">
+    <div class="row hydroBar align-items-center">
+      <div class="col-sm-6 order-sm-1 order-2 text-white">
+        <div class="row justify-content-center">
+          <div class="col-md-10 pb-4 text-justify" dir="auto">
+            <h2 class="hydroInfoH2 text-uppercase">
+              {{ "Themes.attack" | translate }}
+            </h2>
+            <p class="hydroInfo mt-4">{{ "Themes.coffee" | translate }}</p>
+          </div>
+          <div class="col-md-10 pb-4">
+            <button
+              type="button"
+              class="
+                btn
+                btn3
+                btn-outline-light
+                rounded
+                text-body
+                shadow-none
+                bg-white
+              "
+            >
+              {{ "Themes.Shop" | translate
+              }}<i
+                class="fa fa-chevron-right ml-2 text-body"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
+        <img
+          class="img-fluid hydroImg"
+          src="/assets/themes/about/hydro-man.jpg"
+          alt="Marvel"
+        />
+      </div>
     </div>
+  </div>
 </div>
 <div class="imagesCarousel2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 px-0">
-                <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-2-Tall-Large_1.jpg"
-                                alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-2-Tall-Large_2.jpg"
-                                alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-2-Tall-Large_3.jpg"
-                                alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExample2Indicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Previous'|translate}}</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample2Indicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Next'|translate}}</span>
-                    </a>
-                </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 px-0">
+        <div
+          id="carouselExample2Indicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExample2Indicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li
+              data-target="#carouselExample2Indicators"
+              data-slide-to="1"
+            ></li>
+            <li
+              data-target="#carouselExample2Indicators"
+              data-slide-to="2"
+            ></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-2-Tall-Large_1.jpg"
+                alt="First slide"
+              />
             </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-2-Tall-Large_2.jpg"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-2-Tall-Large_3.jpg"
+                alt="Third slide"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExample2Indicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Previous" | translate
+            }}</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExample2Indicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Next" | translate
+            }}</span>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="theStarkInformation">
-    <div class="container-fluid">
-        <div class="row starkBar align-items-center">
-            <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
-                <img class="img-fluid starkImg" src="/assets/themes/about/stark-jet.jpg" alt="Marvel">
-            </div>
-            <div class="col-sm-6 order-sm-1 order-2 text-white">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 pb-4 text-justify" dir="auto">
-                        <h2 class="starkInfoH2 text-uppercase">{{'Themes.drone'|translate}}</h2>
-                        <p class="starkInfo mt-4">{{'Themes.Fly'|translate}}</p>
-                    </div>
-                    <div class="col-md-10 pb-4" > 
-                        <button type="button" class="btn btn3 btn-outline-light rounded text-body shadow-none bg-white">
-                            {{'Themes.Shop'|translate}}<i class="fa fa-chevron-right ml-2 text-body"
-                                aria-hidden="true"></i></button>
-                    </div>
-                        
-                    
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row starkBar align-items-center">
+      <div class="col-sm-6 order-sm-1 order-1 px-0 mb-sm-0 mb-3">
+        <img
+          class="img-fluid starkImg"
+          src="/assets/themes/about/stark-jet.jpg"
+          alt="Marvel"
+        />
+      </div>
+      <div class="col-sm-6 order-sm-1 order-2 text-white">
+        <div class="row justify-content-center">
+          <div class="col-md-10 pb-4 text-justify" dir="auto">
+            <h2 class="starkInfoH2 text-uppercase">
+              {{ "Themes.drone" | translate }}
+            </h2>
+            <p class="starkInfo mt-4">{{ "Themes.Fly" | translate }}</p>
+          </div>
+          <div class="col-md-10 pb-4">
+            <button
+              type="button"
+              class="
+                btn
+                btn3
+                btn-outline-light
+                rounded
+                text-body
+                shadow-none
+                bg-white
+              "
+            >
+              {{ "Themes.Shop" | translate
+              }}<i
+                class="fa fa-chevron-right ml-2 text-body"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="imagesCarousel3">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 px-0">
-                <div id="carouselExample3Indicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExample3Indicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExample3Indicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExample3Indicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-3-Tall-Large_1.jpg"
-                                alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-3-Tall-Large_2.jpg"
-                                alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-fluid galleryImg" src="/assets/themes/about/Gallery-3-Tall-Large_3.jpg"
-                                alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExample3Indicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Previous'|translate}}</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample3Indicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">{{'RecommendedForYou.Next'|translate}}</span>
-                    </a>
-                </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 px-0">
+        <div
+          id="carouselExample3Indicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExample3Indicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li
+              data-target="#carouselExample3Indicators"
+              data-slide-to="1"
+            ></li>
+            <li
+              data-target="#carouselExample3Indicators"
+              data-slide-to="2"
+            ></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-3-Tall-Large_1.jpg"
+                alt="First slide"
+              />
             </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-3-Tall-Large_2.jpg"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="img-fluid galleryImg"
+                src="/assets/themes/about/Gallery-3-Tall-Large_3.jpg"
+                alt="Third slide"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExample3Indicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Previous" | translate
+            }}</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExample3Indicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{
+              "RecommendedForYou.Next" | translate
+            }}</span>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="questions">
-    <div class="container-fluid">
-        <div class="row questionsBar">
-            <div class="col-12 text-center text-white py-5">
-                <h2 class="questionInfoH2">{{'Themes.Questions'|translate}}</h2>
-                <p class="questionInfo mt-4">{{'Themes.find'|translate}}</p>
-                <button type="button" class="btn btn3 btn-outline-light rounded text-body shadow-none bg-white">
-                    {{'Themes.Section'|translate}}<i class="fa fa-chevron-right ml-2 text-body"
-                        aria-hidden="true"></i></button>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row questionsBar">
+      <div class="col-12 text-center text-white py-5">
+        <h2 class="questionInfoH2">{{ "Themes.Questions" | translate }}</h2>
+        <p class="questionInfo mt-4">{{ "Themes.find" | translate }}</p>
+        <button
+          type="button"
+          class="
+            btn
+            btn3
+            btn-outline-light
+            rounded
+            text-body
+            shadow-none
+            bg-white
+          "
+        >
+          {{ "Themes.Section" | translate
+          }}<i
+            class="fa fa-chevron-right ml-2 text-body"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </div>
     </div>
+  </div>
 </div>
